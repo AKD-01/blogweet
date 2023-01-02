@@ -16,18 +16,17 @@ function Home({ isAuth }) {
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
-      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id, key: `${Math.random}_${auth.currentUser.id}` })));
+      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
 
     getPosts();
-    console.log("1")
-  }, []);
+  }, [postsCollectionRef]);
 
   return (
     <div className="homePage">
       {postLists.map((post) => {
         return (
-          <div className="post">
+          <div className="post" key={post.id}>
             <div className="postHeader">
               <div className="title">
                 <h1> {post.title}</h1>
