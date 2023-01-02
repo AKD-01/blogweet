@@ -16,7 +16,7 @@ function Home({ isAuth }) {
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
-      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id, key: `${Math.random}_${auth.currentUser.id}` })));
     };
 
     getPosts();
