@@ -8,7 +8,7 @@ import Login from "./pages/Login";
 import CreatePost from "./pages/CreatePost";
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
   const signUserOut = () => {
     signOut(auth).then(() => {
@@ -22,16 +22,18 @@ function App() {
     <Router>
       <nav>
         <Link to="/"> Home </Link>
-        <Link to="/createpost"> Create Post </Link>
         {isAuth ? (
+          <>
+          <Link to="/createpost"> Create Post </Link>
           <button onClick={signUserOut}> Log Out</button>
+          </>
         ) : (
           <Link to="/login"> Login </Link>
         )}
       </nav>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/createpost" element={<CreatePost />} />
+        <Route path="/" element={<Home isAuth={isAuth} />} />
+        <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
       </Routes>
     </Router>
@@ -40,4 +42,4 @@ function App() {
 
 export default App;
 
-// line 20: passing state as prop in login component.
+// line 35, 36, 37: passing state as a prop in the respective components.
