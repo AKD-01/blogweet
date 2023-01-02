@@ -1,8 +1,10 @@
 import React from "react";
 import { auth, provider } from "../firebase-config";
-import { signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import LoginButton from "../components/LoginButton";
+import GithubLogo from '../assets/svg-icons/github.svg'
+import GoogleLogo from "../assets/svg-icons/google.svg";
 
 function Login({ setIsAuth }) {
   let navigate = useNavigate();
@@ -14,19 +16,36 @@ function Login({ setIsAuth }) {
       navigate("/");
     });
   };
+  const signInWithGithub = () => {
+    signInWithPopup(auth, new GithubAuthProvider()).then((result) => {
+      localStorage.setItem("isAuth", true);
+      setIsAuth(true);
+      navigate("/");
+    });
+  };
 
   return (
     <div className="loginPage">
-      <p>Sign in with Google to continue</p>
+      <p>Enter into BlogWeet</p>
       <LoginButton
         label="Continue With Google"
         alt="Google"
         bgColor="#8ab4f8"
         altColor="#8ab4f8"
+        signIn={signInWithGoogle}
+        // image={GoogleLogo}
       />
-      <button className="login-with-google-btn" onClick={signInWithGoogle}>
+      <LoginButton
+        label="Continue With Github"
+        alt="Github"
+        bgColor="rgb(145, 151, 157)"
+        altColor="#f0f6fc"
+        signIn={signInWithGithub}
+        // image={GithubLogo}
+      />
+      {/* <button className="login-with-google-btn" onClick={signInWithGoogle}>
         Sign in with Google
-      </button>
+      </button> */}
     </div>
   );
 }
