@@ -19,11 +19,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-const firestoreDB = initializeFirestore(firebaseConfig, {
-  experimentalForceLongPolling: true, // this line
-  useFetchStreams: false, // and this line
-});
-
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
