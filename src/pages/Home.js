@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
-import { auth, db } from "../firebase-config";
+import { auth, db } from "../firebase-config"
+import { useNavigate } from "react-router-dom";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
   const postsCollectionRef = collection(db, "posts");
+  let navigate = useNavigate();
 
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id);
     await deleteDoc(postDoc);
+    navigate("/home");
   };
-
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
@@ -18,7 +20,7 @@ function Home({ isAuth }) {
     };
 
     getPosts();
-  }, [deletePost]);
+  }, []);
 
   return (
     <div className="homePage">
