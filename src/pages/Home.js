@@ -1,27 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
-import { auth, db } from "../firebase-config"
-import { useNavigate } from "react-router-dom";
+import { auth, db } from "../firebase-config";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
   const postsCollectionRef = collection(db, "posts");
-  let navigate = useNavigate();
 
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id);
     await deleteDoc(postDoc);
-    window.location.reload();
   };
+
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
-      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id, key: `${Math.random}_${auth.currentUser.id}` })));
+      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
 
     getPosts();
-    console.log("1")
-  }, []);
+  }, [deletePost]);
 
   return (
     <div className="homePage">
