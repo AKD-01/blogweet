@@ -11,7 +11,7 @@ function Home({ isAuth }) {
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id);
     await deleteDoc(postDoc);
-    navigate("/home");
+    window.location.reload();
   };
   useEffect(() => {
     const getPosts = async () => {
@@ -20,6 +20,7 @@ function Home({ isAuth }) {
     };
 
     getPosts();
+    console.log("1")
   }, []);
 
   return (

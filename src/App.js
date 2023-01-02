@@ -24,8 +24,8 @@ function App() {
         <Link to="/"> Home </Link>
         {isAuth ? (
           <>
-          <Link to="/createpost"> Create Post </Link>
-          <button onClick={signUserOut}> Log Out</button>
+            <Link to="/createpost"> Create Post </Link>
+            <button onClick={signUserOut}> Log Out</button>
           </>
         ) : (
           <Link to="/login"> Login </Link>
