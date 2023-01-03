@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { auth, db } from "../firebase-config"
 import { useNavigate } from "react-router-dom";
+import './Home.css'
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
