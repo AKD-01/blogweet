@@ -52,6 +52,10 @@ box-shadow: 1px 1px .5rem wheat;
   background-color: black;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  font-size: 1.25rem;
+  vertical-align: middle;
+  display: inline;
+
 }
 a {
   color: white;
