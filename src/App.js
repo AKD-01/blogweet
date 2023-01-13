@@ -1,67 +1,35 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import CreatePost from "./pages/CreatePost";
+import Sidebar from "./components/SideBar/Sidebar";
+import SidebarOnDesktop from "./components/SidebarOnDesktop/SidebarOnDesktop";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
-    const signUserOut = () => {
+  const signUserOut = () => {
     signOut(auth).then(() => {
       localStorage.clear();
       setIsAuth(false);
       window.location.pathname = "/login";
     });
   };
+  let width = 1000;
+
+  width = window.screen.width;
 
   return (
     <Router>
       {/* <Navbar isAuth={isAuth} setIsAuth={setIsAuth}/> */}
-      <nav>
-        <div style={{display:"flex", justifyContent:"space-between"}}>
-            <Link to="/">
-              <div className="HomeLink">🇧 🇱 🇴 🇬 🇼 🇪 🇪 🇹🐦</div>{" "}
-            </Link>
-            {isAuth && <Link to="/createpost">
-              <div className="CreatePost">🖊️ Create Post</div>{" "}
-            </Link>}
-        </div>
-        <div>
-          {isAuth ? (
-          <>
-            {/* <Link to="/createpost">
-              <div className="CreatePost"> Create Post</div>{" "}
-            </Link> */}
-            <button className="logout" onClick={signUserOut}>
-              <div>🔐</div>
-            </button>
-          </>
-        ) : (
-          <Link to="/login">
-            <div className="Link login">Login</div>
-          </Link>
-        )}
-        </div>
-
-        {/* {isAuth ? (
-          <>
-            <Link to="/createpost">
-              <div className="CreatePost"> Create Post</div>{" "}
-            </Link>
-            <button onClick={signUserOut}>
-              <div> Log Out</div>
-            </button>
-          </>
-        ) : (
-          <Link to="/login">
-            <div className="Link"> Login </div>
-          </Link>
-        )} */}
-      </nav>
+      {width < 500 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
+      {width > 500 && (
+        <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
+      )}
       <Routes>
         <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />

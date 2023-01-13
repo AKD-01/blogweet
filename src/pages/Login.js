@@ -33,7 +33,7 @@ function Login({ setIsAuth }) {
         bgColor="#8ab4f8"
         altColor="#8ab4f8"
         signIn={signInWithGoogle}
-        // image={GoogleLogo}
+        image="bx bxl-google bx-tada"
       />
       <LoginButton
         label="Continue With Github"
@@ -41,7 +41,7 @@ function Login({ setIsAuth }) {
         bgColor="rgb(145, 151, 157)"
         altColor="#f0f6fc"
         signIn={signInWithGithub}
-        // image={GithubLogo}
+        image="bx bxl-github bx-tada"
       />
       {/* <button className="login-with-google-btn" onClick={signInWithGoogle}>
         Sign in with Google
