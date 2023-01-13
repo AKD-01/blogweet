@@ -1,5 +1,6 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -19,34 +20,33 @@ nav {
   justify-content: space-between;
   color: white;
   text-decoration: none;
-  padding-top:0.5rem;
+  padding-top: 0.5rem;
 }
-.logout{
+.logout {
   border: none;
   font-family: "poppins";
   color: navajowhite;
   background-color: transparent;
-  margin-right: .5rem;
-  cursor:pointer;
-  font-size:1.75rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  font-size: 1.75rem;
 }
-.login{
+.login {
   font-size: 1rem;
   vertical-align: middle;
   display: inherit;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   color: navajowhite;
 }
 .CreatePost {
   font-size: 1rem;
   position: absolute;
-bottom: 1rem;
-right: 1rem;
-background-color: black;
-padding: .5rem;
-border-radius: 1rem;
-box-shadow: 1px 1px .5rem wheat;
-
+  bottom: 1rem;
+  right: 1rem;
+  background-color: black;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 0.5rem wheat;
 }
 .HomeLink {
   background-color: black;
@@ -55,7 +55,6 @@ box-shadow: 1px 1px .5rem wheat;
   font-size: 1.25rem;
   vertical-align: middle;
   display: inline;
-
 }
 a {
   color: white;
@@ -69,17 +68,16 @@ a {
   display: grid;
   place-items: center;
 }
-
 .cpContainer {
- width: 84%;
-height: auto;
-padding: 20px;
-background-color: #753d743b;
-border-radius: 12px;
-color: white;
-display: flex;
-flex-direction: column;
-margin: 1rem;
+  width: 70%;
+  height: auto;
+  padding: 20px;
+  background-color: #11101df2;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 1.6rem;
 }
 
 .cpContainer h1 {
@@ -187,11 +185,11 @@ textarea {
   width: 600px;
   height: auto;
   max-height: 600px;
-  background-color: rgb(202, 201, 191);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: rgba(76, 75, 68, 0.24);
   margin: 20px;
   padding: 20px;
   border-radius: 15px;
+  box-shadow: 1px 1px 1rem #40415d;
 }
 
 .post .postHeader {
@@ -201,10 +199,10 @@ textarea {
 }
 
 .postHeader .title {
-  flex: 50%;
+  flex: 100%;
 }
 .postHeader .deletePost {
-  flex: 50%;
+  flex: 10%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -231,4 +229,32 @@ textarea {
   .homePage .post {
     width: 85%;
   }
+  .loginPage {
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins";
+    margin-left: 95px;
+    width: 70%;
+  }
+  .sidebar{
+    z-index: 1000;
+  }
+  .homePage .post {
+  width: 79%;
+  margin-left: 5rem !important;
+}
+.cpContainer {
+  width: 70%;
+  height: auto;
+  padding: 20px;
+  background-color: #11101df2;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 1.6rem;
+}
 }

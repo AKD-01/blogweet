@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import CreatePost from "./pages/CreatePost";
 import Navbar from './components/Navbar/Navbar'
+import Sidebar from "./components/SideBar/Sidebar";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -22,47 +23,8 @@ function App() {
   return (
     <Router>
       {/* <Navbar isAuth={isAuth} setIsAuth={setIsAuth}/> */}
-      <nav>
-        <div style={{display:"flex", justifyContent:"space-between"}}>
-            <Link to="/">
-              <div className="HomeLink">🇧 🇱 🇴 🇬 🇼 🇪 🇪 🇹🐦</div>{" "}
-            </Link>
-            {isAuth && <Link to="/createpost">
-              <div className="CreatePost">🖊️ Create Post</div>{" "}
-            </Link>}
-        </div>
-        <div>
-          {isAuth ? (
-          <>
-            {/* <Link to="/createpost">
-              <div className="CreatePost"> Create Post</div>{" "}
-            </Link> */}
-            <button className="logout" onClick={signUserOut}>
-              <div>🔐</div>
-            </button>
-          </>
-        ) : (
-          <Link to="/login">
-            <div className="Link login">Login</div>
-          </Link>
-        )}
-        </div>
-
-        {/* {isAuth ? (
-          <>
-            <Link to="/createpost">
-              <div className="CreatePost"> Create Post</div>{" "}
-            </Link>
-            <button onClick={signUserOut}>
-              <div> Log Out</div>
-            </button>
-          </>
-        ) : (
-          <Link to="/login">
-            <div className="Link"> Login </div>
-          </Link>
-        )} */}
-      </nav>
+      <Sidebar isAuth={isAuth} signUserOut={signUserOut}/>
+      
       <Routes>
         <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />

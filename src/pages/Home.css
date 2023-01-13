@@ -1,3 +1,8 @@
-body{
-    background-color: #07283e;
+body {
+  background-color: #ffffff;
+}
+.post h3 {
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-align: right;
 }
