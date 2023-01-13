@@ -6,7 +6,6 @@ import { auth } from "./firebase-config";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import CreatePost from "./pages/CreatePost";
-import Navbar from './components/Navbar/Navbar'
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
