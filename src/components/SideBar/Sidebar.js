@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Sidebar.css";
 import "boxicons";
 import { auth } from "../../firebase-config";
@@ -9,7 +9,14 @@ const Sidebar = ({ isAuth, signUserOut }) => {
   const toggleSidebar = () => {
     setState((prevState) => ({ active: !prevState.active }));
   };
-
+  const [currUser, setCurrUser] = useState([]);
+  const [url, setUrl] = useState("");
+  const [name, setName] = useState("");
+  useEffect(() => {
+    setCurrUser(auth.currentUser);
+    setUrl(auth.currentUser.photoURL);
+    setName(auth.currentUser.displayName);
+  }, []);
   const { active } = state;
   return (
     <div className={`sidebar ${active ? "active" : ""}`}>
@@ -77,13 +84,9 @@ const Sidebar = ({ isAuth, signUserOut }) => {
         <div className="profile_content">
           <div className="profile">
             <div className="profile_details">
-              {auth.currentUser != null && (
-                <img src={auth.currentUser.photoURL} alt="" />
-              )}
+              {currUser != null && <img src={url} alt="" />}
               <div className="name_job">
-                {auth.currentUser != null && (
-                  <div className="name">{auth.currentUser.displayName}</div>
-                )}
+                {currUser != null && <div className="name">{name}</div>}
               </div>
             </div>
             <li onClick={toggleSidebar}>

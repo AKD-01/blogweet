@@ -19,7 +19,8 @@ function Home({ isAuth }) {
     };
 
     getPosts();
-  }, [postsCollectionRef]);
+    console.log(11);
+  }, []);
 
   return (
     <div className="homePage">
