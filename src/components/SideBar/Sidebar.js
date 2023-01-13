@@ -10,6 +10,10 @@ const Sidebar = ({ isAuth, signUserOut }) => {
     setState((prevState) => ({ active: !prevState.active }));
   };
 
+  const closeModal = () => {
+    setState((prevState) => ({ active: false }));
+  }
+
   const { active } = state;
   return (
     <div className={`sidebar ${active ? "active" : ""}`}>
@@ -40,7 +44,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
             <input type="text" placeholder="Search..." />
             <span className="tooltip">Search</span>
           </li> */}
-        <li>
+        <li onClick={toggleSidebar}>
           <Link to="/">
             <i class="bx bxs-home-heart"></i>
             <span className="link_names">Home</span>
@@ -48,7 +52,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
           <span className="tooltip">Home</span>
         </li>
         {isAuth && (
-          <li>
+          <li onClick={toggleSidebar}>
             <Link to="/createpost">
               <i class="bx bxs-pencil"></i>
               <span className="link_names">Create Post</span>
@@ -86,7 +90,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
                 )}
               </div>
             </div>
-            <li>
+            <li onClick={toggleSidebar}>
               <i className="bx bx-log-out" id="log_out" onClick={signUserOut} />
             </li>
           </div>

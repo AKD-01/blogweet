@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
@@ -18,6 +18,10 @@ function App() {
       window.location.pathname = "/login";
     });
   };
+  useEffect(() => {
+    const width = window.screen.width;
+  }, [])
+  
 
   return (
     <Router>
