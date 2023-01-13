@@ -67,7 +67,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
           />
           <span
             className="link_names"
-            style={{ left: "1rem", position: "relative", bottom: ".15rem" }}
+            style={{ left: "2.5rem", position: "relative", bottom: ".1rem" }}
           >
             Log in
           </span>
