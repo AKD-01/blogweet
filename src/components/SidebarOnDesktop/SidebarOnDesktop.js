@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import "./Sidebar.css";
+import "./SidebarOnDesktop.css";
 import "boxicons";
 import { auth } from "../../firebase-config";
 import { Link } from "react-router-dom";
 
-const Sidebar = ({ isAuth, signUserOut }) => {
+const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
   const [state, setState] = useState(false);
-  const toggleSidebar = () => {
+  const toggleSidebarOnDesktop = () => {
     setState((prevState) => ({ active: !prevState.active }));
   };
 
   const { active } = state;
   return (
-    <div className={`sidebar ${active ? "active" : ""}`}>
+    <div className={`SidebarOnDesktop ${active ? "active" : ""}`}>
       <div className="logo_content">
         <div className="logo">
           {/* <i className="bx bxl-c-plus-plus" style={{ fontSize: "30px" }} /> */}
@@ -31,7 +31,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
           className="bx bxl-twitter"
           id="btn"
           style={{ fontSize: "25px" }}
-          onClick={toggleSidebar}
+          onClick={toggleSidebarOnDesktop}
         />
       </div>
       <ul className="nav_list">
@@ -40,7 +40,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
             <input type="text" placeholder="Search..." />
             <span className="tooltip">Search</span>
           </li> */}
-        <li onClick={toggleSidebar}>
+        <li onClick={toggleSidebarOnDesktop}>
           <Link to="/">
             <i class="bx bxs-home-heart"></i>
             <span className="link_names">Home</span>
@@ -48,7 +48,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
           <span className="tooltip">Home</span>
         </li>
         {isAuth && (
-          <li onClick={toggleSidebar}>
+          <li onClick={toggleSidebarOnDesktop}>
             <Link to="/createpost">
               <i class="bx bxs-pencil"></i>
               <span className="link_names">Create Post</span>
@@ -86,7 +86,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
                 )}
               </div>
             </div>
-            <li onClick={toggleSidebar}>
+            <li onClick={toggleSidebarOnDesktop}>
               <i className="bx bx-log-out" id="log_out" onClick={signUserOut} />
             </li>
           </div>
@@ -96,4 +96,4 @@ const Sidebar = ({ isAuth, signUserOut }) => {
   );
 };
 
-export default Sidebar;
+export default SidebarOnDesktop;

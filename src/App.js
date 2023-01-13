@@ -7,27 +7,29 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import CreatePost from "./pages/CreatePost";
 import Sidebar from "./components/SideBar/Sidebar";
+import SidebarOnDesktop from "./components/SidebarOnDesktop/SidebarOnDesktop";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
-    const signUserOut = () => {
+  const signUserOut = () => {
     signOut(auth).then(() => {
       localStorage.clear();
       setIsAuth(false);
       window.location.pathname = "/login";
     });
   };
-  useEffect(() => {
-    const width = window.screen.width;
-  }, [])
-  
+  let width = 1000;
+
+  width = window.screen.width;
 
   return (
     <Router>
       {/* <Navbar isAuth={isAuth} setIsAuth={setIsAuth}/> */}
-      <Sidebar isAuth={isAuth} signUserOut={signUserOut}/>
-      
+      {width < 500 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
+      {width > 500 && (
+        <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
+      )}
       <Routes>
         <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />

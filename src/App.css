@@ -72,12 +72,13 @@ a {
   width: 70%;
   height: auto;
   padding: 20px;
-  background-color: #11101df2;
+  background-color: #1d1b31;
   border-radius: 12px;
   color: white;
   display: flex;
   flex-direction: column;
   margin: 1.6rem;
+  margin-left: 15rem;
 }
 
 .cpContainer h1 {
@@ -109,12 +110,14 @@ a {
 }
 
 .cpContainer button {
-  margin-top: 20px;
   height: 40px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
+  width: max-content;
+  padding: 0 2rem;
+  margin: 20px auto;
 }
 input,
 textarea {
@@ -185,7 +188,7 @@ textarea {
   width: 600px;
   height: auto;
   max-height: 600px;
-  background-color: rgba(76, 75, 68, 0.24);
+  background-color: rgb(158, 155, 187);
   margin: 20px;
   padding: 20px;
   border-radius: 15px;
@@ -239,22 +242,22 @@ textarea {
     margin-left: 95px;
     width: 70%;
   }
-  .sidebar{
+  .sidebar {
     z-index: 1000;
   }
   .homePage .post {
-  width: 79%;
-  margin-left: 5rem !important;
-}
-.cpContainer {
-  width: 70%;
-  height: auto;
-  padding: 20px;
-  background-color: #11101df2;
-  border-radius: 12px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  margin: 1.6rem;
-}
+    width: 79%;
+    margin-left: 5rem !important;
+  }
+  .cpContainer {
+    width: 70%;
+    height: auto;
+    padding: 20px;
+    background-color: #11101df2;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 1.6rem;
+  }
 }
