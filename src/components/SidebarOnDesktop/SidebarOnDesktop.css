@@ -59,7 +59,7 @@ body {
   transform: translateX(-50%);
 }
 .SidebarOnDesktop #btn {
-  left: 90%;
+  left: 80%;
 }
 .SidebarOnDesktop ul {
   margin-top: 20px;
