@@ -8,12 +8,18 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBSN0SLpQmEBJtxlDJENf4syWXPQRRqhN0",
-  authDomain: "blogweet-c28a4.firebaseapp.com",
-  projectId: "blogweet-c28a4",
-  storageBucket: "blogweet-c28a4.appspot.com",
-  messagingSenderId: "801793825021",
-  appId: "1:801793825021:web:8b905f78556131e4c94694"
+  // apiKey: "AIzaSyBSN0SLpQmEBJtxlDJENf4syWXPQRRqhN0",
+  // authDomain: "blogweet-c28a4.firebaseapp.com",
+  // projectId: "blogweet-c28a4",
+  // storageBucket: "blogweet-c28a4.appspot.com",
+  // messagingSenderId: "801793825021",
+  // appId: "1:801793825021:web:8b905f78556131e4c94694"
+  apiKey: "AIzaSyD9tMXwqU7ijIKnQu0vsX1UoR9FM_w7r2E",
+  authDomain: "blog-5814a.firebaseapp.com",
+  projectId: "blog-5814a",
+  storageBucket: "blog-5814a.appspot.com",
+  messagingSenderId: "787500061298",
+  appId: "1:787500061298:web:242f526d6800f0bbbf68eb",
 };
 
 // Initialize Firebase
