@@ -125,17 +125,32 @@ textarea {
 }
 
 .loginPage {
-  width: 100vw;
-  height: calc(100vh - 80px);
+   box-shadow: 1px 1px 1rem #fff;
+  border-radius: 1rem;
+  background: #11101de6;
+  color: wheat;
+  position: absolute;
+  margin: auto;
+  width: 35%;
+  right: 20rem;
+  top: 8rem;
+  height: calc(70vh - 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "Poppins";
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .loginPage p {
   font-size: 30px;
+  color: wheat;
+  margin-bottom: 4rem;
 }
 
 /* GOOGLE BUTTON */

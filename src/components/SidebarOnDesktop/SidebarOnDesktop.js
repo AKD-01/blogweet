@@ -39,7 +39,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
           </div>
         </div>
         <i
-          className="bx bxl-twitter"
+          className="bx bxl-twitter bx-tada"
           id="btn"
           style={{ fontSize: "25px" }}
           onClick={toggleSidebarOnDesktop}
@@ -53,7 +53,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
           </li> */}
         <li onClick={toggleSidebarOnDesktop}>
           <Link to="/">
-            <i class="bx bxs-home-heart"></i>
+            <i className="bx bxs-home-heart"></i>
             <span className="link_names">Home</span>
           </Link>
           <span className="tooltip">Home</span>
@@ -61,7 +61,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         {isAuth && (
           <li onClick={toggleSidebarOnDesktop}>
             <Link to="/createpost">
-              <i class="bx bxs-pencil"></i>
+              <i className="bx bxs-pencil"></i>
               <span className="link_names">Create Post</span>
             </Link>
             <span className="tooltip">Create Post</span>
