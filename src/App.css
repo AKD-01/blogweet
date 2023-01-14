@@ -294,16 +294,25 @@ textarea {
   .blogContent img{
   width: 75vw;
 }
-  .loginPage {
-    height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: "Poppins";
-    margin-left: 95px;
-    width: 70%;
-  }
+.loginPage {
+  height: calc(63vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  margin-left: 95px;
+  width: 80%;
+  right: 1rem;
+  margin: auto;
+}
+.createPostPage {
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: grid;
+  place-items: center;
+  margin-left: 1rem;
+}
   .sidebar {
     z-index: 1000;
   }
