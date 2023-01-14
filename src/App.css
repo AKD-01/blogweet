@@ -272,7 +272,7 @@ textarea {
 .post .postTextContainer {
   word-wrap: break-word;
   display: grid;
-  height: 100px;
+  height: auto;
   overflow: hidden;
   padding: 1rem;
   width: 100%;
