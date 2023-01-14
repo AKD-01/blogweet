@@ -2,6 +2,38 @@
 .blogpage {
   margin-left: 250px;
 }
+.three h1 {
+  position: relative;
+  padding: 0;
+  margin: 1rem 0;
+  font-family: "Raleway", sans-serif;
+  color: #000000;
+  transition: all 0.4s ease 0s;
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.5em;
+  padding-bottom: 15px;
+}
+.three h1:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 55px;
+  background-color: rgb(0, 0, 0);
+}
+.three h1:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  height: 1px;
+  width: 95%;
+  max-width: 255px;
+  background-color: rgb(0, 0, 0);
+}
 .blogtitle {
   font-size: 3rem;
   filter: drop-shadow(1px 1rem 1rem white);
@@ -25,6 +57,11 @@
     margin-right: 0.2rem;
   }
   .blogpage{
-    margin-left: 75px;
+    width: 88%;
+    padding-right: 1rem;
+    color: #aadddd;
+    word-break: break-word;
+    margin-left: 4rem;
+    margin-right: 2rem;
   }
 }

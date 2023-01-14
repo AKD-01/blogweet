@@ -9,21 +9,21 @@ import 'react-toastify/dist/ReactToastify.css';
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
   const postsCollectionRef = collection(db, "posts");
-  console.log(auth.toJSON());
+  // console.log(auth.toJSON());
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id);
     await deleteDoc(postDoc);
     window.location.reload();
   };
-  const DUMMY_POST = {
-    id: `id:${Math.random()}`,
-    title: "Dummy Post",
-    author: { name: "Dummy Author", id: Math.random() },
-    key: Math.random(),
-    postText: "Hi how are you dummy man",
-    image: "https://avatars.githubusercontent.com/in/8329?s=80&v=4",
-  };
-  postLists.push(DUMMY_POST);
+  // const DUMMY_POST = {
+  //   id: `id:${Math.random()}`,
+  //   title: "Dummy Post",
+  //   author: { name: "Dummy Author", id: Math.random() },
+  //   key: Math.random(),
+  //   postText: "Hi how are you dummy man",
+  //   image: "https://avatars.githubusercontent.com/in/8329?s=80&v=4",
+  // };
+  // postLists.push(DUMMY_POST);
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
@@ -31,11 +31,11 @@ function Home({ isAuth }) {
     };
 
     getPosts();
-    console.log(11);
+    // console.log(11);
   }, []);
   const navigate = useNavigate();
   const sharingHandler = (s) => {
-    console.log(`https://blogweet.vercel.app${s}`);
+    // console.log(`https://blogweet.vercel.app${s}`);
     navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`);
     toast(`Your link has been pasted to your Clipboard. Enjoy!`);
 
@@ -43,7 +43,7 @@ function Home({ isAuth }) {
   return (
     <div className="homePage">
       {postLists.map((post) => {
-        console.log(post);
+        // console.log(post);
         return (
           <div className="post" key={post.id}>
             <div className="postHeader">
@@ -91,7 +91,7 @@ function Home({ isAuth }) {
                   )}
                 >
                   <i
-                    class="bx bxs-share-alt"
+                    className="bx bxs-share-alt"
                     style={{
                       color: "rgb(255, 255, 255)",
                       boxShadow: " 1px 1px 1rem black",
@@ -128,7 +128,15 @@ function Home({ isAuth }) {
                 </div>
               </div>
             </div>
-            <h3>-{post.author.name}</h3>
+            <h3>
+              <div>📅{post.date}</div>
+              <div style={{cursor:"pointer"}} onClick={() => {
+                    navigate(
+                      `/${post.author.name.replaceAll(" ", "-")}`,
+                      { state: post.author }
+                    );
+                  }}>👤{post.author.name}</div>
+            </h3>
             {/* <h3>-{post.author.name}</h3> */}
             <ToastContainer
               position="top-center"

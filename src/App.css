@@ -235,7 +235,6 @@ textarea {
 .homePage .post {
   width: 90%;
   height: auto;
-  max-height: 45vh;
   background-color: rgb(158, 155, 187);
   margin: 20px;
   padding: 20px;
@@ -282,7 +281,7 @@ textarea {
   text-align: center;
 }
 .blogContent img{
-  max-width: 600px;
+  width: 50vw;
 }
 .blogContent p{
   text-align: left;

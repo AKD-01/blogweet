@@ -2,15 +2,22 @@ body {
   background-color: #1d1b31c4;
 }
 .post h3 {
+  display: flex;
+  justify-content: space-between;
   font-size: 0.9rem;
   text-decoration: none;
   text-align: right;
   color: rgb(24, 8, 95);
 }
+.blogcredits{
+  display: flex;
+  justify-content: space-between;
+}
 .Link {
   text-decoration: inherit;
 }
 .title {
+  filter: drop-shadow(2px 4px 6px white);
   color: #110c22;
   font-weight: normal;
   font-size: 2.5rem;

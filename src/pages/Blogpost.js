@@ -12,21 +12,24 @@ const Blogpost = () => {
   const post = location.state;
   return (
     <div className='blogpage'>
-      <div className='blogtitle'>{post.title}</div>
-      <hr/>
-      <div className='blogcredits'>
-        👤{post.author.name}
+      <div className='blogtitle'>
+        <div class="three">
+          <h1>{post.title}</h1>
+        </div>
       </div>
-      <hr/>
-      {post.date !=null && <div style={{textAlign:"right", marginRight:"1rem"}}>{post.date}</div>}
-      <hr/>
+      <hr />
+      <div className='blogcredits'>
+        <div>👤{post.author.name}</div>
+        <div>{post.date != null && <div style={{ textAlign: "right", marginRight: "1rem" }}>📅{post.date}</div>}</div>
+      </div>
+      <hr />
       <div className='blogContent'>
         <img src={post.image} alt={post.title} />
         <p>
           {post.postText}
         </p>
       </div>
-      </div>
+    </div>
   )
 }
 

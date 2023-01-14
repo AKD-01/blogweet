@@ -16,7 +16,7 @@ function CreatePost({ isAuth }) {
     await addDoc(postsCollectionRef, {
       title, //title: title
       postText,
-      author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
+      author: { name: auth.currentUser.displayName, id: auth.currentUser.uid, email: auth.currentUser.email, photoUrl: auth.currentUser.photoURL },
       date: new Date().toJSON().slice(0, 10).replace(/-/g, "/"),
       image
     });
@@ -29,7 +29,7 @@ function CreatePost({ isAuth }) {
     }
   }, []);
 
-  const hanldleImageUpload =(e) =>{
+  const hanldleImageUpload = (e) => {
     setImage(e.target.value)
   }
 

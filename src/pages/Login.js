@@ -31,7 +31,7 @@ function Login({ setIsAuth }) {
         bgColor="#8ab4f8"
         altColor="#8ab4f8"
         signIn={signInWithGoogle}
-        image="bx bxl-google bx-tada"
+        image="bx bxl-google bx-flip-horizontal bx-burst"
       />
       <LoginButton
         label="Continue With Github"
