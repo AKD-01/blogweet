@@ -88,9 +88,9 @@ const Sidebar = ({ isAuth, signUserOut }) => {
         <div className="profile_content">
           <div className="profile">
             <div className="profile_details">
-              {currUser != null && <img src={url} alt="" />}
+              {auth.currentUser != null && <img src={auth.currentUser.photoURL} alt="" />}
               <div className="name_job">
-                {currUser != null && <div className="name">{name}</div>}
+                {auth.currentUser != null && <div className="name">{auth.currentUser.displayName}</div>}
               </div>
             </div>
             <li onClick={toggleSidebar}>

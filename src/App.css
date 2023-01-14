@@ -292,7 +292,7 @@ textarea {
     margin-left: -10rem;
   }
   .blogContent img{
-  max-width: 9rem;
+  width: 75vw;
 }
   .loginPage {
     height: calc(100vh - 80px);

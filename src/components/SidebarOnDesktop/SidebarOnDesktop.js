@@ -6,30 +6,15 @@ import { Link } from "react-router-dom";
 
 const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
   const [state, setState] = useState(true);
+
   const toggleSidebarOnDesktop = () => {
-    setState((prevState) => ({ active: !prevState.active }));
+    setState(!state);
   };
-  const [currUser, setCurrUser] = useState([]);
-  const [url, setUrl] = useState("");
-  const [name, setName] = useState("");
-    let { active } = true;
 
-  useEffect(() => {
-    if (isAuth && auth.currentUser!=null) {
-      setCurrUser(auth.currentUser);
-      setUrl(auth.currentUser.photoURL);
-      setName(auth.currentUser.displayName);
-    }
-     active = true;
-
-    console.log(111);
-  }, []);
-  // const { active } = true;
   return (
     <div className={`SidebarOnDesktop active`}>
       <div className="logo_content">
         <div className="logo">
-          {/* <i className="bx bxl-c-plus-plus" style={{ fontSize: "30px" }} /> */}
           <div
             className="logoname"
             style={{
@@ -72,12 +57,12 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         )}
         {/* other list items */}
       </ul>
-      {!isAuth && (
+      {!isAuth && (<li>
         <Link to="login" id="log_in">
           <i
-            className="bx bx-log-in"
+            className="bx bx-log-in bx-fade-left"
             id="log_in"
-            // onClick={}
+            onClick={toggleSidebarOnDesktop}
           />
           <span
             className="link_names"
@@ -85,20 +70,18 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
           >
             Log in
           </span>
-        </Link>
+        </Link></li>
       )}
       {isAuth && (
-        <div className="profile_content">
+        <div className="profile_content" id="profile" >
           <div className="profile">
             <div className="profile_details">
-              {currUser != null && <img src={url} alt="" />}
+              {auth.currentUser != null && <img src={auth.currentUser.photoURL} alt="" />}
               <div className="name_job">
-                {currUser != null && <div className="name">{name}</div>}
+                {auth.currentUser != null && <div className="name">{auth.currentUser.displayName}</div>}
               </div>
             </div>
-            <li onClick={toggleSidebarOnDesktop}>
-              <i className="bx bx-log-out" id="log_out" onClick={signUserOut} />
-            </li>
+            <i className="bx bx-log-out" id="log_out" onClick={signUserOut} />
           </div>
         </div>
       )}
