@@ -33,3 +33,6 @@ body {
 .contents {
   display: flex;
 }
+.deletePost{
+  display: flex;
+}

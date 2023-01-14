@@ -15,12 +15,16 @@ const Blogpost = () => {
       <div className='blogtitle'>{post.title}</div>
       <hr/>
       <div className='blogcredits'>
-        By - {post.author.name}
+        👤{post.author.name}
       </div>
-      {post.date !=null && <div>{post.date}</div>}
       <hr/>
-      <div>
+      {post.date !=null && <div style={{textAlign:"right", marginRight:"1rem"}}>{post.date}</div>}
+      <hr/>
+      <div className='blogContent'>
         <img src={post.image} alt={post.title} />
+        <p>
+          {post.postText}
+        </p>
       </div>
       </div>
   )

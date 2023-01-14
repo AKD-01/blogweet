@@ -277,7 +277,16 @@ textarea {
   display: grid;
   padding: 1rem;
 }
-
+.blogContent{
+  padding: 1rem;
+  text-align: center;
+}
+.blogContent img{
+  max-width: 600px;
+}
+.blogContent p{
+  text-align: left;
+}
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .homePage .post {
     width: 80vw;

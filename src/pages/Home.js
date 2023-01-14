@@ -32,6 +32,10 @@ function Home({ isAuth }) {
     console.log(11);
   }, []);
   const navigate = useNavigate();
+  const sharingHandler = (s) => {
+    console.log(`https://blogweet.vercel.app${s}`);
+    navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`);
+  }
   return (
     <div className="homePage">
       {postLists.map((post) => {
@@ -60,6 +64,7 @@ function Home({ isAuth }) {
                 </h1>
                 {/* </Link> */}
               </div>
+
               <div className="deletePost">
                 {isAuth &&
                   auth.currentUser != null &&
@@ -70,9 +75,27 @@ function Home({ isAuth }) {
                       }}
                     >
                       {" "}
-                      &#128465;
+                      <i
+                        className="bx bxs-message-square-x"
+                        style={{ color: "#600505" }}
+                      ></i>
                     </button>
                   )}
+                <button
+                  onClick={()=>sharingHandler(
+                    `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
+                  )}
+                >
+                  <i
+                    class="bx bxs-share-alt"
+                    style={{
+                      color: "rgb(255, 255, 255)",
+                      boxShadow: " 1px 1px 1rem black",
+                      borderRadius: "1rem",
+                      background: " black",
+                    }}
+                  ></i>
+                </button>
               </div>
             </div>
             <div className="contents">
