@@ -12,15 +12,15 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
   const [currUser, setCurrUser] = useState([]);
   const [url, setUrl] = useState("");
   const [name, setName] = useState("");
-  if (isAuth) {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useEffect(() => {
+  useEffect(() => {
+    if (isAuth && auth.currentUser!=null) {
       setCurrUser(auth.currentUser);
       setUrl(auth.currentUser.photoURL);
       setName(auth.currentUser.displayName);
-      console.log(111)
-    }, []);
-  }
+    }
+
+    console.log(111);
+  }, []);
   const { active } = state;
   return (
     <div className={`SidebarOnDesktop ${active ? "active" : ""}`}>

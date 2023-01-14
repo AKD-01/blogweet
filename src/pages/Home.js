@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
@@ -12,6 +13,14 @@ function Home({ isAuth }) {
     await deleteDoc(postDoc);
     window.location.reload();
   };
+  const DUMMY_POST = {
+    id: `id:${Math.random()}`,
+    title: "Dummy Post",
+    author: { name: "Dummy Author", id: Math.random() },
+    key: Math.random(),
+    postText: "Hi how are you dummy man",
+  };
+postLists.push(DUMMY_POST);
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
@@ -32,7 +41,7 @@ function Home({ isAuth }) {
                 <h1> {post.title}</h1>
               </div>
               <div className="deletePost">
-                {isAuth && post.author.id === auth.currentUser.uid && (
+                {isAuth && auth.currentUser!=null && post.author.id === auth.currentUser.uid && (
                   <button
                     onClick={() => {
                       deletePost(post.id);
@@ -45,7 +54,10 @@ function Home({ isAuth }) {
               </div>
             </div>
             <div className="postTextContainer"> {post.postText} </div>
-            <h3>-{post.author.name}</h3>
+            <Link to={`/${post.author.name.replaceAll(" ", "-")}`}>
+              <h3>-{post.author.name}</h3>
+            </Link>
+            {/* <h3>-{post.author.name}</h3> */}
           </div>
         );
       })}

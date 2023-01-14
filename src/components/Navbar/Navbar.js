@@ -24,21 +24,21 @@ const Navbar = ({isAuth, setIsAuth}) => {
 
   return (
     <div>
-      <div class="topnav" id="myTopnav">
-        <Link to="/" className="ahref" class="active">
-          Home <i class="fa fa-home" aria-hidden="true"></i>
+      <div className="topnav" id="myTopnav">
+        <Link to="/" className="ahref" className="active">
+          Home <i className="fa fa-home" aria-hidden="true"></i>
         </Link>
         <Link to='/contact' className="ahref">
-          Contact <i class="fa fa-envelope"></i>
+          Contact <i className="fa fa-envelope"></i>
         </Link>
         <Link to='/about' className="ahref">
-          About <i class="fa fa-user"></i>
+          About <i className="fa fa-user"></i>
         </Link>
-        <div class="right-lnk">
+        <div className="right-lnk">
           <Link to='/login' className="ahref">Login / Signup</Link>
         </div>
-        <Link href={()=>void(0)} class="icon" onclick={myFunction}>
-          <i class="fa fa-bars"></i>
+        <Link href={()=>void(0)} className="icon" onclick={myFunction}>
+          <i className="fa fa-bars"></i>
         </Link>
       </div>
     </div>

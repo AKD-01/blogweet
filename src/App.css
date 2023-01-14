@@ -239,7 +239,7 @@ textarea {
   height: auto;
   max-height: 400px;
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   overflow-y: auto;
 }
 

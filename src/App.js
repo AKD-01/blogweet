@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import CreatePost from "./pages/CreatePost";
 import Sidebar from "./components/SideBar/Sidebar";
 import SidebarOnDesktop from "./components/SidebarOnDesktop/SidebarOnDesktop";
+import Blogpost from "./pages/Blogpost";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -34,6 +35,7 @@ function App() {
         <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
+        <Route path="/:username/:blogname" element={<Blogpost />} />
       </Routes>
     </Router>
   );

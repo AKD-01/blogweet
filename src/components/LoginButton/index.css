@@ -4,7 +4,7 @@
     margin: 1rem;
   position: relative;
   overflow: hidden;
-  /* border: 1px solid #18181a; */
+  border: 1px solid #18181a;
   border: none;
   color: #18181a;
   display: inline-block;
