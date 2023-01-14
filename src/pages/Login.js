@@ -3,8 +3,6 @@ import { auth, provider } from "../firebase-config";
 import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import LoginButton from "../components/LoginButton";
-import GithubLogo from '../assets/svg-icons/github.svg'
-import GoogleLogo from "../assets/svg-icons/google.svg";
 
 function Login({ setIsAuth }) {
   let navigate = useNavigate();
