@@ -271,11 +271,11 @@ textarea {
 
 .post .postTextContainer {
   word-wrap: break-word;
-  height: auto;
-  max-height: 400px;
-  width: 100%;
   display: grid;
+  height: 100px;
+  overflow: hidden;
   padding: 1rem;
+  width: 100%;
 }
 .blogContent{
   padding: 1rem;
@@ -292,6 +292,9 @@ textarea {
     width: 80vw;
     margin-left: -10rem;
   }
+  .blogContent img{
+  max-width: 9rem;
+}
   .loginPage {
     height: calc(100vh - 80px);
     display: flex;
@@ -315,5 +318,14 @@ textarea {
     display: flex;
     flex-direction: column;
     margin: 1.6rem;
+  }
+  .post .postTextContainer {
+    /* word-wrap: break-word; */
+    display: grid;
+    height: 100px;
+     /* padding: 1rem; */
+    width: 100%;
+    overflow: hidden;
+    font-size: .8rem;
   }
 }

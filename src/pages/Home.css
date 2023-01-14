@@ -36,3 +36,18 @@ body {
 .deletePost{
   display: flex;
 }
+@media screen and (min-width: 300px) and (max-width: 600px) {
+
+  .imageCont img {
+    width: 8rem;
+    height: auto;
+    padding: 0.2rem;
+    border: ridge;
+  }
+  .imageCont {
+    font-size: .5rem;
+    text-align: left;
+    width: 45%;
+    margin: .5rem;
+  }
+}
