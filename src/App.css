@@ -108,7 +108,38 @@ a {
 .inputGp textarea {
   height: 150px;
 }
+/* input image */
 
+.inputImg {
+  margin-top: 1rem;
+}
+.inputImg .cont {
+  display: flex;
+  flex-direction: row;
+}
+
+.inputImg input,
+.inputImg textarea {
+  font-size: 18px;
+  border: none;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.inputImg input {
+  height: 40px;
+}
+.inputImg textarea {
+  height: 150px;
+}
+.inputImg img {
+  height: 5rem;
+  margin: auto;
+  border: 1px dashed;
+  padding: 1rem;
+}
+
+/*  */
 .cpContainer button {
   height: 40px;
   border: none;
@@ -125,7 +156,7 @@ textarea {
 }
 
 .loginPage {
-   box-shadow: 1px 1px 1rem #fff;
+  box-shadow: 1px 1px 1rem #fff;
   border-radius: 1rem;
   background: #11101de6;
   color: wheat;
@@ -190,24 +221,28 @@ textarea {
 }
 
 .homePage {
-  width: 100%;
+  width: calc(100% - 240px);
   min-height: calc(100vh - 80px);
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  left: 240px;
+  position: absolute;
 }
 
 .homePage .post {
-  width: 600px;
+  width: 90%;
   height: auto;
-  max-height: 600px;
+  max-height: 45vh;
   background-color: rgb(158, 155, 187);
   margin: 20px;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 1px 1px 1rem #40415d;
+  overflow: hidden;
+  padding: 1rem;
 }
 
 .post .postHeader {
@@ -239,13 +274,23 @@ textarea {
   height: auto;
   max-height: 400px;
   width: 100%;
-  /* overflow: hidden; */
-  overflow-y: auto;
+  display: grid;
+  padding: 1rem;
 }
-
+.blogContent{
+  padding: 1rem;
+  text-align: center;
+}
+.blogContent img{
+  max-width: 600px;
+}
+.blogContent p{
+  text-align: left;
+}
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .homePage .post {
-    width: 85%;
+    width: 80vw;
+    margin-left: -10rem;
   }
   .loginPage {
     height: calc(100vh - 80px);
@@ -259,10 +304,6 @@ textarea {
   }
   .sidebar {
     z-index: 1000;
-  }
-  .homePage .post {
-    width: 79%;
-    margin-left: 5rem !important;
   }
   .cpContainer {
     width: 70%;

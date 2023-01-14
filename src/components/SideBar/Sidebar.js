@@ -12,11 +12,15 @@ const Sidebar = ({ isAuth, signUserOut }) => {
   const [currUser, setCurrUser] = useState([]);
   const [url, setUrl] = useState("");
   const [name, setName] = useState("");
-  useEffect(() => {
-    setCurrUser(auth.currentUser);
-    setUrl(auth.currentUser.photoURL);
-    setName(auth.currentUser.displayName);
-  }, []);
+   useEffect(() => {
+     if (isAuth && auth.currentUser != null) {
+       setCurrUser(auth.currentUser);
+       setUrl(auth.currentUser.photoURL);
+       setName(auth.currentUser.displayName);
+     }
+
+     console.log(111);
+   }, []);
   const { active } = state;
   return (
     <div className={`sidebar ${active ? "active" : ""}`}>

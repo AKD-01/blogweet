@@ -1,0 +1,30 @@
+/* Blogpost */
+.blogpage {
+  margin-left: 250px;
+}
+.blogtitle {
+  font-size: 3rem;
+  filter: drop-shadow(1px 1rem 1rem white);
+  color: #000;
+}
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  .inputImg img {
+    height: 5rem;
+    margin: auto;
+    margin-left: auto;
+    border: 1px dashed;
+    padding: 0.5rem;
+    font-size: 10px;
+    text-align: center;
+    margin-left: 0.2rem;
+    border-radius: 0.5rem;
+  }
+  .inputImg input {
+    height: 40px;
+    width: 80%;
+    margin-right: 0.2rem;
+  }
+  .blogpage{
+    margin-left: 75px;
+  }
+}

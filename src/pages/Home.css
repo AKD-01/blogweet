@@ -7,6 +7,32 @@ body {
   text-align: right;
   color: rgb(24, 8, 95);
 }
-.Link{
+.Link {
   text-decoration: inherit;
+}
+.title {
+  color: #110c22;
+  font-weight: normal;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.title:hover {
+  color: #2d0e36;
+  filter: drop-shadow(1rem 1rem 1rem black);
+}
+.imageCont {
+  text-align: left;
+  width: 45%;
+  margin: 1rem;
+}
+.imageCont img {
+  height: 8rem;
+  padding: 0.2rem;
+  border: ridge;
+}
+.contents {
+  display: flex;
+}
+.deletePost{
+  display: flex;
 }
