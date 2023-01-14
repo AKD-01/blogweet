@@ -5,25 +5,28 @@ import { auth } from "../../firebase-config";
 import { Link } from "react-router-dom";
 
 const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
-  const [state, setState] = useState(false);
+  const [state, setState] = useState(true);
   const toggleSidebarOnDesktop = () => {
     setState((prevState) => ({ active: !prevState.active }));
   };
   const [currUser, setCurrUser] = useState([]);
   const [url, setUrl] = useState("");
   const [name, setName] = useState("");
+    let { active } = true;
+
   useEffect(() => {
     if (isAuth && auth.currentUser!=null) {
       setCurrUser(auth.currentUser);
       setUrl(auth.currentUser.photoURL);
       setName(auth.currentUser.displayName);
     }
+     active = true;
 
     console.log(111);
   }, []);
-  const { active } = state;
+  // const { active } = true;
   return (
-    <div className={`SidebarOnDesktop ${active ? "active" : ""}`}>
+    <div className={`SidebarOnDesktop active`}>
       <div className="logo_content">
         <div className="logo">
           {/* <i className="bx bxl-c-plus-plus" style={{ fontSize: "30px" }} /> */}
