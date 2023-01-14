@@ -3,6 +3,8 @@ import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import "./Home.css";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
@@ -35,6 +37,8 @@ function Home({ isAuth }) {
   const sharingHandler = (s) => {
     console.log(`https://blogweet.vercel.app${s}`);
     navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`);
+    toast(`Your link has been pasted to your Clipboard. Enjoy!`);
+
   }
   return (
     <div className="homePage">
@@ -82,7 +86,7 @@ function Home({ isAuth }) {
                     </button>
                   )}
                 <button
-                  onClick={()=>sharingHandler(
+                  onClick={() => sharingHandler(
                     `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
                   )}
                 >
@@ -126,7 +130,20 @@ function Home({ isAuth }) {
             </div>
             <h3>-{post.author.name}</h3>
             {/* <h3>-{post.author.name}</h3> */}
+            <ToastContainer
+              position="top-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
           </div>
+
         );
       })}
     </div>
