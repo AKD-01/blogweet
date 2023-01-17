@@ -19,7 +19,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
             className="logoname"
             style={{
               marginLeft: "5px",
-              fontSize: "1rem",
+              fontSize: "1.8rem",
               marginTop: ".5rem",
             }}
           >
