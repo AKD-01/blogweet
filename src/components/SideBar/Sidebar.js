@@ -31,7 +31,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
             className="logoname"
             style={{
               marginLeft: "5px",
-              fontSize: "1rem",
+              fontSize: "1.5rem",
               marginTop: ".5rem",
             }}
           >
