@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with BlogWeet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+BlogWeet isx bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

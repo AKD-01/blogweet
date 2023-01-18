@@ -311,7 +311,6 @@ textarea {
   height: calc(100vh - 80px);
   display: grid;
   place-items: center;
-  margin-left: 1rem;
 }
   .sidebar {
     z-index: 1000;
@@ -331,9 +330,12 @@ textarea {
     /* word-wrap: break-word; */
     display: grid;
     height: 100px;
-     /* padding: 1rem; */
+     padding: .25rem;
     width: 100%;
     overflow: hidden;
     font-size: .8rem;
+  }
+  .loginPage p{
+    font-size: 1.5rem;
   }
 }

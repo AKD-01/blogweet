@@ -107,9 +107,10 @@ function Home({ isAuth }) {
                 <img src={post.image} alt={post.title} />
               </div>
               <div className="postTextContainer">
-                {" "}
+                <div style={{height:"70px", overflow:"hidden"}}>
                 {post.postText.substr(0, Math.min(post.postText.length, 200))}
                 &nbsp;&nbsp;{" "}
+                </div>
                 <div
                   style={{
                     textAlign: "right",
