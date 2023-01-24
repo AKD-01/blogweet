@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
+import { getDocs, collection, deleteDoc, doc, getDoc } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import "./Home.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -15,6 +15,7 @@ function Home({ isAuth }) {
     await deleteDoc(postDoc);
     window.location.reload();
   };
+
   // const DUMMY_POST = {
   //   id: `id:${Math.random()}`,
   //   title: "Dummy Post",
@@ -111,14 +112,14 @@ function Home({ isAuth }) {
                 {post.postText.substr(0, Math.min(post.postText.length, 200))}
                 &nbsp;&nbsp;{" "}
                 </div>
-                <div
+                <Link
                   style={{
                     textAlign: "right",
                     color: "#3a363d",
                     fontSize: ".9rem",
                     cursor: "pointer",
                   }}
-                  onClick={() => {
+                  to={() => {
                     navigate(
                       `/${post.author.name.replaceAll(" ", "-")}/${post.id}`,
                       { state: post }
@@ -126,7 +127,7 @@ function Home({ isAuth }) {
                   }}
                 >
                   ......Read More
-                </div>
+                </Link>
               </div>
             </div>
             <h3>
