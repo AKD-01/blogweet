@@ -67,4 +67,7 @@ body{
     margin-left: 4rem;
     margin-right: 2rem;
   }
+  .three h1{
+    font-size: 2.5rem;
+  }
 }
