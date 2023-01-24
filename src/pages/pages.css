@@ -37,10 +37,19 @@ body{
   max-width: 255px;
   background-color: rgb(0, 0, 0);
 }
+.shareButton
+{
+  border: none;
+  background-color: transparent;
+}
 .blogtitle {
   font-size: 3rem;
   filter: drop-shadow(1px 1rem 1rem white);
   color: #000;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1rem;
+  
 }
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .inputImg img {
