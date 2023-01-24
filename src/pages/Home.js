@@ -112,14 +112,14 @@ function Home({ isAuth }) {
                 {post.postText.substr(0, Math.min(post.postText.length, 200))}
                 &nbsp;&nbsp;{" "}
                 </div>
-                <Link
+                <div
                   style={{
                     textAlign: "right",
                     color: "#3a363d",
                     fontSize: ".9rem",
                     cursor: "pointer",
                   }}
-                  to={() => {
+                  onClick={() => {
                     navigate(
                       `/${post.author.name.replaceAll(" ", "-")}/${post.id}`,
                       { state: post }
@@ -127,7 +127,7 @@ function Home({ isAuth }) {
                   }}
                 >
                   ......Read More
-                </Link>
+                </div>
               </div>
             </div>
             <h3>

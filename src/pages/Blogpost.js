@@ -1,8 +1,11 @@
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import { db } from "../firebase-config";
 import "./pages.css";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Blogpost = () => {
   // const post = useParams();
@@ -26,6 +29,12 @@ const Blogpost = () => {
   const isPost = (id) => {
     return id == postId.blogname;
   };
+  const sharingHandler = (s) => {
+    // console.log(`https://blogweet.vercel.app${s}`);
+    navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`);
+    toast(`Your link has been pasted to your Clipboard. Enjoy!`);
+
+  }
   // console.log(postLists.filter(x => x.id==postId.blogname)[0])
   const location = useLocation();
   // console.log(location.state)
@@ -45,8 +54,29 @@ const Blogpost = () => {
             <div className="three">
               <h1>{post.title}</h1>
             </div>
+            <button
+                  className="shareButton"
+                  onClick={() => sharingHandler(
+                    `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
+                  )}
+                  
+                >
+                  <i
+                    className="bx bxs-share-alt"
+                    style={{
+                      color: "rgb(255, 255, 255)",
+                      boxShadow: " 1px 1px 1rem black",
+                      borderRadius: "1rem",
+                      background: " black",
+                      fontSize: "2rem",
+                      cursor: "pointer"
+                    }}
+                  ></i>
+                </button>
           </div>
+          
           <hr />
+          
           <div className="blogcredits">
             <div>👤{post.author.name}</div>
             <div>
@@ -64,6 +94,18 @@ const Blogpost = () => {
           </div>
         </>
       )}
+      <ToastContainer
+              position="top-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
     </div>
   );
 };

@@ -57,4 +57,14 @@ body {
     width: 45%;
     margin: .5rem;
   }
+  .blogcredits{
+    color: #110c22;
+  }
+  .blogContent p{
+    color: #110c22;
+  }
+  .title{
+    font-size: 1.5rem;
+  }
+
 }
