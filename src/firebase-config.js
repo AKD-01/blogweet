@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, initializeFirestore } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -23,15 +23,10 @@ const firebaseConfig = {
   // appId: "1:787500061298:web:242f526d6800f0bbbf68eb",
 
   apiKey: "AIzaSyC5bxhpw-DzJF-1dtVQsdA5u7AaRUxQ-7g",
-
   authDomain: "blog-divine.firebaseapp.com",
-
   projectId: "blog-divine",
-
   storageBucket: "blog-divine.appspot.com",
-
   messagingSenderId: "610968567774",
-
   appId: "1:610968567774:web:84d7f5a01962489992a74f",
 };
 

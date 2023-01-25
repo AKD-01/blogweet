@@ -1,6 +1,6 @@
 import "./App.css";
-import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
 import Home from "./pages/Home";
@@ -27,7 +27,6 @@ function App() {
 
   return (
     <Router>
-      {/* <Navbar isAuth={isAuth} setIsAuth={setIsAuth}/> */}
       {width < 500 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
       {width > 500 && (
         <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />

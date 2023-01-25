@@ -1,6 +1,7 @@
 body {
   background-color: #1d1b31c4;
 }
+
 .post h3 {
   display: flex;
   justify-content: space-between;
@@ -9,13 +10,16 @@ body {
   text-align: right;
   color: rgb(24, 8, 95);
 }
-.blogcredits{
+
+.blogcredits {
   display: flex;
   justify-content: space-between;
 }
+
 .Link {
   text-decoration: inherit;
 }
+
 .title {
   filter: drop-shadow(2px 4px 6px white);
   color: #110c22;
@@ -23,26 +27,32 @@ body {
   font-size: 2.5rem;
   cursor: pointer;
 }
+
 .title:hover {
   color: #2d0e36;
   filter: drop-shadow(1rem 1rem 1rem black);
 }
+
 .imageCont {
   text-align: left;
   width: 45%;
   margin: 1rem;
 }
+
 .imageCont img {
   height: 8rem;
   padding: 0.2rem;
   border: ridge;
 }
+
 .contents {
   display: flex;
 }
-.deletePost{
+
+.deletePost {
   display: flex;
 }
+
 @media screen and (min-width: 300px) and (max-width: 600px) {
 
   .imageCont img {
@@ -51,19 +61,23 @@ body {
     padding: 0.2rem;
     border: ridge;
   }
+
   .imageCont {
     font-size: .5rem;
     text-align: left;
     width: 45%;
     margin: .5rem;
   }
-  .blogcredits{
+
+  .blogcredits {
     color: #110c22;
   }
-  .blogContent p{
+
+  .blogContent p {
     color: #110c22;
   }
-  .title{
+
+  .title {
     font-size: 1.5rem;
   }
 

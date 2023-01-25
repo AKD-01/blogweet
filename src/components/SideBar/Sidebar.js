@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Sidebar.css";
 import "boxicons";
 import { auth } from "../../firebase-config";
@@ -9,24 +9,12 @@ const Sidebar = ({ isAuth, signUserOut }) => {
   const toggleSidebar = () => {
     setState((prevState) => ({ active: !prevState.active }));
   };
-  const [currUser, setCurrUser] = useState([]);
-  const [url, setUrl] = useState("");
-  const [name, setName] = useState("");
-   useEffect(() => {
-     if (isAuth && auth.currentUser != null) {
-       setCurrUser(auth.currentUser);
-       setUrl(auth.currentUser.photoURL);
-       setName(auth.currentUser.displayName);
-     }
 
-     console.log(111);
-   }, []);
   const { active } = state;
   return (
     <div className={`sidebar ${active ? "active" : ""}`}>
       <div className="logo_content">
         <div className="logo">
-          {/* <i className="bx bxl-c-plus-plus" style={{ fontSize: "30px" }} /> */}
           <div
             className="logoname"
             style={{
@@ -46,11 +34,6 @@ const Sidebar = ({ isAuth, signUserOut }) => {
         />
       </div>
       <ul className="nav_list">
-        {/* <li>
-            <i className="bx bx-search" />
-            <input type="text" placeholder="Search..." />
-            <span className="tooltip">Search</span>
-          </li> */}
         <li onClick={toggleSidebar}>
           <Link to="/">
             <i className="bx bxs-home-heart"></i>
@@ -88,9 +71,13 @@ const Sidebar = ({ isAuth, signUserOut }) => {
         <div className="profile_content">
           <div className="profile">
             <div className="profile_details">
-              {auth.currentUser != null && <img src={auth.currentUser.photoURL} alt="" />}
+              {auth.currentUser != null && (
+                <img src={auth.currentUser.photoURL} alt="" />
+              )}
               <div className="name_job">
-                {auth.currentUser != null && <div className="name">{auth.currentUser.displayName}</div>}
+                {auth.currentUser != null && (
+                  <div className="name">{auth.currentUser.displayName}</div>
+                )}
               </div>
             </div>
             <li onClick={toggleSidebar}>
