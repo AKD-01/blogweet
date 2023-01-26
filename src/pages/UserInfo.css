@@ -43,3 +43,18 @@
 .card:hover .card-body {
     height: 60%;
 }
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+
+    .card {
+        width: 314px;
+        height: 70vh;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-top: 5rem;
+        margin-left: 5rem;
+        position: relative;
+    }
+}
