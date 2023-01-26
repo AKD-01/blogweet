@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
 * {
   font-family: "Poppins", sans-serif;
 }
@@ -22,6 +23,7 @@ nav {
   text-decoration: none;
   padding-top: 0.5rem;
 }
+
 .logout {
   border: none;
   font-family: "poppins";
@@ -31,6 +33,7 @@ nav {
   cursor: pointer;
   font-size: 1.75rem;
 }
+
 .login {
   font-size: 1rem;
   vertical-align: middle;
@@ -38,6 +41,7 @@ nav {
   margin-right: 0.5rem;
   color: navajowhite;
 }
+
 .CreatePost {
   font-size: 1rem;
   position: absolute;
@@ -48,6 +52,7 @@ nav {
   border-radius: 1rem;
   box-shadow: 1px 1px 0.5rem wheat;
 }
+
 .HomeLink {
   background-color: black;
   padding-left: 0.5rem;
@@ -56,6 +61,7 @@ nav {
   vertical-align: middle;
   display: inline;
 }
+
 a {
   color: white;
   text-decoration: none;
@@ -68,6 +74,7 @@ a {
   display: grid;
   place-items: center;
 }
+
 .cpContainer {
   width: 70%;
   height: auto;
@@ -88,6 +95,7 @@ a {
 .cpContainer label {
   font-size: 25px;
 }
+
 .cpContainer .inputGp {
   margin-top: 30px;
   display: flex;
@@ -105,14 +113,17 @@ a {
 .inputGp input {
   height: 40px;
 }
+
 .inputGp textarea {
   height: 150px;
 }
+
 /* input image */
 
 .inputImg {
   margin-top: 1rem;
 }
+
 .inputImg .cont {
   display: flex;
   flex-direction: row;
@@ -129,9 +140,11 @@ a {
 .inputImg input {
   height: 40px;
 }
+
 .inputImg textarea {
   height: 150px;
 }
+
 .inputImg img {
   height: 5rem;
   margin: auto;
@@ -150,6 +163,7 @@ a {
   padding: 0 2rem;
   margin: 20px auto;
 }
+
 input,
 textarea {
   margin-top: 5px;
@@ -172,6 +186,7 @@ textarea {
   align-items: center;
   font-family: "Poppins";
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -202,17 +217,21 @@ textarea {
   background-repeat: no-repeat;
   background-position: 12px 11px;
 }
+
 .login-with-google-btn:hover {
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25);
 }
+
 .login-with-google-btn:active {
   background-color: #eeeeee;
 }
+
 .login-with-google-btn:focus {
   outline: none;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25),
     0 0 0 3px #c8dafc;
 }
+
 .login-with-google-btn:disabled {
   filter: grayscale(100%);
   background-color: #ebebeb;
@@ -253,6 +272,7 @@ textarea {
 .postHeader .title {
   flex: 100%;
 }
+
 .postHeader .deletePost {
   flex: 10%;
   display: flex;
@@ -276,45 +296,54 @@ textarea {
   padding: 1rem;
   width: 100%;
 }
-.blogContent{
+
+.blogContent {
   padding: 1rem;
   text-align: center;
 }
-.blogContent img{
+
+.blogContent img {
   width: 50vw;
 }
-.blogContent p{
+
+.blogContent p {
   text-align: left;
 }
+
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .homePage .post {
     width: 80vw;
     margin-left: -10rem;
   }
-  .blogContent img{
-  width: 75vw;
-}
-.loginPage {
-  height: calc(63vh - 80px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "Poppins";
-  margin-left: 95px;
-  width: 80%;
-  right: 1rem;
-  margin: auto;
-}
-.createPostPage {
-  width: 100%;
-  height: calc(100vh - 80px);
-  display: grid;
-  place-items: center;
-}
+
+  .blogContent img {
+    width: 75vw;
+  }
+
+  .loginPage {
+    height: calc(63vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins";
+    margin-left: 95px;
+    width: 80%;
+    right: 1rem;
+    margin: auto;
+  }
+
+  .createPostPage {
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: grid;
+    place-items: center;
+  }
+
   .sidebar {
     z-index: 1000;
   }
+
   .cpContainer {
     width: 70%;
     height: auto;
@@ -326,16 +355,18 @@ textarea {
     flex-direction: column;
     margin: 1.6rem;
   }
+
   .post .postTextContainer {
     /* word-wrap: break-word; */
     display: grid;
     height: 100px;
-     padding: .25rem;
+    padding: .25rem;
     width: 100%;
     overflow: hidden;
     font-size: .8rem;
   }
-  .loginPage p{
+
+  .loginPage p {
     font-size: 1.5rem;
   }
 }

@@ -1,10 +1,12 @@
-body{
+body {
   background-color: #a8a4cac4;
 }
+
 /* Blogpost */
 .blogpage {
   margin-left: 250px;
 }
+
 .three h1 {
   position: relative;
   padding: 0;
@@ -18,6 +20,7 @@ body{
   line-height: 1.5em;
   padding-bottom: 15px;
 }
+
 .three h1:before {
   content: "";
   position: absolute;
@@ -27,6 +30,7 @@ body{
   width: 55px;
   background-color: rgb(0, 0, 0);
 }
+
 .three h1:after {
   content: "";
   position: absolute;
@@ -37,11 +41,12 @@ body{
   max-width: 255px;
   background-color: rgb(0, 0, 0);
 }
-.shareButton
-{
+
+.shareButton {
   border: none;
   background-color: transparent;
 }
+
 .blogtitle {
   font-size: 3rem;
   filter: drop-shadow(1px 1rem 1rem white);
@@ -49,8 +54,9 @@ body{
   display: flex;
   justify-content: space-between;
   padding-right: 1rem;
-  
+
 }
+
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .inputImg img {
     height: 5rem;
@@ -63,12 +69,14 @@ body{
     margin-left: 0.2rem;
     border-radius: 0.5rem;
   }
+
   .inputImg input {
     height: 40px;
     width: 80%;
     margin-right: 0.2rem;
   }
-  .blogpage{
+
+  .blogpage {
     width: 88%;
     padding-right: 1rem;
     color: #aadddd;
@@ -76,7 +84,8 @@ body{
     margin-left: 4rem;
     margin-right: 2rem;
   }
-  .three h1{
+
+  .three h1 {
     font-size: 2.5rem;
   }
 }

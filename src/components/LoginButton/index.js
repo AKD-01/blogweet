@@ -11,9 +11,11 @@ const LoginButton = (props) => {
       style={{ backgroundColor: `${props.bgColor}` }}
       onClick={SignInHandler}
     >
-      <span className="text" style={{display:"flex"}}>
+      <span className="text" style={{ display: "flex" }}>
         <i className={props.image} style={{ color: "#18181a" }} />
-        <div  style={{marginTop: ".15rem",marginLeft: ".5rem"}}>{props.label}</div>
+        <div style={{ marginTop: ".15rem", marginLeft: ".5rem" }}>
+          {props.label}
+        </div>
       </span>
       <span style={{ color: `${props.altColor}` }}>{props.alt}</span>
     </button>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./SidebarOnDesktop.css";
 import "boxicons";
 import { auth } from "../../firebase-config";
@@ -34,11 +34,6 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         />
       </div>
       <ul className="nav_list">
-        {/* <li>
-            <i className="bx bx-search" />
-            <input type="text" placeholder="Search..." />
-            <span className="tooltip">Search</span>
-          </li> */}
         <li onClick={toggleSidebarOnDesktop}>
           <Link to="/">
             <i className="bx bxs-home-heart"></i>
@@ -57,28 +52,34 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         )}
         {/* other list items */}
       </ul>
-      {!isAuth && (<li>
-        <Link to="login" id="log_in">
-          <i
-            className="bx bx-log-in bx-fade-left"
-            id="log_in"
-            onClick={toggleSidebarOnDesktop}
-          />
-          <span
-            className="link_names"
-            style={{ left: "2.5rem", position: "relative", bottom: ".1rem" }}
-          >
-            Log in
-          </span>
-        </Link></li>
+      {!isAuth && (
+        <li>
+          <Link to="login" id="log_in">
+            <i
+              className="bx bx-log-in bx-fade-left"
+              id="log_in"
+              onClick={toggleSidebarOnDesktop}
+            />
+            <span
+              className="link_names"
+              style={{ left: "2.5rem", position: "relative", bottom: ".1rem" }}
+            >
+              Log in
+            </span>
+          </Link>
+        </li>
       )}
       {isAuth && (
-        <div className="profile_content" id="profile" >
+        <div className="profile_content" id="profile">
           <div className="profile">
             <div className="profile_details">
-              {auth.currentUser != null && <img src={auth.currentUser.photoURL} alt="" />}
+              {auth.currentUser != null && (
+                <img src={auth.currentUser.photoURL} alt="" />
+              )}
               <div className="name_job">
-                {auth.currentUser != null && <div className="name">{auth.currentUser.displayName}</div>}
+                {auth.currentUser != null && (
+                  <div className="name">{auth.currentUser.displayName}</div>
+                )}
               </div>
             </div>
             <i className="bx bx-log-out" id="log_out" onClick={signUserOut} />

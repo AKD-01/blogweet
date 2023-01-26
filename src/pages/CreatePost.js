@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { addDoc, collection, Timestamp } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
 
@@ -16,9 +16,14 @@ function CreatePost({ isAuth }) {
     await addDoc(postsCollectionRef, {
       title, //title: title
       postText,
-      author: { name: auth.currentUser.displayName, id: auth.currentUser.uid, email: auth.currentUser.email, photoUrl: auth.currentUser.photoURL },
+      author: {
+        name: auth.currentUser.displayName,
+        id: auth.currentUser.uid,
+        email: auth.currentUser.email,
+        photoUrl: auth.currentUser.photoURL,
+      },
       date: new Date().toJSON().slice(0, 10).replace(/-/g, "/"),
-      image
+      image,
     });
     navigate("/");
   };
@@ -27,11 +32,12 @@ function CreatePost({ isAuth }) {
     if (!isAuth) {
       navigate("/login");
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const hanldleImageUpload = (e) => {
-    setImage(e.target.value)
-  }
+    setImage(e.target.value);
+  };
 
   return (
     <div className="createPostPage">
@@ -59,7 +65,7 @@ function CreatePost({ isAuth }) {
           <label> Image Link</label>
           <div className="cont">
             <input placeholder="https://" onChange={hanldleImageUpload} />
-            <img src={image} alt="Uploaded Image preview" />
+            <img src={image} alt="Uploaded preview" />
           </div>
         </div>
 
