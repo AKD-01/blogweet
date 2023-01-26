@@ -41,6 +41,12 @@ const Sidebar = ({ isAuth, signUserOut }) => {
           </Link>
           <span className="tooltip">Home</span>
         </li>
+        <li>
+          <Link to="/about">
+            <i class='bx bxs-info-square'></i>
+            <span className="link_names">About</span>
+          </Link>
+        </li>
         {isAuth && (
           <li onClick={toggleSidebar}>
             <Link to="/createpost">
