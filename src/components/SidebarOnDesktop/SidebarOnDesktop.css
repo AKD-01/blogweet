@@ -6,7 +6,9 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
+li{
+  list-style: none;
+}
 body {
   position: relative;
   min-height: 100vh;
