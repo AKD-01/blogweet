@@ -45,5 +45,3 @@ function App() {
 }
 
 export default App;
-
-// line 35, 36, 37: passing state as a prop in the respective components.
