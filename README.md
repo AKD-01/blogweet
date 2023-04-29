@@ -1,70 +1,73 @@
-# Getting Started with BlogWeet
+# BlogWeet
+BlogWeet is a user-friendly social media app for creating, posting, and sharing blogs. It provides a vibrant community for sharing and exploring new ideas and perspectives.
 
-BlogWeet is bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Brief
+BlogWeet is a social media app that allows users to create, post and share their blogs. It is a platform that encourages users to express their thoughts, opinions, and perspectives through written content, and engage with the content of others. The app is easy to use, and it is designed to be accessible to users of all ages and levels of technical expertise. Users can create their blogs and post their content with just a few clicks.
+Once a blog post is published, other users can read, and share it. This creates a vibrant and dynamic community of users who are passionate about sharing and discovering new ideas and perspectives. The platform is also searchable, so users can easily find content that is relevant to their interests.
 
-In the project directory, you can run:
 
-### `npm start`
+## Main Features 
+● Easy-to-use interface :
+The app is designed to be accessible to users of all ages and levels of technical expertise. Users can create and post their content with just a few clicks.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+● Blogging platform :
+The app is a social media platform that allows users to create, post and share their blogs. It encourages users to express their thoughts, opinions, and perspectives through written content.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+● Engaging community :
+The app creates a vibrant and dynamic community of users who are passionate about sharing and discovering new ideas and perspectives. Users can engage with the content of others by reading, sharing, and commenting on blog posts.
 
-### `npm test`
+<h2>:arrow_right:Installation Guide:</h2>
+✴️ First, fork the repository (Click the <b><b>Fork</b></b> button in the top right corner of the page).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+✴️ Clone the forked repository to your local machine.
 
-### `npm run build`
+```markdown
+git clone https://github.com/your_username/blogweet.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+✴️ Add upstream URL 
+```markdown
+git remote add upstream https://github.com/akd-01/blogweet.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+✴️ Create a new branch
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```markdown
+git checkout -b branch_name
+```
 
-### `npm run eject`
+✴️ Make your contribution
+✴️ Commit and push the changes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```markdown
+git add .
+git commit -m 'Your message'
+git push origin branch_name
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+✴️ Create a new pull request from your forked repository (Click the `New Pull Request` button located at the top of your repo)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+✴️ Wait for your PR review and approval from the maintainers.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+✴️ Star ⭐ this repository if you liked it and you can also follow me 👀 .
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<h2>:arrow_right:Contribution Guide:</h2>
+:point_right:You must fork the repo.      
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+:point_right:After doing `npm start`, create your account on the website and be familiar with the interface.   
 
-### Code Splitting
+:point_right:You are adviced to make your own branch for contributing.     
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+:point_right:Now you can either create an issue to request some changes or adding features or improving styling.   
 
-### Analyzing the Bundle Size
+:point_right:You can also work on already created issues, but first comment on that issue, so that you get assigned the label of `hacktoberfest` and start working that issue and once you complete, you can raise a pull request.     
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+:point_right:Once I review your code and if it seems okay then your branch will be merged.   
 
-### Making a Progressive Web App
+:point_right:Bonus Tip: If you are new to GitHub and using terminal does no suit you, then you can use <a href="https://desktop.github.com/">GitHub Desktop</a>. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
