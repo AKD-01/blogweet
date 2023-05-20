@@ -6,6 +6,9 @@ BlogWeet is a user-friendly social media app for creating, posting, and sharing 
 BlogWeet is a social media app that allows users to create, post and share their blogs. It is a platform that encourages users to express their thoughts, opinions, and perspectives through written content, and engage with the content of others. The app is easy to use, and it is designed to be accessible to users of all ages and levels of technical expertise. Users can create their blogs and post their content with just a few clicks.
 Once a blog post is published, other users can read, and share it. This creates a vibrant and dynamic community of users who are passionate about sharing and discovering new ideas and perspectives. The platform is also searchable, so users can easily find content that is relevant to their interests.
 
+## Preview
+
+![image](https://github.com/AKD-01/blogweet/assets/111564362/9bef9211-5c37-404b-9253-0a2c411ce9a9)
 
 ## Main Features 
 ● Easy-to-use interface :
@@ -50,7 +53,7 @@ git push origin branch_name
 
 ✴️ Wait for your PR review and approval from the maintainers.
 
-✴️ Star ⭐ this repository if you liked it and you can also follow me 👀 .
+✴️ Star ⭐ this repository if you ❤️️ it and you can also follow me 👀 .
 
 
 <h2>:arrow_right:Contribution Guide:</h2>
