@@ -82,3 +82,22 @@ body {
   }
 
 }
+.scrollToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  opacity: 0.7;
+}
+
+.scrollToTopBtn:hover {
+  opacity: 1;
+}
