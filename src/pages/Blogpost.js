@@ -1,19 +1,17 @@
-import { collection, getDocs } from "firebase/firestore";
+import { getPostsFromDb } from "../utils/firebase";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
-import { db } from "../firebase-config";
+import { toast, ToastContainer } from "react-toastify"; 
 import "./pages.css";
 import "react-toastify/dist/ReactToastify.css";
 
 const Blogpost = () => {
   const postId = useParams();
   const [postLists, setPostList] = useState([]);
-  const postsCollectionRef = collection(db, "posts");
   useEffect(() => {
     const getPosts = async () => {
-      const data = await getDocs(postsCollectionRef);
-      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      const data = await getPostsFromDb();
+      setPostList(data);
     };
 
     getPosts();
