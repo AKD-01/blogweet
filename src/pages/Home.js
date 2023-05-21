@@ -6,6 +6,8 @@ import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
@@ -175,21 +177,19 @@ function Home({ isAuth }) {
           );
         })}
       </div>
-    {/* Scroll-to-top button */}
-    {showScrollToTop && (
-      <button
-        className="scrollToTopBtn"
-        onClick={() => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
-        title="Scroll to top"
-      >
-         Top
-      </button>
-    )}
-
+      {/* Scroll-to-top button */}
+      {showScrollToTop && (
+        <button
+          className="scrollToTopBtn"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          title="Scroll to top"
+        >
+          <FontAwesomeIcon icon={faArrowUp} />
+        </button>
+      )}
     </>
-    
   );
 }
 
