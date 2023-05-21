@@ -101,7 +101,13 @@ a {
   display: flex;
   flex-direction: column;
 }
-
+.errorMessage {
+  color: red;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  margin-left: 1rem;
+}
 .inputGp input,
 .inputGp textarea {
   font-size: 18px;
@@ -309,6 +315,7 @@ textarea {
 .blogContent p {
   text-align: left;
 }
+
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .homePage .post {
