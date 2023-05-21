@@ -1,0 +1,99 @@
+@keyframes borderAnimation {
+    0% {
+      border-color: #11101d;
+      box-shadow: 0 0 0 0 rgb(34, 34, 34);
+    }
+    50% {
+      border-color: #11101d;
+      box-shadow: 0 0 0 7px rgb(33, 33, 33);
+    }
+    100% {
+      border-color: #11101d;
+      box-shadow: 0 0 0 0 rgb(32, 32, 32);
+    }
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 400px;
+    height: 300px;
+    border: 2px solid #11101d;
+    border-radius: 10px;
+    padding: 20px;
+    animation: borderAnimation 2s infinite;
+    margin: 50px auto 0 auto;
+  }
+  
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-details img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-details img:hover {
+    transform: scale(1.1);
+  }
+  
+  .name {
+    display: inline;
+    font-size: 15px;
+    margin-bottom: 4px;
+    transition: color 0.3s ease;
+  }
+  
+  .name span {
+    color: #11101d;
+    font-weight: bold;
+  }
+  
+  .email span {
+    color: #11101d;
+    font-weight: bold;
+  }
+  
+  .email {
+    display: inline;
+    font-size: 15px;
+    transition: color 0.3s ease;
+  }
+  
+
+
+  
+  /* Additional styles for mobile responsiveness */
+  
+  @media only screen and (max-width: 768px) {
+    .profile-container {
+      width: 90%;
+      height: auto;
+    }
+  
+    .profile-details img {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .name,
+    .email {
+      font-size: 13px;
+    }
+    
+    .sign-out-button {
+      font-size: 14px;
+    }
+  }
+  

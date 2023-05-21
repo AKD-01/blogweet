@@ -56,6 +56,15 @@ const Sidebar = ({ isAuth, signUserOut }) => {
             <span className="tooltip">Create Post</span>
           </li>
         )}
+        {isAuth && (
+          <li onClick={toggleSidebar}>
+            <Link to="/profile">
+              <i className="bx bx-user-circle"></i>
+              <span className="link_names">Profile</span>
+            </Link>
+            <span className="tooltip">Profile</span>
+          </li>
+        )}
         {/* other list items */}
       </ul>
       {!isAuth && (
@@ -63,7 +72,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
           <i
             className="bx bx-log-in"
             id="log_in"
-            // onClick={}
+          // onClick={}
           />
           <span
             className="link_names"

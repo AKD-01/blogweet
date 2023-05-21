@@ -46,7 +46,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
             <i class='bx bxs-info-circle'></i>
             <span className="link_names">About</span>
           </Link>
-        </li>   
+        </li>
         {isAuth && (
           <li onClick={toggleSidebarOnDesktop}>
             <Link to="/createpost">
@@ -54,6 +54,15 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
               <span className="link_names">Create Post</span>
             </Link>
             <span className="tooltip">Create Post</span>
+          </li>
+        )}
+        {isAuth && (
+          <li onClick={toggleSidebarOnDesktop}>
+            <Link to="/profile">
+              <i className="bx bx-user-circle"></i>
+              <span className="link_names">Profile</span>
+            </Link>
+            <span className="tooltip">Profile</span>
           </li>
         )}
         {/* other list items */}
