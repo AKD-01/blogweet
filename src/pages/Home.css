@@ -2,6 +2,7 @@ body {
   background-color: #1d1b31c4;
 }
 
+
 .post h3 {
   display: flex;
   justify-content: space-between;
@@ -9,6 +10,15 @@ body {
   text-decoration: none;
   text-align: right;
   color: rgb(24, 8, 95);
+}
+
+.post{
+  transition: transform .3s ease-out;
+  display: inline-block;
+}
+
+.post:hover{
+  transform: translate(0, -10px);
 }
 
 .blogcredits {
