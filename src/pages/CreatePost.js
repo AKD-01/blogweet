@@ -12,6 +12,12 @@ function CreatePost({ isAuth }) {
   let navigate = useNavigate();
 
   const createPost = async () => {
+
+    //make post and title area mandatory
+    if (!title || !postText) {
+      alert("Please fill in all required fields.");
+      return;
+    }
     //function adds the document to the database.
     await addDoc(postsCollectionRef, {
       title, //title: title
@@ -50,6 +56,7 @@ function CreatePost({ isAuth }) {
             onChange={(event) => {
               setTitle(event.target.value);
             }}
+            required
           />
         </div>
         <div className="inputGp">
@@ -59,6 +66,7 @@ function CreatePost({ isAuth }) {
             onChange={(event) => {
               setPostText(event.target.value);
             }}
+            required
           />
         </div>
         <div className="inputImg">
