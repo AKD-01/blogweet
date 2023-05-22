@@ -18,6 +18,12 @@ function CreatePost({ isAuth }) {
       alert("Please fill in all required fields.");
       return;
     }
+
+    //function to add atleast 100 words in blog post
+    if (getWordCount(postText) < 30) {
+      alert("The post must contain at least 30 words.");
+      return;
+    }
     //function adds the document to the database.
     await addDoc(postsCollectionRef, {
       title, //title: title
@@ -43,6 +49,10 @@ function CreatePost({ isAuth }) {
 
   const hanldleImageUpload = (e) => {
     setImage(e.target.value);
+  };
+
+  const getWordCount = (text) => {
+    return text.trim().split(/\s+/).length;
   };
 
   return (
