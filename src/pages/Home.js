@@ -6,6 +6,7 @@ import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import GoToTop from "../components/GoToTop";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
@@ -45,6 +46,7 @@ function Home({ isAuth }) {
         // console.log(post);
         return (
           <div className="post" key={post.id}>
+            <GoToTop />
             <div className="postHeader">
               <div>
                 <h1
