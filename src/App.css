@@ -65,7 +65,7 @@ nav {
 a {
   color: white;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .createPostPage {
@@ -254,11 +254,9 @@ textarea {
 .homePage .post {
   width: 90%;
   height: auto;
-  background-color: rgb(158, 155, 187);
+  background-color: #bcbeb1;
   margin: 20px;
-  padding: 20px;
   border-radius: 15px;
-  box-shadow: 1px 1px 1rem #40415d;
   overflow: hidden;
   padding: 1rem;
 }
@@ -295,6 +293,14 @@ textarea {
   overflow: hidden;
   padding: 1rem;
   width: 100%;
+}
+
+/* share button css */
+i.bx.bxs-share-alt {
+    color: rgb(227 220 220) !important;
+    border-radius: 1rem;
+    background: #515151 !important;
+    box-shadow: none !important;
 }
 
 .blogContent {
