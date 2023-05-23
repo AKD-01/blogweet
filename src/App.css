@@ -170,7 +170,9 @@ textarea {
 }
 
 .loginPage {
-  box-shadow: 1px 1px 1rem #fff;
+  
+  border:5px solid wheat;
+  
   border-radius: 1rem;
   background: #11101de6;
   color: wheat;
@@ -201,6 +203,7 @@ textarea {
 
 /* GOOGLE BUTTON */
 .login-with-google-btn {
+  border:1px solid wheat;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
   padding: 5px 16px 12px 42px;
