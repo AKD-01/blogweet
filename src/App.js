@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
@@ -11,9 +11,11 @@ import SidebarOnDesktop from "./components/SidebarOnDesktop/SidebarOnDesktop";
 import Blogpost from "./pages/Blogpost";
 import UserInfo from "./pages/UserInfo";
 import About from "./pages/About";
+import PreLoadder from "./pages/PreLoadder";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+  const [isLoading, setIsLoading] = useState(true);
 
   const signUserOut = () => {
     signOut(auth).then(() => {
@@ -22,24 +24,37 @@ function App() {
       window.location.pathname = "/login";
     });
   };
-  let width = 1000;
 
+  useEffect(() => {
+    // Simulating data loading
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+
+  let width = 1000;
   width = window.screen.width;
 
   return (
     <Router>
-      {width < 500 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
-      {width > 500 && (
-        <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
+      {isLoading ? (
+        <PreLoadder  />
+      ) : (
+        <>
+          {width < 500 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
+          {width > 500 && (
+            <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
+          )}
+          <Routes>
+            <Route path="/" element={<Home isAuth={isAuth} />} />
+            <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
+            <Route path="/:username" element={<UserInfo />} />
+            <Route path="/:username/:blogname" element={<Blogpost />} />
+          </Routes>
+        </>
       )}
-      <Routes>
-        <Route path="/" element={<Home isAuth={isAuth} />} />
-        <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
-        <Route path="/:username" element={<UserInfo />} />
-        <Route path="/:username/:blogname" element={<Blogpost />} />
-      </Routes>
     </Router>
   );
 }
