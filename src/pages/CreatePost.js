@@ -7,10 +7,13 @@ function CreatePost({ isAuth }) {
   const [postText, setPostText] = useState("");
   const [image, setImage] = useState("");
 
- 
   let navigate = useNavigate();
 
   const createPost = async () => {
+    if (title.trim() === "" || postText.trim() === "" || image.trim() === "") {
+      alert("Please fill in all the required fields.");
+      return;
+    }
     await addPostToDb(title, postText, image);
     navigate("/");
   };
@@ -19,7 +22,7 @@ function CreatePost({ isAuth }) {
     if (!isAuth) {
       navigate("/login");
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const hanldleImageUpload = (e) => {
