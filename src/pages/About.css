@@ -6,19 +6,21 @@ h1{
     font-size: 4rem;
     font-weight: normal;
 }
+
 .AboutPage i{
     font-size: 3rem;
     color: black;
-    filter: drop-shadow(1rem 1rem 1rem yellow);
+    filter: drop-shadow(1rem 1rem 1rem rgb(174, 174, 174));
 }
 .AboutPage span{
     font-size: 3rem;
     color: black;
-    filter: drop-shadow(1rem 1rem 1rem yellow);
+    filter: drop-shadow(0rem 0rem 1rem rgb(95, 76, 240));
 }
-.AboutPage i:hover, span:hover{
-    filter: drop-shadow(1rem 1rem 1rem blue);
+.AboutPage span:hover{
+    filter: drop-shadow(0rem 0rem 1rem blue);
 }
+
 p{
     padding: 2rem;
 }

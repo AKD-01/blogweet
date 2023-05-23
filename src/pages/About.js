@@ -7,7 +7,7 @@ const About = () => {
       <h1>ABOUT</h1>
       <hr />
       <p>
-        BlogWeet is a social media app that allows users to create, post and
+        <b>BlogWeet</b> is a social media app that allows users to create, post and
         share their blogs. It is a platform that encourages users to express
         their thoughts, opinions, and perspectives through written content, and
         engage with the content of others. The app is easy to use, and it is
