@@ -249,6 +249,7 @@ textarea {
   padding-top: 20px;
   left: 240px;
   position: absolute;
+  z-index: -1;
 }
 
 .homePage .post {
