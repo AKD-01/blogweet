@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
-import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
-import { auth, db } from "../firebase-config";
+import { getPostsFromDb, deletePostFromDb } from "../utils/firebase";
+import { auth } from "../utils/firebase";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -11,10 +11,8 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
-  const postsCollectionRef = collection(db, "posts");
   const deletePost = async (id) => {
-    const postDoc = doc(db, "posts", id);
-    await deleteDoc(postDoc);
+    await deletePostFromDb(id);
     window.location.reload();
   };
 
@@ -29,8 +27,8 @@ function Home({ isAuth }) {
   // postLists.push(DUMMY_POST);
   useEffect(() => {
     const getPosts = async () => {
-      const data = await getDocs(postsCollectionRef);
-      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      const data = await getPostsFromDb();
+      setPostList(data);
     };
 
     getPosts();

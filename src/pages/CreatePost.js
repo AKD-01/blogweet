@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { addDoc, collection } from "firebase/firestore";
-import { db, auth } from "../firebase-config";
+import { addPostToDb } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 
 function CreatePost({ isAuth }) {
@@ -8,23 +7,11 @@ function CreatePost({ isAuth }) {
   const [postText, setPostText] = useState("");
   const [image, setImage] = useState("");
 
-  const postsCollectionRef = collection(db, "posts");
+ 
   let navigate = useNavigate();
 
   const createPost = async () => {
-    //function adds the document to the database.
-    await addDoc(postsCollectionRef, {
-      title, //title: title
-      postText,
-      author: {
-        name: auth.currentUser.displayName,
-        id: auth.currentUser.uid,
-        email: auth.currentUser.email,
-        photoUrl: auth.currentUser.photoURL,
-      },
-      date: new Date().toJSON().slice(0, 10).replace(/-/g, "/"),
-      image,
-    });
+    await addPostToDb(title, postText, image);
     navigate("/");
   };
 
