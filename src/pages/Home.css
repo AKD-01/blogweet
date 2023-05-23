@@ -53,6 +53,26 @@ body {
   display: flex;
 }
 
+@media screen and (min-width: 600px) and (max-width: 740px) {
+  .contents {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 740px) and (max-width: 800px) {
+  .contents {
+    gap: 1.2rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+}
+
 @media screen and (min-width: 300px) and (max-width: 600px) {
 
   .imageCont img {
