@@ -6,6 +6,7 @@ import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "../components/Footer/Footer";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
@@ -152,6 +153,7 @@ function Home({ isAuth }) {
           </div>
         );
       })}
+      <Footer />
     </div>
   );
 }

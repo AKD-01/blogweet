@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
@@ -26,6 +27,7 @@ function CreatePost({ isAuth }) {
       image,
     });
     navigate("/");
+    toast.success('Your Post has been published!')
   };
 
   useEffect(() => {

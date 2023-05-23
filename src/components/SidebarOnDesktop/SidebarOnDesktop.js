@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import "./SidebarOnDesktop.css";
-import "boxicons";
+//import "boxicons";
 import { auth } from "../../firebase-config";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import {FaBloggerB} from 'react-icons/fa';
+import { Tooltip } from 'react-tooltip';
+
+
 
 const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
   const [state, setState] = useState(true);
-
+  const navigate= useNavigate();
+  const location= useLocation()
+    function pathMatchingRoute(route){
+        return route=== location.pathname ? true: false;
+    }
   const toggleSidebarOnDesktop = () => {
     setState(!state);
   };
@@ -15,10 +23,11 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
     <div className={`SidebarOnDesktop active`}>
       <div className="logo_content">
         <div className="logo">
+        <FaBloggerB style={{ fontSize: "1.8rem", marginTop: ".5rem", }}/>
           <div
             className="logoname"
             style={{
-              marginLeft: "5px",
+              marginLeft: "8px",
               fontSize: "1.8rem",
               marginTop: ".5rem",
             }}
@@ -26,36 +35,32 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
             <b>BLOGWEET</b>
           </div>
         </div>
-        <i
-          className="bx bxl-twitter bx-tada"
-          id="btn"
-          style={{ fontSize: "25px" }}
-          onClick={toggleSidebarOnDesktop}
-        />
+        
       </div>
       <ul className="nav_list">
         <li onClick={toggleSidebarOnDesktop}>
-          <Link to="/">
+          <Link to="/" className={`${pathMatchingRoute("/") && `active_class`}`}>
             <i className="bx bxs-home-heart"></i>
             <span className="link_names">Home</span>
           </Link>
           <span className="tooltip">Home</span>
         </li>
         <li>
-          <Link to="/about">
+          <Link to="/about" className={`${pathMatchingRoute("/about") && `active_class`}`}>
             <i class='bx bxs-info-circle'></i>
             <span className="link_names">About</span>
           </Link>
         </li>   
         {isAuth && (
           <li onClick={toggleSidebarOnDesktop}>
-            <Link to="/createpost">
+            <Link to="/createpost" className={`${pathMatchingRoute("/createpost") && `active_class`}`}>
               <i className="bx bxs-pencil"></i>
               <span className="link_names">Create Post</span>
             </Link>
             <span className="tooltip">Create Post</span>
           </li>
         )}
+        
         {/* other list items */}
       </ul>
       {!isAuth && (
@@ -80,15 +85,18 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
           <div className="profile">
             <div className="profile_details">
               {auth.currentUser != null && (
-                <img src={auth.currentUser.photoURL} alt="" />
+                <img src={auth.currentUser.photoURL} alt="" id="my-anchor-element" onClick={()=>{navigate('/' + `${auth.currentUser.displayName}`)}}/>
               )}
+              <Tooltip anchorSelect="#my-anchor-element" content="Profile"/>
               <div className="name_job">
                 {auth.currentUser != null && (
                   <div className="name">{auth.currentUser.displayName}</div>
                 )}
               </div>
+              
             </div>
             <i className="bx bx-log-out" id="log_out" onClick={signUserOut} />
+            <Tooltip anchorSelect="#log_out" content="Logout"/>
           </div>
         </div>
       )}

@@ -5,6 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { db } from "../firebase-config";
 import "./pages.css";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "../components/Footer/Footer";
 
 const Blogpost = () => {
   const postId = useParams();
@@ -88,6 +89,7 @@ const Blogpost = () => {
         pauseOnHover
         theme="dark"
       />
+      <Footer />
     </div>
   );
 };

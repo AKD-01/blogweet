@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
-import "boxicons";
+//import "boxicons";
 import { auth } from "../../firebase-config";
 import { Link } from "react-router-dom";
+import {FaBloggerB} from 'react-icons/fa';
 
 const Sidebar = ({ isAuth, signUserOut }) => {
   const [state, setState] = useState(false);
@@ -15,6 +16,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
     <div className={`sidebar ${active ? "active" : ""}`}>
       <div className="logo_content">
         <div className="logo">
+        <FaBloggerB style={{ fontSize: "1.8rem", marginTop: ".5rem", }}/>
           <div
             className="logoname"
             style={{
@@ -26,12 +28,6 @@ const Sidebar = ({ isAuth, signUserOut }) => {
             <b>BLOGWEET</b>
           </div>
         </div>
-        <i
-          className="bx bxl-twitter"
-          id="btn"
-          style={{ fontSize: "25px" }}
-          onClick={toggleSidebar}
-        />
       </div>
       <ul className="nav_list">
         <li onClick={toggleSidebar}>

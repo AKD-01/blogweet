@@ -1,0 +1,13 @@
+.footer-text{
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+ .social-icon{
+    margin: -2px;
+    margin-right: 4px;
+}
+.social-icon :hover{
+    color: black;
+    transition: all 0.4s ease;
+}

@@ -9,7 +9,7 @@ import CreatePost from "./pages/CreatePost";
 import Sidebar from "./components/SideBar/Sidebar";
 import SidebarOnDesktop from "./components/SidebarOnDesktop/SidebarOnDesktop";
 import Blogpost from "./pages/Blogpost";
-import UserInfo from "./pages/UserInfo";
+import UserInfo from "./components/UserInfo";
 import About from "./pages/About";
 
 function App() {
@@ -37,10 +37,11 @@ function App() {
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
-        <Route path="/:username" element={<UserInfo />} />
+        <Route path="/:username" element={<UserInfo isAuth={isAuth} />} />
         <Route path="/:username/:blogname" element={<Blogpost />} />
       </Routes>
     </Router>
+    
   );
 }
 

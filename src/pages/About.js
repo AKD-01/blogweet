@@ -1,5 +1,6 @@
 import React from "react";
 import "./About.css";
+import Footer from "../components/Footer/Footer";
 
 const About = () => {
   return (
@@ -41,9 +42,7 @@ const About = () => {
         dynamic community where ideas and perspectives are shared and explored.
       </p>
       <hr />
-      <div className="social">
-      <a href="https://github.com/AKD-01/blogweet"><i class='bx bxl-github'></i><span>GitHub</span></a>
-      </div>
+      <Footer />
       
     </div>
   );
