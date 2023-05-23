@@ -6,19 +6,22 @@ import LoginButton from "../components/LoginButton";
 function Login({ setIsAuth }) {
   let navigate = useNavigate();
 
-  const signInWithGoogle = () => {
-    signInWithGooglePopup().then((result) => {
+  const signInWithGoogle = async () => {
+    const response = await signInWithGooglePopup();
+    if (response) {
       localStorage.setItem("isAuth", true);
       setIsAuth(true);
       navigate("/");
-    });
+    }
   };
-  const signInWithGithub = () => {
-    signInWithGithubPopup().then((result) => {
+
+  const signInWithGithub = async () => {
+    const response = await signInWithGithubPopup();
+    if (response) {
       localStorage.setItem("isAuth", true);
       setIsAuth(true);
       navigate("/");
-    });
+    }
   };
 
   return (
