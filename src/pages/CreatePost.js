@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { addDoc, collection } from "firebase/firestore";
-import { db, auth } from "../firebase-config";
+import { addPostToDb } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -11,7 +10,7 @@ function CreatePost({ isAuth }) {
   const [postText, setPostText] = useState("");
   const [image, setImage] = useState("");
 
-  const postsCollectionRef = collection(db, "posts");
+ 
   let navigate = useNavigate();
   // form validation rules
   const validationSchema = yup.object().shape({
@@ -26,19 +25,7 @@ function CreatePost({ isAuth }) {
 
 
   const createPost = async () => {
-    //function adds the document to the database.
-    await addDoc(postsCollectionRef, {
-      title, //title: title
-      postText,
-      author: {
-        name: auth.currentUser.displayName,
-        id: auth.currentUser.uid,
-        email: auth.currentUser.email,
-        photoUrl: auth.currentUser.photoURL,
-      },
-      date: new Date().toJSON().slice(0, 10).replace(/-/g, "/"),
-      image,
-    });
+    await addPostToDb(title, postText, image);
     navigate("/");
   };
 

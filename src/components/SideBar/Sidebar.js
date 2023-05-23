@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
 import "boxicons";
-import { auth } from "../../firebase-config";
+import { auth } from "../../utils/firebase";
 import { Link } from "react-router-dom";
 
 const Sidebar = ({ isAuth, signUserOut }) => {
