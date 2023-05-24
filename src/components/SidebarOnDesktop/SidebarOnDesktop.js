@@ -23,7 +23,6 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
     <div className={`SidebarOnDesktop active`}>
       <div className="logo_content">
         <div className="logo">
-        <FaBloggerB style={{ fontSize: "1.8rem", marginTop: ".5rem", }}/>
           <div
             className="logoname"
             style={{
