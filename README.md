@@ -81,7 +81,7 @@ git push origin branch_name
 
 :point_right:Now you can either create an issue to request some changes or adding features or improving styling.   
 
-:point_right:You can also work on already created issues, but first comment on that issue, so that you get assigned the label of `hacktoberfest` and start working that issue and once you complete, you can raise a pull request.     
+:point_right:You can also work on already created issues, but first comment on that issue, so that you get assigned the label of `gssoc23` and start working that issue and once you complete, you can raise a pull request.     
 
 :point_right:Once I review your code and if it seems okay then your branch will be merged.   
 
