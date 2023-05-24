@@ -1,38 +1,63 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
-
+name: "🐛 Bug Report"
+about: Create a new ticket for a bug. 
+title: "🐛 [BUG] - <title>"
+labels: [
+  "bug"
+]
 ---
+## 🐛 Bug Report Form
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+|                |                     |
+|----------------|---------------------|
+| **Description** | Please provide a clear and concise description of the bug |
+| **Reproduction URL** | Please provide your GitHub URL to reproduce the issue |
+| **Reproduction Steps** | 1. Step 1...<br>2. Step 2...<br>3. Step 3...<br>4. Step 4... |
+| **Screenshots** | ![Screenshot 1](screenshot1.png) |
+| **Logs** | Relevant log output goes here |
+| **Additional Context** | Please provide any other relevant information about the problem |
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+🌐 **Browsers**
+Which browsers are you experiencing the problem on? (Select all that apply)
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+- [ ] Chrome
+- [ ] Firefox
+- [ ] Safari
+- [ ] Microsoft Edge
+- [ ] Opera
+- [ ] Brave
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+💻 **OS**
+What is the impacted environment (operating system)? (Select all that apply)
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+- [ ] Windows
+- [ ] Linux
+- [ ] Mac
+- [ ] iOS
+- [ ] Android
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
 
-**Additional context**
-Add any other context about the problem here.
+📝 **Sections Completed**
+Check the box of the sections you have completed:
+
+- [ ] Description
+- [ ] Reproduction URL
+- [ ] Reproduction Steps
+- [ ] Screenshots
+- [ ] Logs
+- [ ] Browsers
+- [ ] OS
+- [ ] Additional Context
+
+🔍 **Priority**
+Please select the priority of the bug:
+- [ ] High
+- [ ] Medium
+- [ ] Low
+
+📜 **Code of Conduct**
+By submitting this issue, you agree to follow our Code of Conduct:
+
+- [ ] I follow Contributing Guidelines of this project.
+- [ ] I have checked the current issues for duplicate problems.
+- [ ] I have read the readme.
