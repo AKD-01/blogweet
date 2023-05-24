@@ -36,7 +36,7 @@ The app is a social media platform that allows users to create, post and share t
 ● Engaging community :
 The app creates a vibrant and dynamic community of users who are passionate about sharing and discovering new ideas and perspectives. Users can engage with the content of others by reading, sharing, and commenting on blog posts.
 
-## Technology Used🚀
+## Technology Used 🚀
 - **Frontend**:  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) <img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
 	
 - **Backend**:   ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
