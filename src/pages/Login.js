@@ -1,21 +1,20 @@
 import React from "react";
-import { auth, provider } from "../firebase-config";
-import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { signInWithGooglePopup, signInWithGithubPopup } from "../utils/firebase";
 import LoginButton from "../components/LoginButton";
 
 function Login({ setIsAuth }) {
   let navigate = useNavigate();
 
   const signInWithGoogle = () => {
-    signInWithPopup(auth, provider).then((result) => {
+    signInWithGooglePopup().then((result) => {
       localStorage.setItem("isAuth", true);
       setIsAuth(true);
       navigate("/");
     });
   };
   const signInWithGithub = () => {
-    signInWithPopup(auth, new GithubAuthProvider()).then((result) => {
+    signInWithGithubPopup().then((result) => {
       localStorage.setItem("isAuth", true);
       setIsAuth(true);
       navigate("/");
