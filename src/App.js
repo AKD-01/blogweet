@@ -11,6 +11,8 @@ import Blogpost from "./pages/Blogpost";
 import UserInfo from "./pages/UserInfo";
 import About from "./pages/About";
 
+import './shimmer.css';
+
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
@@ -26,7 +28,7 @@ function App() {
   width = window.screen.width;
 
   return (
-    <Router>
+    <><Router>
       {width < 500 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
       {width > 500 && (
         <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
@@ -39,7 +41,18 @@ function App() {
         <Route path="/:username" element={<UserInfo />} />
         <Route path="/:username/:blogname" element={<Blogpost />} />
       </Routes>
-    </Router>
+    </Router><div>
+        {isLoading ? (
+          <div className="shimmer-effect" style={{ height: '100px', width: '100%' }} />
+        ) : (
+          // Render your actual content here
+          <div>
+            <h1>Welcome to MyPage</h1>
+          <p>loading.....</p>
+          </div>
+        )}
+      </div></>
+
   );
 }
 

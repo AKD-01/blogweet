@@ -75,6 +75,7 @@ a {
   place-items: center;
 }
 
+
 .cpContainer {
   width: 70%;
   height: auto;
@@ -379,4 +380,23 @@ textarea {
   .loginPage p {
     font-size: 1.5rem;
   }
+}
+
+/*By Shahil*/
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, #f6f7f8 8%, #edeef1 18%, #f6f7f8 33%);
+  background-size: 800px 104px;
+  animation: shimmer 1.5s infinite linear;
 }
