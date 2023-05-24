@@ -23,7 +23,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
               marginTop: ".5rem",
             }}
           >
-            <b>BLOGWEET</b>
+            <a href = "Home.js"><b>BLOGWEET</b></a>
           </div>
         </div>
         <i
