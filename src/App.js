@@ -28,7 +28,7 @@ function App() {
   width = window.screen.width;
 
   return (
-    <><Router>
+    <><><Router>
       {width < 500 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
       {width > 500 && (
         <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
@@ -45,12 +45,18 @@ function App() {
         {isLoading ? (
           <div className="shimmer-effect" style={{ height: '100px', width: '100%' }} />
         ) : (
-          // Render your actual content here
+
           <div>
             <h1>Welcome to MyPage</h1>
-          <p>loading.....</p>
+            <p>loading.....</p>
           </div>
         )}
+      </div></><div className="App">
+        <div className="image-container">
+          <img src="src\assets\svg-icons\banner.jpg" alt="Component Image" />
+        </div>
+        <div className="App-content">
+        </div>
       </div></>
 
   );

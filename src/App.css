@@ -400,3 +400,24 @@ textarea {
   background-size: 800px 104px;
   animation: shimmer 1.5s infinite linear;
 }
+
+
+/*Image fixing */
+.image-container {
+  width: 100%; 
+  height: 0; 
+  padding-bottom: 100%;
+  position: relative;
+  overflow: hidden; 
+}
+
+
+.image-container img {
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  top: 0; 
+  left: 0; 
+}
+
