@@ -16,6 +16,14 @@ body {
   justify-content: space-between;
 }
 
+.centered {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;  
+  margin-right: 120px;
+}
+
 .Link {
   text-decoration: inherit;
 }

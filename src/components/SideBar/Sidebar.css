@@ -275,3 +275,52 @@ body {
   bottom: 0;
   position: absolute;
 }
+
+@media (max-width: 767px) {
+  .sidebar {
+    width: 100%;
+  }
+
+  .sidebar.active {
+    width: 100%;
+  }
+
+  .sidebar.active #btn {
+    left: 90%;
+  }
+
+  .home_content {
+    left: 100%;
+    width: 100%;
+  }
+
+  .sidebar.active ~ .home_content {
+    left: 100%;
+    width: 100%;
+  }
+}
+
+/* Laptop devices */
+@media (min-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .sidebar.active {
+    width: 240px;
+  }
+
+  .sidebar.active #btn {
+    left: 90%;
+  }
+
+  .home_content {
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+
+  .sidebar.active ~ .home_content {
+    left: 240px;
+    width: calc(100% - 240px);
+  }
+}

@@ -1,6 +1,6 @@
 .custom-loader {
     margin-top: 275px;
-    margin-left: 250px;
+    
     width:32px;
     height:32px;
     --c:radial-gradient(circle closest-side,#766DF4 90%,#0000);

@@ -12,49 +12,27 @@ const About = () => {
     }, 2000);
   }, []);
 
-  return (<>
-    {isLoading ? (
-      <PreLoadder />
-    ) : (
-    <div className="AboutPage">
-      
-        
+  return (
+    <>
+      <div className="lodder"></div>
+      {isLoading ? (
+        <div className="centered">
+          <PreLoadder />
+        </div>
+      ) : (
+        <div className="AboutPage">
           <h1>ABOUT</h1>
           <hr />
           <p>
-            BlogWeet is a social media app that allows users to create, post and
-            share their blogs. It is a platform that encourages users to express
-            their thoughts, opinions, and perspectives through written content, and
-            engage with the content of others. The app is easy to use, and it is
-            designed to be accessible to users of all ages and levels of technical
-            expertise. Users can create their blogs and post their content with just
-            a few clicks.
+            BlogWeet is a social media app that allows users to create, post and share their blogs. It is a platform that encourages users to express their thoughts, opinions, and perspectives through written content, and engage with the content of others. The app is easy to use, and it is designed to be accessible to users of all ages and levels of technical expertise. Users can create their blogs and post their content with just a few clicks.
             <br />
-            Once a blog post is published, other users can read and share it. This
-            creates a vibrant and dynamic community of users who are passionate
-            about sharing and discovering new ideas and perspectives. The platform
-            is also searchable, so users can easily find content that is relevant to
-            their interests.
+            Once a blog post is published, other users can read and share it. This creates a vibrant and dynamic community of users who are passionate about sharing and discovering new ideas and perspectives. The platform is also searchable, so users can easily find content that is relevant to their interests.
             <br />
-            One of the unique features of BlogWeet is that it allows users to build
-            a following by connecting with other users who share similar interests.
-            This feature enables users to expand their reach and increase the
-            visibility of their content. Overall, BlogWeet is a great platform for
-            users who are looking for an easy, user-friendly way to create, post and
-            share their blogs and engage with a community of like-minded
-            individuals. Whether you're a blogger looking to expand your reach or a
-            reader looking for new perspectives, BlogWeet is the perfect platform
-            for you.
+            One of the unique features of BlogWeet is that it allows users to build a following by connecting with other users who share similar interests. This feature enables users to expand their reach and increase the visibility of their content. Overall, BlogWeet is a great platform for users who are looking for an easy, user-friendly way to create, post and share their blogs and engage with a community of like-minded individuals. Whether you're a blogger looking to expand your reach or a reader looking for new perspectives, BlogWeet is the perfect platform for you.
             <br />
-            In terms of security, BlogWeet provides robust security features to
-            ensure that users' data is protected. The platform uses Google's
-            encryption to secure user data and also uses advanced security measures
-            to protect against hacking and other malicious activities.
+            In terms of security, BlogWeet provides robust security features to ensure that users' data is protected. The platform uses Google's encryption to secure user data and also uses advanced security measures to protect against hacking and other malicious activities.
             <br />
-            Overall, BlogWeet is a versatile and feature-rich social media app that
-            provides users with a platform to create, post, and share their blogs.
-            With its focus on user-generated content, BlogWeet is a vibrant and
-            dynamic community where ideas and perspectives are shared and explored.
+            Overall, BlogWeet is a versatile and feature-rich social media app that provides users with a platform to create, post, and share their blogs. With its focus on user-generated content, BlogWeet is a vibrant and dynamic community where ideas and perspectives are shared and explored.
           </p>
           <hr />
           <div className="social">
@@ -63,13 +41,10 @@ const About = () => {
               <span>GitHub</span>
             </a>
           </div>
-        
-      
-    </div>
-    )}
+        </div>
+      )}
     </>
   );
-  
 };
 
 export default About;

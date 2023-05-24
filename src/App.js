@@ -38,7 +38,9 @@ function App() {
   return (
     <Router>
       {isLoading ? (
-        <PreLoadder  />
+        <div className="centered">
+          <PreLoadder />
+        </div>
       ) : (
         <>
           {width < 500 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}

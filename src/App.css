@@ -23,6 +23,12 @@ nav {
   text-decoration: none;
   padding-top: 0.5rem;
 }
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .logout {
   border: none;

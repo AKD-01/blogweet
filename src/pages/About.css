@@ -1,6 +1,14 @@
 .AboutPage{
     margin-left: 250px;
 }
+.centered {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    align-items: center;  
+    margin-left: 250px;
+  }
+  
 h1{
     text-align: center;
     font-size: 4rem;

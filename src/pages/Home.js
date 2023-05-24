@@ -36,115 +36,122 @@ function Home({ isAuth }) {
   };
 
   return (
-    <div className="homePage">
+    <div>
       {isLoading ? (
-        <PreLoadder/>
+        <div className="centered">
+          <PreLoadder />
+        </div>
       ) : (
-        postLists.map((post) => (
-          <div className="post" key={post.id}>
-            <div className="postHeader">
-              <div>
-                <h1
-                  className="title"
-                  onClick={() => {
-                    navigate(
-                      `/${post.author.name.replaceAll(" ", "-")}/${post.id}`,
-                      { state: post }
-                    );
-                  }}
-                >
-                  {post.title}
-                </h1>
-              </div>
-
-              <div className="deletePost">
-                {isAuth &&
-                  auth.currentUser != null &&
-                  post.author.id === auth.currentUser.uid && (
-                    <button
-                      onClick={() => {
-                        deletePost(post.id);
-                      }}
-                    >
-                      <i
-                        className="bx bxs-message-square-x"
-                        style={{ color: "#600505" }}
-                      ></i>
-                    </button>
-                  )}
-                <button
-                  onClick={() =>
-                    sharingHandler(
-                      `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
-                    )
-                  }
-                >
-                  <i
-                    className="bx bxs-share-alt"
-                    style={{
-                      color: "rgb(255, 255, 255)",
-                      boxShadow: "1px 1px 1rem black",
-                      borderRadius: "1rem",
-                      background: "black",
+        <div className="homePage">
+          {postLists.map((post) => (
+            <div className="post" key={post.id}>
+              <div className="postHeader">
+                <div>
+                  <h1
+                    className="title"
+                    onClick={() => {
+                      navigate(
+                        `/${post.author.name.replaceAll(" ", "-")}/${post.id}`,
+                        { state: post }
+                      );
                     }}
-                  ></i>
-                </button>
-              </div>
-            </div>
-            <div className="contents">
-              <div className="imageCont">
-                <img src={post.image} alt={post.title} />
-              </div>
-              <div className="postTextContainer">
-                <div style={{ height: "70px", overflow: "hidden" }}>
-                  {post.postText.substr(0, Math.min(post.postText.length, 200))}
-                  &nbsp;&nbsp;
+                  >
+                    {post.title}
+                  </h1>
                 </div>
+
+                <div className="deletePost">
+                  {isAuth &&
+                    auth.currentUser != null &&
+                    post.author.id === auth.currentUser.uid && (
+                      <button
+                        onClick={() => {
+                          deletePost(post.id);
+                        }}
+                      >
+                        <i
+                          className="bx bxs-message-square-x"
+                          style={{ color: "#600505" }}
+                        ></i>
+                      </button>
+                    )}
+                  <button
+                    onClick={() =>
+                      sharingHandler(
+                        `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
+                      )
+                    }
+                  >
+                    <i
+                      className="bx bxs-share-alt"
+                      style={{
+                        color: "rgb(255, 255, 255)",
+                        boxShadow: "1px 1px 1rem black",
+                        borderRadius: "1rem",
+                        background: "black",
+                      }}
+                    ></i>
+                  </button>
+                </div>
+              </div>
+              <div className="contents">
+                <div className="imageCont">
+                  <img src={post.image} alt={post.title} />
+                </div>
+                <div className="postTextContainer">
+                  <div style={{ height: "70px", overflow: "hidden" }}>
+                    {post.postText.substr(
+                      0,
+                      Math.min(post.postText.length, 200)
+                    )}
+                    &nbsp;&nbsp;
+                  </div>
+                  <div
+                    style={{
+                      textAlign: "right",
+                      color: "#3a363d",
+                      fontSize: ".9rem",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => {
+                      navigate(
+                        `/${post.author.name.replaceAll(" ", "-")}/${post.id}`,
+                        { state: post }
+                      );
+                    }}
+                  >
+                    ......Read More
+                  </div>
+                </div>
+              </div>
+              <h3>
+                <div>📅{post.date}</div>
                 <div
-                  style={{
-                    textAlign: "right",
-                    color: "#3a363d",
-                    fontSize: ".9rem",
-                    cursor: "pointer",
-                  }}
+                  style={{ cursor: "pointer" }}
                   onClick={() => {
-                    navigate(
-                      `/${post.author.name.replaceAll(" ", "-")}/${post.id}`,
-                      { state: post }
-                    );
+                    navigate(`/${post.author.name.replaceAll(" ", "-")}`, {
+                      state: post.author,
+                    });
                   }}
                 >
-                  ......Read More
+                  👤{post.author.name}
                 </div>
-              </div>
+              </h3>
+              <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+              />
             </div>
-            <h3>
-              <div>📅{post.date}</div>
-              <div
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  navigate(`/${post.author.name.replaceAll(" ", "-")}`, {
-                    state: post.author,
-                  });
-                }}
-              >
-                👤{post.author.name}
-              </div>
-            </h3>
-            <ToastContainer
-              position="top-center"
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="dark"
-            />
-          </div>
-        ))
+          ))}
+        </div>
       )}
     </div>
   );
