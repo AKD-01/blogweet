@@ -26,7 +26,7 @@ BlogWeet is a social media app that allows users to create, post and share their
 Once a blog post is published, other users can read, and share it. This creates a vibrant and dynamic community of users who are passionate about sharing and discovering new ideas and perspectives. The platform is also searchable, so users can easily find content that is relevant to their interests.
 
 
-## Main Features 
+## Main Features
 ● Easy-to-use interface :
 The app is designed to be accessible to users of all ages and levels of technical expertise. Users can create and post their content with just a few clicks.
 
@@ -35,6 +35,12 @@ The app is a social media platform that allows users to create, post and share t
 
 ● Engaging community :
 The app creates a vibrant and dynamic community of users who are passionate about sharing and discovering new ideas and perspectives. Users can engage with the content of others by reading, sharing, and commenting on blog posts.
+
+## 🧰 Tech Stack Used
+- **Frontend**: <img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
+	
+- **Backend**:   ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
+
 
 <h2>:arrow_right:Installation Guide:</h2>
 ✴️ First, fork the repository (Click the <b><b>Fork</b></b> button in the top right corner of the page).
