@@ -1,5 +1,7 @@
 .Contactus {
   margin-left: 250px;
+  
+  
 }
 
 h1 {
@@ -9,14 +11,17 @@ h1 {
 }
 
 p {
-  padding: 2rem;
+  text-align: center;
+  /* padding: 2rem;  */
   font-weight: bold;
-  margin-left: 8%;
+  /* margin-left: 8%; */
 }
 
 form {
   margin-top: 20px;
-  margin-left: 10%;
+  margin-left: 37%;
+  
+  
 }
 
 label {
@@ -55,9 +60,9 @@ button:hover {
 }
 
 @media (max-width: 767px) {
-  p {
+  /* p {
     text-align: center;
-  }
+  } */
   h1 {
     font-size: 3rem;
   }
@@ -65,6 +70,10 @@ button:hover {
   input[type="email"],
   textarea {
     width: 90%;
+  }
+
+  form{
+    margin-left: 30%;;
   }
 }
 
@@ -76,9 +85,11 @@ button:hover {
   textarea {
     width: 80%;
   }
-  p {
+  /* p {
     text-align: center;
+  } */
+  form{
+    margin-left: 25%;
   }
-
   /* Add more styles for other elements as needed */
 }
