@@ -1,20 +1,28 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
-
+name: "💡 Feature Request"
+about: Create a new ticket for a new feature request
+title: "💡 [REQUEST] - <title>"
+labels: [
+  "new feature"
+]
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+- [ ] I am from GSSoC'23.
+- [ ] I would like to be assigned this task.
+---
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+| Section                    | Description |
+|----------------------------|-------------|
+| **Concise Description**    |Write a concise and appropriate description of the feature request |
+| **Solution Proposed**      |Describe the solution you would want|
+| **Alternative Solutions**  |Describe any alternative solutions you can think of|
+| **Additional Context**     |Write any other contexts related to the feature request|
+| **Screenshots**            |[Provide screenshots here]|
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+### Code of Conduct
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+By submitting this issue, you agree to follow our Code of Conduct.
+
+- [ ] I follow the Contributing Guidelines of this project.
+- [ ] I have checked the current issues for duplicate problems.
+- [ ] I have read the readme of this repository.
