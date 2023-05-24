@@ -107,10 +107,10 @@ function Home({ isAuth }) {
                     <i
                       className="bx bxs-share-alt"
                       style={{
-                        color: "rgb(255, 255, 255)",
-                        boxShadow: " 1px 1px 1rem black",
+                        color: "rgb(17,16,29)",
+                        // boxShadow: " 1px 1px 1rem black",  
                         borderRadius: "1rem",
-                        background: " black",
+                        // background: "white",
                       }}
                     ></i>
                   </button>
@@ -121,14 +121,14 @@ function Home({ isAuth }) {
                   <img src={post.image} alt={post.title} />
                 </div>
                 <div className="postTextContainer">
-                  <div style={{ height: "70px", overflow: "hidden" }}>
+                  <div style={{overflow: "hidden" }}>
                     {post.postText.substr(
                       0,
                       Math.min(post.postText.length, 200)
                     )}
                     &nbsp;&nbsp;{" "}
                   </div>
-                  <div
+                  <div className="readmore"
                     style={{
                       textAlign: "right",
                       color: "#3a363d",

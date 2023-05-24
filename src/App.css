@@ -9,6 +9,7 @@ body {
   padding: 0%;
   margin: 0%;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 nav {
@@ -254,7 +255,7 @@ textarea {
 .homePage .post {
   width: 90%;
   height: auto;
-  background-color: rgb(158, 155, 187);
+  background-color: rgb(236 237 244);
   margin: 20px;
   padding: 20px;
   border-radius: 15px;
@@ -266,6 +267,7 @@ textarea {
 .post .postHeader {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -288,14 +290,7 @@ textarea {
   cursor: pointer;
 }
 
-.post .postTextContainer {
-  word-wrap: break-word;
-  display: grid;
-  height: auto;
-  overflow: hidden;
-  padding: 1rem;
-  width: 100%;
-}
+
 
 .blogContent {
   padding: 1rem;
@@ -311,11 +306,7 @@ textarea {
 }
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
-  .homePage .post {
-    width: 80vw;
-    margin-left: -10rem;
-  }
-
+ 
   .blogContent img {
     width: 75vw;
   }
@@ -366,15 +357,7 @@ textarea {
     margin: 1.6rem;
   }
 
-  .post .postTextContainer {
-    /* word-wrap: break-word; */
-    display: grid;
-    height: 100px;
-    padding: .25rem;
-    width: 100%;
-    overflow: hidden;
-    font-size: .8rem;
-  }
+  
 
   .loginPage p {
     font-size: 1.5rem;

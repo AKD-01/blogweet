@@ -275,3 +275,10 @@ body {
   bottom: 0;
   position: absolute;
 }
+
+
+@media screen and (max-width: 1460px) {
+  .SidebarOnDesktop{
+    width: 200px;
+  }
+}
