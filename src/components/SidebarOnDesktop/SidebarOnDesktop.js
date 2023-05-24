@@ -23,7 +23,6 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
     <div className={`SidebarOnDesktop active`}>
       <div className="logo_content">
         <div className="logo">
-        <FaBloggerB style={{ fontSize: "1.8rem", marginTop: ".5rem", }}/>
           <div
             className="logoname"
             style={{
@@ -33,6 +32,12 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
             }}
           >
             <b>BLOGWEET</b>
+            <i
+          className="bx bxl-twitter bx-tada"
+          id="btn"
+          style={{ fontSize: "25px" }}
+          onClick={toggleSidebarOnDesktop}
+        />
           </div>
         </div>
         
