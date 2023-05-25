@@ -2,6 +2,7 @@ body {
   background-color: #1d1b31c4;
 }
 
+
 .post h3 {
   display: flex;
   justify-content: space-between;
@@ -9,6 +10,15 @@ body {
   text-decoration: none;
   text-align: right;
   color: rgb(24, 8, 95);
+}
+
+.post{
+  transition: transform .3s ease-out;
+  display: inline-block;
+}
+
+.post:hover{
+  transform: translate(0, -10px);
 }
 
 .blogcredits {
@@ -53,6 +63,26 @@ body {
   display: flex;
 }
 
+@media screen and (min-width: 600px) and (max-width: 740px) {
+  .contents {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 740px) and (max-width: 800px) {
+  .contents {
+    gap: 1.2rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+}
+
 @media screen and (min-width: 300px) and (max-width: 600px) {
 
   .imageCont img {
@@ -81,4 +111,23 @@ body {
     font-size: 1.5rem;
   }
 
+}
+.scrollToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  opacity: 0.7;
+}
+
+.scrollToTopBtn:hover {
+  opacity: 1;
 }

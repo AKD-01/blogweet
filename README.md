@@ -1,4 +1,23 @@
 # BlogWeet
+
+<div align="center">
+<img src="https://forthebadge.com/images/badges/built-with-love.svg" />
+<img src="https://forthebadge.com/images/badges/uses-brains.svg" />
+<img src="https://forthebadge.com/images/badges/powered-by-responsibility.svg" />
+  <br>
+  <img src="https://img.shields.io/github/repo-size/AKD-01/blogweet?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues/AKD-01/blogweet?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues-closed-raw/AKD-01/blogweet?style=for-the-badge" />
+  
+  <img src="https://img.shields.io/github/forks/AKD-01/blogweet?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues-pr/AKD-01/blogweet?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues-pr-closed-raw/AKD-01/blogweet?style=for-the-badge" />
+  <img src="https://img.shields.io/github/stars/AKD-01/blogweet?style=for-the-badge" />
+  <img src="https://img.shields.io/github/contributors/AKD-01/blogweet?style=for-the-badge" />
+  <img src="https://img.shields.io/github/last-commit/AKD-01/blogweet?style=for-the-badge" />
+  
+  </div>
+<br>
 BlogWeet is a user-friendly social media app for creating, posting, and sharing blogs. It provides a vibrant community for sharing and exploring new ideas and perspectives.
 
 
@@ -62,7 +81,7 @@ git push origin branch_name
 
 :point_right:Now you can either create an issue to request some changes or adding features or improving styling.   
 
-:point_right:You can also work on already created issues, but first comment on that issue, so that you get assigned the label of `hacktoberfest` and start working that issue and once you complete, you can raise a pull request.     
+:point_right:You can also work on already created issues, but first comment on that issue, so that you get assigned the label of `gssoc23` and start working that issue and once you complete, you can raise a pull request.     
 
 :point_right:Once I review your code and if it seems okay then your branch will be merged.   
 
