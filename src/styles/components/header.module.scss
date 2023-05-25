@@ -6,6 +6,7 @@
     max-width: 1100px;
     height: 100%;
     margin: auto;
+    padding: 0 14px;
 
     display: flex;
     justify-content: space-between;
@@ -51,6 +52,7 @@
     }
 
     .menuButton {
+      display: none;
       cursor: pointer;
 
       svg {

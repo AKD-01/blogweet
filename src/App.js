@@ -30,7 +30,9 @@ function App() {
 
   return (
     <Router>
-      <Header headerShouldBeLarge />
+      <Header
+        headerShouldBeLarge={['/createpost'].includes(window.location.pathname)}
+      />
 
       {/* previous navigation options are listed below */}
       {/* {width < 500 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
