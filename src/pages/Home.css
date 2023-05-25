@@ -2,6 +2,10 @@ body {
   background-color: #1d1b31c4;
 }
 
+.postHeader{
+  display: flex;
+  flex-direction: column;
+}
 
 .post h3 {
   display: flex;

@@ -11,10 +11,15 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
-  const deletePost = async (id) => {
-    await deletePostFromDb(id);
-    window.location.reload();
-  };
+  const deletePost = (id) => {
+    toast(`Your post deleted succesfully`);
+    const deleteThePost = async (id) => {
+      await deletePostFromDb(id);
+      const updatedPostList = postLists.filter((post) => post.id !== id);
+      setPostList(updatedPostList);
+    };
+    deleteThePost(id);
+  }
 
   // const DUMMY_POST = {
   //   id: `id:${Math.random()}`,
@@ -60,6 +65,20 @@ function Home({ isAuth }) {
   return (
     <>
       <div className="homePage">
+
+        <ToastContainer
+          position="top-center"
+          autoClose={2500}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
+
         {postLists.map((post) => {
           // console.log(post);
           return (
@@ -81,6 +100,7 @@ function Home({ isAuth }) {
                   {/* </Link> */}
                 </div>
 
+
                 <div className="deletePost">
                   {isAuth &&
                     auth.currentUser != null &&
@@ -97,6 +117,23 @@ function Home({ isAuth }) {
                         ></i>
                       </button>
                     )}
+
+                  {/* {isAuth &&
+                    auth.currentUser != null &&
+                    post.author.id === auth.currentUser.uid && (
+                      <button
+                        onClick={() => {
+                          deletePost(post.id);
+                        }}
+                      >
+                        {" "}
+                        <i
+                          className="bx bxs-pencil edit-icon"
+                          style={{ color: "darkblue" }}
+                        ></i>
+                      </button>
+                    )} */}
+
                   <button
                     onClick={() =>
                       sharingHandler(
@@ -159,18 +196,7 @@ function Home({ isAuth }) {
                   👤{post.author.name}
                 </div>
               </h3>
-              <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
-              />
+
             </div>
           );
         })}
