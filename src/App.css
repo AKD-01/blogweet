@@ -199,6 +199,24 @@ textarea {
   margin-bottom: 4rem;
 }
 
+/* SCROLL BAR */
+::-webkit-scrollbar {
+  width: 16px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 100vw;
+  background: #9E9BBB;
+  margin-block: 0.4em;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 0.21em solid transparent;
+  border-radius: 100px;
+  background-color: #6756bf;
+  background-clip: content-box;
+}
+
 /* GOOGLE BUTTON */
 .login-with-google-btn {
   cursor: pointer;
