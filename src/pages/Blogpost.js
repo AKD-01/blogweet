@@ -1,21 +1,25 @@
 import { getPostsFromDb } from "../utils/firebase";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify"; 
+import { toast, ToastContainer } from "react-toastify";
 import "./pages.css";
 import "react-toastify/dist/ReactToastify.css";
+import Loader from "../components/Loader";
 
 const Blogpost = () => {
   const postId = useParams();
   const [postLists, setPostList] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
+    setLoading(true);
     const getPosts = async () => {
       const data = await getPostsFromDb();
       setPostList(data);
+      setLoading(false);
     };
 
     getPosts();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const sharingHandler = (s) => {
@@ -27,6 +31,7 @@ const Blogpost = () => {
   const post = Array.of(postInfo)[0];
   return (
     <div className="blogpage">
+      {loading && <Loader />}
       {post && (
         <>
           <div className="blogtitle">

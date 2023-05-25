@@ -8,9 +8,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import Loader from "../components/Loader";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
+  const [loading, setLoading] = useState(true);
   const deletePost = async (id) => {
     await deletePostFromDb(id);
     window.location.reload();
@@ -26,9 +28,11 @@ function Home({ isAuth }) {
   // };
   // postLists.push(DUMMY_POST);
   useEffect(() => {
+    setLoading(true);
     const getPosts = async () => {
       const data = await getPostsFromDb();
       setPostList(data);
+      setLoading(false);
     };
 
     getPosts();
@@ -60,6 +64,7 @@ function Home({ isAuth }) {
   return (
     <>
       <div className="homePage">
+        {loading && <Loader />}
         {postLists.map((post) => {
           // console.log(post);
           return (
