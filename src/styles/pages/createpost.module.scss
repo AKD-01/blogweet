@@ -1,0 +1,125 @@
+.createPostRoot {
+  display: flex;
+  justify-content: space-between;
+
+  .createPostContainer {
+    height: 100vh;
+    width: 50%;
+    margin: auto;
+    padding: 0 14px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    border-right: 1px solid var(--dark-border);
+
+    .createPostHeader {
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--dark-border);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      p {
+        font-size: 1.5rem;
+        // font-weight: 600;
+
+        // this will be a normal button
+        &:last-child {
+          font-size: 14px;
+          font-weight: 500;
+          padding: 8px 18px;
+
+          background-color: var(--primary);
+          color: var(--text-color-over-primary);
+          border-radius: 100px;
+
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+
+          &:active {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+
+    .postInputs {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+
+      input {
+        padding: 8px 16px;
+        font-size: 22px;
+        background-color: transparent;
+
+        border-bottom: 1px solid var(--dark-border);
+
+        &:nth-child(3) {
+          border: none;
+          border-top: 1px solid var(--dark-border);
+          margin-bottom: 10px;
+          font-size: 18px;
+        }
+      }
+
+      textarea {
+        flex-grow: 1;
+        background-color: transparent;
+        font-size: 18px;
+
+        padding: 20px 14px;
+
+        &::placeholder {
+          font-size: 20px;
+
+          white-space: pre-line;
+        }
+      }
+    }
+  }
+
+  .postPreviewContainer {
+    width: 50%;
+    padding: 0 14px;
+    max-height: 100vh;
+    overflow: scroll;
+
+    .postPreviewHeader {
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--dark-border);
+
+      p {
+        font-size: 1.5rem;
+        font-weight: 600;
+
+        text-align: center;
+      }
+    }
+
+    .mardownPostPreview {
+      width: 100%;
+
+      img {
+        width: 100%;
+        max-height: 630px;
+        object-fit: cover;
+
+        margin: auto;
+        padding: 12px 0;
+      }
+    }
+  }
+}

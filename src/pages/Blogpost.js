@@ -1,30 +1,30 @@
-import { getPostsFromDb } from "../utils/firebase";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify"; 
-import "./pages.css";
-import "react-toastify/dist/ReactToastify.css";
+import { getPostsFromDb } from '../utils/firebase'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify'
+// import "./pages.css";
+import 'react-toastify/dist/ReactToastify.css'
 
 const Blogpost = () => {
-  const postId = useParams();
-  const [postLists, setPostList] = useState([]);
+  const postId = useParams()
+  const [postLists, setPostList] = useState([])
   useEffect(() => {
     const getPosts = async () => {
-      const data = await getPostsFromDb();
-      setPostList(data);
-    };
+      const data = await getPostsFromDb()
+      setPostList(data)
+    }
 
-    getPosts();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    getPosts()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
-  const sharingHandler = (s) => {
-    navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`);
-    toast(`Your link has been pasted to your Clipboard. Enjoy!`);
-  };
-  const postInfo = postLists.filter((x) => x.id === postId.blogname)[0];
-  console.log(Array.of(postInfo)[0]);
-  const post = Array.of(postInfo)[0];
+  const sharingHandler = s => {
+    navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`)
+    toast(`Your link has been pasted to your Clipboard. Enjoy!`)
+  }
+  const postInfo = postLists.filter(x => x.id === postId.blogname)[0]
+  console.log(Array.of(postInfo)[0])
+  const post = Array.of(postInfo)[0]
   return (
     <div className="blogpage">
       {post && (
@@ -37,21 +37,19 @@ const Blogpost = () => {
               className="shareButton"
               onClick={() =>
                 sharingHandler(
-                  `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
+                  `/${post.author.name.replaceAll(' ', '-')}/${post.id}`,
                 )
-              }
-            >
+              }>
               <i
                 className="bx bxs-share-alt"
                 style={{
-                  color: "rgb(255, 255, 255)",
-                  boxShadow: " 1px 1px 1rem black",
-                  borderRadius: "1rem",
-                  background: " black",
-                  fontSize: "2rem",
-                  cursor: "pointer",
-                }}
-              ></i>
+                  color: 'rgb(255, 255, 255)',
+                  boxShadow: ' 1px 1px 1rem black',
+                  borderRadius: '1rem',
+                  background: ' black',
+                  fontSize: '2rem',
+                  cursor: 'pointer',
+                }}></i>
             </button>
           </div>
 
@@ -61,7 +59,7 @@ const Blogpost = () => {
             <div>👤{post.author.name}</div>
             <div>
               {post.date != null && (
-                <div style={{ textAlign: "right", marginRight: "1rem" }}>
+                <div style={{ textAlign: 'right', marginRight: '1rem' }}>
                   📅{post.date}
                 </div>
               )}
@@ -87,7 +85,7 @@ const Blogpost = () => {
         theme="dark"
       />
     </div>
-  );
-};
+  )
+}
 
-export default Blogpost;
+export default Blogpost

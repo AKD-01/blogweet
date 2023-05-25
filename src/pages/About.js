@@ -1,5 +1,5 @@
-import React from "react";
-import "./About.css";
+import React from 'react'
+// import './About.css'
 
 const About = () => {
   return (
@@ -42,11 +42,13 @@ const About = () => {
       </p>
       <hr />
       <div className="social">
-      <a href="https://github.com/AKD-01/blogweet"><i class='bx bxl-github'></i><span>GitHub</span></a>
+        <a href="https://github.com/AKD-01/blogweet">
+          <i class="bx bxl-github"></i>
+          <span>GitHub</span>
+        </a>
       </div>
-      
     </div>
-  );
-};
+  )
+}
 
-export default About;
+export default About

@@ -1,11 +1,11 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
-import "./UserInfo.css";
+import React from 'react'
+import { useLocation } from 'react-router-dom'
+// import "./UserInfo.css";
 
 const UserInfo = () => {
-  const location = useLocation();
-  console.log(location.state);
-  const user = location.state;
+  const location = useLocation()
+  console.log(location.state)
+  const user = location.state
 
   return (
     <>
@@ -17,7 +17,7 @@ const UserInfo = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default UserInfo;
+export default UserInfo

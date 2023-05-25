@@ -1,0 +1,215 @@
+.markdown {
+  color: var(--silver);
+  line-height: 1.5;
+  word-wrap: break-word;
+  font-family: 'Source Serif Pro';
+
+  * {
+    font-size: 18px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1em;
+    margin-bottom: 16px;
+    font-weight: bold;
+    line-height: 1.4;
+    font-family: Calibre, Inter, Karla, Roboto, Ubuntu, JetBrains, sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    line-height: 1.2;
+
+    border-bottom: 1px solid rgba(var(--silver-rgb), 0.35);
+  }
+  h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+
+    border-bottom: 1px solid rgba(var(--silver-rgb), 0.35);
+  }
+  h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+  }
+  h4 {
+    font-size: 1.25em;
+  }
+  h5 {
+    font-size: 1em;
+  }
+  h6 {
+    font-size: 1em;
+    color: var(--silver-dim);
+  }
+
+  p {
+    padding: 10px 0;
+
+    strong {
+      font-weight: bold;
+    }
+
+    a {
+      strong {
+        &:hover {
+          color: var(--primary);
+        }
+      }
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+  }
+
+  * strong {
+    font-weight: bold;
+  }
+
+  * a {
+    text-decoration: underline;
+
+    strong {
+      &:hover {
+        color: var(--primary);
+      }
+    }
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+
+  blockquote {
+    padding: 10px 0;
+
+    p {
+      padding: 5px 5px 5px 15px;
+
+      line-height: 32px;
+      border-left: 4px solid var(--primary);
+
+      font-style: italic;
+    }
+  }
+
+  blockquote + p {
+    // margin-bottom: -25px;
+  }
+
+  hr {
+    padding: 0;
+    margin: 4px 0;
+    height: 3px;
+    width: 100%;
+
+    border: none;
+    background-color: rgba(var(--background-light-rgb), 0.75);
+  }
+
+  ol,
+  ol li {
+    list-style-type: decimal;
+    padding: 0;
+
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  ul,
+  ul li {
+    list-style-type: disc;
+  }
+
+  ul,
+  ol,
+  ul li,
+  ol li {
+    margin: 0 0 0 12px;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  code,
+  code pre,
+  pre,
+  pre code,
+  code span,
+  pre code span {
+    font-family: 'Fira Code', monospace;
+  }
+
+  table {
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin: 14px 0;
+
+    overflow: auto;
+
+    word-break: normal;
+    word-break: keep-all;
+
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    border-radius: 10px;
+
+    * {
+      font-family: Roboto;
+    }
+
+    thead {
+      width: 100%;
+
+      tr {
+        background-color: var(--background);
+        border-top: 1px solid var(--background-light);
+
+        font-weight: bold;
+        background-color: var(--background-light);
+
+        &:nth-child(2n) {
+          background-color: var(--background-light);
+        }
+
+        th {
+          line-height: 1;
+          padding: 10px 13px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    tbody {
+      width: 100%;
+
+      tr {
+        background-color: var(--background);
+        border-top: 1px solid var(--background-light);
+
+        &:nth-child(2n) {
+          background-color: var(--background-light);
+        }
+
+        td {
+          line-height: 1;
+          padding: 10px 13px;
+          text-align: start;
+        }
+      }
+    }
+  }
+}
