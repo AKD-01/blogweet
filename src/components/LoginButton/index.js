@@ -1,24 +1,30 @@
 import React from "react";
 import "./index.css";
 
+import { Button } from "@mui/material";
+
 const LoginButton = (props) => {
   const SignInHandler = () => {
     props.signIn();
   };
   return (
-    <button
-      className="button-57"
-      style={{ backgroundColor: `${props.bgColor}` }}
+    <Button
+      style={{
+        backgroundColor: `${props.bgColor}`,
+        color: `${props.color}`,
+        width: "60%",
+        margin: "1em",
+      }}
       onClick={SignInHandler}
+      variant="contained"
+      startIcon={ props.icon }
     >
       <span className="text" style={{ display: "flex" }}>
-        <i className={props.image} style={{ color: "#18181a" }} />
-        <div style={{ marginTop: ".15rem", marginLeft: ".5rem" }}>
+        <div>
           {props.label}
         </div>
       </span>
-      <span style={{ color: `${props.altColor}` }}>{props.alt}</span>
-    </button>
+    </Button>
   );
 };
 

@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { signInWithGooglePopup, signInWithGithubPopup } from "../utils/firebase";
 import LoginButton from "../components/LoginButton";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 function Login({ setIsAuth }) {
   let navigate = useNavigate();
@@ -27,18 +29,18 @@ function Login({ setIsAuth }) {
       <LoginButton
         label="Continue With Google"
         alt="Google"
-        bgColor="#8ab4f8"
-        altColor="#8ab4f8"
+        bgColor="#ffffff"
+        color="black"
         signIn={signInWithGoogle}
-        image="bx bxl-google bx-flip-horizontal bx-burst"
+        icon={<FcGoogle />}
       />
       <LoginButton
         label="Continue With Github"
         alt="Github"
-        bgColor="rgb(145, 151, 157)"
-        altColor="#f0f6fc"
+        bgColor="#333333"
+        color="white"
         signIn={signInWithGithub}
-        image="bx bxl-github bx-tada"
+        icon={<FaGithub />}
       />
     </div>
   );
