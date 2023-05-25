@@ -31,7 +31,6 @@ body {
 }
 
 .title {
-  filter: drop-shadow(2px 4px 6px white);
   color: #110c22;
   font-weight: normal;
   font-size: 2.5rem;
@@ -39,8 +38,7 @@ body {
 }
 
 .title:hover {
-  color: #2d0e36;
-  filter: drop-shadow(1rem 1rem 1rem black);
+  color: #ffffff;
 }
 
 .imageCont {
