@@ -3,7 +3,7 @@
   justify-content: space-between;
 
   .createPostContainer {
-    height: 100vh;
+    height: calc(100vh - var(--header-height));
     width: 50%;
     margin: auto;
     padding: 0 14px;
@@ -13,12 +13,12 @@
     justify-content: space-between;
     align-items: center;
 
-    border-right: 1px solid var(--dark-border);
+    border-right: 1px solid rgba(var(--dark-border-rgb), 0.5);
 
     .createPostHeader {
       width: 100%;
       padding: 10px 0;
-      border-bottom: 1px solid var(--dark-border);
+      border-bottom: 1px solid rgba(var(--dark-border-rgb), 0.5);
 
       display: flex;
       justify-content: space-between;
@@ -33,7 +33,7 @@
           font-size: 14px;
 
           a {
-            color: var(--text-color);
+            color: var(--primary);
 
             &:hover {
               text-decoration: underline;
@@ -76,11 +76,11 @@
         font-size: 22px;
         background-color: transparent;
 
-        border-bottom: 1px solid var(--dark-border);
+        border-bottom: 1px solid rgba(var(--dark-border-rgb), 0.5);
 
         &:nth-child(3) {
           border: none;
-          border-top: 1px solid var(--dark-border);
+          border-top: 1px solid rgba(var(--dark-border-rgb), 0.5);
           margin-bottom: 10px;
           font-size: 18px;
         }
@@ -111,7 +111,7 @@
     .postPreviewHeader {
       width: 100%;
       padding: 10px 0;
-      border-bottom: 1px solid var(--dark-border);
+      border-bottom: 1px solid rgba(var(--dark-border-rgb), 0.5);
 
       p {
         font-size: 1.5rem;
@@ -131,6 +131,45 @@
 
         margin: auto;
         padding: 12px 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .createPostRoot {
+    .createPostContainer {
+      width: 100%;
+    }
+
+    .postPreviewContainer {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .createPostRoot {
+    .createPostContainer {
+      .createPostHeader {
+        p {
+          &:nth-child(2) {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .postInputs {
+        input {
+          font-size: 18px;
+        }
+        textarea {
+          font-size: 16px;
+
+          &::placeholder {
+            font-size: 16px;
+          }
+        }
       }
     }
   }
