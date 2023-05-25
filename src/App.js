@@ -12,6 +12,7 @@ import SidebarOnDesktop from './components/SidebarOnDesktop/SidebarOnDesktop'
 import Blogpost from './pages/Blogpost'
 import UserInfo from './pages/UserInfo'
 import About from './pages/About'
+import { Header } from './components/Header'
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'))
@@ -29,10 +30,14 @@ function App() {
 
   return (
     <Router>
+      <Header headerShouldBeLarge />
+
+      {/* previous navigation options are listed below */}
       {/* {width < 500 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
       {width > 500 && (
         <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
       )} */}
+
       <Routes>
         <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
