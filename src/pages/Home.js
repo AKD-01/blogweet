@@ -118,22 +118,6 @@ function Home({ isAuth }) {
                       </button>
                     )}
 
-                  {/* {isAuth &&
-                    auth.currentUser != null &&
-                    post.author.id === auth.currentUser.uid && (
-                      <button
-                        onClick={() => {
-                          deletePost(post.id);
-                        }}
-                      >
-                        {" "}
-                        <i
-                          className="bx bxs-pencil edit-icon"
-                          style={{ color: "darkblue" }}
-                        ></i>
-                      </button>
-                    )} */}
-
                   <button
                     onClick={() =>
                       sharingHandler(
