@@ -51,6 +51,10 @@ function CreatePost({ isAuth }) {
     <div className={styles.createPostRoot}>
       <div className={styles.createPostContainer}>
         <div className={styles.createPostHeader}>
+          <p>
+            <a href="/">Go-To Home</a>
+          </p>
+
           <p>Create New Post</p>
 
           <p onClick={createPost}>Publish</p>

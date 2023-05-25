@@ -27,7 +27,19 @@
 
       p {
         font-size: 1.5rem;
-        // font-weight: 600;
+
+        &:first-child {
+          font-weight: 600;
+          font-size: 14px;
+
+          a {
+            color: var(--text-color);
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
 
         // this will be a normal button
         &:last-child {
