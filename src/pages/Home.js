@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import Edit from "../model_overlays/Edit";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
@@ -19,6 +20,24 @@ function Home({ isAuth }) {
       setPostList(updatedPostList);
     };
     deleteThePost(id);
+  }
+
+  const [editOverlay,setEditOverlay] = useState(false);
+
+  const [titleValue,setTitleValue]=useState('');
+  const [desciptionValue,setDesciptionValue]=useState('');
+  const [imageValue,setImageValue]=useState('');
+
+  const edit =(id,blogTitle,blogPostText,blogPostImage)=>{
+    setTitleValue(blogTitle);
+    setDesciptionValue(blogPostText);
+    setImageValue(blogPostImage);
+    setEditOverlay(true);
+    console.log(blogTitle);
+  }
+
+  const confirmHandler = ()=>{
+    setEditOverlay(false);
   }
 
   // const DUMMY_POST = {
@@ -64,6 +83,11 @@ function Home({ isAuth }) {
 
   return (
     <>
+
+    {/* {error && <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler} />} */}
+
+      { editOverlay && <Edit title={titleValue} description={desciptionValue} image={imageValue} onConfirm={confirmHandler} />}
+
       <div className="homePage">
 
         <ToastContainer
@@ -114,6 +138,22 @@ function Home({ isAuth }) {
                         <i
                           className="bx bxs-message-square-x"
                           style={{ color: "#600505" }}
+                        ></i>
+                      </button>
+                    )}
+                    {/* edit post code */}
+                    {isAuth &&
+                    auth.currentUser != null &&
+                    post.author.id === auth.currentUser.uid && (
+                      <button
+                        onClick={() => {
+                          edit(post.id ,post.title,post.postText,post.image);
+                        }}
+                      >
+                        {" "}
+                        <i
+                          className="bx bxs-pencil edit-icon"
+                          style={{ color: "darkblue" }}
                         ></i>
                       </button>
                     )}

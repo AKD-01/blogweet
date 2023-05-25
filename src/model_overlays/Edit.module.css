@@ -1,0 +1,99 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.75);
+  }
+  
+  .modal {
+    position: fixed;
+    top: 20vh;
+    left: 20%;
+    width: 70%;
+    z-index: 100;
+    overflow: hidden;
+  }
+  
+  .header {
+    background: #a060ad;
+    padding: 1rem;
+  }
+  
+  .header h2 {
+    margin: 0;
+    color: white;
+  }
+
+  .main_content{
+    display: flex;
+    flex-direction: row;
+
+  }
+  
+  /* .content {
+    /* display: flex;
+    flex-direction: column;
+    padding: 0;
+  } */
+
+  .content input{
+    width:240%;
+    margin-top: 20%;
+    margin-bottom: 5%;
+    border: 1px solid #7b178f;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    margin:0;
+  }
+  
+  .content p {
+    font-size: 20px;
+    height: 7px;
+  }
+
+  .button {
+    font: inherit;
+    border: 1px solid #7b178f;
+    background: #9527ac;
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button:hover,
+  .button:active {
+    background: #741188;
+    border-color: #741188;
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  
+  .actions {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  @media (max-width: 767px) {
+    .modal {
+      left: auto;
+      right:10px;
+      width: 80%;
+    }
+    .content input{
+      margin-top: 22%;
+      margin-bottom: 7%;
+      border: 1px solid #7b178f;
+      width: 150px;
+    }
+  }
+  
