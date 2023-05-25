@@ -45,10 +45,9 @@ const Blogpost = () => {
                 className="bx bxs-share-alt"
                 style={{
                   color: "rgb(255, 255, 255)",
-                  boxShadow: " 1px 1px 1rem black",
                   borderRadius: "1rem",
                   background: " black",
-                  fontSize: "2rem",
+                  fontSize: "2.5rem",
                   cursor: "pointer",
                 }}
               ></i>
@@ -62,7 +61,7 @@ const Blogpost = () => {
             <div>
               {post.date != null && (
                 <div style={{ textAlign: "right", marginRight: "1rem" }}>
-                  📅{post.date}
+                  📅 {post.date}
                 </div>
               )}
             </div>

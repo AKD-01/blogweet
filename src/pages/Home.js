@@ -98,6 +98,7 @@ function Home({ isAuth }) {
                       </button>
                     )}
                   <button
+                  className="shareButton"
                     onClick={() =>
                       sharingHandler(
                         `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
@@ -108,9 +109,9 @@ function Home({ isAuth }) {
                       className="bx bxs-share-alt"
                       style={{
                         color: "rgb(255, 255, 255)",
-                        boxShadow: " 1px 1px 1rem black",
                         borderRadius: "1rem",
                         background: " black",
+                        fontSize: "2.5rem"
                       }}
                     ></i>
                   </button>
@@ -124,7 +125,7 @@ function Home({ isAuth }) {
                   <div style={{ height: "70px", overflow: "hidden" }}>
                     {post.postText.substr(
                       0,
-                      Math.min(post.postText.length, 200)
+                      Math.min(post.postText.length, 300)
                     )}
                     &nbsp;&nbsp;{" "}
                   </div>
@@ -147,7 +148,7 @@ function Home({ isAuth }) {
                 </div>
               </div>
               <h3>
-                <div>📅{post.date}</div>
+                <div>📅 {post.date}</div>
                 <div
                   style={{ cursor: "pointer" }}
                   onClick={() => {

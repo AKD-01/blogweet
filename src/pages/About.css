@@ -9,15 +9,10 @@ h1{
 .AboutPage i{
     font-size: 3rem;
     color: black;
-    filter: drop-shadow(1rem 1rem 1rem yellow);
 }
 .AboutPage span{
     font-size: 3rem;
     color: black;
-    filter: drop-shadow(1rem 1rem 1rem yellow);
-}
-.AboutPage i:hover, span:hover{
-    filter: drop-shadow(1rem 1rem 1rem blue);
 }
 p{
     padding: 2rem;
