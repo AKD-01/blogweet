@@ -32,74 +32,7 @@ const Blogpost = () => {
   }
   const postInfo = postLists.filter(x => x.id === postId.blogname)[0]
   console.log(Array.of(postInfo)[0])
-  // const post = Array.of(postInfo)[0]
-  const post = {
-    title: 'Post to test markdown and post screen',
-    image:
-      'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWF',
-    postText: `
-    This is a test post just to test all the markdown syntax:
-    # Header 1
-    ## Header 2
-    ### Header 3
-    
-    One line gap
-    
-    #### Header 4
-    ##### Header 5
-    ##### Header 6
-    
-    > Here is a test blockquote
-    
-    > And here goes the 2nd one
-    
-    \`small code sample\` and here is some random text.
-    
-    * here is the first point
-    * here is another point
-    * here is one more point
-    * and here is the last point
-    
-    [\`link\`](https://github.com/rehypejs/rehype-highlight).
-    
-    Some random paragraphs and **bold text** in between, also why not use ~~italic texts~~ also?
-    
-    ***
-    
-    The code used in this post is here below
-    \`\`\`md
-    This is a test post just to test all the markdown syntax:
-    # Header 1
-    ## Header 2
-    ### Header 3
-    
-    One line gap
-    
-    #### Header 4
-    ##### Header 5
-    ##### Header 6
-    
-    > Here is a test blockquote
-    
-    > And here goes the 2nd one
-    
-    \`small code sample\` and here is some random text.
-    
-    * here is the first point
-    * here is another point
-    * here is one more point
-    * and here is the last point
-    
-    [\`link\`](https://github.com/rehypejs/rehype-highlight).
-    
-    Some random paragraphs and **bold text** in between, also why not use ~~italic texts~~ also?
-    
-    ***
-    \`\`\`
-    `.toString(),
-    author: { name: 'Sobhan Bera' },
-    date: '2023/05/26',
-  }
+  const post = Array.of(postInfo)[0]
 
   return (
     <div className={styles.blogpostRoot}>

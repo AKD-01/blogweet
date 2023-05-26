@@ -16,30 +16,30 @@
   h4,
   h5,
   h6 {
-    margin-top: 1em;
-    margin-bottom: 16px;
+    margin-top: 0.5em;
+    margin-bottom: 12px;
     font-weight: bold;
     line-height: 1.4;
     font-family: Calibre, Inter, Karla, Roboto, Ubuntu, JetBrains, sans-serif;
   }
   h1 {
-    font-size: 2em;
-    line-height: 1.2;
+    font-size: 1.8em;
+    line-height: 1;
 
     border-bottom: 1px solid rgba(var(--silver-rgb), 0.35);
   }
   h2 {
-    font-size: 1.75em;
-    line-height: 1.225;
+    font-size: 1.6em;
+    line-height: 0.8;
 
     border-bottom: 1px solid rgba(var(--silver-rgb), 0.35);
   }
   h3 {
-    font-size: 1.5em;
-    line-height: 1.43;
+    font-size: 1.4em;
+    line-height: 0.6;
   }
   h4 {
-    font-size: 1.25em;
+    font-size: 1.2em;
   }
   h5 {
     font-size: 1em;
@@ -50,7 +50,7 @@
   }
 
   p {
-    padding: 10px 0;
+    padding: 3px 0;
 
     strong {
       font-weight: bold;
@@ -88,7 +88,7 @@
   }
 
   blockquote {
-    padding: 10px 0;
+    padding: 1px 0;
 
     p {
       padding: 5px 5px 5px 15px;
@@ -156,8 +156,7 @@
   table {
     display: block;
     width: 100%;
-    margin: auto;
-    margin: 14px 0;
+    margin: 10px auto;
 
     overflow: auto;
 
