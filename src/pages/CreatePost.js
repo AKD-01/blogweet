@@ -30,13 +30,18 @@ function CreatePost({ isAuth }) {
     } else if (
       title.length === 0 ||
       postText.length === 0 ||
+      image.length === 0 ||
       !postText ||
-      !title
+      !title ||
+      !image
     ) {
       alert('Please make sure that you have filled all the fields.')
     } else {
       await addPostToDb(title, postText, image)
-      navigate('/')
+        .then(_res => {
+          navigate('/')
+        })
+        .catch(_err => {})
     }
   }
 

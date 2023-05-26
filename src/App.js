@@ -7,8 +7,8 @@ import { signUserAccountOut } from './utils/firebase'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import CreatePost from './pages/CreatePost'
-import Sidebar from './components/SideBar/Sidebar'
-import SidebarOnDesktop from './components/SidebarOnDesktop/SidebarOnDesktop'
+// import Sidebar from './components/SideBar/Sidebar'
+// import SidebarOnDesktop from './components/SidebarOnDesktop/SidebarOnDesktop'
 import Blogpost from './pages/Blogpost'
 import UserInfo from './pages/UserInfo'
 import About from './pages/About'
@@ -18,11 +18,15 @@ function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'))
 
   const signUserOut = () => {
-    signUserAccountOut().then(() => {
-      localStorage.clear()
-      setIsAuth(false)
-      window.location.pathname = '/login'
-    })
+    // we must ask for confirmation before logging out
+    // it might happen that the user have clicked logout button by mistake
+    if (window.confirm('Are you sure you want to logout?')) {
+      signUserAccountOut().then(() => {
+        localStorage.clear()
+        setIsAuth(false)
+        window.location.pathname = '/login'
+      })
+    }
   }
   let width = 1000
 
@@ -32,6 +36,8 @@ function App() {
     <Router>
       <Header
         headerShouldBeLarge={['/createpost'].includes(window.location.pathname)}
+        isAuth={isAuth}
+        signUserOut={signUserOut}
       />
 
       {/* previous navigation options are listed below */}

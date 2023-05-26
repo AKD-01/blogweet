@@ -39,13 +39,19 @@
             color: var(--text-color);
           }
 
-          // last one is the create post everytime...
+          // 3rd child is the create post everytime...
           // should look elegant also in perspective of UX designing right!?
-          &:last-child {
+          &:nth-child(3) {
             a {
               color: var(--primary);
               font-weight: 600;
             }
+          }
+
+          i {
+            cursor: pointer;
+            font-size: 22px;
+            padding: 0 10px;
           }
         }
       }

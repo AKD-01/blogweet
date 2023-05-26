@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from '../../styles/components/header.module.scss'
 
-export function Header({ headerShouldBeLarge }) {
+export function Header({ headerShouldBeLarge, isAuth, signUserOut }) {
   // toggle for showing menu
   const [showMenu, setShowMenu] = useState(false)
 
@@ -50,6 +50,16 @@ export function Header({ headerShouldBeLarge }) {
             <li>
               <a href={'/createpost'}>Create Post</a>
             </li>
+
+            {isAuth && (
+              <li>
+                <i
+                  className="bx bx-log-out"
+                  id="log_out"
+                  onClick={signUserOut}
+                />
+              </li>
+            )}
           </ul>
         </nav>
 
