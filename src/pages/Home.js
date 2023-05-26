@@ -24,16 +24,18 @@ function Home({ isAuth }) {
 
   const [editOverlay,setEditOverlay] = useState(false);
 
+  const [id,setIdValue]=useState('');
   const [titleValue,setTitleValue]=useState('');
   const [desciptionValue,setDesciptionValue]=useState('');
   const [imageValue,setImageValue]=useState('');
 
   const edit =(id,blogTitle,blogPostText,blogPostImage)=>{
+    setIdValue(id);
     setTitleValue(blogTitle);
     setDesciptionValue(blogPostText);
     setImageValue(blogPostImage);
     setEditOverlay(true);
-    console.log(blogTitle);
+    //console.log(blogTitle);
   }
 
   const confirmHandler = ()=>{
@@ -56,7 +58,7 @@ function Home({ isAuth }) {
     };
 
     getPosts();
-  }, []);
+  }, [editOverlay]);
   const navigate = useNavigate();
   const sharingHandler = (s) => {
     // console.log(`https://blogweet.vercel.app${s}`);
@@ -86,7 +88,7 @@ function Home({ isAuth }) {
 
     {/* {error && <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler} />} */}
 
-      { editOverlay && <Edit title={titleValue} description={desciptionValue} image={imageValue} onConfirm={confirmHandler} />}
+      { editOverlay && <Edit id={id} title={titleValue} description={desciptionValue} image={imageValue} onConfirm={confirmHandler} />}
 
       <div className="homePage">
 
