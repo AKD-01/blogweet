@@ -258,7 +258,6 @@ textarea {
   margin: 20px;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 1px 1px 1rem #40415d;
   overflow: hidden;
   padding: 1rem;
 }
@@ -309,6 +308,7 @@ textarea {
 .blogContent p {
   text-align: left;
 }
+
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .homePage .post {
@@ -367,7 +367,7 @@ textarea {
   }
 
   .post .postTextContainer {
-    /* word-wrap: break-word; */
+    word-wrap: break-word;
     display: grid;
     height: 100px;
     padding: .25rem;

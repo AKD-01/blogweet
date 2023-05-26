@@ -12,13 +12,15 @@ body {
   color: rgb(24, 8, 95);
 }
 
-.post{
-  transition: transform .3s ease-out;
+.post {
+  transition: transform 0.3s ease-out;
   display: inline-block;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.post:hover{
-  transform: translate(0, -10px);
+.post:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .blogcredits {
@@ -31,16 +33,32 @@ body {
 }
 
 .title {
-  filter: drop-shadow(2px 4px 6px white);
   color: #110c22;
   font-weight: normal;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   cursor: pointer;
+  position: relative;
+  width: fit-content;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  background-color: #3c1247;
+  transition: width 0.3s ease-out;
 }
 
 .title:hover {
-  color: #2d0e36;
-  filter: drop-shadow(1rem 1rem 1rem black);
+  color: #3c1247;
+}
+
+.title:hover::after {
+  width: 100%;
 }
 
 .imageCont {
@@ -49,19 +67,41 @@ body {
   margin: 1rem;
 }
 
+.post .postTextContainer {
+  word-wrap: break-word;
+  display: grid;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  font-size: 1rem;
+  padding: 1.2rem 1rem;
+}
+
+/* Expading animations */
+.expandElement {
+  transition: transform 0.3s ease-out;
+}
+
+.expandElement:hover {
+  transform: scale(1.1);
+}
+/* Expading animations */
+
 .imageCont img {
-  height: 8rem;
+  height: 9rem;
   padding: 0.2rem;
-  border: ridge;
+  border-radius: 10px;
 }
 
 .contents {
   display: flex;
+  padding-bottom: 15px;
 }
 
 .deletePost {
   display: flex;
 }
+
 
 @media screen and (min-width: 600px) and (max-width: 740px) {
   .contents {

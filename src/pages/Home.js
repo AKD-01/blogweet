@@ -97,22 +97,15 @@ function Home({ isAuth }) {
                         ></i>
                       </button>
                     )}
-                  <button
+                  <button className="expandElement"
                     onClick={() =>
                       sharingHandler(
                         `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
                       )
                     }
                   >
-                    <i
-                      className="bx bxs-share-alt"
-                      style={{
-                        color: "rgb(255, 255, 255)",
-                        boxShadow: " 1px 1px 1rem black",
-                        borderRadius: "1rem",
-                        background: " black",
-                      }}
-                    ></i>
+<i className="bx bxs-share-alt"></i>
+
                   </button>
                 </div>
               </div>
@@ -134,6 +127,8 @@ function Home({ isAuth }) {
                       color: "#3a363d",
                       fontSize: ".9rem",
                       cursor: "pointer",
+                      width: "fit-content",
+                      'justify-self': "end"
                     }}
                     onClick={() => {
                       navigate(
