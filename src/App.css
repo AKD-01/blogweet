@@ -11,6 +11,9 @@
   border: none;
   outline: none;
 
+  list-style: none;
+  list-style-type: none;
+
   transition: all 0.2s ease-in-out;
 }
 
