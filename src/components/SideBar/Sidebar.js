@@ -56,6 +56,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
             <span className="tooltip">Create Post</span>
           </li>
         )}
+        
         {/* other list items */}
       </ul>
       {!isAuth && (
@@ -72,7 +73,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
             Log in
           </span>
         </Link>
-      )}
+      )}  
       {isAuth && (
         <div className="profile_content">
           <div className="profile">
