@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./featuredPost.css";
 
+//This Page contains a list of Posts that are created by Officials or that are highlighted by officials
 class FeaturedPosts extends Component {
   state = {
     blogPosts: [
