@@ -10,6 +10,7 @@ import SidebarOnDesktop from "./components/SidebarOnDesktop/SidebarOnDesktop";
 import Blogpost from "./pages/Blogpost";
 import UserInfo from "./pages/UserInfo";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import NotFound404 from "./pages/NotFound404";
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
         <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
         <Route path="/user/:username" element={<UserInfo />} />
         <Route path="/user/:username/:blogname" element={<Blogpost />} />
