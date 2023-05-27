@@ -10,16 +10,17 @@ import SidebarOnDesktop from "./components/SidebarOnDesktop/SidebarOnDesktop";
 import Blogpost from "./pages/Blogpost";
 import UserInfo from "./pages/UserInfo";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
+import NotFound404 from "./pages/NotFound404";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
-  const signUserOut = () => {
-    signUserAccountOut().then(() => {
-      localStorage.clear();
-      setIsAuth(false);
-      window.location.pathname = "/login";
-    });
+  const signUserOut = async () => {
+    await signUserAccountOut();
+    localStorage.clear();
+    setIsAuth(false);
+    window.location.pathname = "/login";
   };
   let width = 1000;
 
@@ -35,9 +36,12 @@ function App() {
         <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
-        <Route path="/:username" element={<UserInfo />} />
-        <Route path="/:username/:blogname" element={<Blogpost />} />
+        <Route path="/user/:username" element={<UserInfo />} />
+        <Route path="/user/:username/:blogname" element={<Blogpost />} />
+        <Route path="*" element={<NotFound404 />} />
       </Routes>
     </Router>
   );
