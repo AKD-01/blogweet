@@ -90,7 +90,10 @@ function Home({ isAuth }) {
                     post.author.id === auth.currentUser.uid && (
                       <button
                         onClick={() => {
-                          deletePost(post.id);
+                          const confirmed = window.confirm("Are you sure you want to delete this post?");
+                          if (confirmed) {
+                              deletePost(post.id);
+                            }
                         }}
                       >
                         {" "}
