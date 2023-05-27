@@ -1,11 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SidebarOnDesktop.css";
 import "boxicons";
 import { auth } from "../../utils/firebase";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import { Box } from "@mui/system";
+import { Alert, Divider, ListSubheader, Popover } from "@mui/material";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import { getPostsFromDb } from "../../utils/firebase";
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 
 const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
   const [state, setState] = useState(true);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [postLists, setPostList] = useState([]);
+
+  const navigate = useNavigate();
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
+
+  useEffect(() => {
+    const getPosts = async () => {
+      const data = await getPostsFromDb();
+      setPostList(data);
+      console.log(postLists);
+    };
+
+    getPosts();
+  }, []);
 
   const toggleSidebarOnDesktop = () => {
     setState(!state);
@@ -36,26 +71,84 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
       <ul className="nav_list">
         <li onClick={toggleSidebarOnDesktop}>
           <Link to="/">
-            <i className="bx bxs-home-heart"></i>
+          <Box className="bx" margin={"15px"} marginTop={"20px"} marginRight={"10px"}>
+              <HomeOutlinedIcon />
+            </Box>
             <span className="link_names">Home</span>
           </Link>
           <span className="tooltip">Home</span>
         </li>
         <li>
           <Link to="/about">
-            <i class='bx bxs-info-circle'></i>
+          <Box className="bx" margin={"15px"} marginTop={"20px"} marginRight={"10px"}>
+          <InfoOutlinedIcon />
+            </Box>
             <span className="link_names">About</span>
           </Link>
-        </li>   
+        </li>
         {isAuth && (
           <li onClick={toggleSidebarOnDesktop}>
             <Link to="/createpost">
-              <i className="bx bxs-pencil"></i>
+            <Box className="bx" margin={"15px"} marginTop={"20px"} marginRight={"10px"}>
+              <EditOutlinedIcon />
+            </Box>
               <span className="link_names">Create Post</span>
             </Link>
             <span className="tooltip">Create Post</span>
           </li>
         )}
+        <li onClick={toggleSidebarOnDesktop}>
+          <Link to="/">
+            <Box className="bx" margin={"15px"} marginTop={"20px"} marginRight={"10px"}>
+              <NotificationsIcon />
+            </Box>
+            <span onClick={handleClick} className="link_names">
+              Notifications
+            </span>
+            <Popover
+              id={id}
+              open={open}
+              anchorEl={anchorEl}
+              onClose={handleClose}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+            >
+              <Box className="list-container" bgcolor={"#ffffff"}>
+                <List
+                  subheader={
+                    <ListSubheader component="div">
+                      Latest Notifications
+                    </ListSubheader>
+                  }
+                >
+                  {postLists.slice(0, 9).map((post) => (
+                    <ListItem disablePadding>
+                      <ListItemButton sx={{ justifyContent: "center" }}>
+                        <Alert
+                          onClick={() => {
+                            navigate(
+                              `/${post.author.name.replaceAll(" ", "-")}/${
+                                post.id
+                              }`,
+                              { state: post }
+                            );
+                          }}
+                          sx={{ width: "25em" }}
+                          severity="info"
+                        >
+                          {post.author.name} Made a new post, Check it Out.
+                        </Alert>
+                      </ListItemButton>
+                    </ListItem>
+                  ))}
+                </List>
+                <Divider />
+              </Box>
+            </Popover>
+          </Link>
+        </li>
         {/* other list items */}
       </ul>
       {!isAuth && (
