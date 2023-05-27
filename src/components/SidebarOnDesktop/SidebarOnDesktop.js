@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SidebarOnDesktop.css";
 import "boxicons";
-import { auth } from "../../firebase-config";
+import { auth } from "../../utils/firebase";
 import { Link } from "react-router-dom";
 
 const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
@@ -41,12 +41,18 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
           </Link>
           <span className="tooltip">Home</span>
         </li>
-        <li>
+        <li onClick={toggleSidebarOnDesktop}>
           <Link to="/about">
             <i class='bx bxs-info-circle'></i>
             <span className="link_names">About</span>
           </Link>
         </li>   
+        <li>
+          <Link to="/contact">
+            <i class='bx bxs-info-circle'></i>
+            <span className="link_names">Contact Us</span>
+          </Link>
+        </li>  
         {isAuth && (
           <li onClick={toggleSidebarOnDesktop}>
             <Link to="/createpost">

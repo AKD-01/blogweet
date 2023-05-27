@@ -6,6 +6,7 @@ const LoginButton = (props) => {
     props.signIn();
   };
   return (
+    
     <button
       className="button-57"
       style={{ backgroundColor: `${props.bgColor}` }}
@@ -19,7 +20,9 @@ const LoginButton = (props) => {
       </span>
       <span style={{ color: `${props.altColor}` }}>{props.alt}</span>
     </button>
+  
   );
 };
+
 
 export default LoginButton;
