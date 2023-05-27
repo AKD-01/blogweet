@@ -6,24 +6,29 @@ import LoginButton from "../components/LoginButton";
 function Login({ setIsAuth }) {
   let navigate = useNavigate();
 
-  const signInWithGoogle = () => {
-    signInWithGooglePopup().then((result) => {
+  const signInWithGoogle = async () => {
+    const response = await signInWithGooglePopup();
+    if (response) {
       localStorage.setItem("isAuth", true);
       setIsAuth(true);
       navigate("/");
-    });
+    }
   };
-  const signInWithGithub = () => {
-    signInWithGithubPopup().then((result) => {
+
+  const signInWithGithub = async () => {
+    const response = await signInWithGithubPopup();
+    if (response) {
       localStorage.setItem("isAuth", true);
       setIsAuth(true);
       navigate("/");
-    });
+    }
   };
 
   return (
     <div className="loginPage">
-      <p>Enter into BlogWeet</p>
+      <p className="lg-hd">Choose an account</p>
+      <p className="lg-shd">to continue to <span className="clr-hd">blogweet</span> </p>
+      
       <LoginButton
         label="Continue With Google"
         alt="Google"

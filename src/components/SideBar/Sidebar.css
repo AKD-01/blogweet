@@ -275,3 +275,24 @@ body {
   bottom: 0;
   position: absolute;
 }
+
+@media screen and (max-width:600px){
+  .sidebar{
+    width: 59px;
+  }
+  .sidebar.active{
+    width: 59px;
+  }
+  .sidebar.active #btn{
+    left: 50%;
+  }
+  .profile_details .name{
+    display: none;
+  }
+  .profile .profile_details img{
+    display: none;
+  }
+  .sidebar.active .profile #log_out {
+    left: 50%;
+  }
+}
