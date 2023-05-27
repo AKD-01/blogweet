@@ -203,7 +203,6 @@ textarea {
 
 /* GOOGLE BUTTON */
 .login-with-google-btn {
-  border:1px solid wheat;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
   padding: 5px 16px 12px 42px;
