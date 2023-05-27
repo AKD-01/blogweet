@@ -11,6 +11,10 @@ function CreatePost({ isAuth }) {
   let navigate = useNavigate();
 
   const createPost = async () => {
+    if (getWordCount(postText) < 20) {
+      alert("The post must contain at least 20 words.");
+      return;
+    } 
     await addPostToDb(title, postText, image);
     navigate("/");
   };
@@ -24,6 +28,10 @@ function CreatePost({ isAuth }) {
 
   const hanldleImageUpload = (e) => {
     setImage(e.target.value);
+  };
+
+  const getWordCount = (text) => {
+    return text.trim().split(/\s+/).length;
   };
 
   return (
