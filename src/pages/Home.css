@@ -15,6 +15,7 @@ body {
 .post{
   transition: transform .3s ease-out;
   display: inline-block;
+  width: 300px;
 }
 
 .post:hover{
@@ -50,6 +51,7 @@ body {
   font-weight: normal;
   font-size: 2.5rem;
   cursor: pointer;
+  padding-left:10px;
 }
 
 .title:hover {
@@ -64,13 +66,16 @@ body {
 }
 
 .imageCont img {
-  height: 8rem;
-  padding: 0.2rem;
-  border: ridge;
+  height: 9rem;
+  
+  padding: 0;
+  border: none;
+    border-radius: 8px;
 }
 
 .contents {
   display: flex;
+  
 }
 
 .deletePost {
@@ -126,12 +131,12 @@ body {
   }
 
 }
+
 .scrollToTopBtn {
   position: fixed;
   bottom: 40px;
   right: 10px;
-  width: 42px;
-  height: 42px;
+  width: 1%;  
   border: none;
   border-radius: 50%;
   background-color: #333;
@@ -147,5 +152,6 @@ body {
 .scrollToTopBtn:hover {
   opacity: 1;
   bottom: 46px;
+  background-color: #333;
 
 }
