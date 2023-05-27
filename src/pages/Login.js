@@ -1,34 +1,36 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { signInWithGooglePopup, signInWithGithubPopup } from "../utils/firebase";
-import LoginButton from "../components/LoginButton";
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { signInWithGooglePopup, signInWithGithubPopup } from '../utils/firebase'
+import LoginButton from '../components/LoginButton'
 
 function Login({ setIsAuth }) {
-  let navigate = useNavigate();
+  let navigate = useNavigate()
 
   const signInWithGoogle = async () => {
-    const response = await signInWithGooglePopup();
+    const response = await signInWithGooglePopup()
     if (response) {
-      localStorage.setItem("isAuth", true);
-      setIsAuth(true);
-      navigate("/");
+      localStorage.setItem('isAuth', true)
+      setIsAuth(true)
+      navigate('/')
     }
-  };
+  }
 
   const signInWithGithub = async () => {
-    const response = await signInWithGithubPopup();
+    const response = await signInWithGithubPopup()
     if (response) {
-      localStorage.setItem("isAuth", true);
-      setIsAuth(true);
-      navigate("/");
+      localStorage.setItem('isAuth', true)
+      setIsAuth(true)
+      navigate('/')
     }
-  };
+  }
 
   return (
     <div className="loginPage">
       <p className="lg-hd">Choose an account</p>
-      <p className="lg-shd">to continue to <span className="clr-hd">blogweet</span> </p>
-      
+      <p className="lg-shd">
+        to continue to <span className="clr-hd">blogweet</span>{' '}
+      </p>
+
       <LoginButton
         label="Continue With Google"
         alt="Google"
@@ -46,7 +48,7 @@ function Login({ setIsAuth }) {
         image="bx bxl-github bx-tada"
       />
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login

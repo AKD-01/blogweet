@@ -1,15 +1,22 @@
-import React, { useState } from "react";
-import "./SidebarOnDesktop.css";
-import "boxicons";
-import { auth } from "../../utils/firebase";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react'
+import './SidebarOnDesktop.css'
+import 'boxicons'
+import { auth } from '../../utils/firebase'
+import { Link, useLocation } from 'react-router-dom'
 
 const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
-  const [state, setState] = useState(true);
+  const location = useLocation()
+
+  const [state, setState] = useState(true)
 
   const toggleSidebarOnDesktop = () => {
-    setState(!state);
-  };
+    setState(!state)
+  }
+
+  // only don't show sidebar in createpost screen
+  if (location.pathname === '/createpost') {
+    return null
+  }
 
   return (
     <div className={`SidebarOnDesktop active`}>
@@ -18,18 +25,17 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
           <div
             className="logoname"
             style={{
-              marginLeft: "5px",
-              fontSize: "1.8rem",
-              marginTop: ".5rem",
-            }}
-          >
+              marginLeft: '5px',
+              fontSize: '1.8rem',
+              marginTop: '.5rem',
+            }}>
             <b>BLOGWEET</b>
           </div>
         </div>
         <i
           className="bx bxl-twitter bx-tada"
           id="btn"
-          style={{ fontSize: "25px" }}
+          style={{ fontSize: '25px' }}
           onClick={toggleSidebarOnDesktop}
         />
       </div>
@@ -43,16 +49,16 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         </li>
         <li onClick={toggleSidebarOnDesktop}>
           <Link to="/about">
-            <i class='bx bxs-info-circle'></i>
+            <i class="bx bxs-info-circle"></i>
             <span className="link_names">About</span>
           </Link>
-        </li>   
+        </li>
         <li>
           <Link to="/contact">
-            <i class='bx bxs-info-circle'></i>
+            <i class="bx bxs-info-circle"></i>
             <span className="link_names">Contact Us</span>
           </Link>
-        </li>  
+        </li>
         {isAuth && (
           <li onClick={toggleSidebarOnDesktop}>
             <Link to="/createpost">
@@ -74,8 +80,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
             />
             <span
               className="link_names"
-              style={{ left: "2.5rem", position: "relative", bottom: ".1rem" }}
-            >
+              style={{ left: '2.5rem', position: 'relative', bottom: '.1rem' }}>
               Log in
             </span>
           </Link>
@@ -99,7 +104,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default SidebarOnDesktop;
+export default SidebarOnDesktop

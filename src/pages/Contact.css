@@ -1,38 +1,34 @@
 .Contactus {
   margin-left: 250px;
-  
-  
 }
 
-h1 {
+.Contactus h1 {
   text-align: center;
   font-weight: normal;
   font-size: 4rem;
 }
 
-p {
+.Contactus p {
   text-align: center;
   /* padding: 2rem;  */
   font-weight: bold;
   /* margin-left: 8%; */
 }
 
-form {
+.Contactus form {
   margin-top: 20px;
   margin-left: 37%;
-  
-  
 }
 
-label {
+.Contactus label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
+input[type='text'],
+input[type='email'],
+.Contactus textarea {
   width: 35%;
   padding: 8px;
   margin-bottom: 10px;
@@ -40,11 +36,11 @@ textarea {
   border-radius: 4px;
 }
 
-textarea {
+.Contactus textarea {
   width: 35%;
 }
 
-button {
+.Contactus button {
   padding: 12px 25px;
   background-color: #d65f30;
   color: white;
@@ -55,7 +51,7 @@ button {
   /* margin-left: 200px; */
 }
 
-button:hover {
+.Contactus button:hover {
   background-color: #45a049;
 }
 
@@ -63,32 +59,32 @@ button:hover {
   /* p {
     text-align: center;
   } */
-  h1 {
+  .Contactus h1 {
     font-size: 3rem;
   }
-  input[type="text"],
-  input[type="email"],
-  textarea {
+  input[type='text'],
+  input[type='email'],
+  .Contactus textarea {
     width: 90%;
   }
 
-  form{
-    margin-left: 30%;;
+  .Contactus form {
+    margin-left: 30%;
   }
 }
 
 /* medium screen  */
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   /* Styles specific to medium screens */
-  input[type="text"],
-  input[type="email"],
-  textarea {
+  input[type='text'],
+  input[type='email'],
+  .Contactus textarea {
     width: 80%;
   }
   /* p {
     text-align: center;
   } */
-  form{
+  .Contactus form {
     margin-left: 25%;
   }
   /* Add more styles for other elements as needed */

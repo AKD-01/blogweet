@@ -1,0 +1,13 @@
+.loginRoot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+
+  p {
+    font-size: 26px;
+    font-weight: 600;
+    padding: 0 0 25px 0;
+  }
+}

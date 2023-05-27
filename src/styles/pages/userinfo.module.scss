@@ -1,0 +1,36 @@
+.userInfoRoot {
+  .userInfoCard {
+    max-width: 400px;
+    width: max-content;
+
+    margin: 35px auto;
+    padding: 15px;
+
+    border: 1px solid rgba(var(--dark-border-rgb), 0.5);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 280px;
+      border-radius: 15px;
+    }
+
+    .userInfoDetail {
+      padding: 15px 0;
+
+      p,
+      h3 {
+        text-align: center;
+
+        a {
+          color: var(--primary);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

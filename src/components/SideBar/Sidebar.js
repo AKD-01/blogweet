@@ -1,35 +1,43 @@
-import React, { useState } from "react";
-import "./Sidebar.css";
-import "boxicons";
-import { auth } from "../../utils/firebase";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react'
+import './Sidebar.css'
+import 'boxicons'
+import { auth } from '../../utils/firebase'
+import { Link, useLocation } from 'react-router-dom'
 
 const Sidebar = ({ isAuth, signUserOut }) => {
-  const [state, setState] = useState(false);
-  const toggleSidebar = () => {
-    setState((prevState) => ({ active: !prevState.active }));
-  };
+  const location = useLocation()
 
-  const { active } = state;
+  const [state, setState] = useState(false)
+  const toggleSidebar = () => {
+    setState(prevState => ({ active: !prevState.active }))
+  }
+
+  const { active } = state
+  console.log('ASD', location.pathname)
+
+  // only don't show sidebar in createpost screen
+  if (location.pathname === '/createpost') {
+    return null
+  }
+
   return (
-    <div className={`sidebar ${active ? "active" : ""}`}>
+    <div className={`sidebar ${active ? 'active' : ''}`}>
       <div className="logo_content">
         <div className="logo">
           <div
             className="logoname"
             style={{
-              marginLeft: "5px",
-              fontSize: "1.5rem",
-              marginTop: ".5rem",
-            }}
-          >
+              marginLeft: '5px',
+              fontSize: '1.5rem',
+              marginTop: '.5rem',
+            }}>
             <b>BLOGWEET</b>
           </div>
         </div>
         <i
           className="bx bxl-twitter"
           id="btn"
-          style={{ fontSize: "25px" }}
+          style={{ fontSize: '25px' }}
           onClick={toggleSidebar}
         />
       </div>
@@ -43,7 +51,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
         </li>
         <li onClick={toggleSidebar}>
           <Link to="/about">
-            <i class='bx bxs-info-square'></i>
+            <i class="bx bxs-info-square"></i>
             <span className="link_names">About</span>
           </Link>
         </li>
@@ -67,8 +75,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
           />
           <span
             className="link_names"
-            style={{ left: "2.5rem", position: "relative", bottom: ".1rem" }}
-          >
+            style={{ left: '2.5rem', position: 'relative', bottom: '.1rem' }}>
             Log in
           </span>
         </Link>
@@ -93,7 +100,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar
