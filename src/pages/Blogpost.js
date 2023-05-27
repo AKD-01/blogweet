@@ -12,6 +12,7 @@ import { db } from "../firebase-config";
 import "./pages.css";
 import "react-toastify/dist/ReactToastify.css";
 import { AiOutlineLike, AiOutlineDislike } from "react-icons/ai";
+import MoonLoader from "react-spinners/MoonLoader";
 
 const Blogpost = () => {
   const postId = useParams();
@@ -20,11 +21,13 @@ const Blogpost = () => {
   const postsCollectionRef = collection(db, "posts");
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef);
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setIsLoading(false);
     };
 
     getPosts();
@@ -66,12 +69,11 @@ const Blogpost = () => {
       .where("postId", "==", postId.blogname)
       .get();
     const commentsData = commentsQuerySnapshot.docs.map((doc) => doc.data());
+    console.log('commentsData:', commentsData);
     setComments(commentsData);
   };
 
-  useEffect(() => {
-    getComments();
-  }, []);
+
 
   const submitComment = async () => {
     // Validate if the newComment is not empty
@@ -96,10 +98,30 @@ const Blogpost = () => {
     setComments((prevComments) => [...prevComments, newCommentObject]);
   };
   
+  useEffect(() => {
+    const getComments = async () => {
+      // Retrieve comments from the database based on the postId
+      const commentsQuerySnapshot = await collection(db, "comments")
+        .where("postId", "==", postId.blogname)
+        .get();
+      const commentsData = commentsQuerySnapshot.docs.map((doc) => doc.data());
+      setComments(commentsData);
+    };
+  
+    getComments();
+  }, [postId]);
+  console.log('postId.blogname:', postId.blogname);
+getComments();
 
   const postInfo = postLists.find((x) => x.id === postId.blogname);
   const post = postInfo ? postInfo : null;
   return (
+    <div>
+      {isLoading ? (
+        <div className="centered">
+          <MoonLoader/>
+        </div>
+      ) : (
     <div className="blogpage">
       {post && (
         <>
@@ -191,6 +213,9 @@ const Blogpost = () => {
         theme="dark"
       />
     </div>
+      )}
+    </div>
+
   );
 };
 export default Blogpost;

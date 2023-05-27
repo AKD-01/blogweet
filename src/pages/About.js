@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./About.css";
-import PreLoadder from "./PreLoadder";
+import MoonLoader from "react-spinners/MoonLoader";
 
 const About = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,7 +17,7 @@ const About = () => {
       <div className="lodder"></div>
       {isLoading ? (
         <div className="centered">
-          <PreLoadder />
+          <MoonLoader/>
         </div>
       ) : (
         <div className="AboutPage">

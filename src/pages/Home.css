@@ -19,9 +19,8 @@ body {
 .centered {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  align-items: center;  
-  margin-right: 120px;
+  align-items: center;
+  height: 95vh;
 }
 
 .Link {
