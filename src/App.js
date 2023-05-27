@@ -1,8 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { signOut } from "firebase/auth";
-import { auth } from "./firebase-config";
+import {signUserAccountOut} from "./utils/firebase";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import CreatePost from "./pages/CreatePost";
@@ -12,12 +11,13 @@ import Blogpost from "./pages/Blogpost";
 import UserInfo from "./pages/UserInfo";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import NotFound404 from "./pages/NotFound404";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
   const signUserOut = () => {
-    signOut(auth).then(() => {
+    signUserAccountOut().then(() => {
       localStorage.clear();
       setIsAuth(false);
       window.location.pathname = "/login";
@@ -40,8 +40,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
 
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
-        <Route path="/:username" element={<UserInfo />} />
-        <Route path="/:username/:blogname" element={<Blogpost />} />
+        <Route path="/user/:username" element={<UserInfo />} />
+        <Route path="/user/:username/:blogname" element={<Blogpost />} />
+        <Route path="*" element={<NotFound404 />} />
       </Routes>
     </Router>
   );
