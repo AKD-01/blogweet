@@ -5,7 +5,8 @@ import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import PreLoadder from "./PreLoadder";
+import MoonLoader from "react-spinners/MoonLoader";
+
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
@@ -39,7 +40,7 @@ function Home({ isAuth }) {
     <div>
       {isLoading ? (
         <div className="centered">
-          <PreLoadder />
+          <MoonLoader/>
         </div>
       ) : (
         <div className="homePage">
