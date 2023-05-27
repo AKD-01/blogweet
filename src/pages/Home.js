@@ -30,7 +30,7 @@ function Home({ isAuth }) {
       const data = await getPostsFromDb();
       setPostList(data);
     };
-
+    
     getPosts();
   }, []);
   const navigate = useNavigate();
@@ -69,8 +69,11 @@ function Home({ isAuth }) {
                   <h1
                     className="title"
                     onClick={() => {
+                      
                       navigate(
-                        `/${post.author.name.replaceAll(" ", "-")}/${post.id}`,
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
+                        }`,
                         { state: post }
                       );
                     }}
@@ -100,7 +103,9 @@ function Home({ isAuth }) {
                   <button
                     onClick={() =>
                       sharingHandler(
-                        `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
+                        }`
                       )
                     }
                   >
@@ -137,7 +142,9 @@ function Home({ isAuth }) {
                     }}
                     onClick={() => {
                       navigate(
-                        `/${post.author.name.replaceAll(" ", "-")}/${post.id}`,
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
+                        }`,
                         { state: post }
                       );
                     }}
@@ -151,7 +158,7 @@ function Home({ isAuth }) {
                 <div
                   style={{ cursor: "pointer" }}
                   onClick={() => {
-                    navigate(`/${post.author.name.replaceAll(" ", "-")}`, {
+                    navigate(`/user/${post.author.name.replaceAll(" ", "-")}`, {
                       state: post.author,
                     });
                   }}
