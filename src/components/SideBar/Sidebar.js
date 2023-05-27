@@ -47,6 +47,12 @@ const Sidebar = ({ isAuth, signUserOut }) => {
             <span className="link_names">About</span>
           </Link>
         </li>
+        <li>
+          <Link to="/FeaturedPosts">
+          <i class='bx bxl-blogger'></i>
+            <span className="link_names">Featured Posts</span>
+          </Link>
+        </li>
         {isAuth && (
           <li onClick={toggleSidebar}>
             <Link to="/createpost">
