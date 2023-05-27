@@ -94,5 +94,8 @@ git push origin branch_name
 :point_right:Bonus Tip: If you are new to GitHub and using terminal does no suit you, then you can use <a href="https://desktop.github.com/">GitHub Desktop</a>. 
 
 
-
-
+## Contributors
+ <p align="center">
+  <a href="https://github.com/AKD-01/blogweet/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=AKD-01/blogweet" />
+</a></p>
