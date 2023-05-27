@@ -16,6 +16,10 @@ function CreatePost({ isAuth }) {
       return;
     }
     console.log(title, postText, image);
+    if (getWordCount(postText) < 20) {
+      alert("The post must contain at least 20 words.");
+      return;
+    } 
     await addPostToDb(title, postText, image);
     navigate("/");
   };
@@ -29,6 +33,10 @@ function CreatePost({ isAuth }) {
 
   const hanldleImageUpload = (e) => {
     setImage(e.target.value);
+  };
+
+  const getWordCount = (text) => {
+    return text.trim().split(/\s+/).length;
   };
 
   return (
