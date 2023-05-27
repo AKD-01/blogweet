@@ -20,6 +20,12 @@
 <br>
 BlogWeet is a user-friendly social media app for creating, posting, and sharing blogs. It provides a vibrant community for sharing and exploring new ideas and perspectives.
 
+## Table of Content
+
+- [Brief](#brief)
+- [Main Features](#main-features)
+- [Installation Guide](#install)
+- [Contribution Guide](#contribute)
 
 ## Brief
 BlogWeet is a social media app that allows users to create, post and share their blogs. It is a platform that encourages users to express their thoughts, opinions, and perspectives through written content, and engage with the content of others. The app is easy to use, and it is designed to be accessible to users of all ages and levels of technical expertise. Users can create their blogs and post their content with just a few clicks.
@@ -36,11 +42,12 @@ The app is a social media platform that allows users to create, post and share t
 ● Engaging community :
 The app creates a vibrant and dynamic community of users who are passionate about sharing and discovering new ideas and perspectives. Users can engage with the content of others by reading, sharing, and commenting on blog posts.
 
+<a name="install"></a>
+
  ## 🧰 Tech Stacks Used
 - **Frontend**:  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) <img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
 	
 - **Backend**:   ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
-
 
 <h2>:arrow_right:Installation Guide:</h2>
 ✴️ First, fork the repository (Click the <b><b>Fork</b></b> button in the top right corner of the page).
@@ -77,7 +84,7 @@ git push origin branch_name
 
 ✴️ Star ⭐ this repository if you liked it and you can also follow me 👀 .
 
-
+<a name="contribute"></a>
 <h2>:arrow_right:Contribution Guide:</h2>
 :point_right:You must fork the repo.      
 

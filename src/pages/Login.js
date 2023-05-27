@@ -26,7 +26,9 @@ function Login({ setIsAuth }) {
 
   return (
     <div className="loginPage">
-      <p>Enter into BlogWeet</p>
+      <p className="lg-hd">Choose an account</p>
+      <p className="lg-shd">to continue to <span className="clr-hd">blogweet</span> </p>
+      
       <LoginButton
         label="Continue With Google"
         alt="Google"
