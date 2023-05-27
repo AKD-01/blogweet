@@ -16,12 +16,11 @@ import NotFound404 from "./pages/NotFound404";
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
-  const signUserOut = () => {
-    signUserAccountOut().then(() => {
-      localStorage.clear();
-      setIsAuth(false);
-      window.location.pathname = "/login";
-    });
+  const signUserOut = async () => {
+    await signUserAccountOut();
+    localStorage.clear();
+    setIsAuth(false);
+    window.location.pathname = "/login";
   };
   let width = 1000;
 
