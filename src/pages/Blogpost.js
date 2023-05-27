@@ -1,6 +1,6 @@
 import { getPostsFromDb } from "../utils/firebase";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "./pages.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,8 +12,17 @@ const Blogpost = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(true);
+  const [post, setPost] = useState();
+  const navigate = useNavigate();
+  useEffect(() => {
+    console.log(postId.blogname);
     const getPosts = async () => {
       const data = await getPostsFromDb();
+      const postInfo = data.filter((x) => x.id === postId.blogname)[0];
+      if (!postInfo) {
+        navigate("/404");
+      }
+      setPost(Array.of(postInfo)[0]);
       setPostList(data);
       setLoading(false);
     };
@@ -26,9 +35,9 @@ const Blogpost = () => {
     navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`);
     toast(`Your link has been pasted to your Clipboard. Enjoy!`);
   };
-  const postInfo = postLists.filter((x) => x.id === postId.blogname)[0];
-  console.log(Array.of(postInfo)[0]);
-  const post = Array.of(postInfo)[0];
+  // const postInfo = postLists.filter((x) => x.id === postId.blogname)[0];
+  // console.log(Array.of(postInfo)[0]);
+  // const post = Array.of(postInfo)[0];
   return (
     <div className="blogpage">
       {loading && <Loader />}
