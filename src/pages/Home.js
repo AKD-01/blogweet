@@ -8,6 +8,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import Loader from "../components/Loader";
+
+function Home({ isAuth }) {
+  const [postLists, setPostList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const deletePost = async (id) => {
+    await deletePostFromDb(id);
+    window.location.reload();
+  };
 import Edit from "../model_overlays/Edit";
 
 function Home({ isAuth }) {
@@ -52,9 +61,11 @@ function Home({ isAuth }) {
   // };
   // postLists.push(DUMMY_POST);
   useEffect(() => {
+    setLoading(true);
     const getPosts = async () => {
       const data = await getPostsFromDb();
       setPostList(data);
+      setLoading(false);
     };
     
     getPosts();
@@ -91,6 +102,7 @@ function Home({ isAuth }) {
       { editOverlay && <Edit id={id} title={titleValue} description={desciptionValue} image={imageValue} onConfirm={confirmHandler} />}
 
       <div className="homePage">
+        {loading && <Loader />}
 
         <ToastContainer
           position="top-center"

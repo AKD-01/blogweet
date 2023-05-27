@@ -4,10 +4,14 @@ import { useParams, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "./pages.css";
 import "react-toastify/dist/ReactToastify.css";
+import Loader from "../components/Loader";
 
 const Blogpost = () => {
   const postId = useParams();
   const [postLists, setPostList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(true);
   const [post, setPost] = useState();
   const navigate = useNavigate();
   useEffect(() => {
@@ -20,6 +24,7 @@ const Blogpost = () => {
       }
       setPost(Array.of(postInfo)[0]);
       setPostList(data);
+      setLoading(false);
     };
 
     getPosts();
@@ -35,6 +40,7 @@ const Blogpost = () => {
   // const post = Array.of(postInfo)[0];
   return (
     <div className="blogpage">
+      {loading && <Loader />}
       {post && (
         <>
           <div className="blogtitle">
