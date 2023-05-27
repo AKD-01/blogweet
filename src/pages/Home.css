@@ -1,0 +1,144 @@
+.post h3 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-align: right;
+  color: rgb(24, 8, 95);
+}
+
+.post {
+  transition: transform 0.3s ease-out;
+  display: inline-block;
+}
+
+.post:hover {
+  transform: scale(1.03);
+  box-shadow: 0 13px 40px -5px hsla(240, 30.1%, 28%, 0.12),
+    0 8px 32px -8px hsla(0, 0%, 0%, 0.14),
+    0 -6px 32px -6px hsla(0, 0%, 0%, 0.02);
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform 0.3s ease-out 0s;
+    background: rgba(255, 255, 255, 0.059);
+    content: '';
+    pointer-events: none;
+  }
+}
+
+.blogcredits {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Link {
+  text-decoration: inherit;
+}
+
+.title {
+  filter: drop-shadow(2px 4px 6px white);
+  color: #110c22;
+  font-weight: normal;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.title:hover {
+  color: #2d0e36;
+  filter: drop-shadow(1rem 1rem 1rem black);
+}
+
+.imageCont {
+  text-align: left;
+  width: 45%;
+  margin: 1rem;
+}
+
+.imageCont img {
+  height: 8rem;
+  padding: 0.2rem;
+  border: ridge;
+}
+
+.contents {
+  display: flex;
+}
+
+.deletePost {
+  display: flex;
+}
+
+@media screen and (min-width: 600px) and (max-width: 740px) {
+  .contents {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 740px) and (max-width: 800px) {
+  .contents {
+    gap: 1.2rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  .imageCont img {
+    width: 8rem;
+    height: auto;
+    padding: 0.2rem;
+    border: ridge;
+  }
+
+  .imageCont {
+    font-size: 0.5rem;
+    text-align: left;
+    width: 45%;
+    margin: 0.5rem;
+  }
+
+  .blogcredits {
+    color: #110c22;
+  }
+
+  .blogContent p {
+    color: #110c22;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
+.scrollToTopBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  opacity: 0.7;
+  transition: bottom 0.3s;
+}
+
+.scrollToTopBtn:hover {
+  opacity: 1;
+  bottom: 46px;
+}

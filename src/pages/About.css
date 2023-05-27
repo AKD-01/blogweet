@@ -1,0 +1,26 @@
+.AboutPage {
+  margin-left: 250px;
+}
+.AboutPage i {
+  font-size: 3rem;
+  color: black;
+  filter: drop-shadow(1rem 1rem 1rem yellow);
+}
+.AboutPage span {
+  font-size: 3rem;
+  color: black;
+  filter: drop-shadow(1rem 1rem 1rem yellow);
+}
+.AboutPage i:hover,
+.p {
+  padding: 2rem;
+}
+.social {
+  margin-top: 10%;
+  text-align: center;
+}
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  .AboutPage {
+    margin-left: 2.5rem;
+  }
+}

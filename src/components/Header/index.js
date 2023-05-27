@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import styles from '../../styles/components/header.module.scss'
+import { useLocation } from 'react-router-dom'
 
 export function Header({ headerShouldBeLarge, isAuth, signUserOut }) {
+  const location = useLocation()
+
   // toggle for showing menu
   const [showMenu, setShowMenu] = useState(false)
 
@@ -21,6 +24,11 @@ export function Header({ headerShouldBeLarge, isAuth, signUserOut }) {
 
       return !value
     })
+
+  // only show header in createpost screen
+  if (location.pathname !== '/createpost') {
+    return null
+  }
 
   return (
     <header className={styles.headerRoot}>

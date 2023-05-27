@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { getPostsFromDb, deletePostFromDb } from '../utils/firebase'
 import { auth } from '../utils/firebase'
-import styles from '../styles/pages/home.module.scss'
+import './Home.css'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -29,7 +29,6 @@ function Home({ isAuth }) {
     const getPosts = async () => {
       const data = await getPostsFromDb()
       setPostList(data)
-      console.log(data)
     }
 
     getPosts()
@@ -59,104 +58,6 @@ function Home({ isAuth }) {
   }, [])
 
   return (
-    <div className={styles.homeRoot}>
-      <div className={styles.homeContainer}>
-        {postLists.map(post => {
-          return (
-            <div
-              className={styles.postCard}
-              key={post.id}
-              onClick={() => {
-                navigate(
-                  `/${post.author.name.replaceAll(' ', '-')}/${post.id}`,
-                  { state: post },
-                )
-              }}>
-              <div className={styles.postLeft}>
-                <img src={post.image} />
-              </div>
-
-              <div className={styles.postRight}>
-                <p className={styles.title}>{post.title}</p>
-
-                <p className={styles.desc}>
-                  {/* we should show 120 characters only... 200 seems very long */}
-                  {post.postText.substr(
-                    0,
-                    Math.min(post.postText.length, 120),
-                  ) + '...'}
-                </p>
-
-                <p
-                  className={styles.authorAndDate}
-                  style={{ cursor: 'pointer' }}
-                  onClick={e => {
-                    e.stopPropagation() // will not send click event to parents
-
-                    navigate(`/${post.author.name.replaceAll(' ', '-')}`, {
-                      state: post.author,
-                    })
-                  }}>
-                  Published by <span>{post.author.name}</span> on {post.date}
-                </p>
-
-                <div className={styles.actions}>
-                  {isAuth &&
-                    auth.currentUser != null &&
-                    post.author.id === auth.currentUser.uid && (
-                      <i
-                        onClick={e => {
-                          e.stopPropagation() // will not send click event to parents
-
-                          deletePost(post.id)
-                        }}
-                        className="bx bxs-message-square-x"></i>
-                    )}
-
-                  <i
-                    className="bx bxs-share-alt"
-                    onClick={e => {
-                      e.stopPropagation() // will not send click event to parents
-
-                      sharingHandler(
-                        `/${post.author.name.replaceAll(' ', '-')}/${post.id}`,
-                      )
-                    }}></i>
-                </div>
-              </div>
-            </div>
-          )
-        })}
-      </div>
-
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
-
-      {/* Scroll-to-top button */}
-      {showScrollToTop && (
-        <button
-          className={styles.gotoTopBtn}
-          onClick={() => {
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-          }}
-          title="Scroll to top">
-          <FontAwesomeIcon icon={faArrowUp} />
-        </button>
-      )}
-    </div>
-  )
-
-  return (
     <>
       <div className="homePage">
         {postLists.map(post => {
@@ -165,11 +66,58 @@ function Home({ isAuth }) {
             <div className="post" key={post.id}>
               <div className="postHeader">
                 <div>
-                  <h1 className="title" onClick={() => {}}>
+                  <h1
+                    className="title"
+                    onClick={() => {
+                      navigate(
+                        `/user/${post.author.name.replaceAll(' ', '-')}/${
+                          post.id
+                        }`,
+                        { state: post },
+                      )
+                    }}>
                     {' '}
                     {post.title}
                   </h1>
                   {/* </Link> */}
+                </div>
+
+                <div className="deletePost">
+                  {isAuth &&
+                    auth.currentUser != null &&
+                    post.author.id === auth.currentUser.uid && (
+                      <button
+                        onClick={() => {
+                          const confirmed = window.confirm(
+                            'Are you sure you want to delete this post?',
+                          )
+                          if (confirmed) {
+                            deletePost(post.id)
+                          }
+                        }}>
+                        {' '}
+                        <i
+                          className="bx bxs-message-square-x"
+                          style={{ color: '#600505' }}></i>
+                      </button>
+                    )}
+                  <button
+                    onClick={() =>
+                      sharingHandler(
+                        `/user/${post.author.name.replaceAll(' ', '-')}/${
+                          post.id
+                        }`,
+                      )
+                    }>
+                    <i
+                      className="bx bxs-share-alt"
+                      style={{
+                        color: 'rgb(255, 255, 255)',
+                        boxShadow: ' 1px 1px 1rem black',
+                        borderRadius: '1rem',
+                        background: ' black',
+                      }}></i>
+                  </button>
                 </div>
               </div>
               <div className="contents">
@@ -193,7 +141,9 @@ function Home({ isAuth }) {
                     }}
                     onClick={() => {
                       navigate(
-                        `/${post.author.name.replaceAll(' ', '-')}/${post.id}`,
+                        `/user/${post.author.name.replaceAll(' ', '-')}/${
+                          post.id
+                        }`,
                         { state: post },
                       )
                     }}>
@@ -206,17 +156,52 @@ function Home({ isAuth }) {
                 <div
                   style={{ cursor: 'pointer' }}
                   onClick={() => {
-                    navigate(`/${post.author.name.replaceAll(' ', '-')}`, {
+                    navigate(`/user/${post.author.name.replaceAll(' ', '-')}`, {
                       state: post.author,
                     })
                   }}>
                   👤{post.author.name}
                 </div>
               </h3>
+              <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+              />
             </div>
           )
         })}
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+      {/* Scroll-to-top button */}
+      {showScrollToTop && (
+        <button
+          className="scrollToTopBtn"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          }}
+          title="Scroll to top">
+          <FontAwesomeIcon icon={faArrowUp} />
+        </button>
+      )}
     </>
   )
 }
