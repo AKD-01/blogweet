@@ -6,7 +6,8 @@ function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [image, setImage] = useState("");
-
+  const maxTitleLength=20;
+  const [isInvalid,setIsInvalid]=useState(false)
  
   let navigate = useNavigate();
 
@@ -31,6 +32,14 @@ function CreatePost({ isAuth }) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleTitleChange=(e)=>{
+    if(e.target.value.length<=maxTitleLength){
+      setTitle(e.target.value);
+    }else{
+      setIsInvalid(true)
+    }
+  }
+
   const hanldleImageUpload = (e) => {
     setImage(e.target.value);
   };
@@ -48,8 +57,16 @@ function CreatePost({ isAuth }) {
           <input
             placeholder="Title..."
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            style={{borderColor:isInvalid?"red":""}}
+            onChange={(e) =>{
+              handleTitleChange(e)
+            } }
           />
+          {
+            maxTitleLength- title.length===0? <p style={{color:"red"}}>You have reached maximum number of characters</p>
+            : (<p>{maxTitleLength- title.length} character(s) remaining</p>)
+          }
+          
         </div>
         <div className="inputGp">
           <label> Post:</label>
