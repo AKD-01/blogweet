@@ -37,7 +37,7 @@ function Home({ isAuth }) {
   const sharingHandler = (s) => {
     // console.log(`https://blogweet.vercel.app${s}`);
     navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`);
-    toast.success(`Your link has been pasted to your Clipboard. Enjoy!`);
+    toast.succ(`Your link has been pasted to your Clipboard. Enjoy!`);
   };
 
   const [showScrollToTop, setShowScrollToTop] = useState(false);
