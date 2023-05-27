@@ -74,7 +74,7 @@ git checkout -b branch_name
 
 ```markdown
 git add .
-git commit -m 'Your message'
+git commit -m "Your message"
 git push origin branch_name
 ```
 
