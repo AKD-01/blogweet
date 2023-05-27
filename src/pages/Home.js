@@ -8,13 +8,39 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import Edit from "../model_overlays/Edit";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
-  const deletePost = async (id) => {
-    await deletePostFromDb(id);
-    window.location.reload();
-  };
+  const deletePost = (id) => {
+    toast(`Your post deleted succesfully`);
+    const deleteThePost = async (id) => {
+      await deletePostFromDb(id);
+      const updatedPostList = postLists.filter((post) => post.id !== id);
+      setPostList(updatedPostList);
+    };
+    deleteThePost(id);
+  }
+
+  const [editOverlay,setEditOverlay] = useState(false);
+
+  const [id,setIdValue]=useState('');
+  const [titleValue,setTitleValue]=useState('');
+  const [desciptionValue,setDesciptionValue]=useState('');
+  const [imageValue,setImageValue]=useState('');
+
+  const edit =(id,blogTitle,blogPostText,blogPostImage)=>{
+    setIdValue(id);
+    setTitleValue(blogTitle);
+    setDesciptionValue(blogPostText);
+    setImageValue(blogPostImage);
+    setEditOverlay(true);
+    //console.log(blogTitle);
+  }
+
+  const confirmHandler = ()=>{
+    setEditOverlay(false);
+  }
 
   // const DUMMY_POST = {
   //   id: `id:${Math.random()}`,
@@ -30,14 +56,14 @@ function Home({ isAuth }) {
       const data = await getPostsFromDb();
       setPostList(data);
     };
-
+    
     getPosts();
-  }, []);
+  }, [editOverlay]);
   const navigate = useNavigate();
   const sharingHandler = (s) => {
     // console.log(`https://blogweet.vercel.app${s}`);
     navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`);
-    toast(`Your link has been pasted to your Clipboard. Enjoy!`);
+    toast.success(`Your link has been pasted to your Clipboard. Enjoy!`);
   };
 
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -59,7 +85,26 @@ function Home({ isAuth }) {
 
   return (
     <>
+
+    {/* {error && <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler} />} */}
+
+      { editOverlay && <Edit id={id} title={titleValue} description={desciptionValue} image={imageValue} onConfirm={confirmHandler} />}
+
       <div className="homePage">
+
+        <ToastContainer
+          position="top-center"
+          autoClose={2500}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
+
         {postLists.map((post) => {
           // console.log(post);
           return (
@@ -69,8 +114,11 @@ function Home({ isAuth }) {
                   <h1
                     className="title"
                     onClick={() => {
+                      
                       navigate(
-                        `/${post.author.name.replaceAll(" ", "-")}/${post.id}`,
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
+                        }`,
                         { state: post }
                       );
                     }}
@@ -81,13 +129,17 @@ function Home({ isAuth }) {
                   {/* </Link> */}
                 </div>
 
+
                 <div className="deletePost">
                   {isAuth &&
                     auth.currentUser != null &&
                     post.author.id === auth.currentUser.uid && (
                       <button
                         onClick={() => {
-                          deletePost(post.id);
+                          const confirmed = window.confirm("Are you sure you want to delete this post?");
+                          if (confirmed) {
+                              deletePost(post.id);
+                            }
                         }}
                       >
                         {" "}
@@ -97,10 +149,29 @@ function Home({ isAuth }) {
                         ></i>
                       </button>
                     )}
+                    {/* edit post code */}
+                    {isAuth &&
+                    auth.currentUser != null &&
+                    post.author.id === auth.currentUser.uid && (
+                      <button
+                        onClick={() => {
+                          edit(post.id ,post.title,post.postText,post.image);
+                        }}
+                      >
+                        {" "}
+                        <i
+                          className="bx bxs-pencil edit-icon"
+                          style={{ color: "darkblue" }}
+                        ></i>
+                      </button>
+                    )}
+
                   <button
                     onClick={() =>
                       sharingHandler(
-                        `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
+                        }`
                       )
                     }
                   >
@@ -137,7 +208,9 @@ function Home({ isAuth }) {
                     }}
                     onClick={() => {
                       navigate(
-                        `/${post.author.name.replaceAll(" ", "-")}/${post.id}`,
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
+                        }`,
                         { state: post }
                       );
                     }}
@@ -151,7 +224,7 @@ function Home({ isAuth }) {
                 <div
                   style={{ cursor: "pointer" }}
                   onClick={() => {
-                    navigate(`/${post.author.name.replaceAll(" ", "-")}`, {
+                    navigate(`/user/${post.author.name.replaceAll(" ", "-")}`, {
                       state: post.author,
                     });
                   }}
@@ -159,22 +232,23 @@ function Home({ isAuth }) {
                   👤{post.author.name}
                 </div>
               </h3>
-              <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
-              />
+
             </div>
           );
         })}
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       {/* Scroll-to-top button */}
       {showScrollToTop && (
         <button
