@@ -190,7 +190,9 @@ function Home({ isAuth }) {
           }}
           title="Scroll to top"
         >
-          <FontAwesomeIcon icon={faArrowUp} />
+          <div className="scrollElement">
+            <FontAwesomeIcon icon={faArrowUp} />
+          </div>
         </button>
       )}
     </>

@@ -95,10 +95,11 @@ body {
 /* Expading animations */
 .expandElement {
   transition: transform 0.3s ease-out;
+  color: black;
 }
 
 .expandElement:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 /* Expading animations */
 
@@ -174,7 +175,7 @@ body {
   width: 42px;
   height: 42px;
   border: none;
-  border-radius: 50%;
+  border-radius: 100%;
   background-color: #333;
   color: #fff;
   font-size: 16px;
@@ -183,6 +184,13 @@ body {
   opacity: 0.7;
   transition: bottom 0.3s;
 
+}
+.scrollElement{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .scrollToTopBtn:hover {
