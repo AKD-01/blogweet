@@ -18,26 +18,20 @@ export const findLinks = (caption) => {
 }
 
 // Function to validate a link
-export const checkLinkValidity = (link) => {
+export const checkLinkValidity = async(link) => {
    const valid = isLink(link);
-   console.log('valid:', valid);
    if (valid === false) {
-     console.log('Link is invalid!');
      return Promise.resolve({ validUrl: null });
    } else {
      return fetch(link)
        .then((response) => {
-         console.log(response);
          if (response?.ok === true) {
-           console.log('Return True');
            return { validUrl: response?.url };
          } else {
-           console.log('Link is broken!');
            return { validUrl: null };
          }
        })
        .catch((error) => {
-         console.log('Error:', error);
          return { validUrl: null };
        });
    }

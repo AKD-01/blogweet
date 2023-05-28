@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {signUserAccountOut} from "./utils/firebase";
+import { signUserAccountOut } from "./utils/firebase";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import CreatePost from "./pages/CreatePost";
@@ -28,10 +28,10 @@ function App() {
 
   return (
     <Router>
-      {width < 500 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
-      {width > 500 && (
+      {/* {width < 786 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />} */}
+      {/* {width > 786 && (
         <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
-      )}
+      )} */}
       <Routes>
         <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
