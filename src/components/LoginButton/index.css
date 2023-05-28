@@ -1,16 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 /* CSS */
 .button-57 {
-    margin: 1rem;
+  margin-top:10px;
+  margin-bottom:3%;  
   position: relative;
   overflow: hidden;
   border: 1px solid #18181a;
   border: none;
-  color: #18181a;
+  color: #eff4f0;
   display: inline-block;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 15px;
-  padding: 1rem ;
+  padding: 12px ;
   border-radius: .5rem;
   text-decoration: none;
   cursor: pointer;
@@ -21,7 +22,7 @@
   width: 300px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-size: 1.25rem;
+ 
 }
 
 .button-57 span:first-child {

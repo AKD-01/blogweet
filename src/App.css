@@ -170,7 +170,8 @@ textarea {
 }
 
 .loginPage {
-  box-shadow: 1px 1px 1rem #fff;
+  
+  
   border-radius: 1rem;
   background: #11101de6;
   color: wheat;
@@ -182,7 +183,7 @@ textarea {
   height: calc(70vh - 80px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-family: "Poppins";
 }
@@ -196,11 +197,12 @@ textarea {
 .loginPage p {
   font-size: 30px;
   color: wheat;
-  margin-bottom: 4rem;
+  
 }
 
 /* GOOGLE BUTTON */
 .login-with-google-btn {
+  border:1px solid wheat;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
   padding: 5px 16px 12px 42px;

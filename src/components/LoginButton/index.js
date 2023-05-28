@@ -7,15 +7,14 @@ const LoginButton = (props) => {
   };
   return (
     
-    <button 
-    className="button-57"
-    style={{ backgroundColor: `${props.bgColor}` }}
-    onClick={SignInHandler}
+    <button
+      className="button-57"
+      style={{ backgroundColor: `${props.bgColor}` }}
+      onClick={SignInHandler}
     >
-      
-      <span className="text" style={{ display: "flex" }}>
-        <i className={props.image} style={{ color: "#18181a" }} />
-        <div style={{ marginTop: ".15rem", marginLeft: ".5rem" }}>
+      <span className="text" style={{ display: "flex" , justifyContent:'space-around'}}>
+        <i className={props.image} style={{ color: "#18181a",marginLeft:'.5rem',  marginTop: ".3rem"}} />
+        <div style={{ marginTop: ".3rem",marginRight:'1rem'}}>
           {props.label}
         </div>
       </span>
