@@ -8,12 +8,18 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+// eslint-disable-next-line
+import boxicons from 'boxicons';
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
   const deletePost = async (id) => {
+    toast.success("Post Deleted Successfully", {
+      autoClose: 1500,
+    });
     await deletePostFromDb(id);
-    window.location.reload();
+    const updatedPostList = postLists.filter(post => post.id !== id);
+    setPostList(updatedPostList);
   };
 
   // const DUMMY_POST = {
