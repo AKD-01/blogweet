@@ -370,10 +370,10 @@ textarea {
     /* word-wrap: break-word; */
     display: grid;
     height: 100px;
-    padding: .25rem;
+    padding: 0.25rem;
     width: 100%;
     overflow: hidden;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .loginPage p {
@@ -399,3 +399,76 @@ textarea {
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+/* making blog post responsive */
+/* media queries */
+@media (max-width: 768px) {
+  .cpContainer {
+    width: 60%;
+    height: auto;
+    padding: 20px;
+    background-color: #1d1b31;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 1.6rem;
+    margin-left: 15rem;
+  }
+
+  .inputImg img {
+    height: 4rem;
+    font-size: 0.9rem;
+    margin-left: 1%;
+    margin: auto; 
+    border: 1px dashed;
+    padding: 1rem; 
+  } 
+
+  .cpContainer h1 {
+    font-size: 3.5em;
+    text-align: center;
+  } 
+} 
+
+@media (max-width: 435px) and (min-width: 320px) {
+  .cpContainer {
+    width: 70%;
+    height: auto;
+    padding: 10px;
+    background-color: #1d1b31;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 1% 0 2% 15%;
+  }
+
+  .inputImg img {
+    height: 4rem;
+    font-size: 0.9rem;
+    margin-left: 1%;
+    margin: auto;
+     border: 1px dashed;
+    padding: 1rem;
+  }
+
+  .cpContainer h1 {
+    font-size: 2.5em;
+    text-align: center;
+  }
+
+  .cpContainer label {
+    font-size: 12px;
+  }
+}
+@media (max-width: 320px) {
+  .cpContainer h1 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .cpContainer label {
+    font-size: 10px;
+  }
+}
+

@@ -12,6 +12,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
   };
 
   return (
+  <>
     <div className={`SidebarOnDesktop active`}>
       <div className="logo_content">
         <div className="logo">
@@ -43,16 +44,10 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         </li>
         <li onClick={toggleSidebarOnDesktop}>
           <Link to="/about">
-            <i class='bx bxs-info-circle'></i>
+            <i class="bx bxs-info-circle"></i>
             <span className="link_names">About</span>
           </Link>
         </li>   
-        <li>
-          <Link to="/contact">
-            <i class='bx bxs-info-circle'></i>
-            <span className="link_names">Contact Us</span>
-          </Link>
-        </li>  
         {isAuth && (
           <li onClick={toggleSidebarOnDesktop}>
             <Link to="/createpost">
@@ -99,6 +94,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
