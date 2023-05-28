@@ -19,7 +19,7 @@ const Contact=()=>{
             </div>
                 <div>
                 <label htmlFor="message">Message:</label>
-                <textarea id="message" rows="6"></textarea>
+                <textarea id="message" rows="8"></textarea>
                 </div>
                 <button>Submit</button>
             </form>
