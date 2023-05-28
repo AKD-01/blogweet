@@ -311,6 +311,7 @@ textarea {
 }
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
+
   .homePage .post {
     width: 80vw;
     margin-left: -10rem;
@@ -319,6 +320,7 @@ textarea {
   .blogContent img {
     width: 75vw;
   }
+
   .card {
     width: 314px;
     height: 70vh;
@@ -330,6 +332,7 @@ textarea {
     margin-left: 5rem;
     position: relative;
   }
+
   .loginPage {
     height: calc(63vh - 80px);
     display: flex;
@@ -355,15 +358,28 @@ textarea {
   }
 
   .cpContainer {
-    width: 70%;
-    height: auto;
-    padding: 20px;
     background-color: #11101df2;
-    border-radius: 12px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    margin: 1.6rem;
+    margin-left: auto;
+  }
+
+  .cpContainer h1 {
+    font-size: 1.9rem;
+  }
+
+  .cpContainer label {
+    font-size: 20px;
+  }
+
+  .inputGp textarea {
+    width: 100%;
+  }
+
+  .inputImg .cont img {
+    height: 4rem;
+  }
+
+  .cpContainer button {
+    font-size: 14px;
   }
 
   .post .postTextContainer {
@@ -387,15 +403,15 @@ textarea {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #bfa5de; 
+  background: #bfa5de;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
