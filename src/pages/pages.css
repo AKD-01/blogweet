@@ -46,6 +46,11 @@ body {
   background-color: transparent;
 }
 
+button:hover{
+  background-color: transparent;
+  transform: scale(1.1);
+}
+
 .blogtitle {
   font-size: 3rem;
   filter: drop-shadow(1px 1rem 1rem white);
