@@ -27,6 +27,7 @@ function Home({ isAuth }) {
     };
 
     getPosts();
+    //eslint-disable-next-line
   }, []);
 
   const navigate = useNavigate();
