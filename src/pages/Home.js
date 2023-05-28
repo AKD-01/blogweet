@@ -27,7 +27,7 @@ function Home({ isAuth }) {
     };
 
     getPosts();
-    // eslint-disable-line react-hooks/exhaustive-deps
+    //eslint-disable-next-line
   }, []);
 
   const navigate = useNavigate();
