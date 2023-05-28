@@ -145,3 +145,15 @@ body {
 .scrollToTopBtn:hover {
   opacity: 1;
 }
+
+.shareButton{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  opacity: 0.7;
+}
+
+.shareButton:hover{
+  opacity: 1;
+}
