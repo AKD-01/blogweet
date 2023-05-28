@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { addDoc, collection } from "firebase/firestore";
-import { db, auth } from "../firebase-config";
+import { addPostToDb } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 
 function CreatePost({ isAuth }) {
@@ -8,23 +7,20 @@ function CreatePost({ isAuth }) {
   const [postText, setPostText] = useState("");
   const [image, setImage] = useState("");
 
-  const postsCollectionRef = collection(db, "posts");
+ 
   let navigate = useNavigate();
 
   const createPost = async () => {
-    //function adds the document to the database.
-    await addDoc(postsCollectionRef, {
-      title, //title: title
-      postText,
-      author: {
-        name: auth.currentUser.displayName,
-        id: auth.currentUser.uid,
-        email: auth.currentUser.email,
-        photoUrl: auth.currentUser.photoURL,
-      },
-      date: new Date().toJSON().slice(0, 10).replace(/-/g, "/"),
-      image,
-    });
+    if(!title || !postText || !image) {
+      alert("Please fill all the fields");
+      return;
+    }
+    console.log(title, postText, image);
+    if (getWordCount(postText) < 20) {
+      alert("The post must contain at least 20 words.");
+      return;
+    } 
+    await addPostToDb(title, postText, image);
     navigate("/");
   };
 
@@ -39,6 +35,10 @@ function CreatePost({ isAuth }) {
     setImage(e.target.value);
   };
 
+  const getWordCount = (text) => {
+    return text.trim().split(/\s+/).length;
+  };
+
   return (
     <div className="createPostPage">
       <div className="cpContainer">
@@ -47,29 +47,27 @@ function CreatePost({ isAuth }) {
           <label> Title:</label>
           <input
             placeholder="Title..."
-            onChange={(event) => {
-              setTitle(event.target.value);
-            }}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <div className="inputGp">
           <label> Post:</label>
           <textarea
             placeholder="Post..."
-            onChange={(event) => {
-              setPostText(event.target.value);
-            }}
+            value={postText}
+            onChange={(e) => setPostText(e.target.value)}
           />
         </div>
         <div className="inputImg">
           <label> Image Link</label>
           <div className="cont">
-            <input placeholder="https://" onChange={hanldleImageUpload} />
+            <input placeholder="https://"  onChange={hanldleImageUpload} />
             <img src={image} alt="Uploaded preview" />
           </div>
         </div>
 
-        <button onClick={createPost}> Submit Post </button>
+        <button  onClick={createPost}> Submit Post </button>
       </div>
     </div>
   );

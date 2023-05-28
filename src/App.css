@@ -258,7 +258,7 @@ textarea {
 }
 
 .homePage .post {
-  width: 90%;
+  width: 89%;
   height: auto;
   background-color: rgb(158, 155, 187);
   margin: 20px;
@@ -385,4 +385,23 @@ textarea {
   .loginPage p {
     font-size: 1.5rem;
   }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bfa5de; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
