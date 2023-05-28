@@ -8,6 +8,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+// eslint-disable-next-line
+import boxicons from 'boxicons';
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
