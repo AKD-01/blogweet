@@ -33,6 +33,7 @@ const Blogpost = () => {
   // const postInfo = postLists.filter((x) => x.id === postId.blogname)[0];
   // console.log(Array.of(postInfo)[0]);
   // const post = Array.of(postInfo)[0];
+  // const postImageMaskedURL = `https://images.weserv.nl/?url=${post.image}&output=webp`
   return (
     <div className="blogpage">
       {post && (
@@ -77,7 +78,7 @@ const Blogpost = () => {
           </div>
           <hr />
           <div className="blogContent">
-            <img src={post.image} alt={post.title} />
+            <img src={`${'https://images.weserv.nl/?output=webp&url='}${post.image}`} alt={post.title} />
             <p>{post.postText}</p>
           </div>
         </>

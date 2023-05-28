@@ -127,7 +127,7 @@ function Home({ isAuth }) {
               </div>
               <div className="contents">
                 <div className="imageCont">
-                  <img src={post.image} alt={post.title} />
+                  <img src={`${'https://images.weserv.nl/?output=webp&width=150px&url='}${post.image}`} alt={post.title} />
                 </div>
                 <div className="postTextContainer">
                   <div style={{ height: "70px", overflow: "hidden" }}>
