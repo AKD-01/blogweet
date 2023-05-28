@@ -182,7 +182,7 @@ textarea {
   height: calc(70vh - 80px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-family: "Poppins";
 }
@@ -196,7 +196,7 @@ textarea {
 .loginPage p {
   font-size: 30px;
   color: wheat;
-  margin-bottom: 4rem;
+  
 }
 
 /* GOOGLE BUTTON */
