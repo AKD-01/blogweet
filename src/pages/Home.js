@@ -30,14 +30,14 @@ function Home({ isAuth }) {
       const data = await getPostsFromDb();
       setPostList(data);
     };
-    
+
     getPosts();
   }, []);
   const navigate = useNavigate();
   const sharingHandler = (s) => {
     // console.log(`https://blogweet.vercel.app${s}`);
     navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`);
-    toast(`Your link has been pasted to your Clipboard. Enjoy!`);
+    toast.success(`Your link has been pasted to your Clipboard. Enjoy!`);
   };
 
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -69,7 +69,6 @@ function Home({ isAuth }) {
                   <h1
                     className="title"
                     onClick={() => {
-                      
                       navigate(
                         `/user/${post.author.name.replaceAll(" ", "-")}/${
                           post.id
@@ -90,10 +89,12 @@ function Home({ isAuth }) {
                     post.author.id === auth.currentUser.uid && (
                       <button
                         onClick={() => {
-                          const confirmed = window.confirm("Are you sure you want to delete this post?");
+                          const confirmed = window.confirm(
+                            "Are you sure you want to delete this post?"
+                          );
                           if (confirmed) {
-                              deletePost(post.id);
-                            }
+                            deletePost(post.id);
+                          }
                         }}
                       >
                         {" "}
@@ -169,18 +170,6 @@ function Home({ isAuth }) {
                   👤{post.author.name}
                 </div>
               </h3>
-              <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
-              />
             </div>
           );
         })}
