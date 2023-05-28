@@ -1,20 +1,48 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { getPostsFromDb, deletePostFromDb } from "../utils/firebase";
-import { auth } from "../utils/firebase";
+import { auth, db } from "../utils/firebase";
+
 import "./Home.css";
+import { doc, updateDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import Modal from "react-modal";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedPost, setSelectedPost] = useState(null);
   const deletePost = async (id) => {
     await deletePostFromDb(id);
     window.location.reload();
   };
+
+  const openEditModal = (post) => {
+    setSelectedPost(post);
+    setShowModal(true);
+  };
+
+  const closeEditModal = () => {
+    setShowModal(false);
+  };
+
+  const handleModalSubmit = async () => {
+    if (selectedPost) {
+      const postDoc = doc(db, "posts", selectedPost.id);
+      const updatedPostContent = document.getElementById("editedContent").value;
+      if (updatedPostContent) {
+        await updateDoc(postDoc, { postText: updatedPostContent });
+        toast.success("Post updated successfully!");
+        closeEditModal();
+        window.location.reload();
+      }
+    }
+  };
+
 
   // const DUMMY_POST = {
   //   id: `id:${Math.random()}`,
@@ -70,8 +98,7 @@ function Home({ isAuth }) {
                     className="title"
                     onClick={() => {
                       navigate(
-                        `/user/${post.author.name.replaceAll(" ", "-")}/${
-                          post.id
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
                         }`,
                         { state: post }
                       );
@@ -107,8 +134,7 @@ function Home({ isAuth }) {
                   <button
                     onClick={() =>
                       sharingHandler(
-                        `/user/${post.author.name.replaceAll(" ", "-")}/${
-                          post.id
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
                         }`
                       )
                     }
@@ -123,6 +149,17 @@ function Home({ isAuth }) {
                       }}
                     ></i>
                   </button>
+                  {isAuth &&
+                    auth.currentUser != null &&
+                    post.author.id === auth.currentUser.uid && (
+                      <button onClick={() => openEditModal(post)}>
+                        <i
+                          className="bx bxs-pencil"
+                          style={{ color: "#000000" }}
+                        ></i>
+                      </button>
+                    )}
+
                 </div>
               </div>
               <div className="contents">
@@ -146,8 +183,7 @@ function Home({ isAuth }) {
                     }}
                     onClick={() => {
                       navigate(
-                        `/user/${post.author.name.replaceAll(" ", "-")}/${
-                          post.id
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
                         }`,
                         { state: post }
                       );
@@ -198,6 +234,33 @@ function Home({ isAuth }) {
           <FontAwesomeIcon icon={faArrowUp} />
         </button>
       )}
+
+      <Modal
+        isOpen={showModal}
+        onRequestClose={closeEditModal}
+        contentLabel="Edit Post Modal"
+        style={{ overlay: { background: "transparent" }, content: { color: "#fff" } }}>
+        <div style={{ height: "100%", background: "#1D1B31", padding: "20px"}}>
+          <h2 className="edit-heading">Edit Your Post</h2>
+          {selectedPost && (
+            <div>
+              <label htmlFor="editedContent" className="edit-label">Update your content:</label>
+              <textarea
+                id="editedContent"
+                defaultValue={selectedPost.postText}
+                rows="10"
+                className="edit-textarea"
+              ></textarea>
+
+            </div>
+          )}
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <button onClick={handleModalSubmit} className="button">Submit</button>
+            <button onClick={closeEditModal} className="button buttonGap">Back</button>
+          </div>
+        </div>
+
+      </Modal>
     </>
   );
 }
