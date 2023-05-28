@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUp, faSquareShareNodes } from "@fortawesome/free-solid-svg-icons";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
@@ -104,7 +104,7 @@ function Home({ isAuth }) {
                         ></i>
                       </button>
                     )}
-                  <button
+                  <button className="shareButton" 
                     onClick={() =>
                       sharingHandler(
                         `/user/${post.author.name.replaceAll(" ", "-")}/${
@@ -113,7 +113,7 @@ function Home({ isAuth }) {
                       )
                     }
                   >
-                    <i
+                    {/* <i
                       className="bx bxs-share-alt"
                       style={{
                         color: "rgb(255, 255, 255)",
@@ -121,7 +121,8 @@ function Home({ isAuth }) {
                         borderRadius: "1rem",
                         background: " black",
                       }}
-                    ></i>
+                    ></i> */}
+                    <FontAwesomeIcon icon={faSquareShareNodes} />
                   </button>
                 </div>
               </div>
