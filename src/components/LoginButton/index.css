@@ -76,3 +76,19 @@
   font-size: 1.1rem;
 }
 }
+.lg-hd{
+  color: rgb(241, 142, 14);
+  padding: 0;
+  margin: 0;
+  font-size: 2.7em!important;
+  /* position: relative; */
+}
+.lg-shd{
+  padding: 0;
+  margin: -50px;
+  font-size: 1.2em!important;
+  /* position: absolute; */
+}
+.clr-hd{
+  color:rgb(12, 174, 12);
+}

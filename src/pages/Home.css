@@ -18,10 +18,25 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.post:hover {
-  transform: scale(1.01);
+
+.post:hover{
+  transform: scale(1.03);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
+    &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform .3s ease-out 0s;
+    background: rgba(255, 255, 255, 0.059);
+    content: '';
+    pointer-events: none;
+  }
 }
+
 
 .blogcredits {
   display: flex;
@@ -154,10 +169,10 @@ body {
 }
 .scrollToTopBtn {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
+  bottom: 40px;
+  right: 10px;
+  width: 42px;
+  height: 42px;
   border: none;
   border-radius: 50%;
   background-color: #333;
@@ -166,8 +181,12 @@ body {
   cursor: pointer;
   transition: opacity 0.3s;
   opacity: 0.7;
+  transition: bottom 0.3s;
+
 }
 
 .scrollToTopBtn:hover {
   opacity: 1;
+  bottom: 46px;
+
 }
