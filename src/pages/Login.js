@@ -1,34 +1,30 @@
 import React from "react";
+import { auth, provider } from "../firebase-config";
+import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { signInWithGooglePopup, signInWithGithubPopup } from "../utils/firebase";
 import LoginButton from "../components/LoginButton";
 
 function Login({ setIsAuth }) {
   let navigate = useNavigate();
 
-  const signInWithGoogle = async () => {
-    const response = await signInWithGooglePopup();
-    if (response) {
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, provider).then((result) => {
       localStorage.setItem("isAuth", true);
       setIsAuth(true);
       navigate("/");
-    }
+    });
   };
-
-  const signInWithGithub = async () => {
-    const response = await signInWithGithubPopup();
-    if (response) {
+  const signInWithGithub = () => {
+    signInWithPopup(auth, new GithubAuthProvider()).then((result) => {
       localStorage.setItem("isAuth", true);
       setIsAuth(true);
       navigate("/");
-    }
+    });
   };
 
   return (
     <div className="loginPage">
-      <p className="lg-hd">Choose an account</p>
-      <p className="lg-shd">to continue to <span className="clr-hd">blogweet</span> </p>
-      
+      <p>Enter into BlogWeet</p>
       <LoginButton
         label="Continue With Google"
         alt="Google"
