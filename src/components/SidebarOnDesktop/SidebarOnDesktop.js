@@ -23,7 +23,9 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
               marginTop: ".5rem",
             }}
           >
-            <b>BLOGWEET</b>
+            <Link to="/">
+              <b>BLOGWEET</b>
+            </Link>
           </div>
         </div>
         <i
@@ -43,16 +45,16 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         </li>
         <li onClick={toggleSidebarOnDesktop}>
           <Link to="/about">
-            <i class='bx bxs-info-circle'></i>
+            <i class="bx bxs-info-circle"></i>
             <span className="link_names">About</span>
           </Link>
-        </li>   
+        </li>
         <li>
           <Link to="/contact">
-            <i class='bx bxs-info-circle'></i>
+            <i class="bx bxs-info-circle"></i>
             <span className="link_names">Contact Us</span>
           </Link>
-        </li>  
+        </li>
         {isAuth && (
           <li onClick={toggleSidebarOnDesktop}>
             <Link to="/createpost">
