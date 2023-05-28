@@ -250,9 +250,9 @@ body {
   cursor: pointer;
 }
 
-/* .SidebarOnDesktop .profile #log_out {
+.SidebarOnDesktop .profile #log_out {
   left: 88%;
-} */
+}
 
 .home_content {
   position: absolute;
