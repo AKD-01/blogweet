@@ -1,4 +1,4 @@
-.AboutPage{
+/* .AboutPage{
     margin-left: 250px;
 }
 h1{
@@ -30,4 +30,72 @@ p{
     .AboutPage{
       margin-left: 2.5rem;
     }
+}   */
+
+.AboutPage{
+    margin-left: 250px;
+}
+.aboutbg{
+    background-color: #f8e9f6f5;
+    padding: 5px;
+    border-radius: 30px;
+    /* height:37rem; */
+    height: auto;
+    width:72.5rem;
+}
+
+.aboutbg p{
+    text-align: left;
+}
+
+h1{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+}
+.AboutPage i{
+    font-size: 3rem;
+    color: black;
+    filter: drop-shadow(1rem 1rem 1rem yellow);
+}
+.AboutPage span{
+    font-size: 3rem; 
+    color: black;
+    filter: drop-shadow(1rem 1rem 1rem yellow);
+}
+.AboutPage i:hover, span:hover{
+    filter: drop-shadow(1rem 1rem 1rem blue);
+}
+p{
+    display: flex;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+.social{
+    margin-top: 10%;
+    text-align: center;
+}
+@media screen and (min-width: 300px) and (max-width: 600px) {
+    .AboutPage{
+      margin-left: 2.5rem;
+    }
+    .aboutbg {
+        /* height: 55rem; */
+        height: auto;
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Add this line to hide overflowing content */
+      }
+      .aboutbg p {
+        padding: 1rem;
+        flex-grow: 1; /* Add this line to make paragraphs fill the available space */
+      }
+    
+    
 }  
