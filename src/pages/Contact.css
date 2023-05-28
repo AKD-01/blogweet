@@ -44,7 +44,7 @@ textarea {
   width: 35%;
 }
 
-button {
+.cbutton {
   padding: 12px 25px;
   background-color: #d65f30;
   color: white;
@@ -55,7 +55,7 @@ button {
   /* margin-left: 200px; */
 }
 
-button:hover {
+.cbutton:hover {
   background-color: #45a049;
 }
 
