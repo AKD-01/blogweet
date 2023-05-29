@@ -28,18 +28,18 @@ export const signUserAccountOut = () => signOut(auth);
 const postsCollectionRef = collection(db, "posts");
 // Add post to firestore database
 export const addPostToDb = async (title, postText, image) => {
-    await addDoc(postsCollectionRef, {
-        title, //title: title
-        postText,
-        author: {
-          name: auth.currentUser.displayName,
-          id: auth.currentUser.uid,
-          email: auth.currentUser.email,
-          photoUrl: auth.currentUser.photoURL,
-        },
-        date: new Date().toJSON().slice(0, 10).replace(/-/g, "/"),
-        image,
-      });
+  await addDoc(postsCollectionRef, {
+    title, //title: title
+    postText,
+    author: {
+      name: auth.currentUser.displayName,
+      id: auth.currentUser.uid,
+      email: auth.currentUser.email,
+      photoUrl: auth.currentUser.photoURL,
+    },
+    date: new Date().toJSON().slice(0, 10).replace(/-/g, "/"),
+    image,
+  });
 }
 
 // Get posts from firestore database
@@ -52,3 +52,8 @@ export const getPostsFromDb = async () => {
 export const deletePostFromDb = async (id) => await deleteDoc(doc(db, "posts", id));
 
 
+export const submitFormData = (formData) => {
+  // const newFormDataRef = database.ref('form-data').push();
+  // newFormDataRef.set(formData);
+  console.log(formData);
+};

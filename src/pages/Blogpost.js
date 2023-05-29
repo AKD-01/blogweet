@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Blogpost = () => {
   const postId = useParams();
-  const [postLists, setPostList] = useState([]);
+  //const [postLists, setPostList] = useState([]);
   const [post, setPost] = useState();
   const navigate = useNavigate();
   useEffect(() => {
@@ -19,7 +19,7 @@ const Blogpost = () => {
         navigate("/404");
       }
       setPost(Array.of(postInfo)[0]);
-      setPostList(data);
+      //setPostList(data);
     };
 
     getPosts();
