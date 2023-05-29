@@ -4,9 +4,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
-li{
+li {
   list-style: none;
 }
 body {
@@ -175,6 +175,7 @@ body {
 .SidebarOnDesktop .link_names {
   opacity: 0;
   pointer-events: none;
+  font-size: 25px;
 }
 
 .SidebarOnDesktop .link_names {
@@ -258,7 +259,7 @@ body {
   width: calc(100%-60px);
 }
 
-.SidebarOnDesktop~.home_content {
+.SidebarOnDesktop ~ .home_content {
   left: 240px;
   width: calc(100% - 240px);
 }
@@ -274,21 +275,23 @@ body {
   margin: 0.5rem;
   bottom: 0;
   position: absolute;
+  font-size: 25px;
 }
 
-@media screen and (max-width:600px) {
-  .SidebarOnDesktop{
+@media screen and (max-width: 600px) {
+  .SidebarOnDesktop {
     width: 60px;
   }
-  .SidebarOnDesktop #btn{
+  .SidebarOnDesktop #btn {
     left: 10%;
   }
-  .link_names, .logoname, .logo_content .logo{
+  .link_names,
+  .logoname,
+  .logo_content .logo {
     display: none;
   }
-  .profile .profile_details img{
+  .profile .profile_details img {
     height: 25px;
     width: 25px;
   }
 }
- 

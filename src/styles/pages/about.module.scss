@@ -1,4 +1,6 @@
 .aboutRoot {
+  margin-left: 240px; // sidebar
+
   height: 100%;
 
   .aboutContainer {
@@ -65,5 +67,11 @@
     .aboutContainer {
       max-width: 95%;
     }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .aboutRoot {
+    margin-left: 60px;
   }
 }

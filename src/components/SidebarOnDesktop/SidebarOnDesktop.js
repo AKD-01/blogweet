@@ -77,10 +77,18 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
               className="bx bx-log-in bx-fade-left"
               id="log_in"
               onClick={toggleSidebarOnDesktop}
+              style={{
+                color: 'white',
+              }}
             />
             <span
               className="link_names"
-              style={{ left: '2.5rem', position: 'relative', bottom: '.1rem' }}>
+              style={{
+                left: '2.5rem',
+                position: 'relative',
+                bottom: '.1rem',
+                color: 'white',
+              }}>
               Log in
             </span>
           </Link>

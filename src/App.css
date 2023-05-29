@@ -158,7 +158,7 @@ textarea {
 .loginPage {
   box-shadow: 1px 1px 1rem #fff;
   border-radius: 1rem;
-  /* background: #11101de6; */
+  background: #11101de6;
   color: wheat;
   position: absolute;
   margin: auto;
@@ -171,6 +171,7 @@ textarea {
   justify-content: center;
   align-items: center;
   font-family: 'Poppins';
+  font-weight: 700;
 }
 
 * {
