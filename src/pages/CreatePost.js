@@ -6,7 +6,7 @@ function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [image, setImage] = useState("");
-
+  const [tags, setTags] = useState([]);
  
   let navigate = useNavigate();
 
@@ -20,7 +20,7 @@ function CreatePost({ isAuth }) {
       alert("The post must contain at least 20 words.");
       return;
     } 
-    await addPostToDb(title, postText, image);
+    await addPostToDb(title, postText, image, tags);
     navigate("/");
   };
 
@@ -57,6 +57,12 @@ function CreatePost({ isAuth }) {
             placeholder="Post..."
             value={postText}
             onChange={(e) => setPostText(e.target.value)}
+          />
+          <label> Tags:</label>
+          <input
+            placeholder="Tag1, Tag2..."
+            value={tags}
+            onChange={(e) => setTags (e.target.value.split(","))}
           />
         </div>
         <div className="inputImg">

@@ -27,10 +27,11 @@ export const signUserAccountOut = () => signOut(auth);
 
 const postsCollectionRef = collection(db, "posts");
 // Add post to firestore database
-export const addPostToDb = async (title, postText, image) => {
+export const addPostToDb = async (title, postText, image, tags) => {
     await addDoc(postsCollectionRef, {
         title, //title: title
         postText,
+        tags,
         author: {
           name: auth.currentUser.displayName,
           id: auth.currentUser.uid,
