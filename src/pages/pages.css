@@ -58,6 +58,23 @@ body {
 
 }
 
+.lik{
+  margin-left: 30px;
+}
+.likeButton {
+  background: #fff;
+  border: unset;
+  outline: 0;
+  cursor: pointer;
+  color: #65676b;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: white;
+}
+.likeButton:hover{
+  transform: translateY(-0.25rem);
+  background-color: whitesmoke;
+}
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .inputImg img {
     height: 5rem;
