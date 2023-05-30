@@ -14,7 +14,7 @@ function CreatePost({ isAuth }) {
 
   const createPost = async () => {
     //function adds the document to the database.
-    await addDoc(postsCollectionRef, {
+    const postDataCopy= {
       title, //title: title
       postText,
       author: {
@@ -25,8 +25,10 @@ function CreatePost({ isAuth }) {
       },
       date: new Date().toJSON().slice(0, 10).replace(/-/g, "/"),
       image,
-    });
-    navigate("/");
+    }
+    const postByAuthor= await addDoc(postsCollectionRef, postDataCopy);
+    //`/${postDataCopy.author.name}/${postByAuthor.id}`
+    navigate(`/${postDataCopy.author.name}/${postByAuthor.id}`);
     toast.success('Your Post has been published!')
   };
 
