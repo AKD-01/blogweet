@@ -1,7 +1,22 @@
-body {
-  background-color: #1d1b31c4;
+:root {
+  --body_background: white;
+  --body_color:black;
+  --link_color:navy;
+  --shadow_color:solid black;
+  --hover_color: brown;
+  --sidebar_background:#282828;
+  --blog_background:#252525
 }
 
+[data-theme = "dark"] {
+  --body_background:#282c34;
+  --body_color:white;
+  --link_color:cyan;
+  --shadow_color:solid rgb(228, 210, 210);
+  --hover_color: #FFDF00;
+  --sidebar_background:rgb(243, 243, 243);
+  --blog_background:rgb(210, 210, 210);
+}
 
 .post h3 {
   display: flex;
@@ -9,7 +24,7 @@ body {
   font-size: 0.9rem;
   text-decoration: none;
   text-align: right;
-  color: rgb(24, 8, 95);
+  color: var(--link_color);
 }
 
 .post {
@@ -48,7 +63,7 @@ body {
 }
 
 .title {
-  color: #110c22;
+  color: var(--link_color);
   font-weight: normal;
   font-size: 1.5rem;
   font-weight: bold;
@@ -64,12 +79,12 @@ body {
   bottom: 0;
   width: 0;
   height: 4px;
-  background-color: #3c1247;
+  background-color: var(--hover_color);
   transition: width 0.3s ease-out;
 }
 
 .title:hover {
-  color: #3c1247;
+  color: var(--hover_color);
 }
 
 .title:hover::after {
@@ -196,5 +211,10 @@ body {
 .scrollToTopBtn:hover {
   opacity: 1;
   bottom: 46px;
+}
 
+.readmore:hover {
+  rotate: 360deg;
+  color: var(--hover_color);
+  zoom: 150%;
 }

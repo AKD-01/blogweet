@@ -12,6 +12,7 @@ import UserInfo from "./pages/UserInfo";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound404 from "./pages/NotFound404";
+import DarkMode from "./components/Theme/DarkMode";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));

@@ -7,21 +7,25 @@ const About = () => {
       <h1>ABOUT</h1>
       <hr />
       <p>
+        <div className="text">
         BlogWeet is a social media app that allows users to create, post and
         share their blogs. It is a platform that encourages users to express
         their thoughts, opinions, and perspectives through written content, and
         engage with the content of others. The app is easy to use, and it is
         designed to be accessible to users of all ages and levels of technical
         expertise. Users can create their blogs and post their content with just
-        a few clicks. <br />
+        a few clicks.  </div> <br />
         <br />
+        <div className="text">
         Once a blog post is published, other users can read, and share it. This
         creates a vibrant and dynamic community of users who are passionate
         about sharing and discovering new ideas and perspectives. The platform
         is also searchable, so users can easily find content that is relevant to
         their interests.
+        </div>
         <br />
         <br />
+        <div className="text">
         One of the unique features of BlogWeet is that it allows users to build
         a following by connecting with other users who share similar interests.
         This feature enables users to expand their reach, and increase the
@@ -31,18 +35,23 @@ const About = () => {
         individuals. Whether you're a blogger looking to expand your reach, or a
         reader looking for new perspectives, BlogWeet is the perfect platform
         for you.
+        </div>
         <br />
         <br />
+        <div className="text">
         In terms of security, BlogWeet provides robust security features to
         ensure that users' data is protected. The platform uses google’s
         encryption to secure user data and also uses advanced security measures
         to protect against hacking and other malicious activities.
+        </div>
         <br />
         <br />
+        <div className="text">
         Overall, BlogWeet is a versatile and feature-rich social media app that
         provides users with a platform to create, post, and share their blogs.
         With its focus on user-generated content, BlogWeet is a vibrant and
         dynamic community where ideas and perspectives are shared and explored.
+        </div>
       </p>
       <hr />
       <div className="social">

@@ -1,3 +1,20 @@
+
+:root {
+  --body_background: white;
+  --body_color:black;
+  --link_color:navy;
+  --shadow_color:solid black;
+  --hover_color: rgb(50, 16, 16);
+}
+
+[data-theme = "dark"] {
+  --body_background:#282c34;
+  --body_color:white;
+  --link_color:cyan;
+  --shadow_color:solid rgb(228, 210, 210);
+  --hover_color: #FFDF00;
+}
+
 .AboutPage{
     margin-left: 250px;
 }
@@ -6,21 +23,29 @@ h1{
     font-size: 4rem;
     font-weight: normal;
 }
+
+h1:hover {
+    color: var(--hover_color);
+}
 .AboutPage i{
     font-size: 3rem;
-    color: black;
+    color: var(--body_color);
     filter: drop-shadow(1rem 1rem 1rem yellow);
 }
 .AboutPage span{
     font-size: 3rem;
-    color: black;
+    color: var(--body_color);
     filter: drop-shadow(1rem 1rem 1rem yellow);
 }
 .AboutPage i:hover, span:hover{
-    filter: drop-shadow(1rem 1rem 1rem blue);
+    filter: drop-shadow(1rem 1rem 1rem var(--link_color));
 }
+
 p{
     padding: 2rem;
+}
+.text {
+    text-align: left;
 }
 .social{
     margin-top: 10%;
@@ -30,4 +55,4 @@ p{
     .AboutPage{
       margin-left: 2.5rem;
     }
-}  
+}

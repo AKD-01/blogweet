@@ -3,6 +3,7 @@ import "./SidebarOnDesktop.css";
 import "boxicons";
 import { auth } from "../../utils/firebase";
 import { Link } from "react-router-dom";
+import DarkMode from "../Theme/DarkMode";
 
 const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
   const [state, setState] = useState(true);
@@ -34,6 +35,9 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         />
       </div>
       <ul className="nav_list">
+        <li className="theme">
+          <DarkMode />
+        </li>
         <li onClick={toggleSidebarOnDesktop}>
           <Link to="/">
             <i className="bx bxs-home-heart"></i>
@@ -46,7 +50,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
             <i class='bx bxs-info-circle'></i>
             <span className="link_names">About</span>
           </Link>
-        </li>   
+        </li>
         <li>
           <Link to="/contact">
             <i class='bx bxs-user-circle'></i>

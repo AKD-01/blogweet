@@ -6,6 +6,27 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+
+:root {
+  --body_background: white;
+  --body_color:black;
+  --link_color:navy;
+  --shadow_color:solid black;
+  --hover-color: rgb(50, 16, 16);
+  --sidebar_background:rgb(243, 243, 243);
+}
+
+[data-theme = "dark"] {
+  --body_background:#282c34;
+  --body_color:white;
+  --link_color:cyan;
+  --shadow_color:solid rgb(228, 210, 210);
+  --hover_color: #FFDF00;
+  --sidebar_background:#282828;
+}
+
+
 li{
   list-style: none;
 }
@@ -21,17 +42,18 @@ body {
   left: 0;
   height: 100%;
   width: 60px;
-  background: #11101d;
+  /* background: #11101d; */
+  background: var(--sidebar_background);
   padding: 2px 6px;
   transition: all 0.5s ease;
 }
 
 .SidebarOnDesktop {
-  width: 240px;
+  width: 230px;
 }
 
 .SidebarOnDesktop .logo_content .logo {
-  color: #fff;
+  color: var(--body_color);
   display: flex;
   height: 50px;
   width: 100%;
@@ -58,7 +80,7 @@ body {
 
 .SidebarOnDesktop #btn {
   position: absolute;
-  color: #fff;
+  color: var(--body_color);
   left: 50%;
   top: 6px;
   font-size: 20px;
@@ -94,7 +116,7 @@ body {
   border-radius: 6px;
   height: 35px;
   width: 122px;
-  background: #fff;
+  background: var(--body_background);
   line-height: 35px;
   text-align: center;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -123,32 +145,32 @@ body {
   border-radius: 12px;
   outline: none;
   border: none;
-  background: #1d1b31;
+  background:var(--body_background);
   padding-left: 50px;
   font-size: 18px;
-  color: #fff;
+  color: var(--body_color);
 }
 
 .SidebarOnDesktop ul li .bx-search {
   position: absolute;
   z-index: 99;
-  color: #fff;
+  color: var(--body_color);
   font-size: 22px;
   transition: all 0.5s ease;
 }
 
 .SidebarOnDesktop ul li .bx-search:hover {
-  background: #fff;
-  color: #11101d;
+  background: var(--body_color);
+  color: var(--body_background);
 }
 
 .SidebarOnDesktop ul li .bx-search:hover {
-  background: #1d1b31;
-  color: #fff;
+  background:var(--body_background);
+  color: var(--body_color);
 }
 
 .SidebarOnDesktop ul li a {
-  color: #fff;
+  color: var(--body_color);
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -159,8 +181,8 @@ body {
 }
 
 .SidebarOnDesktop ul li a:hover {
-  background: #fff;
-  color: #11101d;
+  background: var(--body_color);
+  color: var(--body_background);
 }
 
 .SidebarOnDesktop ul li i {
@@ -291,4 +313,3 @@ body {
     width: 25px;
   }
 }
- 

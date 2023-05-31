@@ -2,12 +2,36 @@
 
 * {
   font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease-in-out;
 }
+
+:root {
+  --body_background: white;
+  --body_color:black;
+  --link_color:navy;
+  --shadow_color:solid black;
+  --hover-color: rgb(50, 16, 16);
+  --sidebar_background:#282828;
+  --blog_background:#252525
+}
+
+[data-theme = "dark"] {
+  --body_background:#282c34;
+  --body_color:white;
+  --link_color:cyan;
+  --shadow_color:solid rgb(228, 210, 210);
+  --hover_color: #FFDF00;
+  --sidebar_background:rgb(243, 243, 243);
+  --blog_background:rgb(210, 210, 210);
+}
+
 
 body {
   font-family: "Poppins";
   padding: 0%;
   margin: 0%;
+  color: var(--body_color);
+  background-color: var(--body_background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -16,10 +40,12 @@ nav {
   margin: 0;
   width: 100%;
   height: 50px;
-  background-color: black;
+  /* background-color: black; */
+  background-color: var(--body_background);
   display: flex;
   justify-content: space-between;
-  color: white;
+  /* color: white; */
+  color: var(--body_color);
   text-decoration: none;
   padding-top: 0.5rem;
 }
@@ -47,14 +73,14 @@ nav {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  background-color: black;
+  background-color: var(--body_background);
   padding: 0.5rem;
   border-radius: 1rem;
   box-shadow: 1px 1px 0.5rem wheat;
 }
 
 .HomeLink {
-  background-color: black;
+  background-color: var(--body_background);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   font-size: 1.25rem;
@@ -63,7 +89,7 @@ nav {
 }
 
 a {
-  color: white;
+  color: var(--body_color);
   text-decoration: none;
   font-size: 25px;
 }
@@ -79,9 +105,9 @@ a {
   width: 70%;
   height: auto;
   padding: 20px;
-  background-color: #1d1b31;
+  background-color: var(--body_background);
   border-radius: 12px;
-  color: white;
+  color: var(--body_color);
   display: flex;
   flex-direction: column;
   margin: 1.6rem;
@@ -170,10 +196,10 @@ textarea {
 }
 
 .loginPage {
-  box-shadow: 1px 1px 1rem #fff;
+  box-shadow: 1px 1px 1rem var(--shadow_color);
   border-radius: 1rem;
   background: #11101de6;
-  color: wheat;
+  color: var(--body_color);
   position: absolute;
   margin: auto;
   width: 35%;
@@ -195,7 +221,7 @@ textarea {
 
 .loginPage p {
   font-size: 30px;
-  color: wheat;
+  color: var(--body_color);
   margin-bottom: 4rem;
 }
 
@@ -206,14 +232,14 @@ textarea {
   padding: 5px 16px 12px 42px;
   border: none;
   border-radius: 3px;
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px var(--shadow_color, 0.25);
   color: #757575;
   font-size: 25px;
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
-  background-color: white;
+  background-color: var(--body_background);
   background-repeat: no-repeat;
   background-position: 12px 11px;
 }
@@ -234,8 +260,8 @@ textarea {
 
 .login-with-google-btn:disabled {
   filter: grayscale(100%);
-  background-color: #ebebeb;
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
+  background-color: var(--body_background);
+  box-shadow: 0 -1px 0 var(--shadow_color, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
   cursor: not-allowed;
 }
 
@@ -254,7 +280,8 @@ textarea {
 .homePage .post {
   width: 89%;
   height: auto;
-  background-color: rgb(158, 155, 187);
+  /* background-color: rgb(158, 155, 187); */
+  background-color: var(--body_background);
   margin: 20px;
   padding: 20px;
   border-radius: 15px;
@@ -322,7 +349,7 @@ textarea {
   .card {
     width: 314px;
     height: 70vh;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 var(--shadow_color);
     transition: 0.3s;
     border-radius: 5px;
     overflow: hidden;
@@ -358,9 +385,9 @@ textarea {
     width: 70%;
     height: auto;
     padding: 20px;
-    background-color: #11101df2;
+    background-color: var(--body_background);
     border-radius: 12px;
-    color: white;
+    color: var(--body_color);
     display: flex;
     flex-direction: column;
     margin: 1.6rem;
@@ -387,15 +414,15 @@ textarea {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: var(--body_background); 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #bfa5de; 
+  background: var(--body_background); 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: var(--hover-color);
 }

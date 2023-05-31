@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import "../App.css"
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
@@ -130,10 +131,9 @@ function Home({ isAuth }) {
                     )}
                     &nbsp;&nbsp;{" "}
                   </div>
-                  <div
+                  <div className="readmore"
                     style={{
                       textAlign: "right",
-                      color: "#3a363d",
                       fontSize: ".9rem",
                       cursor: "pointer",
                       width: "fit-content",

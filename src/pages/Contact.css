@@ -1,7 +1,26 @@
+
+:root {
+  --body_background: white;
+  --body_color:black;
+  --link_color:navy;
+  --shadow_color:solid black;
+  --hover-color: rgb(50, 16, 16);
+}
+
+[data-theme = "dark"] {
+  --body_background:#282c34;
+  --body_color:#FAF9F6;
+  --link_color:cyan;
+  --shadow_color:solid rgb(228, 210, 210);
+  --hover_color: #FFDF00;
+}
+
+body {
+  background-color: var(--body_background);
+}
 .Contactus {
   margin-left: 250px;
-  
-  
+
 }
 
 h1 {
@@ -33,7 +52,7 @@ label {
 input[type="text"],
 input[type="email"],
 textarea {
-  width: 35%;
+  width: 40vh;
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -41,7 +60,8 @@ textarea {
 }
 
 textarea {
-  width: 35%;
+  width: 40vw;
+  border-radius: 10px;
 }
 
 button {
@@ -70,7 +90,7 @@ button {
   }
 
   form{
-    margin-left: 30%;;
+    margin-left: 30%;
   }
 }
 
