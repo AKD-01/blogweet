@@ -69,7 +69,12 @@ git remote add upstream https://github.com/akd-01/blogweet.git
 git checkout -b branch_name
 ```
 
+✴️ **IMPORTANT**: Run the following command to install node modules
+
+```npm i```
+
 ✴️ Make your contribution
+
 ✴️ Commit and push the changes
 
 ```markdown
