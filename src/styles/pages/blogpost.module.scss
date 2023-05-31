@@ -1,7 +1,10 @@
 .blogpostRoot {
+  margin-left: 240px; // sidebar
+
   .blogContainer {
     max-width: 900px;
     margin: auto;
+    padding: 0 12px;
 
     .blogImage {
       width: 100%;
@@ -45,5 +48,11 @@
     .blogContent {
       padding: 20px 0;
     }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blogpostRoot {
+    margin-left: 60px;
   }
 }
