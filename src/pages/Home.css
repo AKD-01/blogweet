@@ -2,6 +2,7 @@ body {
   background-color: #1d1b31c4;
 }
 
+
 .post h3 {
   display: flex;
   justify-content: space-between;
@@ -10,6 +11,32 @@ body {
   text-align: right;
   color: rgb(24, 8, 95);
 }
+
+.post {
+  transition: transform 0.3s ease-out;
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.post:hover{
+  transform: scale(1.03);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
+    &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform .3s ease-out 0s;
+    background: rgba(255, 255, 255, 0.059);
+    content: '';
+    pointer-events: none;
+  }
+}
+
 
 .blogcredits {
   display: flex;
@@ -21,16 +48,32 @@ body {
 }
 
 .title {
-  filter: drop-shadow(2px 4px 6px white);
   color: #110c22;
   font-weight: normal;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   cursor: pointer;
+  position: relative;
+  width: fit-content;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  background-color: #3c1247;
+  transition: width 0.3s ease-out;
 }
 
 .title:hover {
-  color: #2d0e36;
-  filter: drop-shadow(1rem 1rem 1rem black);
+  color: #3c1247;
+}
+
+.title:hover::after {
+  width: 100%;
 }
 
 .imageCont {
@@ -39,18 +82,61 @@ body {
   margin: 1rem;
 }
 
+.post .postTextContainer {
+  word-wrap: break-word;
+  display: grid;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  font-size: 1rem;
+  padding: 1.2rem 1rem;
+}
+
+/* Expading animations */
+.expandElement {
+  transition: transform 0.3s ease-out;
+  color: black;
+}
+
+.expandElement:hover {
+  transform: scale(1.2);
+}
+/* Expading animations */
+
 .imageCont img {
-  height: 8rem;
+  height: 9rem;
   padding: 0.2rem;
-  border: ridge;
+  border-radius: 10px;
 }
 
 .contents {
   display: flex;
+  padding-bottom: 15px;
 }
 
 .deletePost {
   display: flex;
+}
+
+
+@media screen and (min-width: 600px) and (max-width: 740px) {
+  .contents {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 740px) and (max-width: 800px) {
+  .contents {
+    gap: 1.2rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
 }
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
@@ -80,5 +166,35 @@ body {
   .title {
     font-size: 1.5rem;
   }
+
+}
+.scrollToTopBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 100%;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  opacity: 0.7;
+  transition: bottom 0.3s;
+
+}
+.scrollElement{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollToTopBtn:hover {
+  opacity: 1;
+  bottom: 46px;
 
 }

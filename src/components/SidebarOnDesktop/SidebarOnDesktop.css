@@ -280,3 +280,22 @@ body {
   position: absolute;
 }
 
+<<<<<<< HEAD
+=======
+@media screen and (max-width:600px) {
+  .SidebarOnDesktop{
+    width: 60px;
+  }
+  .SidebarOnDesktop #btn{
+    left: 10%;
+  }
+  .link_names, .logoname, .logo_content .logo{
+    display: none;
+  }
+  .profile .profile_details img{
+    height: 25px;
+    width: 25px;
+  }
+}
+ 
+>>>>>>> 4b78d19dc4150835dde028bd09b2c44440b29b33

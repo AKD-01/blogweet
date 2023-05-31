@@ -252,13 +252,12 @@ textarea {
 }
 
 .homePage .post {
-  width: 90%;
+  width: 89%;
   height: auto;
   background-color: rgb(158, 155, 187);
   margin: 20px;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 1px 1px 1rem #40415d;
   overflow: hidden;
   padding: 1rem;
 }
@@ -309,6 +308,7 @@ textarea {
 .blogContent p {
   text-align: left;
 }
+
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .homePage .post {
@@ -367,7 +367,7 @@ textarea {
   }
 
   .post .postTextContainer {
-    /* word-wrap: break-word; */
+    word-wrap: break-word;
     display: grid;
     height: 100px;
     padding: .25rem;
@@ -379,4 +379,23 @@ textarea {
   .loginPage p {
     font-size: 1.5rem;
   }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bfa5de; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }

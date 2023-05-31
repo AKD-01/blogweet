@@ -1,8 +1,7 @@
-import { collection, getDocs } from "firebase/firestore";
+import { getPostsFromDb } from "../utils/firebase";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import { db } from "../firebase-config";
 import "./pages.css";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../components/Footer/Footer";
@@ -10,24 +9,31 @@ import Footer from "../components/Footer/Footer";
 const Blogpost = () => {
   const postId = useParams();
   const [postLists, setPostList] = useState([]);
-  const postsCollectionRef = collection(db, "posts");
+  const [post, setPost] = useState();
+  const navigate = useNavigate();
   useEffect(() => {
+    console.log(postId.blogname);
     const getPosts = async () => {
-      const data = await getDocs(postsCollectionRef);
-      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      const data = await getPostsFromDb();
+      const postInfo = data.filter((x) => x.id === postId.blogname)[0];
+      if (!postInfo) {
+        navigate("/404");
+      }
+      setPost(Array.of(postInfo)[0]);
+      setPostList(data);
     };
 
     getPosts();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const sharingHandler = (s) => {
     navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`);
     toast(`Your link has been pasted to your Clipboard. Enjoy!`);
   };
-  const postInfo = postLists.filter((x) => x.id === postId.blogname)[0];
-  console.log(Array.of(postInfo)[0]);
-  const post = Array.of(postInfo)[0];
+  // const postInfo = postLists.filter((x) => x.id === postId.blogname)[0];
+  // console.log(Array.of(postInfo)[0]);
+  // const post = Array.of(postInfo)[0];
   return (
     <div className="blogpage">
       {post && (

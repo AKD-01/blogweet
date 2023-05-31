@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
+<<<<<<< HEAD
 //import "boxicons";
 import { auth } from "../../firebase-config";
+=======
+import "boxicons";
+import { auth } from "../../utils/firebase";
+>>>>>>> 4b78d19dc4150835dde028bd09b2c44440b29b33
 import { Link } from "react-router-dom";
 import {FaBloggerB} from 'react-icons/fa';
 
@@ -37,7 +42,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
           </Link>
           <span className="tooltip">Home</span>
         </li>
-        <li>
+        <li onClick={toggleSidebar}>
           <Link to="/about">
             <i class='bx bxs-info-square'></i>
             <span className="link_names">About</span>
