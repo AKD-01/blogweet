@@ -172,10 +172,10 @@ body {
   position: fixed;
   bottom: 40px;
   right: 10px;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 52px;
   border: none;
-  border-radius: 100%;
+  border-radius: 50%;
   background-color: #333;
   color: #fff;
   font-size: 16px;
