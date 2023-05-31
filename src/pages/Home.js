@@ -101,22 +101,16 @@ function Home({ isAuth }) {
                           style={{ color: '#600505' }}></i>
                       </button>
                     )}
-                  <button
+                  <button className="expandElement"
                     onClick={() =>
                       sharingHandler(
                         `/user/${post.author.name.replaceAll(' ', '-')}/${
                           post.id
                         }`,
                       )
-                    }>
-                    <i
-                      className="bx bxs-share-alt"
-                      style={{
-                        color: 'rgb(255, 255, 255)',
-                        boxShadow: ' 1px 1px 1rem black',
-                        borderRadius: '1rem',
-                        background: ' black',
-                      }}></i>
+                    }
+                  >
+                    <i className="bx bxs-share-alt"></i>
                   </button>
                 </div>
               </div>
@@ -134,10 +128,12 @@ function Home({ isAuth }) {
                   </div>
                   <div
                     style={{
-                      textAlign: 'right',
-                      color: '#3a363d',
-                      fontSize: '.9rem',
-                      cursor: 'pointer',
+                      textAlign: "right",
+                      color: "#3a363d",
+                      fontSize: ".9rem",
+                      cursor: "pointer",
+                      width: "fit-content",
+                      'justify-self': "end"
                     }}
                     onClick={() => {
                       navigate(
@@ -186,8 +182,11 @@ function Home({ isAuth }) {
           onClick={() => {
             window.scrollTo({ top: 0, behavior: 'smooth' })
           }}
-          title="Scroll to top">
-          <FontAwesomeIcon icon={faArrowUp} />
+          title="Scroll to top"
+        >
+          <div className="scrollElement">
+            <FontAwesomeIcon icon={faArrowUp} />
+          </div>
         </button>
       )}
     </>

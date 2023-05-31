@@ -55,7 +55,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         </li>
         <li>
           <Link to="/contact">
-            <i class="bx bxs-info-circle"></i>
+            <i class='bx bxs-user-circle'></i>
             <span className="link_names">Contact Us</span>
           </Link>
         </li>

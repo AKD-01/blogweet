@@ -40,9 +40,8 @@ function App() {
         signUserOut={signUserOut}
       />
 
-      {/* previous navigation options are listed below */}
-      {width < 500 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
-      {width > 500 && (
+      {width <= 600 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
+      {width > 600 && (
         <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
       )}
 

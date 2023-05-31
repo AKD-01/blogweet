@@ -51,10 +51,6 @@ input[type='email'],
   /* margin-left: 200px; */
 }
 
-.Contactus button:hover {
-  background-color: #45a049;
-}
-
 @media (max-width: 767px) {
   /* p {
     text-align: center;
