@@ -28,7 +28,16 @@ function Home({ isAuth }) {
   useEffect(() => {
     const getPosts = async () => {
       const data = await getPostsFromDb();
-      setPostList(data);
+      // Find the index of the post to be pinned
+      const pinnedPostIndex = data.findIndex((post) => post.id === "Pci3H6XCUJHtiBZgYrlA");
+      if (pinnedPostIndex !== -1) {
+        // Extract the pinned post from the array
+        const pinnedPost = data.splice(pinnedPostIndex, 1)[0];
+        // Update the state with the updated postLists array
+        setPostList([pinnedPost, ...data]);
+      } else {
+        setPostList(data);
+      }
     };
 
     getPosts();
