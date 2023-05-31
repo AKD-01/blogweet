@@ -1,7 +1,5 @@
 .Contactus {
   margin-left: 250px;
-  
-  
 }
 
 h1 {
@@ -56,12 +54,19 @@ button {
 }
 
 
-@media (max-width: 767px) {
-  /* p {
-    text-align: center;
-  } */
+@media only screen and (max-width: 768px) {
+
+  .Contactus {
+    margin-left: auto;
+  }
+
+  p {
+    margin-left: 60px;
+  }
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    margin-left: 60px;
+    padding: 1rem;
   }
   input[type="text"],
   input[type="email"],
@@ -70,7 +75,7 @@ button {
   }
 
   form{
-    margin-left: 30%;;
+    margin-left: 25%;;
   }
 }
 
