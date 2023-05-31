@@ -28,10 +28,10 @@ function App() {
 
   return (
     <Router>
-      {/* {width < 786 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />} */}
-      {/* {width > 786 && (
+      {width <= 600 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
+      {width > 600 && (
         <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
-      )} */}
+      )}
       <Routes>
         <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
