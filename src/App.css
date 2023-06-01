@@ -201,19 +201,19 @@ textarea {
 
 /* SCROLL BAR */
 ::-webkit-scrollbar {
-  width: 16px; /* Width of the entire scrollbar */
+  width: 17px; /* Width of the entire scrollbar */
 }
 
 ::-webkit-scrollbar-track {
   border-radius: 100vw;
-  background: #9E9BBB;
+  background: #BCB9D6; 
   margin-block: 0.4em;
 }
 
 ::-webkit-scrollbar-thumb {
   border: 0.21em solid transparent;
   border-radius: 100px;
-  background-color: #6756bf;
+  background-color: #9E9BBB;
   background-clip: content-box;
 }
 
@@ -399,21 +399,3 @@ textarea {
   }
 }
 
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #bfa5de; 
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
