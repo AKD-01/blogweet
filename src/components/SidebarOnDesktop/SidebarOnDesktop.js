@@ -48,6 +48,12 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
             <span className="link_names">About</span>
           </Link>
         </li>   
+        <li>
+          <Link to="/contact">
+            <i class='bx bxs-user-circle'></i>
+            <span className="link_names">Contact Us</span>
+          </Link>
+        </li>  
         {isAuth && (
           <li onClick={toggleSidebarOnDesktop}>
             <Link to="/createpost">
