@@ -111,11 +111,7 @@ body {
 
 .contents {
   display: flex;
-
   justify-content: center;
-
-  padding-bottom: 15px;
-
 }
 
 .deletePost {
@@ -150,10 +146,6 @@ body {
 
   .title {
     font-size: 1.3rem;
-  }
-
-  .postTextContainer div{
-    height: 60px !important;
   }
 
 }
