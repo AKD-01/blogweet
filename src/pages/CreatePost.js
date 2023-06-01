@@ -25,7 +25,12 @@ function CreatePost({ isAuth }) {
   const hanldleImageUpload = (e) => {
     setImage(e.target.value);
   };
-
+  function changeBackground(e) {
+    e.target.style.background = '	#FF6347';
+  }
+  function changecolor(e) {
+    e.target.style.background = 'white';
+  }
   return (
     <div className="createPostPage">
       <div className="cpContainer">
@@ -56,7 +61,7 @@ function CreatePost({ isAuth }) {
           </div>
         </div>
 
-        <button onClick={createPost}> Submit Post </button>
+        <button onClick={createPost} onMouseOver={changeBackground} onMouseLeave = {changecolor}> Submit Post </button>
       </div>
     </div>
   );
