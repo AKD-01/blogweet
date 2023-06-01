@@ -37,7 +37,7 @@ function Home({ isAuth }) {
   const sharingHandler = (s) => {
     // console.log(`https://blogweet.vercel.app${s}`);
     navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`);
-    toast(`Your link has been pasted to your Clipboard. Enjoy!`);
+    toast.success(`Your link has been pasted to your Clipboard. Enjoy!`);
   };
 
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -70,7 +70,9 @@ function Home({ isAuth }) {
                     className="title"
                     onClick={() => {
                       navigate(
-                        `/${post.author.name.replaceAll(" ", "-")}/${post.id}`,
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
+                        }`,
                         { state: post }
                       );
                     }}
@@ -87,7 +89,12 @@ function Home({ isAuth }) {
                     post.author.id === auth.currentUser.uid && (
                       <button
                         onClick={() => {
-                          deletePost(post.id);
+                          const confirmed = window.confirm(
+                            "Are you sure you want to delete this post?"
+                          );
+                          if (confirmed) {
+                            deletePost(post.id);
+                          }
                         }}
                       >
                         {" "}
@@ -97,22 +104,17 @@ function Home({ isAuth }) {
                         ></i>
                       </button>
                     )}
-                  <button
+                  <button className="expandElement"
                     onClick={() =>
                       sharingHandler(
-                        `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
+                        }`
                       )
                     }
                   >
-                    <i
-                      className="bx bxs-share-alt"
-                      style={{
-                        color: "rgb(255, 255, 255)",
-                        boxShadow: " 1px 1px 1rem black",
-                        borderRadius: "1rem",
-                        background: " black",
-                      }}
-                    ></i>
+<i className="bx bxs-share-alt"></i>
+
                   </button>
                 </div>
               </div>
@@ -134,10 +136,14 @@ function Home({ isAuth }) {
                       color: "#3a363d",
                       fontSize: ".9rem",
                       cursor: "pointer",
+                      width: "fit-content",
+                      'justify-self': "end"
                     }}
                     onClick={() => {
                       navigate(
-                        `/${post.author.name.replaceAll(" ", "-")}/${post.id}`,
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
+                        }`,
                         { state: post }
                       );
                     }}
@@ -151,7 +157,7 @@ function Home({ isAuth }) {
                 <div
                   style={{ cursor: "pointer" }}
                   onClick={() => {
-                    navigate(`/${post.author.name.replaceAll(" ", "-")}`, {
+                    navigate(`/user/${post.author.name.replaceAll(" ", "-")}`, {
                       state: post.author,
                     });
                   }}
@@ -159,22 +165,22 @@ function Home({ isAuth }) {
                   👤{post.author.name}
                 </div>
               </h3>
-              <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
-              />
             </div>
           );
         })}
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       {/* Scroll-to-top button */}
       {showScrollToTop && (
         <button
@@ -184,7 +190,9 @@ function Home({ isAuth }) {
           }}
           title="Scroll to top"
         >
-          <FontAwesomeIcon icon={faArrowUp} />
+          <div className="scrollElement">
+            <FontAwesomeIcon icon={faArrowUp} />
+          </div>
         </button>
       )}
     </>
