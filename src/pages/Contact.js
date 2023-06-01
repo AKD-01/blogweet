@@ -11,23 +11,28 @@ const Contact = () => {
           ></img>
         </div>
         <div className="right">
+       
+          <div className="right-bottom">
           <div className="title">Contact Us</div>
-          <div className="subtitle">Please fill out the form below to get in touch with us:</div>
-          <form className="form">
-            <div className="inputs">
-              <label htmlFor="name">Name:</label>
-              <input type="text" id="name"></input>
+            <div className="subtitle">
+              Please fill out the form below to get in touch with us:
             </div>
-            <div className="inputs">
-              <label htmlFor="email">Email:</label>
-              <input type="email" id="email"></input>
-            </div>
-            <div className="inputs">
-              <label htmlFor="message">Message:</label>
-              <textarea id="message" rows="6"></textarea>
-            </div>
-            <button>Submit</button>
-          </form>
+            <form className="form">
+              <div className="inputs">
+                <label htmlFor="name">Name:</label>
+                <input type="text" id="name"></input>
+              </div>
+              <div className="inputs">
+                <label htmlFor="email">Email:</label>
+                <input type="email" id="email"></input>
+              </div>
+              <div className="inputs">
+                <label htmlFor="message">Message:</label>
+                <textarea id="message" rows="6"></textarea>
+              </div>
+              <button>Submit</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

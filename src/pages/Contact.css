@@ -46,10 +46,19 @@
 
 }
 
+.right .right-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 
 .right .subtitle{
   font-size: .8rem;
-  margin:.2rem 0 1.8rem 0;
+  margin:10% 0 1.8rem 0;
 
 }
 
