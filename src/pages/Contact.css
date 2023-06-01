@@ -1,92 +1,122 @@
 .Contactus {
-  margin-left: 250px;
-  
-  
+  height: 100vh;
+
+
 }
 
-h1 {
-  text-align: center;
-  font-weight: normal;
-  font-size: 4rem;
+.login {
+  background-color: rgb(255, 255, 255);
+  width: 60%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 58%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+
 }
 
-p {
-  text-align: center;
-  /* padding: 2rem;  */
-  font-weight: bold;
-  /* margin-left: 8%; */
+.left {
+  width: 50%;
+  height: 100%;
+
 }
 
-form {
-  margin-top: 20px;
-  margin-left: 37%;
-  
-  
+.left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+
+.right {
+  height: 100%;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:black;
+  padding:2rem .5rem;
+
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 35%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+
+.right .subtitle{
+  font-size: .8rem;
+  margin:.2rem 0 1.8rem 0;
+
 }
 
-textarea {
-  width: 35%;
+.right .form{
+  width:70%;
+}
+
+.right .inputs{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.right .inputs label{
+  font-size: .8rem;
+
+}
+
+
+.right .inputs {
+  margin-bottom: 1rem;
+}
+
+.right .inputs label {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.right .inputs input,
+.right .inputs textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 0.9rem;
+  resize: none;
+  outline:none;
+}
+
+.right .inputs textarea {
+  height:3.5rem;
 }
 
 button {
-  padding: 12px 25px;
-  background-color: #d65f30;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #2d88ff;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  text-align: center;
-  /* margin-left: 200px; */
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2b6fe6;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 
-@media (max-width: 767px) {
-  /* p {
-    text-align: center;
-  } */
-  h1 {
-    font-size: 3rem;
-  }
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 90%;
-  }
 
-  form{
-    margin-left: 30%;;
-  }
-}
-
-/* medium screen  */
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-  /* Styles specific to medium screens */
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 80%;
-  }
-  /* p {
-    text-align: center;
-  } */
-  form{
-    margin-left: 25%;
-  }
-  /* Add more styles for other elements as needed */
-}
