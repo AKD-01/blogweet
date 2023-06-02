@@ -16,14 +16,23 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
       <div className="logo_content">
         <div className="logo">
           <div
-            className="logoname"
+            className="logoname link_names"
             style={{
-              marginLeft: "5px",
-              fontSize: "1.8rem",
-              marginTop: ".5rem",
+              marginLeft: "1.2rem",
+
+              marginTop: ".7rem"
             }}
           >
-            <b>BLOGWEET</b>
+           
+              {" "}
+              <b
+                style={{
+                  fontSize: "1.9rem"
+                }}
+              > <Link to="/">
+                BLOGWEET</Link>
+              </b>
+            
           </div>
         </div>
         <i
@@ -43,16 +52,16 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         </li>
         <li onClick={toggleSidebarOnDesktop}>
           <Link to="/about">
-            <i class='bx bxs-info-circle'></i>
+            <i class="bx bxs-info-circle"></i>
             <span className="link_names">About</span>
           </Link>
-        </li>   
+        </li>
         <li>
           <Link to="/contact">
-            <i class='bx bxs-user-circle'></i>
+            <i class="bx bxs-user-circle"></i>
             <span className="link_names">Contact Us</span>
           </Link>
-        </li>  
+        </li>
         {isAuth && (
           <li onClick={toggleSidebarOnDesktop}>
             <Link to="/createpost">

@@ -14,17 +14,23 @@ const Sidebar = ({ isAuth, signUserOut }) => {
   return (
     <div className={`sidebar ${active ? "active" : ""}`}>
       <div className="logo_content">
-        <div className="logo">
-          <div
-            className="logoname"
-            style={{
-              marginLeft: "5px",
-              fontSize: "1.5rem",
-              marginTop: ".5rem",
-            }}
-          >
-            <b>BLOGWEET</b>
-          </div>
+        <div
+          className="logoname link_names"
+          style={{
+            marginLeft: "1.2rem",
+            marginTop: ".7rem"
+          }}
+        >
+          <Link to="/">
+            {" "}
+            <b
+              style={{
+                fontSize: "1.9rem"
+              }}
+            >
+              BLOGWEET
+            </b>
+          </Link>
         </div>
         <i
           className="bx bxl-twitter"
@@ -43,7 +49,7 @@ const Sidebar = ({ isAuth, signUserOut }) => {
         </li>
         <li onClick={toggleSidebar}>
           <Link to="/about">
-            <i class='bx bxs-info-square'></i>
+            <i class="bx bxs-info-square"></i>
             <span className="link_names">About</span>
           </Link>
         </li>
