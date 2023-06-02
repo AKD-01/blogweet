@@ -3,6 +3,11 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+.contactus h1 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
 
 body {
   font-family: "Poppins";
@@ -309,7 +314,6 @@ textarea {
   text-align: left;
 }
 
-
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .homePage .post {
     width: 80vw;
@@ -370,10 +374,10 @@ textarea {
     word-wrap: break-word;
     display: grid;
     height: 100px;
-    padding: .25rem;
+    padding: 0.25rem;
     width: 100%;
     overflow: hidden;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .loginPage p {
@@ -387,15 +391,15 @@ textarea {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #bfa5de; 
+  background: #bfa5de;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }

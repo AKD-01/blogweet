@@ -1,92 +1,42 @@
-.Contactus {
-  margin-left: 250px;
-  
-  
+* {
+  box-sizing: border-box;
 }
-
-h1 {
-  text-align: center;
-  font-weight: normal;
-  font-size: 4rem;
+body {
+  margin: 0;
+  padding: 0;
 }
-
-p {
-  text-align: center;
-  /* padding: 2rem;  */
-  font-weight: bold;
-  /* margin-left: 8%; */
+form h1 {
+  font-size: medium;
 }
-
 form {
-  margin-top: 20px;
-  margin-left: 37%;
-  
-  
-}
-
-label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+  background-color: #fff;
+  box-shadow: 1px 1px 3px #ddd;
+  margin: 40px auto;
+  max-width: 400px;
+  max-height: 530px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 10px 8px 8px rgba(69, 64, 64, 0.2);
 }
-
-input[type="text"],
-input[type="email"],
+form input,
 textarea {
-  width: 35%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
 }
 
-textarea {
-  width: 35%;
-}
-
-button {
-  padding: 12px 25px;
-  background-color: #d65f30;
-  color: white;
-  border: none;
-  border-radius: 4px;
+form button {
+  height: 35px;
+  width: 100%;
+  align-items: center;
   cursor: pointer;
-  text-align: center;
-  /* margin-left: 200px; */
-}
-
-
-@media (max-width: 767px) {
-  /* p {
-    text-align: center;
-  } */
-  h1 {
-    font-size: 3rem;
-  }
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 90%;
-  }
-
-  form{
-    margin-left: 30%;;
-  }
-}
-
-/* medium screen  */
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-  /* Styles specific to medium screens */
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 80%;
-  }
-  /* p {
-    text-align: center;
-  } */
-  form{
-    margin-left: 25%;
-  }
-  /* Add more styles for other elements as needed */
+  background-color: #d65f30;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
 }
