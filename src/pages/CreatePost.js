@@ -1,23 +1,48 @@
 import React, { useState, useEffect } from "react";
 import { addPostToDb } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Slide from "@mui/material/Slide";
+
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
+
 
 function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [image, setImage] = useState("");
+  const [open, setOpen] = useState(false);
+  const [message, setmessage] = useState({});
+
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
  
   let navigate = useNavigate();
 
   const createPost = async () => {
     if(!title || !postText || !image) {
-      alert("Please fill all the fields");
+      // alert("Please fill all the fields");
+      setmessage( {"status" : "Please fill all the fields"})
+      setOpen(true);
       return;
     }
     console.log(title, postText, image);
     if (getWordCount(postText) < 20) {
-      alert("The post must contain at least 20 words.");
+      // alert("The post must contain at least 20 words.");
+      setmessage( {"status" : "The post must contain at least 20 words."})
+      setOpen(true);
       return;
     } 
     await addPostToDb(title, postText, image);
@@ -38,6 +63,13 @@ function CreatePost({ isAuth }) {
   const getWordCount = (text) => {
     return text.trim().split(/\s+/).length;
   };
+
+  const handleClick = () => {
+    setOpen(false);
+  }
+  const handleClose = () => {
+    setOpen(false);
+  }
 
   return (
     <div className="createPostPage">
@@ -69,6 +101,35 @@ function CreatePost({ isAuth }) {
 
         <button  onClick={createPost}> Submit Post </button>
       </div>
+      <Dialog
+      PaperProps={{ sx: { position: "fixed"} }}
+      fullScreen={fullScreen}
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-describedby="alert-dialog-slide-description"
+        style={{width: "50%", margin: "auto"}}
+      >
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+            {message.status}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            style={{
+              padding: "5px",
+              backgroundColor: "#2577ea",
+              color: "white",
+              textTransform: "capitalize",
+            }}
+            onClick={handleClick}
+          >
+            Ok
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }

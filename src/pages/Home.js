@@ -1,13 +1,25 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Slide from "@mui/material/Slide";
 import React, { useEffect, useState } from "react";
-import { getPostsFromDb, deletePostFromDb } from "../utils/firebase";
-import { auth } from "../utils/firebase";
-import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { auth, deletePostFromDb, getPostsFromDb } from "../utils/firebase";
+import "./Home.css";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
@@ -15,6 +27,39 @@ function Home({ isAuth }) {
     await deletePostFromDb(id);
     window.location.reload();
   };
+
+  const [open, setOpen] = useState(false);
+  const [DeleteConfirmed, setDeleteConfirmed] = useState(false);
+  const [Blog, setBlog] = useState({});
+
+
+  
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  useEffect(() => {
+    if(DeleteConfirmed){
+      console.log("inside this confirm")
+      deletePost(Blog.id);
+    }
+  },[DeleteConfirmed])
+
+  const handleYesClick = () => {
+    console.log("inside this yes")
+    setDeleteConfirmed(true);
+    setOpen(false);
+  };
+  
+  const handleNoClick = () => {
+    console.log("inside this No")
+    setDeleteConfirmed(false)
+    setOpen(false);
+  };
+
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+
 
   // const DUMMY_POST = {
   //   id: `id:${Math.random()}`,
@@ -30,9 +75,9 @@ function Home({ isAuth }) {
       const data = await getPostsFromDb();
       setPostList(data);
     };
-
     getPosts();
   }, []);
+
   const navigate = useNavigate();
   const sharingHandler = (s) => {
     // console.log(`https://blogweet.vercel.app${s}`);
@@ -88,23 +133,21 @@ function Home({ isAuth }) {
                     auth.currentUser != null &&
                     post.author.id === auth.currentUser.uid && (
                       <button
+                        
                         onClick={() => {
-                          const confirmed = window.confirm(
-                            "Are you sure you want to delete this post?"
-                          );
-                          if (confirmed) {
-                            deletePost(post.id);
-                          }
+                          setOpen(true);
+                          setBlog(post)
                         }}
                       >
-                        {" "}
                         <i
                           className="bx bxs-message-square-x"
                           style={{ color: "#600505" }}
                         ></i>
                       </button>
                     )}
-                  <button className="expandElement"
+
+                  <button
+                    className="expandElement"
                     onClick={() =>
                       sharingHandler(
                         `/user/${post.author.name.replaceAll(" ", "-")}/${
@@ -113,8 +156,7 @@ function Home({ isAuth }) {
                       )
                     }
                   >
-<i className="bx bxs-share-alt"></i>
-
+                    <i className="bx bxs-share-alt"></i>
                   </button>
                 </div>
               </div>
@@ -137,7 +179,7 @@ function Home({ isAuth }) {
                       fontSize: ".9rem",
                       cursor: "pointer",
                       width: "fit-content",
-                      'justify-self': "end"
+                      "justify-self": "end",
                     }}
                     onClick={() => {
                       navigate(
@@ -195,6 +237,47 @@ function Home({ isAuth }) {
           </div>
         </button>
       )}
+      <Dialog
+      fullScreen={fullScreen}
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-describedby="alert-dialog-slide-description"
+        style={{width: "600px", margin: "auto"}}
+      >
+        <DialogTitle>{"Are you sure?"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+            Are you sure you want to permanently delete this item? This process
+            can be undone!
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            style={{
+              padding: "5px",
+              backgroundColor: "#2577ea",
+              color: "white",
+              textTransform: "capitalize",
+            }}
+            onClick={handleYesClick}
+          >
+            Yes
+          </Button>
+          <Button
+            style={{
+              padding: "5px",
+              backgroundColor: "#2577ea",
+              color: "white",
+              textTransform: "capitalize",
+            }}
+            onClick={handleNoClick}
+          >
+            No
+          </Button>
+        </DialogActions>
+      </Dialog>
     </>
   );
 }
