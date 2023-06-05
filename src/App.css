@@ -104,7 +104,6 @@ a {
 
 .inputGp input,
 .inputGp textarea {
-  font-size: 18px;
   border: none;
   border-radius: 2px;
   padding: 5px;
@@ -302,7 +301,10 @@ textarea {
 }
 
 .blogContent img {
-  width: 50vw;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  width: 60vw;
+  height: 350px;
+  border-radius: 10px;
 }
 
 .blogContent p {

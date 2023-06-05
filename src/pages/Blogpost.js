@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "./pages.css";
 import "react-toastify/dist/ReactToastify.css";
+import parse from 'html-react-parser';
 
 const Blogpost = () => {
   const postId = useParams();
@@ -30,9 +31,12 @@ const Blogpost = () => {
     navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`);
     toast(`Your link has been pasted to your Clipboard. Enjoy!`);
   };
-  // const postInfo = postLists.filter((x) => x.id === postId.blogname)[0];
-  // console.log(Array.of(postInfo)[0]);
-  // const post = Array.of(postInfo)[0];
+
+  let parsedPostText;
+  if (post && post.postText) {
+    parsedPostText = parse(post.postText);
+  }
+
   return (
     <div className="blogpage">
       {post && (
@@ -78,7 +82,7 @@ const Blogpost = () => {
           <hr />
           <div className="blogContent">
             <img src={post.image} alt={post.title} />
-            <p>{post.postText}</p>
+            {parsedPostText}
           </div>
         </>
       )}
