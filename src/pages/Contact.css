@@ -42,7 +42,7 @@
   flex-direction: column;
   align-items: center;
   color:black;
-  padding:2rem .5rem;
+  padding:1.5rem .5rem;
 
 }
 
@@ -58,7 +58,7 @@
 
 .right .subtitle{
   font-size: .8rem;
-  margin:10% 0 1.8rem 0;
+  margin: 8% 0 1.8rem 0;
 
 }
 
@@ -114,7 +114,7 @@ button {
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: bold;
-  transition: background-color 0.3s;
+  transition: background-color 0.4s;
 }
 
 button:hover {
