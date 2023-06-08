@@ -82,7 +82,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
               onClick={toggleSidebarOnDesktop}
             />
             <span
-              className="link_names"
+              className="link_names login-button"
               style={{ left: "2.5rem", position: "relative", bottom: ".1rem" }}
             >
               Log in

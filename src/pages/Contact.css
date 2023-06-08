@@ -1,7 +1,6 @@
 .Contactus {
   height: 100vh;
-
-
+  margin-left: 250px;
 }
 
 .login {
@@ -17,22 +16,19 @@
   transform: translate(-50%, -50%);
   border-radius: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-
-
 }
 
 .left {
   width: 50%;
   height: 100%;
-
 }
 
 .left img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
 }
+
 
 
 .right {
@@ -41,9 +37,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color:black;
-  padding:1.5rem .5rem;
-
+  color: black;
+  padding: 1.5rem 0.5rem;
 }
 
 .right .right-bottom {
@@ -55,28 +50,27 @@
   height: 100%;
 }
 
-
-.right .subtitle{
-  font-size: .8rem;
+.right .subtitle {
+  font-size: 0.8rem;
   margin: 8% 0 1.8rem 0;
-
 }
 
-.right .form{
-  width:70%;
-}
-
-.right .inputs{
+.right .form {
+  width: 80%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
 }
 
-.right .inputs label{
-  font-size: .8rem;
-
+.right .inputs {
+  display: flex;
+  flex-direction: column;
 }
 
+.right .inputs label {
+  font-size: 0.8rem;
+}
 
 .right .inputs {
   margin-bottom: 1rem;
@@ -97,11 +91,11 @@
   color: #333;
   font-size: 0.9rem;
   resize: none;
-  outline:none;
+  outline: none;
 }
 
 .right .inputs textarea {
-  height:3.5rem;
+  height: 3.5rem;
 }
 
 button {
@@ -112,13 +106,33 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: bold;
-  transition: background-color 0.4s;
+  text-align: center;
 }
 
-button:hover {
-  background-color: #2b6fe6;
+@media (max-width: 767px) {
+  h1 {
+    font-size: 3rem;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 90%;
+  }
+
+  form {
+    margin-left: 30%;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 80%;
+  }
+  form {
+    margin-left: 25%;
+  }
 }
 
 .title {
@@ -126,6 +140,3 @@ button:hover {
   font-weight: bold;
   margin-bottom: 1rem;
 }
-
-
-
