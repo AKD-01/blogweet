@@ -175,7 +175,6 @@ body {
   .title {
     font-size: 1.5rem;
   }
-
 }
 
 .scrollToTopBtn {
@@ -205,5 +204,30 @@ body {
   opacity: 1;
   bottom: 46px;
   background-color: #333;
+}
 
+.edit-heading{
+  display: flex;
+  justify-content: center;
+  font-family: Poppins,sans-serif;
+  font-size:xxx-large;
+}
+
+.edit-label {
+  margin-top: 50px;
+  font-size: 1.2rem; /* Adjust the font size as desired */
+}
+
+.edit-textarea {
+  width: 90%;
+  font-size: 1rem; /* Adjust the font size as desired */
+}
+
+.button {
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.buttonGap {
+  margin-left: 100px;
 }
