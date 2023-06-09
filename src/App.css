@@ -199,6 +199,24 @@ textarea {
   margin-bottom: 4rem;
 }
 
+/* SCROLL BAR */
+::-webkit-scrollbar {
+  width: 17px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 100vw;
+  background: #BCB9D6; 
+  margin-block: 0.4em;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 0.21em solid transparent;
+  border-radius: 100px;
+  background-color: #9E9BBB;
+  background-clip: content-box;
+}
+
 /* GOOGLE BUTTON */
 .login-with-google-btn {
   cursor: pointer;
@@ -258,7 +276,6 @@ textarea {
   margin: 20px;
   /* padding: 20px; */
   border-radius: 15px;
-  box-shadow: 1px 1px 1rem #40415d;
   overflow: hidden;
   padding: 2rem;
 }
@@ -298,17 +315,24 @@ textarea {
 }
 
 .blogContent {
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: center;
 }
 
 .blogContent img {
   width: 50vw;
+  box-shadow: 0 0 0.5rem black;
 }
 
 .blogContent p {
   text-align: left;
+  font-family: "Verdana", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  
 }
+
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .homePage .post {
@@ -367,7 +391,7 @@ textarea {
   }
 
   .post .postTextContainer {
-    /* word-wrap: break-word; */
+    word-wrap: break-word;
     display: grid;
     height: 100px;
     padding: .25rem;
@@ -381,21 +405,3 @@ textarea {
   }
 }
 
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #bfa5de; 
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}

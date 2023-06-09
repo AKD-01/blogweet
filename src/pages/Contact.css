@@ -1,7 +1,5 @@
 .Contactus {
   margin-left: 250px;
-  
-  
 }
 
 h1 {
@@ -19,9 +17,7 @@ p {
 
 form {
   margin-top: 20px;
-  margin-left: 37%;
-  
-  
+  margin-left: 37%;  
 }
 
 label {
@@ -53,10 +49,6 @@ button {
   cursor: pointer;
   text-align: center;
   /* margin-left: 200px; */
-}
-
-button:hover {
-  background-color: #45a049;
 }
 
 @media (max-width: 767px) {
