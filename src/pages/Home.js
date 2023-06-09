@@ -1,21 +1,65 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
-import { getPostsFromDb, deletePostFromDb } from "../utils/firebase";
-import { auth, db } from "../utils/firebase";
+import { auth, db, deletePostFromDb, getPostsFromDb } from "../utils/firebase";
 
-import "./Home.css";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { doc, updateDoc } from "firebase/firestore";
+import Modal from "react-modal";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
-import Modal from "react-modal";
+import "./Home.css";
+
+import Slide from "@mui/material/Slide";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
+  const [open, setOpen] = useState(false);
+  const [DeleteConfirmed, setDeleteConfirmed] = useState(false);
+  const [Blog, setBlog] = useState({});
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  useEffect(() => {
+    if (DeleteConfirmed) {
+      console.log("inside this confirm");
+      deletePost(Blog.id);
+    }
+  }, [DeleteConfirmed]);
+
+  const handleYesClick = () => {
+    console.log("inside this yes");
+    setDeleteConfirmed(true);
+    setOpen(false);
+  };
+
+  const handleNoClick = () => {
+    console.log("inside this No");
+    setDeleteConfirmed(false);
+    setOpen(false);
+  };
+
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
+
   const deletePost = async (id) => {
     await deletePostFromDb(id);
     window.location.reload();
@@ -42,7 +86,6 @@ function Home({ isAuth }) {
       }
     }
   };
-
 
   // const DUMMY_POST = {
   //   id: `id:${Math.random()}`,
@@ -98,7 +141,8 @@ function Home({ isAuth }) {
                     className="title"
                     onClick={() => {
                       navigate(
-                        `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
                         }`,
                         { state: post }
                       );
@@ -116,12 +160,8 @@ function Home({ isAuth }) {
                     post.author.id === auth.currentUser.uid && (
                       <button
                         onClick={() => {
-                          const confirmed = window.confirm(
-                            "Are you sure you want to delete this post?"
-                          );
-                          if (confirmed) {
-                            deletePost(post.id);
-                          }
+                          setOpen(true);
+                          setBlog(post)
                         }}
                       >
                         {" "}
@@ -131,16 +171,17 @@ function Home({ isAuth }) {
                         ></i>
                       </button>
                     )}
-                  <button className="expandElement"
+                  <button
+                    className="expandElement"
                     onClick={() =>
                       sharingHandler(
-                        `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
                         }`
                       )
                     }
                   >
-<i className="bx bxs-share-alt"></i>
-
+                    <i className="bx bxs-share-alt"></i>
                   </button>
                   {isAuth &&
                     auth.currentUser != null &&
@@ -152,7 +193,6 @@ function Home({ isAuth }) {
                         ></i>
                       </button>
                     )}
-
                 </div>
               </div>
               <div className="contents">
@@ -174,11 +214,12 @@ function Home({ isAuth }) {
                       fontSize: ".9rem",
                       cursor: "pointer",
                       width: "fit-content",
-                      'justify-self': "end"
+                      "justify-self": "end",
                     }}
                     onClick={() => {
                       navigate(
-                        `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
                         }`,
                         { state: post }
                       );
@@ -236,28 +277,77 @@ function Home({ isAuth }) {
         isOpen={showModal}
         onRequestClose={closeEditModal}
         contentLabel="Edit Post Modal"
-        style={{ overlay: { background: "transparent" }, content: { color: "#fff" } }}>
-        <div style={{ height: "100%", background: "#1D1B31", padding: "20px"}}>
+        style={{
+          overlay: { background: "transparent" },
+          content: { color: "#fff" },
+        }}
+      >
+        <div style={{ height: "100%", background: "#1D1B31", padding: "20px" }}>
           <h2 className="edit-heading">Edit Your Post</h2>
           {selectedPost && (
             <div>
-              <label htmlFor="editedContent" className="edit-label">Update your content:</label>
+              <label htmlFor="editedContent" className="edit-label">
+                Update your content:
+              </label>
               <textarea
                 id="editedContent"
                 defaultValue={selectedPost.postText}
                 rows="10"
                 className="edit-textarea"
               ></textarea>
-
             </div>
           )}
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <button onClick={handleModalSubmit} className="button">Submit</button>
-            <button onClick={closeEditModal} className="button buttonGap">Back</button>
+            <button onClick={handleModalSubmit} className="button">
+              Submit
+            </button>
+            <button onClick={closeEditModal} className="button buttonGap">
+              Back
+            </button>
           </div>
         </div>
-
       </Modal>
+      <Dialog
+      fullScreen={fullScreen}
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-describedby="alert-dialog-slide-description"
+        style={{width: "600px", margin: "auto"}}
+      >
+        <DialogTitle>{"Are you sure?"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+            Are you sure you want to permanently delete this item? This process
+            can be undone!
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            style={{
+              padding: "5px",
+              backgroundColor: "#2577ea",
+              color: "white",
+              textTransform: "capitalize",
+            }}
+            onClick={handleYesClick}
+          >
+            Yes
+          </Button>
+          <Button
+            style={{
+              padding: "5px",
+              backgroundColor: "#2577ea",
+              color: "white",
+              textTransform: "capitalize",
+            }}
+            onClick={handleNoClick}
+          >
+            No
+          </Button>
+        </DialogActions>
+      </Dialog>
     </>
   );
 }
