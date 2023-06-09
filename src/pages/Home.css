@@ -12,14 +12,17 @@ body {
   color: rgb(24, 8, 95);
 }
 
-.post{
-  transition: transform .3s ease-out;
+.post {
+  transition: transform 0.3s ease-out;
   display: inline-block;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 
 .post:hover{
   transform: scale(1.03);
-    box-shadow: 0 13px 40px -5px hsla(240, 30.1%, 28%, 0.12), 0 8px 32px -8px hsla(0, 0%, 0%, 0.14), 0 -6px 32px -6px hsla(0, 0%, 0%, 0.02);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
     &::before,
   &::after {
     position: absolute;
@@ -35,9 +38,12 @@ body {
   }
 }
 
+
 .blogcredits {
   display: flex;
   justify-content: space-between;
+  padding: 8px;
+  font-size: 1.2rem;
 }
 
 .Link {
@@ -45,16 +51,33 @@ body {
 }
 
 .title {
-  filter: drop-shadow(2px 4px 6px white);
   color: #110c22;
   font-weight: normal;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   cursor: pointer;
+  padding-left:10px;
+  position: relative;
+  width: fit-content;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  background-color: #3c1247;
+  transition: width 0.3s ease-out;
 }
 
 .title:hover {
-  color: #2d0e36;
-  filter: drop-shadow(1rem 1rem 1rem black);
+  color: #3c1247;
+}
+
+.title:hover::after {
+  width: 100%;
 }
 
 .imageCont {
@@ -63,19 +86,47 @@ body {
   margin: 1rem;
 }
 
+.post .postTextContainer {
+  word-wrap: break-word;
+  display: grid;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  font-size: 1rem;
+  padding: 1.2rem 1rem;
+}
+
+/* Expading animations */
+.expandElement {
+  transition: transform 0.3s ease-out;
+  color: black;
+}
+
+.expandElement:hover {
+  transform: scale(1.2);
+}
+/* Expading animations */
+
 .imageCont img {
-  height: 8rem;
+  height: 9rem;
+  
+  padding: 0;
+  border: none;
+    border-radius: 8px;
   padding: 0.2rem;
-  border: ridge;
+  border-radius: 10px;
 }
 
 .contents {
   display: flex;
+  
+  padding-bottom: 15px;
 }
 
 .deletePost {
   display: flex;
 }
+
 
 @media screen and (min-width: 600px) and (max-width: 740px) {
   .contents {
@@ -124,30 +175,35 @@ body {
   .title {
     font-size: 1.5rem;
   }
-
 }
+
 .scrollToTopBtn {
   position: fixed;
   bottom: 40px;
-  right: 10px;
-  width: 42px;
-  height: 42px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
   border: none;
-  border-radius: 50%;
+  border-radius: 100%;
   background-color: #333;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
   transition: opacity 0.3s;
   opacity: 0.7;
-  transition: bottom 0.3s;
-
+}
+.scrollElement{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .scrollToTopBtn:hover {
   opacity: 1;
   bottom: 46px;
-
+  background-color: #333;
 }
 
 .edit-heading{
@@ -156,6 +212,7 @@ body {
   font-family: Poppins,sans-serif;
   font-size:xxx-large;
 }
+
 .edit-label {
   margin-top: 50px;
   font-size: 1.2rem; /* Adjust the font size as desired */
