@@ -48,7 +48,7 @@ textarea {
   resize: none;
 }
 
-button {
+.cbutton {
   padding: 12px 25px;
   font-size: 15px;
   font-weight: 500;
@@ -66,6 +66,8 @@ button:hover {
   background-color: #bcb9d6;
   border: 2px solid #fff;
   transform: scale(1.05);
+.cbutton:hover {
+  background-color: #45a049;
 }
 
 @media (max-width: 767px) {
