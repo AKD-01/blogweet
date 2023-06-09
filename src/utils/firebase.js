@@ -3,13 +3,14 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, addDoc, collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider, GithubAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBSN0SLpQmEBJtxlDJENf4syWXPQRRqhN0",
-  authDomain: "blogweet-c28a4.firebaseapp.com",
-  projectId: "blogweet-c28a4",
-  storageBucket: "blogweet-c28a4.appspot.com",
-  messagingSenderId: "801793825021",
-  appId: "1:801793825021:web:8b905f78556131e4c94694",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGE_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 // Initialize Firebase

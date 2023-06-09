@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+.Contactus {
+  margin-left: 250px;
 }
 body {
   margin: 0;
@@ -9,6 +11,11 @@ form h1 {
   font-size: medium;
 }
 form {
+  margin-top: 20px;
+  margin-left: 37%;  
+}
+
+label {
   display: block;
   background-color: #fff;
   box-shadow: 1px 1px 3px #ddd;
@@ -39,4 +46,41 @@ form button {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
+  text-align: center;
+  /* margin-left: 200px; */
+}
+
+@media (max-width: 767px) {
+  /* p {
+    text-align: center;
+  } */
+  h1 {
+    font-size: 3rem;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 90%;
+  }
+
+  form{
+    margin-left: 30%;;
+  }
+}
+
+/* medium screen  */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Styles specific to medium screens */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 80%;
+  }
+  /* p {
+    text-align: center;
+  } */
+  form{
+    margin-left: 25%;
+  }
+  /* Add more styles for other elements as needed */
 }
