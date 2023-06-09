@@ -144,6 +144,8 @@ function Home({ isAuth }) {
                       color: "#3a363d",
                       fontSize: ".9rem",
                       cursor: "pointer",
+                      width: "fit-content",
+                      'justify-self': "end"
                     }}
                     onClick={() => {
                       navigate(
@@ -196,7 +198,9 @@ function Home({ isAuth }) {
           }}
           title="Scroll to top"
         >
-          <FontAwesomeIcon icon={faArrowUp} />
+          <div className="scrollElement">
+            <FontAwesomeIcon icon={faArrowUp} />
+          </div>
         </button>
       )}
     </>

@@ -11,15 +11,15 @@ const Contact=()=>{
             <form>
                 <div >
                 <label htmlFor="name">Name:</label>
-                <input type="text" id="name"></input>
+                <input type="text" id="name" placeholder="Name"></input>
                 </div>
                 <div>
                 <label htmlFor="email">Email:</label>
-                <input type="email" id="email"></input>
+                <input type="email" id="email" placeholder="Email"></input>
             </div>
                 <div>
                 <label htmlFor="message">Message:</label>
-                <textarea id="message" rows="6"></textarea>
+                <textarea id="message" rows="6" placeholder="Enter your message here"></textarea>
                 </div>
                 <button className="cbutton">Submit</button>
             </form>
