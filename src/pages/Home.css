@@ -15,6 +15,7 @@ body {
 .post {
   transition: transform 0.3s ease-out;
   display: inline-block;
+  width: 300px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -55,6 +56,7 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
+  padding-left:10px;
   position: relative;
   width: fit-content;
 }
@@ -107,12 +109,17 @@ body {
 
 .imageCont img {
   height: 9rem;
+  
+  padding: 0;
+  border: none;
+    border-radius: 8px;
   padding: 0.2rem;
   border-radius: 10px;
 }
 
 .contents {
   display: flex;
+  
   padding-bottom: 15px;
 }
 
@@ -170,12 +177,12 @@ body {
   }
 
 }
+
 .scrollToTopBtn {
   position: fixed;
   bottom: 40px;
   right: 10px;
-  width: 42px;
-  height: 42px;
+  width: 1%;  
   border: none;
   border-radius: 100%;
   background-color: #333;
@@ -198,5 +205,6 @@ body {
 .scrollToTopBtn:hover {
   opacity: 1;
   bottom: 46px;
+  background-color: #333;
 
 }

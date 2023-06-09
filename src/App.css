@@ -258,13 +258,13 @@ textarea {
 }
 
 .homePage {
-  width: calc(100% - 240px);
+  width: calc(100% - 250px);
   min-height: calc(100vh - 80px);
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 30px;
   left: 240px;
   position: absolute;
 }
@@ -274,10 +274,10 @@ textarea {
   height: auto;
   background-color: rgb(158, 155, 187);
   margin: 20px;
-  padding: 20px;
+  /* padding: 20px; */
   border-radius: 15px;
   overflow: hidden;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .post .postHeader {
