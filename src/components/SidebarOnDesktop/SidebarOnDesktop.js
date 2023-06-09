@@ -43,16 +43,16 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         </li>
         <li onClick={toggleSidebarOnDesktop}>
           <Link to="/about">
-            <i class='bx bxs-info-circle'></i>
+            <i class="bx bxs-info-circle"></i>
             <span className="link_names">About</span>
           </Link>
-        </li>   
+        </li>
         <li>
           <Link to="/contact">
-            <i class='bx bxs-info-circle'></i>
+            <i class="bx bxs-user-circle"></i>
             <span className="link_names">Contact Us</span>
           </Link>
-        </li>  
+        </li>
         {isAuth && (
           <li onClick={toggleSidebarOnDesktop}>
             <Link to="/createpost">
@@ -73,7 +73,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
               onClick={toggleSidebarOnDesktop}
             />
             <span
-              className="link_names"
+              className="link_names login-button"
               style={{ left: "2.5rem", position: "relative", bottom: ".1rem" }}
             >
               Log in

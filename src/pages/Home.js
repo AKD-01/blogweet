@@ -104,7 +104,7 @@ function Home({ isAuth }) {
                         ></i>
                       </button>
                     )}
-                  <button
+                  <button className="expandElement"
                     onClick={() =>
                       sharingHandler(
                         `/user/${post.author.name.replaceAll(" ", "-")}/${
@@ -113,15 +113,8 @@ function Home({ isAuth }) {
                       )
                     }
                   >
-                    <i
-                      className="bx bxs-share-alt"
-                      style={{
-                        color: "rgb(255, 255, 255)",
-                        boxShadow: " 1px 1px 1rem black",
-                        borderRadius: "1rem",
-                        background: " black",
-                      }}
-                    ></i>
+<i className="bx bxs-share-alt"></i>
+
                   </button>
                 </div>
               </div>
@@ -143,6 +136,8 @@ function Home({ isAuth }) {
                       color: "#3a363d",
                       fontSize: ".9rem",
                       cursor: "pointer",
+                      width: "fit-content",
+                      'justify-self': "end"
                     }}
                     onClick={() => {
                       navigate(
@@ -195,7 +190,9 @@ function Home({ isAuth }) {
           }}
           title="Scroll to top"
         >
-          <FontAwesomeIcon icon={faArrowUp} />
+          <div className="scrollElement">
+            <FontAwesomeIcon icon={faArrowUp} />
+          </div>
         </button>
       )}
     </>
