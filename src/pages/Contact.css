@@ -40,7 +40,7 @@ textarea {
   width: 35%;
 }
 
-button {
+.cbutton {
   padding: 12px 25px;
   background-color: #d65f30;
   color: white;
@@ -49,6 +49,10 @@ button {
   cursor: pointer;
   text-align: center;
   /* margin-left: 200px; */
+}
+
+.cbutton:hover {
+  background-color: #45a049;
 }
 
 @media (max-width: 767px) {

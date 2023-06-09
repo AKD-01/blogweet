@@ -21,7 +21,7 @@ const Contact=()=>{
                 <label htmlFor="message">Message:</label>
                 <textarea id="message" rows="6" placeholder="Enter your message here"></textarea>
                 </div>
-                <button>Submit</button>
+                <button className="cbutton">Submit</button>
             </form>
         </div>
     );
