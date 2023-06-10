@@ -186,6 +186,18 @@ body {
   pointer-events: auto;
 }
 
+.SidebarOnDesktop .login-button{
+  transition: all 0.4s ease;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+.SidebarOnDesktop .login-button:hover{
+  background-color: #fff;
+  color: #000;
+
+}
+
 .SidebarOnDesktop .profile_content {
   position: absolute;
   color: #fff;

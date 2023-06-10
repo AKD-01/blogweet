@@ -1,18 +1,11 @@
 import React, { useState } from "react";
 import "./SidebarOnDesktop.css";
-<<<<<<< HEAD
-//import "boxicons";
-import { auth } from "../../firebase-config";
+
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import {FaBloggerB} from 'react-icons/fa';
 import { Tooltip } from 'react-tooltip';
-
-
-=======
 import "boxicons";
 import { auth } from "../../utils/firebase";
-import { Link } from "react-router-dom";
->>>>>>> 4b78d19dc4150835dde028bd09b2c44440b29b33
 
 const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
   const [state, setState] = useState(true);
@@ -56,23 +49,18 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
           </Link>
           <span className="tooltip">Home</span>
         </li>
-<<<<<<< HEAD
-        <li>
-          <Link to="/about" className={`${pathMatchingRoute("/about") && `active_class`}`}>
-=======
         <li onClick={toggleSidebarOnDesktop}>
           <Link to="/about">
->>>>>>> 4b78d19dc4150835dde028bd09b2c44440b29b33
             <i class='bx bxs-info-circle'></i>
             <span className="link_names">About</span>
           </Link>
-        </li>   
+        </li>
         <li>
           <Link to="/contact">
-            <i class='bx bxs-user-circle'></i>
+            <i class="bx bxs-user-circle"></i>
             <span className="link_names">Contact Us</span>
           </Link>
-        </li>  
+        </li>
         {isAuth && (
           <li onClick={toggleSidebarOnDesktop}>
             <Link to="/createpost" className={`${pathMatchingRoute("/createpost") && `active_class`}`}>
@@ -94,7 +82,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
               onClick={toggleSidebarOnDesktop}
             />
             <span
-              className="link_names"
+              className="link_names login-button"
               style={{ left: "2.5rem", position: "relative", bottom: ".1rem" }}
             >
               Log in
