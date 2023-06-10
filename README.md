@@ -80,7 +80,12 @@ REACT_APP_APP_ID="1:787500061298:web:242f526d6800f0bbbf68eb"
 GENERATE_SOURCEMAP=false
 ```
 
+✴️ **IMPORTANT**: Run the following command to install node modules
+
+```npm i```
+
 ✴️ Make your contribution
+
 ✴️ Commit and push the changes
 
 ```markdown
