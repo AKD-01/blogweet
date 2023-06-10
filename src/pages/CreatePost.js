@@ -1,47 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { addPostToDb } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import Slide from "@mui/material/Slide";
-
-
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
+import Modal from "./Modal"; // Import the Modal component
 
 function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [image, setImage] = useState("");
-  const [open, setOpen] = useState(false);
-  const [message, setmessage] = useState({});
-
-  
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
-
- 
+  const [modalMessage, setModalMessage] = useState(""); // State for the modal message
+  const [showModal, setShowModal] = useState(false); // State to control the modal visibility
   let navigate = useNavigate();
 
   const createPost = async () => {
-    if(!title || !postText || !image) {
-      setmessage( {"status" : "Please fill all the fields"})
-      setOpen(true);
+    if (!title || !postText || !image) {
+      setModalMessage("Please fill all the fields"); // Set the modal message
+      setShowModal(true); // Show the modal
       return;
     }
     console.log(title, postText, image);
     if (getWordCount(postText) < 20) {
-      setmessage( {"status" : "The post must contain at least 20 words."})
-      setOpen(true);
+      setModalMessage("The post must contain at least 20 words."); // Set the modal message
+      setShowModal(true); // Show the modal
       return;
-    } 
+    }
     await addPostToDb(title, postText, image);
     navigate("/");
   };
@@ -57,7 +38,7 @@ function CreatePost({ isAuth }) {
     if (!isAuth) {
       navigate("/login");
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const hanldleImageUpload = (e) => {
@@ -66,6 +47,10 @@ function CreatePost({ isAuth }) {
 
   const getWordCount = (text) => {
     return text.trim().split(/\s+/).length;
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -91,42 +76,15 @@ function CreatePost({ isAuth }) {
         <div className="inputImg">
           <label> Image Link</label>
           <div className="cont">
-            <input placeholder="https://"  onChange={hanldleImageUpload} />
+            <input placeholder="https://" onChange={hanldleImageUpload} />
             <img src={image} alt="Uploaded preview" />
           </div>
         </div>
 
-        <button  onClick={createPost}> Submit Post </button>
+        <button onClick={createPost}> Submit Post </button>
       </div>
-      <Dialog
-      PaperProps={{ sx: { position: "fixed"} }}
-      fullScreen={fullScreen}
-        open={open}
-        TransitionComponent={Transition}
-        keepMounted
-        onClose={handleClose}
-        aria-describedby="alert-dialog-slide-description"
-        style={{width: "50%", margin: "auto"}}
-      >
-        <DialogContent>
-          <DialogContentText id="alert-dialog-slide-description">
-            {message.status}
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button
-            style={{
-              padding: "5px",
-              backgroundColor: "#2577ea",
-              color: "white",
-              textTransform: "capitalize",
-            }}
-            onClick={handleClick}
-          >
-            Ok
-          </Button>
-        </DialogActions>
-      </Dialog>
+
+      {showModal && <Modal message={modalMessage} closeModal={closeModal} />}
     </div>
   );
 }
