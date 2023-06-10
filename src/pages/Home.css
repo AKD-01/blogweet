@@ -186,24 +186,44 @@ body {
   border: none;
   border-radius: 100%;
   background-color: #333;
-  color: #fff;
+  color: #8d1818;
   font-size: 16px;
   cursor: pointer;
   transition: opacity 0.3s;
   opacity: 0.7;
+  animation: jump 0.5s infinite; /* Add this line */
+
 }
-.scrollElement{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.scrollToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #e7dd47;
+  color: #cf1212;
+  border-radius: 50%;
+  padding: 10px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  z-index: 999; /* Add this line */
+
 }
 
 .scrollToTopBtn:hover {
+  animation: jump 0.5s infinite;
   opacity: 1;
-  bottom: 46px;
-  background-color: #333;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .edit-heading{

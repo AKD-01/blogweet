@@ -228,18 +228,16 @@ function Home({ isAuth }) {
       />
       {/* Scroll-to-top button */}
       {showScrollToTop && (
-        <button
-          className="scrollToTopBtn"
-          onClick={() => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-          title="Scroll to top"
-        >
-          <div className="scrollElement">
-            <FontAwesomeIcon icon={faArrowUp} />
-          </div>
-        </button>
-      )}
+  <button
+    className="scrollToTopBtn"
+    onClick={() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }}
+    title="Scroll to top"
+  >
+    <FontAwesomeIcon icon={faArrowUp} />
+  </button>
+)}
 
       <Modal
         isOpen={showModal}
