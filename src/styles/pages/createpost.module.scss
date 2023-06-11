@@ -4,10 +4,11 @@
 
   * {
     overflow-x: hidden;
-  
+
     &::-webkit-scrollbar {
-    width: 0px; /* Width of the entire scrollbar */
-    height: 0px;
+      width: 0px; /* Width of the entire scrollbar */
+      height: 0px;
+    }
   }
 
   .createPostContainer {
