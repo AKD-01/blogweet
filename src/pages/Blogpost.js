@@ -53,7 +53,7 @@ const Blogpost = () => {
                 className="bx bxs-share-alt"
                 style={{
                   color: "rgb(255, 255, 255)",
-                  boxShadow: " 1px 1px 1rem black",
+                  boxShadow: " 0px 0px 0.2rem black",
                   borderRadius: "1rem",
                   background: " black",
                   fontSize: "2rem",

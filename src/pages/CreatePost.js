@@ -3,6 +3,7 @@ import { addPostToDb } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { checkLinkValidity } from "../utils/validateLink";
 import { Alert } from "../components/alert/Alert";
+import Modal from "./Modal"; // Import the Modal component
 
 function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
@@ -10,16 +11,20 @@ function CreatePost({ isAuth }) {
   const [image, setImage] = useState("");
   const [alert, setAlert] = useState(null)
   console.log(alert)
+  const [modalMessage, setModalMessage] = useState(""); // State for the modal message
+  const [showModal, setShowModal] = useState(false); // State to control the modal visibility
   let navigate = useNavigate();
 
   const createPost = async () => {
     if (!title || !postText || !image) {
-      alert("Please fill all the fields");
+      setModalMessage("Please fill all the fields"); // Set the modal message
+      setShowModal(true); // Show the modal
       return;
     }
     console.log(title, postText, image);
     if (getWordCount(postText) < 20) {
-      alert("The post must contain at least 20 words.");
+      setModalMessage("The post must contain at least 20 words."); // Set the modal message
+      setShowModal(true); // Show the modal
       return;
     }
     await addPostToDb(title, postText, image);
@@ -55,6 +60,10 @@ function CreatePost({ isAuth }) {
     return text.trim().split(/\s+/).length;
   };
 
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="createPostPage">
       <div className="cpContainer">
@@ -88,7 +97,9 @@ function CreatePost({ isAuth }) {
         </div>
 
         <button className="submitBtn" onClick={createPost}> Submit Post </button>
-      </div>
+        </div>
+
+      {showModal && <Modal message={modalMessage} closeModal={closeModal} />}
     </div>
   );
 }
