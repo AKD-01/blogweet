@@ -98,7 +98,7 @@ function Home({ isAuth }) {
     <>
       <div className="homePage">
         {postLists.map((post) => {
-          // console.log(post);
+           {/* console.log(post); */}
           return (
             <div className="post" key={post.id}>
               <div className="postHeader">
@@ -109,7 +109,7 @@ function Home({ isAuth }) {
                       navigate(
                         `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
                         }`,
-                        { state: post }
+                        { state: post  }
                       );
                     }}
                   >
@@ -202,6 +202,7 @@ function Home({ isAuth }) {
                 <div
                   style={{ cursor: "pointer" }}
                   onClick={() => {
+                   
                     navigate(`/user/${post.author.name.replaceAll(" ", "-")}`, {
                       state: post.author,
                     });
