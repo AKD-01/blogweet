@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 /* CSS */
 .button-57 {
-    margin: 1rem;
+  margin: 1rem;
   position: relative;
   overflow: hidden;
   border: 1px solid #18181a;
   border: none;
   color: #18181a;
   display: inline-block;
-  font-size: 15px;
-  line-height: 15px;
-  padding: 1rem ;
-  border-radius: .5rem;
+  align-items: center;
+  line-height: 25px;
+  padding: 1rem;
+  border-radius: 0.5rem;
   text-decoration: none;
   cursor: pointer;
   background: #fff;
@@ -71,24 +71,24 @@
 }
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
-.button-57{
-  width: 253px;
-  font-size: 1.1rem;
+  .button-57 {
+    width: 253px;
+    font-size: 1.1rem;
+  }
 }
-}
-.lg-hd{
+.lg-hd {
   color: rgb(241, 142, 14);
   padding: 0;
   margin: 0;
-  font-size: 2.7em!important;
+  font-size: 2.7em !important;
   /* position: relative; */
 }
-.lg-shd{
+.lg-shd {
   padding: 0;
   margin: -50px;
-  font-size: 1.2em!important;
+  font-size: 1.2em !important;
   /* position: absolute; */
 }
-.clr-hd{
-  color:rgb(12, 174, 12);
+.clr-hd {
+  color: rgb(12, 174, 12);
 }
