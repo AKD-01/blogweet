@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { getPostsFromDb, deletePostFromDb } from "../utils/firebase";
 import { auth, db } from "../utils/firebase";
-import { FaHeart } from "react-icons/fa";
+import { FaHeart,FaRegHeart } from "react-icons/fa";
 import { toggleLikePost } from "../utils/firebase";
 
 import "./Home.css";
@@ -218,26 +218,28 @@ function Home({ isAuth }) {
               <h3>
                 <div>📅{post.date}</div>
                 <div
-  onClick={() => handleLike(post.id)}
-  style={{
-    display: "flex",
-    alignItems: "center",
-    cursor: "pointer",
-  }}
->
-  <FaHeart
-    color={post.likes && post.likes.includes(auth.currentUser.uid) ? "red" : "black"}
-    style={{ marginRight: "5px" }}
-  />
+            onClick={() => handleLike(post.id)}
+             style={{
+             display: "flex",
+             alignItems: "center",
+            cursor: "pointer",
+             }}
+             >
+        
+         {post.likes && post.likes.includes(auth.currentUser.uid) ? <FaHeart color="red"  className='absolute top-4 left-4 text-gray-300'/>:<FaRegHeart  className='absolute top-4 left-4 text-gray-300'/>}
+      
+
+  
   <span
     style={{
       color: post.likes && post.likes.includes(auth.currentUser.uid) ? "red" : "black",
       fontWeight: post.likes && post.likes.includes(auth.currentUser.uid) ? "bold" : "normal",
+      marginLeft: "10px",
     }}
   >
     {post.likes ? post.likes.length : 0} Likes
   </span>
-</div>
+                </div>
 
                 <div
                   style={{ cursor: "pointer" }}
