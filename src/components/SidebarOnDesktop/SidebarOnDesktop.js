@@ -55,7 +55,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         </li>
         <li>
           <Link to="/contact">
-            <i class='bx bxs-user-circle'></i>
+            <i class="bx bxs-user-circle"></i>
             <span className="link_names">Contact Us</span>
           </Link>
         </li>
@@ -82,7 +82,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
               }}
             />
             <span
-              className="link_names"
+              className="link_names login-button"
               style={{
                 left: '2.5rem',
                 position: 'relative',
