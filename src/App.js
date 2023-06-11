@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {signUserAccountOut} from "./utils/firebase";
+import { signUserAccountOut } from "./utils/firebase";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import CreatePost from "./pages/CreatePost";
