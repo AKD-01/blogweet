@@ -51,6 +51,20 @@ button {
 	/* margin-left: 200px; */
 }
 
+.cbutton {
+  padding: 12px 25px;
+  background-color: #d65f30;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  /* margin-left: 200px; */
+}
+.cbutton:hover {
+  background-color: #45a049;
+}
+
 @media (max-width: 767px) {
 	/* p {
     text-align: center;
