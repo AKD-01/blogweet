@@ -5,6 +5,8 @@ import {
   addDoc,
   collection,
   getDocs,
+  getDoc,
+  updateDoc,
   deleteDoc,
   doc,
 } from "firebase/firestore";
@@ -54,6 +56,7 @@ export const addPostToDb = async (title, postText, image) => {
     },
     date: new Date().toJSON().slice(0, 10).replace(/-/g, "/"),
     image,
+    likes: []
   });
 };
 
@@ -66,3 +69,25 @@ export const getPostsFromDb = async () => {
 // Delete post from firestore database
 export const deletePostFromDb = async (id) =>
   await deleteDoc(doc(db, "posts", id));
+
+
+  // Toggle like status of a post
+export const toggleLikePost = async (postId, userId) => {
+  const postRef = doc(db, "posts", postId);
+  const postSnapshot = await getDoc(postRef);
+
+  if (postSnapshot.exists()) {
+    const post = postSnapshot.data();
+    const likes = post.likes || [];
+
+    if (likes.includes(userId)) {
+      // Remove user ID from likes array if already liked
+      const updatedLikes = likes.filter((id) => id !== userId);
+      await updateDoc(postRef, { likes: updatedLikes });
+    } else {
+      // Add user ID to likes array if not already liked
+      const updatedLikes = [...likes, userId];
+      await updateDoc(postRef, { likes: updatedLikes });
+    }
+  }
+};
