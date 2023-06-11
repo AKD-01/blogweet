@@ -2,6 +2,14 @@
   display: flex;
   justify-content: space-between;
 
+  * {
+    overflow-x: hidden;
+  
+    &::-webkit-scrollbar {
+    width: 0px; /* Width of the entire scrollbar */
+    height: 0px;
+  }
+
   .createPostContainer {
     height: calc(100vh - var(--header-height));
     width: 50%;
@@ -84,6 +92,10 @@
           margin-bottom: 10px;
           font-size: 18px;
         }
+
+        &::placeholder {
+          color: #505050;
+        }
       }
 
       textarea {
@@ -94,6 +106,7 @@
         padding: 20px 14px;
 
         &::placeholder {
+          color: #505050;
           font-size: 20px;
 
           white-space: pre-line;
