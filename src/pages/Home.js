@@ -1,20 +1,48 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { getPostsFromDb, deletePostFromDb } from "../utils/firebase";
-import { auth } from "../utils/firebase";
+import { auth, db } from "../utils/firebase";
+
 import "./Home.css";
+import { doc, updateDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import Modal from "react-modal";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedPost, setSelectedPost] = useState(null);
   const deletePost = async (id) => {
     await deletePostFromDb(id);
     window.location.reload();
   };
+
+  const openEditModal = (post) => {
+    setSelectedPost(post);
+    setShowModal(true);
+  };
+
+  const closeEditModal = () => {
+    setShowModal(false);
+  };
+
+  const handleModalSubmit = async () => {
+    if (selectedPost) {
+      const postDoc = doc(db, "posts", selectedPost.id);
+      const updatedPostContent = document.getElementById("editedContent").value;
+      if (updatedPostContent) {
+        await updateDoc(postDoc, { postText: updatedPostContent });
+        toast.success("Post updated successfully!");
+        closeEditModal();
+        window.location.reload();
+      }
+    }
+  };
+
 
   // const DUMMY_POST = {
   //   id: `id:${Math.random()}`,
@@ -28,16 +56,25 @@ function Home({ isAuth }) {
   useEffect(() => {
     const getPosts = async () => {
       const data = await getPostsFromDb();
-      setPostList(data);
+      // Find the index of the post to be pinned
+      const pinnedPostIndex = data.findIndex((post) => post.id === "Pci3H6XCUJHtiBZgYrlA");
+      if (pinnedPostIndex !== -1) {
+        // Extract the pinned post from the array
+        const pinnedPost = data.splice(pinnedPostIndex, 1)[0];
+        // Update the state with the updated postLists array
+        setPostList([pinnedPost, ...data]);
+      } else {
+        setPostList(data);
+      }
     };
-    
+
     getPosts();
   }, []);
   const navigate = useNavigate();
   const sharingHandler = (s) => {
     // console.log(`https://blogweet.vercel.app${s}`);
     navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`);
-    toast(`Your link has been pasted to your Clipboard. Enjoy!`);
+    toast.success(`Your link has been pasted to your Clipboard. Enjoy!`);
   };
 
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -69,10 +106,8 @@ function Home({ isAuth }) {
                   <h1
                     className="title"
                     onClick={() => {
-                      
                       navigate(
-                        `/user/${post.author.name.replaceAll(" ", "-")}/${
-                          post.id
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
                         }`,
                         { state: post }
                       );
@@ -90,10 +125,12 @@ function Home({ isAuth }) {
                     post.author.id === auth.currentUser.uid && (
                       <button
                         onClick={() => {
-                          const confirmed = window.confirm("Are you sure you want to delete this post?");
+                          const confirmed = window.confirm(
+                            "Are you sure you want to delete this post?"
+                          );
                           if (confirmed) {
-                              deletePost(post.id);
-                            }
+                            deletePost(post.id);
+                          }
                         }}
                       >
                         {" "}
@@ -103,25 +140,28 @@ function Home({ isAuth }) {
                         ></i>
                       </button>
                     )}
-                  <button
+                  <button className="expandElement"
                     onClick={() =>
                       sharingHandler(
-                        `/user/${post.author.name.replaceAll(" ", "-")}/${
-                          post.id
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
                         }`
                       )
                     }
                   >
-                    <i
-                      className="bx bxs-share-alt"
-                      style={{
-                        color: "rgb(255, 255, 255)",
-                        boxShadow: " 1px 1px 1rem black",
-                        borderRadius: "1rem",
-                        background: " black",
-                      }}
-                    ></i>
+<i className="bx bxs-share-alt"></i>
+
                   </button>
+                  {isAuth &&
+                    auth.currentUser != null &&
+                    post.author.id === auth.currentUser.uid && (
+                      <button onClick={() => openEditModal(post)}>
+                        <i
+                          className="bx bxs-pencil"
+                          style={{ color: "#000000" }}
+                        ></i>
+                      </button>
+                    )}
+
                 </div>
               </div>
               <div className="contents">
@@ -142,11 +182,12 @@ function Home({ isAuth }) {
                       color: "#3a363d",
                       fontSize: ".9rem",
                       cursor: "pointer",
+                      width: "fit-content",
+                      'justify-self': "end"
                     }}
                     onClick={() => {
                       navigate(
-                        `/user/${post.author.name.replaceAll(" ", "-")}/${
-                          post.id
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
                         }`,
                         { state: post }
                       );
@@ -169,18 +210,6 @@ function Home({ isAuth }) {
                   👤{post.author.name}
                 </div>
               </h3>
-              <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
-              />
             </div>
           );
         })}
@@ -206,9 +235,38 @@ function Home({ isAuth }) {
           }}
           title="Scroll to top"
         >
-          <FontAwesomeIcon icon={faArrowUp} />
+          <div className="scrollElement">
+            <FontAwesomeIcon icon={faArrowUp} />
+          </div>
         </button>
       )}
+
+      <Modal
+        isOpen={showModal}
+        onRequestClose={closeEditModal}
+        contentLabel="Edit Post Modal"
+        style={{ overlay: { background: "transparent" }, content: { color: "#fff" } }}>
+        <div style={{ height: "100%", background: "#1D1B31", padding: "20px"}}>
+          <h2 className="edit-heading">Edit Your Post</h2>
+          {selectedPost && (
+            <div>
+              <label htmlFor="editedContent" className="edit-label">Update your content:</label>
+              <textarea
+                id="editedContent"
+                defaultValue={selectedPost.postText}
+                rows="10"
+                className="edit-textarea"
+              ></textarea>
+
+            </div>
+          )}
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <button onClick={handleModalSubmit} className="button">Submit</button>
+            <button onClick={closeEditModal} className="button buttonGap">Back</button>
+          </div>
+        </div>
+
+      </Modal>
     </>
   );
 }

@@ -4,7 +4,6 @@ import 'boxicons'
 import { auth } from '../../utils/firebase'
 import { Link } from 'react-router-dom'
 
-
 const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
   const [state, setState] = useState(true)
 
@@ -42,7 +41,6 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
           </Link>
           <span className='tooltip'>Home</span>
         </li>
-        
 
         <li onClick={toggleSidebarOnDesktop}>
           <Link to='/about'>
@@ -58,7 +56,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         </li>
         <li>
           <Link to='/contact'>
-            <i class='bx bxs-info-circle'></i>
+            <i class='bx bxs-user-circle'></i>
             <span className='link_names'>Contact Us</span>
           </Link>
         </li>
@@ -82,7 +80,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
               onClick={toggleSidebarOnDesktop}
             />
             <span
-              className='link_names'
+              className='link_names login-button'
               style={{ left: '2.5rem', position: 'relative', bottom: '.1rem' }}
             >
               Log in
