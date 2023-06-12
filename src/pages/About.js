@@ -15,16 +15,16 @@ const About = () => {
         expertise. Users can create their blogs and post their content with just
         a few clicks. <br />
         <br />
-        Once a blog post is published, other users can read, and share it. This
-        creates a vibrant and dynamic community of users who are passionate
+        Once a blog post is published, other users can read and share it. This
+        creates a vibrant and dynamic community of passionate users
         about sharing and discovering new ideas and perspectives. The platform
         is also searchable, so users can easily find content that is relevant to
         their interests.
         <br />
         <br />
-        One of the unique features of BlogWeet is that it allows users to build
+       One of the unique features of BlogWeet is that it allows users to build
         a following by connecting with other users who share similar interests.
-        This feature enables users to expand their reach, and increase the
+        This feature enables users to expand their reach and increase the
         visibility of their content. Overall, BlogWeet is a great platform for
         users who are looking for an easy, user-friendly way to create, post and
         share their blogs, and engage with a community of like-minded
@@ -34,7 +34,7 @@ const About = () => {
         <br />
         <br />
         In terms of security, BlogWeet provides robust security features to
-        ensure that users' data is protected. The platform uses google’s
+        ensure that users' data is protected. The platform uses Google’s
         encryption to secure user data and also uses advanced security measures
         to protect against hacking and other malicious activities.
         <br />
