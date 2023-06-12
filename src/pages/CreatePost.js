@@ -27,6 +27,13 @@ function CreatePost({ isAuth }) {
     navigate("/");
   };
 
+  const handleClick = () => {
+    setOpen(false);
+  }
+  const handleClose = () => {
+    setOpen(false);
+  }
+
   useEffect(() => {
     if (!isAuth) {
       navigate("/login");
