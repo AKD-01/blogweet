@@ -2,9 +2,11 @@
 import React, { useEffect, useState } from "react";
 import { getPostsFromDb, deletePostFromDb } from "../utils/firebase";
 import { auth, db } from "../utils/firebase";
+import { FaHeart,FaRegHeart } from "react-icons/fa";
+import { toggleLikePost } from "../utils/firebase";
 
 import "./Home.css";
-import { doc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc,arrayUnion,arrayRemove,getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -42,17 +44,33 @@ function Home({ isAuth }) {
       }
     }
   };
+  const handleLike = async (postId) => {
+    await toggleLikePost(postId, auth.currentUser.uid);
+    setPostList((prevPosts) =>
+      prevPosts.map((post) => {
+        if (post.id === postId) {
+          // Check if the user has already liked the post
+          const liked = post.likes ? post.likes.includes(auth.currentUser.uid) : false;
+  
+          // Display toast message based on like/unlike action
+          const toastMessage = liked ? "Post unliked" : "Post liked";
+          toast.success(toastMessage);
+  
+          return {
+            ...post,
+            likes: liked
+              ? post.likes.filter((id) => id !== auth.currentUser.uid)
+              : [...(post.likes || []), auth.currentUser.uid],
+          };
+        }
+        return post;
+      })
+    );
+  };
+  
 
-
-  // const DUMMY_POST = {
-  //   id: `id:${Math.random()}`,
-  //   title: "Dummy Post",
-  //   author: { name: "Dummy Author", id: Math.random() },
-  //   key: Math.random(),
-  //   postText: "Hi how are you dummy man",
-  //   image: "https://avatars.githubusercontent.com/in/8329?s=80&v=4",
-  // };
-  // postLists.push(DUMMY_POST);
+  
+  
   useEffect(() => {
     const getPosts = async () => {
       const data = await getPostsFromDb();
@@ -200,6 +218,30 @@ function Home({ isAuth }) {
               <h3>
                 <div>📅{post.date}</div>
                 <div
+            onClick={() => handleLike(post.id)}
+             style={{
+             display: "flex",
+             alignItems: "center",
+            cursor: "pointer",
+             }}
+             >
+        
+         {post.likes && post.likes.includes(auth.currentUser.uid) ? <FaHeart color="red"  className='absolute top-4 left-4 text-gray-300'/>:<FaRegHeart  className='absolute top-4 left-4 text-gray-300'/>}
+      
+
+  
+  <span
+    style={{
+      color: post.likes && post.likes.includes(auth.currentUser.uid) ? "red" : "black",
+      fontWeight: post.likes && post.likes.includes(auth.currentUser.uid) ? "bold" : "normal",
+      marginLeft: "10px",
+    }}
+  >
+    {post.likes ? post.likes.length : 0} Likes
+  </span>
+                </div>
+
+                <div
                   style={{ cursor: "pointer" }}
                   onClick={() => {
                     navigate(`/user/${post.author.name.replaceAll(" ", "-")}`, {
@@ -208,10 +250,17 @@ function Home({ isAuth }) {
                   }}
                 >
                   👤{post.author.name}
+                  
                 </div>
               </h3>
+              
+
+              
             </div>
+            
+            
           );
+          
         })}
       </div>
       <ToastContainer
