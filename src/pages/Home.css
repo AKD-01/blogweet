@@ -15,6 +15,7 @@ body {
 .post {
   transition: transform 0.3s ease-out;
   display: inline-block;
+  width: 300px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -41,6 +42,8 @@ body {
 .blogcredits {
   display: flex;
   justify-content: space-between;
+  padding: 8px;
+  font-size: 1.2rem;
 }
 
 .Link {
@@ -53,6 +56,7 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
+  padding-left:10px;
   position: relative;
   width: fit-content;
 }
@@ -105,13 +109,16 @@ body {
 
 .imageCont img {
   height: 9rem;
+  
+  padding: 0;
+  border: none;
+    border-radius: 8px;
   padding: 0.2rem;
   border-radius: 10px;
 }
 
 .contents {
   display: flex;
-  justify-content: center;
 }
 
 .deletePost {
@@ -147,14 +154,14 @@ body {
   .title {
     font-size: 1.3rem;
   }
-
 }
+
 .scrollToTopBtn {
   position: fixed;
   bottom: 40px;
-  right: 10px;
-  width: 42px;
-  height: 42px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
   border: none;
   border-radius: 100%;
   background-color: #333;
@@ -163,8 +170,6 @@ body {
   cursor: pointer;
   transition: opacity 0.3s;
   opacity: 0.7;
-  transition: bottom 0.3s;
-
 }
 .scrollElement{
   height: 100%;
@@ -177,5 +182,31 @@ body {
 .scrollToTopBtn:hover {
   opacity: 1;
   bottom: 46px;
+  background-color: #333;
+}
 
+.edit-heading{
+  display: flex;
+  justify-content: center;
+  font-family: Poppins,sans-serif;
+  font-size:xxx-large;
+}
+
+.edit-label {
+  margin-top: 50px;
+  font-size: 1.2rem; /* Adjust the font size as desired */
+}
+
+.edit-textarea {
+  width: 90%;
+  font-size: 1rem; /* Adjust the font size as desired */
+}
+
+.button {
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.buttonGap {
+  margin-left: 100px;
 }

@@ -68,8 +68,24 @@ git remote add upstream https://github.com/akd-01/blogweet.git
 ```markdown
 git checkout -b branch_name
 ```
+```markdown
+NOTE: please create a .env.local file in the root folder and add your api's from firebase or add following:
+
+REACT_APP_API_KEY="AIzaSyD9tMXwqU7ijIKnQu0vsX1UoR9FM_w7r2E"
+REACT_APP_AUTH_DOMAIN="blog-5814a.firebaseapp.com"
+REACT_APP_PROJECT_ID="blog-5814a"
+REACT_APP_STORAGE_BUCKET="blog-5814a.appspot.com"
+REACT_APP_MESSAGE_SENDER_ID="787500061298"
+REACT_APP_APP_ID="1:787500061298:web:242f526d6800f0bbbf68eb"
+GENERATE_SOURCEMAP=false
+```
+
+✴️ **IMPORTANT**: Run the following command to install node modules
+
+```npm i```
 
 ✴️ Make your contribution
+
 ✴️ Commit and push the changes
 
 ```markdown
