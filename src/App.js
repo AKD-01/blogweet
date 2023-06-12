@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {signUserAccountOut} from "./utils/firebase";
 import Home from "./pages/Home";
@@ -12,8 +12,14 @@ import UserInfo from "./pages/UserInfo";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound404 from "./pages/NotFound404";
-
+import Loading from "./components/Loading";
 function App() {
+  const[isLoading,setIsLoading]=useState(true);
+  useEffect(()=>{
+    setTimeout(()=>{
+      setIsLoading(false)
+    },1100)
+  })
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
 
   const signUserOut = async () => {
@@ -27,7 +33,11 @@ function App() {
   width = window.screen.width;
 
   return (
-    <Router>
+    <div >
+      {isLoading?
+      <div className="loader">
+      <Loading/></div>:( 
+        <Router>
       {width <= 600 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
       {width > 600 && (
         <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
@@ -44,6 +54,9 @@ function App() {
         <Route path="*" element={<NotFound404 />} />
       </Routes>
     </Router>
+      )}
+    
+    </div>
   );
 }
 

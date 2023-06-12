@@ -439,3 +439,9 @@ textarea {
 .modal-content button:hover {
   background-color: #0056b3;
 }
+.loader{
+  position: absolute;
+  display: flex;
+  margin-left: 690px;
+  margin-top: 270px;  
+}
