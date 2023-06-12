@@ -69,7 +69,7 @@ git remote add upstream https://github.com/akd-01/blogweet.git
 git checkout -b branch_name
 ```
 ```markdown
-NOTE: please create a .env.local file in the roor folder and add your api's from firebase or add following:
+NOTE: please create a .env.local file in the root folder and add your api's from firebase or add following:
 
 REACT_APP_API_KEY="AIzaSyD9tMXwqU7ijIKnQu0vsX1UoR9FM_w7r2E"
 REACT_APP_AUTH_DOMAIN="blog-5814a.firebaseapp.com"
