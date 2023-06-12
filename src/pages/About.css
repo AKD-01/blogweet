@@ -6,25 +6,25 @@ h1{
     font-size: 4rem;
     font-weight: normal;
 }
-.AboutPage i{
+.AboutPage span,.AboutPage i{
     font-size: 3rem;
-    color: black;
-    filter: drop-shadow(1rem 1rem 1rem yellow);
+    color: black;   
 }
-.AboutPage span{
-    font-size: 3rem;
-    color: black;
-    filter: drop-shadow(1rem 1rem 1rem yellow);
-}
-.AboutPage i:hover, span:hover{
-    filter: drop-shadow(1rem 1rem 1rem blue);
+
+.social-1:hover{
+    filter: drop-shadow(0.5rem 0.5rem 0.6rem rgb(0, 0, 255));
 }
 p{
     padding: 2rem;
 }
-.social{
-    margin-top: 10%;
+.social-1{
     text-align: center;
+    margin: auto;
+    width: 27%;
+    align-items: center;
+    margin-top: 10%;
+    filter: drop-shadow(0.5rem 0.5rem 0.6rem rgb(255, 255, 0));
+    margin-bottom: 2%;
 }
 @media screen and (min-width: 300px) and (max-width: 600px) {
     .AboutPage{
