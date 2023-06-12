@@ -1,43 +1,54 @@
 .Contactus {
-  margin-left: 250px;
+	margin-left: 250px;
 }
 
 h1 {
-  text-align: center;
-  font-weight: normal;
-  font-size: 4rem;
+	text-align: center;
+	font-weight: normal;
+	font-size: 4rem;
 }
 
 p {
-  text-align: center;
-  /* padding: 2rem;  */
-  font-weight: bold;
-  /* margin-left: 8%; */
+	text-align: center;
+	/* padding: 2rem;  */
+	font-weight: bold;
+	/* margin-left: 8%; */
 }
 
 form {
-  margin-top: 20px;
-  margin-left: 37%;  
+	margin-top: 20px;
+	margin-left: 37%;
 }
 
 label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
 }
 
 input[type="text"],
 input[type="email"],
 textarea {
-  width: 35%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+	width: 35%;
+	padding: 8px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
 }
 
 textarea {
-  width: 35%;
+	width: 35%;
+}
+
+button {
+	padding: 12px 25px;
+	background-color: #d65f30;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	text-align: center;
+	/* margin-left: 200px; */
 }
 
 .cbutton {
@@ -50,42 +61,48 @@ textarea {
   text-align: center;
   /* margin-left: 200px; */
 }
-
 .cbutton:hover {
   background-color: #45a049;
 }
 
 @media (max-width: 767px) {
-  /* p {
+	/* p {
     text-align: center;
   } */
-  h1 {
-    font-size: 3rem;
-  }
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 90%;
-  }
+	h1 {
+		font-size: 3rem;
+	}
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		width: 90%;
+	}
 
-  form{
-    margin-left: 30%;;
-  }
+	form {
+		margin-left: 8%;
+	}
+	.Contactus {
+		margin-left: 65px;
+	}
 }
 
 /* medium screen  */
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-  /* Styles specific to medium screens */
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 80%;
-  }
-  /* p {
+	/* Styles specific to medium screens */
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		width: 80%;
+	}
+	/* p {
     text-align: center;
   } */
-  form{
-    margin-left: 25%;
-  }
-  /* Add more styles for other elements as needed */
+	form {
+		margin-left: 25%;
+	}
+	.Contactus {
+		margin-left: 250px;
+	}
+
+	/* Add more styles for other elements as needed */
 }
