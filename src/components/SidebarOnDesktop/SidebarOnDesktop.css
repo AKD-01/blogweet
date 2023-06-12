@@ -21,7 +21,8 @@ body {
   left: 0;
   height: 100%;
   width: 60px;
-  background: #11101d;
+  background: linear-gradient(182.08deg, #04002E 34.87%, #1400FF 199.35%);
+  border: 2px solid #FFFFFF;
   padding: 2px 6px;
   transition: all 0.5s ease;
 }

@@ -273,12 +273,17 @@ textarea {
 .homePage .post {
   width: 89%;
   height: auto;
-  background-color: rgb(158, 155, 187);
+  background-color: #00B4D8;
   margin: 20px;
-  /* padding: 20px; */
-  border-radius: 15px;
+  padding: 20px;
+  border-radius: 8px;
   overflow: hidden;
-  padding: 2rem;
+  border: 5px solid white;
+}
+
+.homePage .post:hover{
+  background-color: #1C90CD;
+  border-radius: 15px;
 }
 
 .post .postHeader {
