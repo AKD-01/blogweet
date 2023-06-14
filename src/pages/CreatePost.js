@@ -26,6 +26,7 @@ function CreatePost({ isAuth }) {
     setImage(e.target.value);
   };
 
+
   return (
     <div className="createPostPage">
       <div className="cpContainer">
@@ -55,8 +56,7 @@ function CreatePost({ isAuth }) {
             <img src={image} alt="Uploaded preview" />
           </div>
         </div>
-
-        <button onClick={createPost}> Submit Post </button>
+        <button onClick={createPost} onMouseOver = {(e) => {e.target.style.background = ' #FF6347 ';}} onMouseLeave = {(e) => {e.target.style.background = ' white ';}}> Submit Post </button>
       </div>
     </div>
   );
