@@ -74,7 +74,7 @@ function CreatePost({ isAuth }) {
           </div>
         </div>
 
-        <button onClick={createPost}> Submit Post </button>
+        <button onClick={createPost} onMouseOver = {(e) => {e.target.style.background = '#FF6347';}} onMouseLeave = {(e) => {e.target.style.background = 'white';}}> Submit Post </button>
       </div>
 
       {showModal && <Modal message={modalMessage} closeModal={closeModal} />}
