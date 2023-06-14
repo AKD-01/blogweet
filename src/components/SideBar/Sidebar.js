@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
-<<<<<<< HEAD
-//import "boxicons";
-import { auth } from "../../firebase-config";
-=======
 import "boxicons";
 import { auth } from "../../utils/firebase";
->>>>>>> 4b78d19dc4150835dde028bd09b2c44440b29b33
 import { Link } from "react-router-dom";
 import {FaBloggerB} from 'react-icons/fa';
 

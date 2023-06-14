@@ -12,25 +12,6 @@ function CreatePost({ isAuth }) {
   let navigate = useNavigate();
 
   const createPost = async () => {
-<<<<<<< HEAD
-    //function adds the document to the database.
-    const postDataCopy= {
-      title, //title: title
-      postText,
-      author: {
-        name: auth.currentUser.displayName,
-        id: auth.currentUser.uid,
-        email: auth.currentUser.email,
-        photoUrl: auth.currentUser.photoURL,
-      },
-      date: new Date().toJSON().slice(0, 10).replace(/-/g, "/"),
-      image,
-    }
-    const postByAuthor= await addDoc(postsCollectionRef, postDataCopy);
-    //`/${postDataCopy.author.name}/${postByAuthor.id}`
-    navigate(`/${postDataCopy.author.name}/${postByAuthor.id}`);
-    toast.success('Your Post has been published!')
-=======
     if(!title || !postText || !image) {
       alert("Please fill all the fields");
       return;
@@ -42,7 +23,6 @@ function CreatePost({ isAuth }) {
     } 
     await addPostToDb(title, postText, image);
     navigate("/");
->>>>>>> 4b78d19dc4150835dde028bd09b2c44440b29b33
   };
 
   useEffect(() => {

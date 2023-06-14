@@ -39,14 +39,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
 
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
-<<<<<<< HEAD
         <Route path="/:username" element={<UserInfo isAuth={isAuth} />} />
         <Route path="/:username/:blogname" element={<Blogpost />} />
-=======
-        <Route path="/user/:username" element={<UserInfo />} />
-        <Route path="/user/:username/:blogname" element={<Blogpost />} />
-        <Route path="*" element={<NotFound404 />} />
->>>>>>> 4b78d19dc4150835dde028bd09b2c44440b29b33
       </Routes>
     </Router>
     

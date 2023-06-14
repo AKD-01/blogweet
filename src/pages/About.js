@@ -46,17 +46,12 @@ const About = () => {
         dynamic community where ideas and perspectives are shared and explored.
       </p>
       <hr />
-<<<<<<< HEAD
-      <Footer />
-      
-=======
       <div className="social">
         <a href="https://github.com/AKD-01/blogweet">
           <i class="bx bxl-github"></i>
           <span>GitHub</span>
         </a>
       </div>
->>>>>>> 4b78d19dc4150835dde028bd09b2c44440b29b33
     </div>
   );
 };

@@ -6,12 +6,8 @@ import "./Home.css";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-<<<<<<< HEAD
-import Footer from "../components/Footer/Footer";
-=======
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
->>>>>>> 4b78d19dc4150835dde028bd09b2c44440b29b33
+import { FontAwesomeIcon } from "@fontawesome/react-fontawesome";
+import { faArrowUp } from "@fontawesome/free-solid-svg-icons";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
@@ -197,16 +193,9 @@ function Home({ isAuth }) {
           <div className="scrollElement">
             <FontAwesomeIcon icon={faArrowUp} />
           </div>
-<<<<<<< HEAD
-        );
-      })}
-      <Footer />
-    </div>
-=======
         </button>
       )}
     </>
->>>>>>> 4b78d19dc4150835dde028bd09b2c44440b29b33
   );
 }
 

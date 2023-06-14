@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./SidebarOnDesktop.css";
 
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import {FaBloggerB} from 'react-icons/fa';
+//import {FaBloggerB} from 'react-icons/fa';
 import { Tooltip } from 'react-tooltip';
 import "boxicons";
 import { auth } from "../../utils/firebase";

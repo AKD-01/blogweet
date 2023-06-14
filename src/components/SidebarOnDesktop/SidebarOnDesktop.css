@@ -292,8 +292,6 @@ body {
   position: absolute;
 }
 
-<<<<<<< HEAD
-=======
 @media screen and (max-width:600px) {
   .SidebarOnDesktop{
     width: 60px;
@@ -310,4 +308,3 @@ body {
   }
 }
  
->>>>>>> 4b78d19dc4150835dde028bd09b2c44440b29b33
