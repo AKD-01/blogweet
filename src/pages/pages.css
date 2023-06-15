@@ -93,3 +93,25 @@ button:hover{
     font-size: 2.5rem;
   }
 }
+/* scroll-progress-bar-css */
+#progressBarContainer {
+  position: fixed;
+  z-index: 10;
+  background: rgba(255,255,255,0.05);
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+
+#progressBar {
+  background: linear-gradient(to left, #5149c1c4, #675fa8c4);
+  transform-origin: top left;
+  transform: scale(0,0);
+  opacity: 0;
+}
+
+#progressBarContainer,
+#progressBar {
+  height: 10px;
+}
