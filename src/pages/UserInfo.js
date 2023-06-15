@@ -25,7 +25,9 @@ const UserInfo = () => {
   return (
     <>
       <div className="card">
-        <img src={user.photoUrl} alt={user.name} className="card-img" />
+        <div className="card-image-container">
+          <img src={user.photoUrl} alt={user.name} className="card-img" />
+        </div>
         <div className="card-body">
           <h3 className="card-title">{user.name}</h3>
           <p className="card-text">Email: {user.email}</p>
