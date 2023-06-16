@@ -1,26 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { addPostToDb } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
+import Modal from "./Modal"; // Import the Modal component
 
 function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [image, setImage] = useState("");
+
   const [tags, setTags] = useState([]);
- 
+  const [modalMessage, setModalMessage] = useState(""); // State for the modal message
+  const [showModal, setShowModal] = useState(false); // State to control the modal visibility
   let navigate = useNavigate();
 
   const createPost = async () => {
-    if(!title || !postText || !image) {
-      alert("Please fill all the fields");
+    if (!title || !postText || !image) {
+      setModalMessage("Please fill all the fields"); // Set the modal message
+      setShowModal(true); // Show the modal
       return;
     }
     console.log(title, postText, image);
     if (getWordCount(postText) < 20) {
-      alert("The post must contain at least 20 words.");
+      setModalMessage("The post must contain at least 20 words."); // Set the modal message
+      setShowModal(true); // Show the modal
       return;
     } 
     await addPostToDb(title, postText, image, tags);
+
     navigate("/");
   };
 
@@ -28,7 +34,7 @@ function CreatePost({ isAuth }) {
     if (!isAuth) {
       navigate("/login");
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const hanldleImageUpload = (e) => {
@@ -37,6 +43,10 @@ function CreatePost({ isAuth }) {
 
   const getWordCount = (text) => {
     return text.trim().split(/\s+/).length;
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -68,13 +78,15 @@ function CreatePost({ isAuth }) {
         <div className="inputImg">
           <label> Image Link</label>
           <div className="cont">
-            <input placeholder="https://"  onChange={hanldleImageUpload} />
+            <input placeholder="https://" onChange={hanldleImageUpload} />
             <img src={image} alt="Uploaded preview" />
           </div>
         </div>
 
-        <button  onClick={createPost}> Submit Post </button>
+        <button onClick={createPost}> Submit Post </button>
       </div>
+
+      {showModal && <Modal message={modalMessage} closeModal={closeModal} />}
     </div>
   );
 }
