@@ -93,3 +93,21 @@ button:hover{
     font-size: 2.5rem;
   }
 }
+
+.blogpost-user {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.blogpost-user::after {
+  content: "";
+  width: 0;
+  height: 1.5px;
+  display: block;
+  background: #3c1247;
+  transition: 300ms;
+}
+
+.blogpost-user:hover::after {
+  width: 100%;
+}
