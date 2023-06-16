@@ -1,48 +1,73 @@
 .Contactus {
   margin-left: 250px;
+  
+  text-align: left;
 }
-
+.contact{
+  display: flex;
+  
+}
 h1 {
-  text-align: center;
+  text-align: right;
   font-weight: normal;
   font-size: 4rem;
+  margin-left: -10px;
+  background-color: rgb(20, 16, 46);
+  /* color: rgb(20, 16, 46); */
+  color: rgb(71, 65, 115);
+  padding-right: 50px;
 }
 
 p {
-  text-align: center;
+  /* text-align: center; */
   /* padding: 2rem;  */
   font-weight: bold;
-  /* margin-left: 8%; */
+  font-size: 20px;
+  margin-left: -25px;
+  text-align: left;
+  color: rgb(49, 44, 88);
 }
 
 form {
-  margin-top: 20px;
-  margin-left: 37%;  
+  margin-top: 50px;
+  /* margin-left: 37%;   */
+  margin-left: 75px;
+  margin-right: 0;
+  padding-right: 0;
+  width: 70%;
+  /* background-color: #FF0000; */
+  
 }
 
 label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  color: rgb(20, 16, 46);
 }
 
 input[type="text"],
 input[type="email"],
 textarea {
-  width: 35%;
+  /* width: 35%; */
+  width: 90%;
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
+  /* background-color: rgb(188, 185, 214); */
+  background-color: rgb(212, 210, 228);
   border-radius: 4px;
 }
 
 textarea {
-  width: 35%;
+  /* width: 35%; */
+  width: 90%;
 }
 
 .cbutton {
   padding: 12px 25px;
-  background-color: #d65f30;
+  /* background-color: #d65f30; */
+  background-color: rgb(112, 107, 158);
   color: white;
   border: none;
   border-radius: 4px;
@@ -52,8 +77,71 @@ textarea {
 }
 
 .cbutton:hover {
-  background-color: #45a049;
+  /* background-color: #45a049; */
+  /* background-color: black; */
+  background-color: rgb(71, 65, 115);
+  transition: 0.5s;
 }
+
+.social{
+  /* background-color: #45a049; */
+  margin-top: 40vew;
+}
+.icons{
+  
+  margin-top:30px;
+  /* background-color: aqua; */
+  
+}
+.icons li{
+
+  text-align: left;
+  margin-bottom: 4px;
+}
+.icons li a{
+  color: rgb(49, 44, 88);
+  /* color: black; */
+  font-size: 30px;
+  margin-right: 20px;
+  margin-left: 10px;
+  padding-left: 10px;
+  
+  padding-right: 10px;
+  margin-top:10px;
+  
+  /* background-color: red; */
+  
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.icons li a i{
+  margin-right: 20px;
+  font-size: 30px;
+}
+.icons li a:hover{
+  font-weight: 900;
+}
+.facebook:hover{
+  color: #4267B2  ;
+}
+.instagram:hover{
+  color: rgb(214, 43, 72);
+}
+.youtube:hover{
+  color: #FF0000
+  ;
+}
+.linkedin:hover{
+  color: #0e76a8;
+}
+.twitter:hover{
+  color: #1DA1F2  ;
+}
+.github:hover{
+  color: #171515;
+}
+
 
 @media (max-width: 767px) {
   /* p {
@@ -65,11 +153,19 @@ textarea {
   input[type="text"],
   input[type="email"],
   textarea {
-    width: 90%;
+    width: 100vew;
   }
-
+  .contact{
+    display: block;
+  }
   form{
-    margin-left: 30%;;
+    /* margin-left: 30%; */
+    margin-left: 15px;
+    width: 100vew;
+    /* background-color: #FF0000; */
+  }
+  .icons{
+    margin-top:100px;
   }
 }
 
@@ -85,7 +181,13 @@ textarea {
     text-align: center;
   } */
   form{
-    margin-left: 25%;
+    /* margin-left: 25%; */
+    margin-left: 30px;
+    width: 50%;
+    /* background-color: red; */
+  }
+  .icons{
+    margin-top:100px;
   }
   /* Add more styles for other elements as needed */
 }
