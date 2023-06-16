@@ -66,7 +66,15 @@ const Blogpost = () => {
           <hr />
 
           <div className="blogcredits">
-            <div>👤{post.author.name}</div>
+            <div className="blogpost-user"
+              onClick={() => {
+                navigate(`/user/${post.author.name.replaceAll(" ", "-")}`, {
+                  state: post.author,
+                });
+              }}
+            >
+              👤{post.author.name}
+            </div>
             <div>
               {post.date != null && (
                 <div style={{ textAlign: "right", marginRight: "1rem" }}>
