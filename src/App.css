@@ -178,9 +178,9 @@ textarea {
   position: absolute;
   margin: auto;
   width: 35%;
-  right: 20rem;
-  top: 8rem;
-  height: calc(70vh - 80px);
+  right: 22%;
+  top: 30%;
+  /* height: calc(70vh - 80px); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -355,18 +355,6 @@ textarea {
     margin-left: 5rem;
     position: relative;
   }
-  .loginPage {
-    height: calc(63vh - 80px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: "Poppins";
-    margin-left: 95px;
-    width: 80%;
-    right: 1rem;
-    margin: auto;
-  }
 
   .createPostPage {
     width: 100%;
@@ -438,4 +426,32 @@ textarea {
 
 .modal-content button:hover {
   background-color: #0056b3;
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  .loginPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins";
+    margin-left: 95px;
+    width: 50%;
+    right: 8%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  .loginPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins";
+    margin-left: 95px;
+    width: 80%;
+    right: 1rem;
+    margin: auto;
+  }
 }
