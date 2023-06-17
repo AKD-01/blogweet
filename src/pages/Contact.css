@@ -59,6 +59,9 @@ textarea {
   /* p {
     text-align: center;
   } */
+  .Contactus {
+    margin-left: 30px;
+  }
   h1 {
     font-size: 3rem;
   }
@@ -76,6 +79,9 @@ textarea {
 /* medium screen  */
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   /* Styles specific to medium screens */
+  .Contactus {
+    margin-left: 250px;
+  }
   input[type="text"],
   input[type="email"],
   textarea {
