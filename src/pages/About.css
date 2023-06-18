@@ -1,10 +1,23 @@
 .AboutPage{
     margin-left: 250px;
 }
+.aboutbg{
+    background-color: #f8e9f6f5;
+    padding: 5px;
+    border-radius: 30px;
+}
+
+.aboutbg p{
+    text-align: left;
+    font-size: 1.3rem;
+}
+
 h1{
     text-align: center;
     font-size: 4rem;
     font-weight: normal;
+    display: flex;
+    justify-content: center;
 }
 .AboutPage i{
     font-size: 3rem;
@@ -12,7 +25,7 @@ h1{
     filter: drop-shadow(1rem 1rem 1rem yellow);
 }
 .AboutPage span{
-    font-size: 3rem;
+    font-size: 3rem; 
     color: black;
     filter: drop-shadow(1rem 1rem 1rem yellow);
 }
@@ -20,7 +33,9 @@ h1{
     filter: drop-shadow(1rem 1rem 1rem blue);
 }
 p{
+    display: flex;
     padding: 2rem;
+    flex-wrap: wrap;
 }
 .social{
     margin-top: 10%;
@@ -30,4 +45,21 @@ p{
     .AboutPage{
       margin-left: 2.5rem;
     }
+    .aboutbg {
+        /* height: 55rem; */
+        height: auto;
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; 
+      }
+      .aboutbg p {
+        padding: 1rem;
+        flex-grow: 1; 
+      }
+
+
 }  
