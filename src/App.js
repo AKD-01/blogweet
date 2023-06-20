@@ -12,6 +12,8 @@ import UserInfo from "./pages/UserInfo";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound404 from "./pages/NotFound404";
+import Footer from "./components/Footer/Footer";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -31,7 +33,10 @@ function App() {
       {width <= 600 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
       {width > 600 && (
         <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
+     
+       
       )}
+      {<Footer/>}
       <Routes>
         <Route path="/" element={<Home isAuth={isAuth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />

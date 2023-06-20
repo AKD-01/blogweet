@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import Modal from "react-modal";
+import Footer from "../components/Footer/Footer";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
@@ -267,6 +268,7 @@ function Home({ isAuth }) {
         </div>
 
       </Modal>
+      <Footer/>
     </>
   );
 }
