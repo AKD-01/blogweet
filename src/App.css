@@ -85,11 +85,13 @@ a {
   display: flex;
   flex-direction: column;
   margin: 1.6rem;
+  position: absolute;
   margin-left: 15rem;
 }
 
 .cpContainer h1 {
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .cpContainer label {
@@ -97,17 +99,19 @@ a {
 }
 
 .cpContainer .inputGp {
-  margin-top: 30px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin-bottom: 20px;
 }
 
 .inputGp input,
 .inputGp textarea {
   font-size: 18px;
+  width: 77%;
   border: none;
   border-radius: 2px;
   padding: 5px;
+  margin-left: 20px;
 }
 
 .inputGp input {
@@ -123,11 +127,16 @@ a {
 
 .inputImg {
   margin-top: 1rem;
+
 }
 
 .inputImg .cont {
   display: flex;
   flex-direction: row;
+}
+
+.w-75{
+  width: 85%;
 }
 
 .inputImg input,
@@ -438,4 +447,12 @@ textarea {
 
 .modal-content button:hover {
   background-color: #0056b3;
+}
+
+
+.preview{
+  position: absolute;
+  width: 130px;
+  bottom: 30px;
+  right:  30px;
 }
