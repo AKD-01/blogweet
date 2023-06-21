@@ -1,6 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { signInWithGooglePopup, signInWithGithubPopup } from "../utils/firebase";
+import {
+  signInWithGooglePopup,
+  signInWithGithubPopup,
+} from "../utils/firebase";
 import LoginButton from "../components/LoginButton";
 
 function Login({ setIsAuth }) {
@@ -27,8 +30,10 @@ function Login({ setIsAuth }) {
   return (
     <div className="loginPage">
       <p className="lg-hd">Choose an account</p>
-      <p className="lg-shd">to continue to <span className="clr-hd">blogweet</span> </p>
-      
+      <p className="lg-shd">
+        to continue to <span className="clr-hd">blogweet</span>{" "}
+      </p>
+
       <LoginButton
         label="Continue With Google"
         alt="Google"

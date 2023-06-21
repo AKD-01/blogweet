@@ -43,7 +43,6 @@ function Home({ isAuth }) {
     }
   };
 
-
   // const DUMMY_POST = {
   //   id: `id:${Math.random()}`,
   //   title: "Dummy Post",
@@ -57,7 +56,9 @@ function Home({ isAuth }) {
     const getPosts = async () => {
       const data = await getPostsFromDb();
       // Find the index of the post to be pinned
-      const pinnedPostIndex = data.findIndex((post) => post.id === "Pci3H6XCUJHtiBZgYrlA");
+      const pinnedPostIndex = data.findIndex(
+        (post) => post.id === "Pci3H6XCUJHtiBZgYrlA"
+      );
       if (pinnedPostIndex !== -1) {
         // Extract the pinned post from the array
         const pinnedPost = data.splice(pinnedPostIndex, 1)[0];
@@ -107,7 +108,8 @@ function Home({ isAuth }) {
                     className="title"
                     onClick={() => {
                       navigate(
-                        `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
                         }`,
                         { state: post }
                       );
@@ -140,16 +142,17 @@ function Home({ isAuth }) {
                         ></i>
                       </button>
                     )}
-                  <button className="expandElement"
+                  <button
+                    className="expandElement"
                     onClick={() =>
                       sharingHandler(
-                        `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
                         }`
                       )
                     }
                   >
-<i className="bx bxs-share-alt"></i>
-
+                    <i className="bx bxs-share-alt"></i>
                   </button>
                   {isAuth &&
                     auth.currentUser != null &&
@@ -161,7 +164,6 @@ function Home({ isAuth }) {
                         ></i>
                       </button>
                     )}
-
                 </div>
               </div>
               <div className="contents">
@@ -183,11 +185,12 @@ function Home({ isAuth }) {
                       fontSize: ".9rem",
                       cursor: "pointer",
                       width: "fit-content",
-                      'justify-self': "end"
+                      "justify-self": "end",
                     }}
                     onClick={() => {
                       navigate(
-                        `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
                         }`,
                         { state: post }
                       );
@@ -245,27 +248,35 @@ function Home({ isAuth }) {
         isOpen={showModal}
         onRequestClose={closeEditModal}
         contentLabel="Edit Post Modal"
-        style={{ overlay: { background: "transparent" }, content: { color: "#fff" } }}>
-        <div style={{ height: "100%", background: "#1D1B31", padding: "20px"}}>
+        style={{
+          overlay: { background: "transparent" },
+          content: { color: "#fff" },
+        }}
+      >
+        <div style={{ height: "100%", background: "#1D1B31", padding: "20px" }}>
           <h2 className="edit-heading">Edit Your Post</h2>
           {selectedPost && (
             <div>
-              <label htmlFor="editedContent" className="edit-label">Update your content:</label>
+              <label htmlFor="editedContent" className="edit-label">
+                Update your content:
+              </label>
               <textarea
                 id="editedContent"
                 defaultValue={selectedPost.postText}
                 rows="10"
                 className="edit-textarea"
               ></textarea>
-
             </div>
           )}
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <button onClick={handleModalSubmit} className="button">Submit</button>
-            <button onClick={closeEditModal} className="button buttonGap">Back</button>
+            <button onClick={handleModalSubmit} className="button">
+              Submit
+            </button>
+            <button onClick={closeEditModal} className="button buttonGap">
+              Back
+            </button>
           </div>
         </div>
-
       </Modal>
     </>
   );
