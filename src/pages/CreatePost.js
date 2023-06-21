@@ -11,8 +11,15 @@ function CreatePost({ isAuth }) {
   const [showModal, setShowModal] = useState(false); // State to control the modal visibility
   let navigate = useNavigate();
 
+  function isImage(url) {
+    return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url);
+  }
+  
+
   const createPost = async () => {
-    if (!title || !postText || !image) {
+    if(!isImage(image)) alert("is not a valid image");
+  
+    if (!title || !postText || !image || !isImage(image)) {
       setModalMessage("Please fill all the fields"); // Set the modal message
       setShowModal(true); // Show the modal
       return;
@@ -51,28 +58,32 @@ function CreatePost({ isAuth }) {
       <div className="cpContainer">
         <h1>Create A Post</h1>
         <div className="inputGp">
-          <label> Title:</label>
+          <label>Title :</label>
           <input
-            placeholder="Title..."
+            placeholder="Enter the Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <div className="inputGp">
-          <label> Post:</label>
+          <label> Post :</label>
           <textarea
-            placeholder="Post..."
+            placeholder="Write your Post"
             value={postText}
             onChange={(e) => setPostText(e.target.value)}
           />
         </div>
-        <div className="inputImg">
-          <label> Image Link</label>
-          <div className="cont">
-            <input placeholder="https://" onChange={hanldleImageUpload} />
-            <img src={image} alt="Uploaded preview" />
-          </div>
+        <div className="inputGp w-75">
+          <label>Image Link :</label>
+          <input
+            placeholder="https://"
+            value={image}
+            onChange={hanldleImageUpload}
+          />
         </div>
+          { image !== "" &&
+            <img src={image} className="preview" alt="Link Broken not an image" />
+          }
 
         <button onClick={createPost}> Submit Post </button>
       </div>
