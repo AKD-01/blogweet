@@ -1,5 +1,4 @@
 # Contributing
-
 If you would like to contribute to this project, follow the steps below - 
 
 - Fork the repository.
@@ -14,6 +13,23 @@ If you would like to contribute to this project, follow the steps below -
 
 - Once your changes are validated after review, your pull request will be merged.
 
+## Creating a new Pull Request
+After you have made necessary changes to the repository, open a pull request by following these steps: 
+
+- Commit and push the changes
+
+```markdown
+git add .
+git commit -m "Your message"
+git push origin branch_name
+```
+
+- Create a new pull request from your forked repository (Click the `New Pull Request` button located at the top of your repo)
+
+- Wait for the review and approval of your Pull Request from the maintainers.
+
+- Star ⭐ this repository if you liked it and follow me 👀 .
+
 > Bonus Tip: If you are new to GitHub and using the terminal does not suit you, you can use [GitHub Desktop](https://desktop.github.com/).
 
-Please adhere to the [CODE OF CONDUCT](CODE_OF_CONDUCT.md) while contributing.
+Please make sure to adhere with the [CODE OF CONDUCT](CODE_OF_CONDUCT.md) of the project wnile contributing. Thanks!
