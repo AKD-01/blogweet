@@ -15,3 +15,5 @@ If you would like to contribute to this project, follow the steps below -
 - Once your changes are validated after review, your pull request will be merged.
 
 > Bonus Tip: If you are new to GitHub and using the terminal does not suit you, you can use [GitHub Desktop](https://desktop.github.com/).
+
+Please adhere to the [CODE OF CONDUCT](CODE_OF_CONDUCT.md) while contributing.
