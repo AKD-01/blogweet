@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap);
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 
 * {
   margin: 0;
@@ -6,9 +6,11 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-li{
+
+li {
   list-style: none;
 }
+
 body {
   position: relative;
   min-height: 100vh;
@@ -26,7 +28,7 @@ body {
   transition: all 0.5s ease;
 }
 
-.SidebarOnDesktop {
+.SidebarOnDesktop.active {
   width: 240px;
 }
 
@@ -41,17 +43,17 @@ body {
   pointer-events: none;
 }
 
-.SidebarOnDesktop .logo_content .logo {
+.SidebarOnDesktop.active .logo_content .logo {
   opacity: 1;
   pointer-events: none;
 }
 
-.logo_content.logo i {
+.logo_content .logo i {
   font-size: 28px;
   margin-right: 5px;
 }
 
-.logo_content .logo .logo_name {
+.logo_content .logo .logoname {
   font-size: 20px;
   font-weight: 400;
 }
@@ -69,7 +71,7 @@ body {
   transform: translateX(-50%);
 }
 
-.SidebarOnDesktop #btn {
+.SidebarOnDesktop.active #btn {
   left: 80%;
 }
 
@@ -177,21 +179,20 @@ body {
   pointer-events: none;
 }
 
-.SidebarOnDesktop .link_names {
+.SidebarOnDesktop.active .link_names {
   opacity: 1;
   pointer-events: auto;
 }
 
-.SidebarOnDesktop .login-button{
+.SidebarOnDesktop .login-button {
   transition: all 0.4s ease;
   padding: 5px 10px;
   border-radius: 12px;
 }
 
-.SidebarOnDesktop .login-button:hover{
+.SidebarOnDesktop .login-button:hover {
   background-color: #fff;
   color: #000;
-
 }
 
 .SidebarOnDesktop .profile_content {
@@ -267,10 +268,10 @@ body {
 .home_content {
   position: absolute;
   left: 60px;
-  width: calc(100%-60px);
+  width: calc(100% - 60px);
 }
 
-.SidebarOnDesktop~.home_content {
+.SidebarOnDesktop ~ .home_content {
   left: 240px;
   width: calc(100% - 240px);
 }
@@ -288,19 +289,108 @@ body {
   position: absolute;
 }
 
-@media screen and (max-width:600px) {
-  .SidebarOnDesktop{
+.dark-mode-toggle {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #1d1b31;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dark-mode-toggle .toggle-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.dark-mode-toggle .toggle-icon::before,
+.dark-mode-toggle .toggle-icon::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle .toggle-icon::before {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.dark-mode-toggle .toggle-icon::after {
+  bottom: 50%;
+  right: 0;
+  transform: translateY(50%);
+}
+
+.dark-mode-toggle.active .toggle-icon::before {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.dark-mode-toggle.active .toggle-icon::after {
+  transform: translateY(50%) rotate(-45deg);
+}
+
+body.dark-mode {
+  background-color: #5a5a5a;
+}
+
+.SidebarOnDesktop.dark-mode {
+  background-color: #000;
+}
+
+.home_content.dark-mode {
+  background-color: #11101d;
+}
+
+.home_content.dark-mode .about-us-text {
+  color: #fff;
+}
+
+.text.dark-mode {
+  color: #fff;
+}
+
+.post.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.post.dark-mode .title {
+  color: #fff;
+}
+
+.post h3.dark-mode {
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .SidebarOnDesktop {
     width: 60px;
   }
-  .SidebarOnDesktop #btn{
+  .SidebarOnDesktop.dark-mode {
+    background-color: #000;
+  }
+  .SidebarOnDesktop #btn {
     left: 10%;
   }
-  .link_names, .logoname, .logo_content .logo{
+  .link_names,
+  .logoname,
+  .logo_content .logo {
     display: none;
   }
-  .profile .profile_details img{
+  .profile .profile_details img {
     height: 25px;
     width: 25px;
   }
 }
- 

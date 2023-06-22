@@ -1,18 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SidebarOnDesktop.css";
-import "boxicons";
-import { auth } from "../../utils/firebase";
 import { Link } from "react-router-dom";
+import { auth } from "../../utils/firebase";
 
 const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
   const [state, setState] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const isDarkModeEnabled = localStorage.getItem("darkMode") === "true";
+    setDarkMode(isDarkModeEnabled);
+
+    document.body.classList.toggle("dark-mode", isDarkModeEnabled);
+  }, []);
 
   const toggleSidebarOnDesktop = () => {
     setState(!state);
   };
 
   return (
-    <div className={`SidebarOnDesktop active`}>
+    <div
+      className={`SidebarOnDesktop ${state ? "active" : ""} ${
+        darkMode ? "dark-mode" : ""
+      }`}
+    >
       <div className="logo_content">
         <div className="logo">
           <div
@@ -43,13 +54,13 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         </li>
         <li onClick={toggleSidebarOnDesktop}>
           <Link to="/about">
-            <i class="bx bxs-info-circle"></i>
+            <i className="bx bxs-info-circle"></i>
             <span className="link_names">About</span>
           </Link>
         </li>
         <li>
           <Link to="/contact">
-            <i class="bx bxs-user-circle"></i>
+            <i className="bx bxs-user-circle"></i>
             <span className="link_names">Contact Us</span>
           </Link>
         </li>

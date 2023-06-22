@@ -6,7 +6,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-li{
+li {
   list-style: none;
 }
 body {
@@ -258,7 +258,7 @@ body {
   width: calc(100%-60px);
 }
 
-.sidebar.active~.home_content {
+.sidebar.active ~ .home_content {
   left: 240px;
   width: calc(100% - 240px);
 }
@@ -276,20 +276,20 @@ body {
   position: absolute;
 }
 
-@media screen and (max-width:600px){
-  .sidebar{
+@media screen and (max-width: 600px) {
+  .sidebar {
     width: 59px;
   }
-  .sidebar.active{
+  .sidebar.active {
     width: 59px;
   }
-  .sidebar.active #btn{
+  .sidebar.active #btn {
     left: 50%;
   }
-  .profile_details .name{
+  .profile_details .name {
     display: none;
   }
-  .profile .profile_details img{
+  .profile .profile_details img {
     display: none;
   }
   .sidebar.active .profile #log_out {

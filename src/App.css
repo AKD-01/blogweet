@@ -3,12 +3,35 @@
 * {
   font-family: "Poppins", sans-serif;
 }
-
 body {
-  font-family: "Poppins";
-  padding: 0%;
-  margin: 0%;
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.dark-mode {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.dark-mode-toggle button {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dark-mode-toggle button:hover {
+  background-color: #f0f0f0;
 }
 
 nav {
@@ -112,7 +135,6 @@ a {
 
 .inputGp input {
   height: 40px;
-  
 }
 
 .inputGp textarea {
@@ -207,14 +229,14 @@ textarea {
 
 ::-webkit-scrollbar-track {
   border-radius: 100vw;
-  background: #BCB9D6; 
+  background: #bcb9d6;
   margin-block: 0.4em;
 }
 
 ::-webkit-scrollbar-thumb {
   border: 0.21em solid transparent;
   border-radius: 100px;
-  background-color: #9E9BBB;
+  background-color: #9e9bbb;
   background-clip: content-box;
 }
 
@@ -331,9 +353,7 @@ textarea {
   font-weight: 500;
   font-size: 1.1rem;
   line-height: 1.8rem;
-  
 }
-
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .homePage .post {
@@ -378,6 +398,9 @@ textarea {
   .sidebar {
     z-index: 1000;
   }
+  .SidebarOnDesktop.dark-mode {
+    background-color: #000;
+  }
 
   .cpContainer {
     width: 70%;
@@ -395,10 +418,10 @@ textarea {
     word-wrap: break-word;
     display: grid;
     height: 100px;
-    padding: .25rem;
+    padding: 0.25rem;
     width: 100%;
     overflow: hidden;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .loginPage p {
@@ -438,4 +461,96 @@ textarea {
 
 .modal-content button:hover {
   background-color: #0056b3;
+}
+
+.dark-mode-toggle {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #1d1b31;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dark-mode-toggle .toggle-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.dark-mode-toggle .toggle-icon::before,
+.dark-mode-toggle .toggle-icon::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+.bx-moon {
+  color: white;
+}
+
+.dark-mode-toggle .toggle-icon::before {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.dark-mode-toggle .toggle-icon::after {
+  bottom: 50%;
+  right: 0;
+  transform: translateY(50%);
+}
+
+.dark-mode-toggle.active .toggle-icon::before {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.dark-mode-toggle.active .toggle-icon::after {
+  transform: translateY(50%) rotate(-45deg);
+}
+
+body.dark-mode {
+  background-color: #5a5a5a;
+}
+
+.SidebarOnDesktop.dark-mode {
+  background-color: #000;
+}
+
+.sidebar.dark-mode {
+  background-color: #000;
+}
+
+.home_content.dark-mode {
+  background-color: #11101d;
+}
+
+.home_content.dark-mode .about-us-text {
+  color: #fff;
+}
+
+.text.dark-mode {
+  color: #fff;
+}
+
+.post.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.post.dark-mode .title {
+  color: #fff;
+}
+
+.post h3.dark-mode {
+  color: white;
 }
