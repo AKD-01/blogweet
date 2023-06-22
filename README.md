@@ -84,22 +84,6 @@ GENERATE_SOURCEMAP=false
 
 ```npm i```
 
-✴️ Make your contribution
-
-✴️ Commit and push the changes
-
-```markdown
-git add .
-git commit -m "Your message"
-git push origin branch_name
-```
-
-✴️ Create a new pull request from your forked repository (Click the `New Pull Request` button located at the top of your repo)
-
-✴️ Wait for your PR review and approval from the maintainers.
-
-✴️ Star ⭐ this repository if you liked it and you can also follow me 👀 .
-
 <a name="contribute"></a>
 <h2>:arrow_right:Contribution Guide:</h2>
 To learn about how to contribute to this project, visit <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>
