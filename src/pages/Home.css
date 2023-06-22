@@ -11,7 +11,10 @@ body {
   text-align: right;
   color: rgb(24, 8, 95);
 }
-
+.post, h3>div:nth-child(3){
+  margin:auto;
+  justify-content: flex-end;
+}
 .post {
   transition: transform 0.3s ease-out;
   display: inline-block;
