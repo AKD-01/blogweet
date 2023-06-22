@@ -102,7 +102,7 @@ git push origin branch_name
 
 <a name="contribute"></a>
 <h2>:arrow_right:Contribution Guide:</h2>
-To learn about how to contribute to this project, visit [`CONTRIBUTING.md`](CONTRIBUTING.md)
+To learn about how to contribute to this project, visit <a href='CONTRIBUTING.md'>`CONTRIBUTING.md`</a>
 
 ## Contributors
  <p align="center">
