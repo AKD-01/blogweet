@@ -102,20 +102,7 @@ git push origin branch_name
 
 <a name="contribute"></a>
 <h2>:arrow_right:Contribution Guide:</h2>
-:point_right:You must fork the repo.      
-
-:point_right:After doing `npm start`, create your account on the website and be familiar with the interface.   
-
-:point_right:You are adviced to make your own branch for contributing.     
-
-:point_right:Now you can either create an issue to request some changes or adding features or improving styling.   
-
-:point_right:You can also work on already created issues, but first comment on that issue, so that you get assigned the label of `gssoc23` and start working that issue and once you complete, you can raise a pull request.     
-
-:point_right:Once I review your code and if it seems okay then your branch will be merged.   
-
-:point_right:Bonus Tip: If you are new to GitHub and using terminal does no suit you, then you can use <a href="https://desktop.github.com/">GitHub Desktop</a>. 
-
+To learn about how to contribute to this project, visit [`CONTRIBUTING.md`](CONTRIBUTING.md)
 
 ## Contributors
  <p align="center">
