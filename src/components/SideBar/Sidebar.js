@@ -4,7 +4,7 @@ import "boxicons";
 import { auth } from "../../utils/firebase";
 import { Link } from "react-router-dom";
 
-const Sidebar = ({ isAuth, signUserOut }) => {
+const Sidebar = ({ isAuth, signUserOut, darkMode }) => {
   const [state, setState] = useState(false);
   const toggleSidebar = () => {
     setState((prevState) => ({ active: !prevState.active }));
@@ -12,7 +12,10 @@ const Sidebar = ({ isAuth, signUserOut }) => {
 
   const { active } = state;
   return (
-    <div className={`sidebar ${active ? "active" : ""}`}>
+    <div
+      className={`sidebar ${active ? "active" : ""}`}
+      style={{ backgroundColor: `${darkMode ? "black" : "#11101d"}` }}
+    >
       <div className="logo_content">
         <div className="logo">
           <div

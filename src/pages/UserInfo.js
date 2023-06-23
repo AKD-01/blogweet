@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./UserInfo.css";
 
-const UserInfo = () => {
+const UserInfo = ({ darkMode }) => {
   const location = useLocation();
   console.log(location.state);
   let user;
@@ -24,7 +24,10 @@ const UserInfo = () => {
 
   return (
     <>
-      <div className="card">
+      <div
+        className="card"
+        style={{ color: `${darkMode ? "white" : "black"}` }}
+      >
         <img src={user.photoUrl} alt={user.name} className="card-img" />
         <div className="card-body">
           <h3 className="card-title">{user.name}</h3>
