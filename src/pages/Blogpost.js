@@ -5,7 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "./pages.css";
 import "react-toastify/dist/ReactToastify.css";
 
-const Blogpost = () => {
+const Blogpost = ({ darkMode }) => {
   const postId = useParams();
   const [postLists, setPostList] = useState([]);
   const [post, setPost] = useState();
@@ -21,10 +21,16 @@ const Blogpost = () => {
       setPost(Array.of(postInfo)[0]);
       setPostList(data);
     };
-
     getPosts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--h1-color",
+      darkMode ? "white" : "black"
+    );
+  }, [darkMode]);
 
   const sharingHandler = (s) => {
     navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`);
@@ -34,7 +40,10 @@ const Blogpost = () => {
   // console.log(Array.of(postInfo)[0]);
   // const post = Array.of(postInfo)[0];
   return (
-    <div className="blogpage">
+    <div
+      className="blogpage"
+      style={{ color: `${darkMode ? "white" : "black"}` }}
+    >
       {post && (
         <>
           <div className="blogtitle">

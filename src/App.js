@@ -1,7 +1,10 @@
 import "./App.css";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {signUserAccountOut} from "./utils/firebase";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun } from "@fortawesome/free-solid-svg-icons";
+import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { signUserAccountOut } from "./utils/firebase";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import CreatePost from "./pages/CreatePost";
@@ -15,6 +18,12 @@ import NotFound404 from "./pages/NotFound404";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+  const [darkMode, setdarkMode] = useState(false);
+  const toggleMode = () => {
+    setdarkMode(!darkMode);
+  };
+
+  document.body.style.backgroundColor = `${darkMode ? "#272631" : "#bcb9d6"}`;
 
   const signUserOut = async () => {
     await signUserAccountOut();
@@ -28,21 +37,56 @@ function App() {
 
   return (
     <Router>
-      {width <= 600 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
+      {width <= 600 && (
+        <Sidebar
+          isAuth={isAuth}
+          signUserOut={signUserOut}
+          darkMode={darkMode}
+        />
+      )}
       {width > 600 && (
-        <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
+        <SidebarOnDesktop
+          isAuth={isAuth}
+          signUserOut={signUserOut}
+          darkMode={darkMode}
+        />
       )}
       <Routes>
-        <Route path="/" element={<Home isAuth={isAuth} />} />
+        <Route
+          path="/"
+          element={<Home isAuth={isAuth} darkMode={darkMode} />}
+        />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About darkMode={darkMode} />} />
+        <Route path="/contact" element={<Contact darkMode={darkMode} />} />
 
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
-        <Route path="/user/:username" element={<UserInfo />} />
-        <Route path="/user/:username/:blogname" element={<Blogpost />} />
+        <Route
+          path="/user/:username"
+          element={<UserInfo darkMode={darkMode} />}
+        />
+        <Route
+          path="/user/:username/:blogname"
+          element={<Blogpost darkMode={darkMode} />}
+        />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
+      <FontAwesomeIcon
+        icon={darkMode ? faSun : faMoon}
+        size="xl"
+        style={{
+          position: "absolute",
+          right: "7px",
+          top: "10px",
+          marginTop: "10px",
+          color: `${darkMode ? "white" : "black"}`,
+          cursor: "pointer",
+          padding: "15px",
+          backgroundColor: `${darkMode ? "black" : "#9e9bbb"}`,
+          borderRadius: "10px",
+        }}
+        onClick={toggleMode}
+      />
     </Router>
   );
 }

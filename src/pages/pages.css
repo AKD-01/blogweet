@@ -11,7 +11,7 @@ body {
   position: relative;
   padding: 0;
   margin: 1rem 0;
-  color: #000000;
+  color: var(--h1-color);
   transition: all 0.4s ease 0s;
   font-family: "Verdana", sans-serif;
   font-size: 2.8rem;
@@ -46,7 +46,7 @@ body {
   background-color: transparent;
 }
 
-button:hover{
+button:hover {
   background-color: transparent;
   transform: scale(1.1);
 }
@@ -58,7 +58,6 @@ button:hover{
   display: flex;
   justify-content: center;
   padding-right: 1rem;
-
 }
 
 @media screen and (min-width: 300px) and (max-width: 600px) {

@@ -112,7 +112,6 @@ a {
 
 .inputGp input {
   height: 40px;
-  
 }
 
 .inputGp textarea {
@@ -207,14 +206,14 @@ textarea {
 
 ::-webkit-scrollbar-track {
   border-radius: 100vw;
-  background: #BCB9D6; 
+  /* background: #BCB9D6;  */
   margin-block: 0.4em;
 }
 
 ::-webkit-scrollbar-thumb {
   border: 0.21em solid transparent;
   border-radius: 100px;
-  background-color: #9E9BBB;
+  background-color: #9e9bbb;
   background-clip: content-box;
 }
 
@@ -331,9 +330,7 @@ textarea {
   font-weight: 500;
   font-size: 1.1rem;
   line-height: 1.8rem;
-  
 }
-
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .homePage .post {
@@ -395,10 +392,10 @@ textarea {
     word-wrap: break-word;
     display: grid;
     height: 100px;
-    padding: .25rem;
+    padding: 0.25rem;
     width: 100%;
     overflow: hidden;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .loginPage p {

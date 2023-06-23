@@ -4,7 +4,7 @@ import "boxicons";
 import { auth } from "../../utils/firebase";
 import { Link } from "react-router-dom";
 
-const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
+const SidebarOnDesktop = ({ isAuth, signUserOut, darkMode }) => {
   const [state, setState] = useState(true);
 
   const toggleSidebarOnDesktop = () => {
@@ -12,7 +12,10 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
   };
 
   return (
-    <div className={`SidebarOnDesktop active`}>
+    <div
+      className={`SidebarOnDesktop active`}
+      style={{ backgroundColor: `${darkMode ? "black" : "#11101d"}` }}
+    >
       <div className="logo_content">
         <div className="logo">
           <div

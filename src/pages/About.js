@@ -1,9 +1,12 @@
 import React from "react";
 import "./About.css";
 
-const About = () => {
+const About = ({ darkMode }) => {
   return (
-    <div className="AboutPage">
+    <div
+      className="AboutPage"
+      style={{ color: `${darkMode ? "white" : "black"}` }}
+    >
       <h1>ABOUT</h1>
       <hr />
       <p>

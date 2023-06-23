@@ -12,10 +12,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import Modal from "react-modal";
 
-function Home({ isAuth }) {
+function Home({ isAuth, darkMode }) {
   const [postLists, setPostList] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
+
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--title-background-color",
+      darkMode ? "white" : "#3c1247"
+    );
+  }, [darkMode]);
+
   const deletePost = async (id) => {
     await deletePostFromDb(id);
     window.location.reload();
@@ -43,7 +51,6 @@ function Home({ isAuth }) {
     }
   };
 
-
   // const DUMMY_POST = {
   //   id: `id:${Math.random()}`,
   //   title: "Dummy Post",
@@ -57,7 +64,9 @@ function Home({ isAuth }) {
     const getPosts = async () => {
       const data = await getPostsFromDb();
       // Find the index of the post to be pinned
-      const pinnedPostIndex = data.findIndex((post) => post.id === "Pci3H6XCUJHtiBZgYrlA");
+      const pinnedPostIndex = data.findIndex(
+        (post) => post.id === "Pci3H6XCUJHtiBZgYrlA"
+      );
       if (pinnedPostIndex !== -1) {
         // Extract the pinned post from the array
         const pinnedPost = data.splice(pinnedPostIndex, 1)[0];
@@ -100,18 +109,24 @@ function Home({ isAuth }) {
         {postLists.map((post) => {
           // console.log(post);
           return (
-            <div className="post" key={post.id}>
+            <div
+              className="post"
+              key={post.id}
+              style={{ backgroundColor: `${darkMode ? "#11101d" : "#9e9bbb"}` }}
+            >
               <div className="postHeader">
                 <div>
                   <h1
                     className="title"
                     onClick={() => {
                       navigate(
-                        `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
                         }`,
                         { state: post }
                       );
                     }}
+                    style={{ color: `${darkMode ? "white" : "black"}` }}
                   >
                     {" "}
                     {post.title}
@@ -140,16 +155,18 @@ function Home({ isAuth }) {
                         ></i>
                       </button>
                     )}
-                  <button className="expandElement"
+                  <button
+                    className="expandElement"
                     onClick={() =>
                       sharingHandler(
-                        `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
                         }`
                       )
                     }
+                    style={{ color: `${darkMode ? "white" : "black"}` }}
                   >
-<i className="bx bxs-share-alt"></i>
-
+                    <i className="bx bxs-share-alt"></i>
                   </button>
                   {isAuth &&
                     auth.currentUser != null &&
@@ -161,14 +178,16 @@ function Home({ isAuth }) {
                         ></i>
                       </button>
                     )}
-
                 </div>
               </div>
               <div className="contents">
                 <div className="imageCont">
                   <img src={post.image} alt={post.title} />
                 </div>
-                <div className="postTextContainer">
+                <div
+                  className="postTextContainer"
+                  style={{ color: `${darkMode ? "white" : "black"}` }}
+                >
                   <div style={{ height: "70px", overflow: "hidden" }}>
                     {post.postText.substr(
                       0,
@@ -183,11 +202,13 @@ function Home({ isAuth }) {
                       fontSize: ".9rem",
                       cursor: "pointer",
                       width: "fit-content",
-                      'justify-self': "end"
+                      "justify-self": "end",
+                      color: `${darkMode ? "white" : "black"}`,
                     }}
                     onClick={() => {
                       navigate(
-                        `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
+                        `/user/${post.author.name.replaceAll(" ", "-")}/${
+                          post.id
                         }`,
                         { state: post }
                       );
@@ -198,9 +219,14 @@ function Home({ isAuth }) {
                 </div>
               </div>
               <h3>
-                <div>📅{post.date}</div>
+                <div style={{ color: `${darkMode ? "white" : "#18085f"}` }}>
+                  📅{post.date}
+                </div>
                 <div
-                  style={{ cursor: "pointer" }}
+                  style={{
+                    cursor: "pointer",
+                    color: `${darkMode ? "white" : "#18085f"}`,
+                  }}
                   onClick={() => {
                     navigate(`/user/${post.author.name.replaceAll(" ", "-")}`, {
                       state: post.author,
@@ -245,27 +271,35 @@ function Home({ isAuth }) {
         isOpen={showModal}
         onRequestClose={closeEditModal}
         contentLabel="Edit Post Modal"
-        style={{ overlay: { background: "transparent" }, content: { color: "#fff" } }}>
-        <div style={{ height: "100%", background: "#1D1B31", padding: "20px"}}>
+        style={{
+          overlay: { background: "transparent" },
+          content: { color: "#fff" },
+        }}
+      >
+        <div style={{ height: "100%", background: "#1D1B31", padding: "20px" }}>
           <h2 className="edit-heading">Edit Your Post</h2>
           {selectedPost && (
             <div>
-              <label htmlFor="editedContent" className="edit-label">Update your content:</label>
+              <label htmlFor="editedContent" className="edit-label">
+                Update your content:
+              </label>
               <textarea
                 id="editedContent"
                 defaultValue={selectedPost.postText}
                 rows="10"
                 className="edit-textarea"
               ></textarea>
-
             </div>
           )}
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <button onClick={handleModalSubmit} className="button">Submit</button>
-            <button onClick={closeEditModal} className="button buttonGap">Back</button>
+            <button onClick={handleModalSubmit} className="button">
+              Submit
+            </button>
+            <button onClick={closeEditModal} className="button buttonGap">
+              Back
+            </button>
           </div>
         </div>
-
       </Modal>
     </>
   );
