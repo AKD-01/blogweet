@@ -21,7 +21,7 @@ body {
   left: 0;
   height: 100%;
   width: 60px;
-  background: #11101d;
+  background: #0b0b0b;
   padding: 2px 6px;
   transition: all 0.5s ease;
 }
@@ -33,12 +33,15 @@ body {
 .SidebarOnDesktop .logo_content .logo {
   color: #fff;
   display: flex;
-  height: 50px;
   width: 100%;
   align-items: center;
   font-size: 20px;
   opacity: 0;
   pointer-events: none;
+}
+.logo_content{
+  height: 100px;
+  padding: 0%;
 }
 
 .SidebarOnDesktop .logo_content .logo {
@@ -51,10 +54,6 @@ body {
   margin-right: 5px;
 }
 
-.logo_content .logo .logo_name {
-  font-size: 20px;
-  font-weight: 400;
-}
 
 .SidebarOnDesktop #btn {
   position: absolute;
@@ -288,6 +287,14 @@ body {
   position: absolute;
 }
 
+.logo_img{
+  width: 100%;
+}
+
+.logo_img_vertical{
+  display: none;
+}
+
 @media screen and (max-width:600px) {
   .SidebarOnDesktop{
     width: 60px;
@@ -301,6 +308,22 @@ body {
   .profile .profile_details img{
     height: 25px;
     width: 25px;
+  }
+  .logo_img{
+    display: none;
+  }
+  .logo_content{
+    margin-top: 22px;
+    height: 130px;
+  }
+
+  .logo_img_vertical{
+    display: block;
+    /* height: 150px; */
+    width: 100%;
+     margin-top: 44px;
+     margin-bottom: 45px;
+    /* padding-left: 8px; */
   }
 }
  

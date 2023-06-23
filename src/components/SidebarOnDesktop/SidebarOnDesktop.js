@@ -3,35 +3,23 @@ import "./SidebarOnDesktop.css";
 import "boxicons";
 import { auth } from "../../utils/firebase";
 import { Link } from "react-router-dom";
+import logo from "../../assets/svg-icons/logo.png";
+import logo_vertical from "../../assets/svg-icons/logo_vertical.png";
+
 
 const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
   const [state, setState] = useState(true);
-
   const toggleSidebarOnDesktop = () => {
     setState(!state);
   };
-
   return (
     <div className={`SidebarOnDesktop active`}>
       <div className="logo_content">
         <div className="logo">
-          <div
-            className="logoname"
-            style={{
-              marginLeft: "5px",
-              fontSize: "1.8rem",
-              marginTop: ".5rem",
-            }}
-          >
-            <b>BLOGWEET</b>
-          </div>
+           <img className="logo_img" src={logo} />
+           <img className="logo_img_vertical" src={logo_vertical} />
         </div>
-        <i
-          className="bx bxl-twitter bx-tada"
-          id="btn"
-          style={{ fontSize: "25px" }}
-          onClick={toggleSidebarOnDesktop}
-        />
+        
       </div>
       <ul className="nav_list">
         <li onClick={toggleSidebarOnDesktop}>

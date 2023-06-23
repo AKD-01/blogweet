@@ -3,6 +3,7 @@ import "./Sidebar.css";
 import "boxicons";
 import { auth } from "../../utils/firebase";
 import { Link } from "react-router-dom";
+import logo from "../../assets/svg-icons/logo_vertical.png";
 
 const Sidebar = ({ isAuth, signUserOut }) => {
   const [state, setState] = useState(false);
@@ -15,23 +16,9 @@ const Sidebar = ({ isAuth, signUserOut }) => {
     <div className={`sidebar ${active ? "active" : ""}`}>
       <div className="logo_content">
         <div className="logo">
-          <div
-            className="logoname"
-            style={{
-              marginLeft: "5px",
-              fontSize: "1.5rem",
-              marginTop: ".5rem",
-            }}
-          >
-            <b>BLOGWEET</b>
-          </div>
+          <img id="logo" src={logo} alt="hover alt bla bla bla" />
         </div>
-        <i
-          className="bx bxl-twitter"
-          id="btn"
-          style={{ fontSize: "25px" }}
-          onClick={toggleSidebar}
-        />
+        
       </div>
       <ul className="nav_list">
         <li onClick={toggleSidebar}>
