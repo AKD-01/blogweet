@@ -395,10 +395,10 @@ textarea {
     word-wrap: break-word;
     display: grid;
     height: 100px;
-    padding: .25rem;
+    padding: 0.25rem;
     width: 100%;
     overflow: hidden;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .loginPage p {

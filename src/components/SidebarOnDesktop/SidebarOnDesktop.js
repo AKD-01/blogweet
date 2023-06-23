@@ -12,6 +12,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
   };
 
   return (
+  <>
     <div className={`SidebarOnDesktop active`}>
       <div className="logo_content">
         <div className="logo">
@@ -99,6 +100,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
