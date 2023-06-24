@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { getPostsFromDb, deletePostFromDb } from "../utils/firebase";
 import { auth, db } from "../utils/firebase";
-
 import "./Home.css";
 import { doc, updateDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import Modal from "react-modal";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function Home({ isAuth }) {
   const [postLists, setPostList] = useState([]);
@@ -43,6 +43,8 @@ function Home({ isAuth }) {
     }
   };
 
+  const [loading, setLoading] = useState(true);
+
 
   // const DUMMY_POST = {
   //   id: `id:${Math.random()}`,
@@ -66,6 +68,7 @@ function Home({ isAuth }) {
       } else {
         setPostList(data);
       }
+      setLoading(false);
     };
 
     getPosts();
@@ -96,6 +99,14 @@ function Home({ isAuth }) {
 
   return (
     <>
+      {loading ? (
+      <div className="preloader">
+        <ClipLoader color={'#18085f'}
+        loading={loading}
+        size={100} />
+      </div>
+      ) : (
+      <>
       <div className="homePage">
         {postLists.map((post) => {
           // console.log(post);
@@ -267,6 +278,8 @@ function Home({ isAuth }) {
         </div>
 
       </Modal>
+    </>
+      )}
     </>
   );
 }

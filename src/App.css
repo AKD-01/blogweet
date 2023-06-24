@@ -439,3 +439,28 @@ textarea {
 .modal-content button:hover {
   background-color: #0056b3;
 }
+
+/* Preloader.css */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #9e9bbb;
+  z-index: 9999;
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
