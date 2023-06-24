@@ -2,8 +2,9 @@ import { getPostsFromDb } from "../utils/firebase";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import "./pages.css";
 import "react-toastify/dist/ReactToastify.css";
+import "./Blogpost.css";
+import { faLeftRight } from "@fortawesome/free-solid-svg-icons";
 
 const Blogpost = () => {
   const postId = useParams();
@@ -37,49 +38,46 @@ const Blogpost = () => {
     <div className="blogpage">
       {post && (
         <>
+        <hr/>
           <div className="blogtitle">
-            <div className="three">
-              <h1>{post.title}</h1>
-            </div>
-            <button
-              className="shareButton"
-              onClick={() =>
-                sharingHandler(
-                  `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
-                )
-              }
-            >
-              <i
-                className="bx bxs-share-alt"
-                style={{
-                  color: "rgb(255, 255, 255)",
-                  boxShadow: " 0px 0px 0.2rem black",
-                  borderRadius: "1rem",
-                  background: " black",
-                  fontSize: "2rem",
-                  cursor: "pointer",
-                }}
-              ></i>
-            </button>
+            <div className="three"> <h1 >{post.title}</h1> </div>
+            
           </div>
+          
+          <div className="blogContent">
+            <div className="image"> <img src={post.image} alt={post.title} /> </div>
 
-          <hr />
-
-          <div className="blogcredits">
+            <div className="blogcredits">
             <div>👤{post.author.name}</div>
             <div>
               {post.date != null && (
-                <div style={{ textAlign: "right", marginRight: "1rem" }}>
+                <div >
                   📅{post.date}
-                </div>
-              )}
+                </div> )}
             </div>
+            {/* <div className="shareButton" > */}
+            <button className="share" onClick={() =>
+                sharingHandler(
+                  `/${post.author.name.replaceAll(" ", "-")}/${post.id}`)}>
+              <i className= "bx bxs-share-alt" 
+              style={{
+              color:" rgb(255, 255, 255)", 
+              boxShadow:" 8b86abc4 0px 0px 0rem",
+              borderRadius: "1rem", 
+              background: " black", 
+              fontSize: "2rem",
+              cursor:" pointer",}}
+              >
+              
+
+              </i>
+            </button>
+            </div>
+          {/* </div> */}
+
+            <div className="content"> <p>{post.postText}</p> </div>
           </div>
           <hr />
-          <div className="blogContent">
-            <img src={post.image} alt={post.title} />
-            <p>{post.postText}</p>
-          </div>
         </>
       )}
       <ToastContainer

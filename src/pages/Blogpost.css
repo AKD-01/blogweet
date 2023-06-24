@@ -1,0 +1,139 @@
+body {
+    background-color: #a8a4cac4;
+}
+
+.blogContent{
+    border-radius: 1rem;
+    filter: drop-shadow(1px 1rem 1rem white);
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.content{
+    background-color: #a8a4cac4;
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.image{
+    padding-bottom: 15px;
+}
+
+
+.blogpage{
+    height: 100%;
+    margin-left: 250px;
+    color: #f6f7f7;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 700;
+    word-break: break-word;
+}
+
+.blogtitle {
+    padding: 10px;
+    font-size: 4rem;
+    filter: drop-shadow(1px 1rem 1rem white);
+    color: #000;
+    display: flex;
+    justify-content: center;
+    padding-right: 1rem;
+    background-color: #8b86abc4 ;
+    border-radius: 1rem;
+    margin: 25px;
+    margin-bottom: 0px;
+}
+
+.blogcredits{
+    background-color: #a8a4cac4;
+    padding-bottom: 0.5rem;
+    border-radius: 1rem;
+    padding-top: 15px;
+    filter: drop-shadow(1px 1rem 1rem white);
+}
+
+
+button:hover{
+    background-color: transparent;
+    transform: scale(1.1);
+}
+
+.share{
+    display: flex;
+    background-color: a8a4cac4;
+    margin-right: 2rem;
+}
+
+
+.three h1 {
+    position: relative;
+    padding: 0;
+    margin: 1rem 0;
+    color: #000000;
+    transition: all 0.4s ease 0s;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.5em;
+}
+  
+
+.three h1:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    width: 55px;
+    background-color: rgb(0, 0, 0);
+}
+  
+.three h1:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    height: 1px;
+    width: 95%;
+    max-width: 255px;
+    background-color: rgb(0, 0, 0);
+}
+
+  @media screen and (min-width: 300px) and (max-width: 600px) {
+    .inputImg img {
+      height: 5rem;
+      margin: auto;
+      margin-left: auto;
+      border: 1px dashed;
+      padding: 0.5rem;
+      font-size: 10px;
+      text-align: center;
+      margin-left: 0.2rem;
+      border-radius: 0.5rem;
+    }
+  
+    .inputImg input {
+      height: 40px;
+      width: 80%;
+      margin-right: 0.2rem;
+    }
+  
+    .blogpage {
+      width: 88%;
+      padding-right: 1rem;
+      color: #aadddd;
+      word-break: break-word;
+      margin-left: 4rem;
+      margin-right: 2rem;
+    }
+  
+    .three h1 {
+      font-size: 2.5rem;
+    }
+    .blogcredits{
+        color: white;
+        margin-left: 0%;
+    }
+    .share{
+        
+    }
+  }
