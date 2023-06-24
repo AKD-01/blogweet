@@ -59,6 +59,11 @@ textarea {
   /* p {
     text-align: center;
   } */
+  .Contactus {
+    margin-left: 20%;
+    justify-content: center;
+  }
+
   h1 {
     font-size: 3rem;
   }
@@ -68,14 +73,24 @@ textarea {
     width: 90%;
   }
 
+  .Contactus p {
+    margin-left: 0%;
+  }
+
   form{
-    margin-left: 30%;;
+    margin-left: 0%;
+    justify-content: center;
   }
 }
 
 /* medium screen  */
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   /* Styles specific to medium screens */
+  .Contactus {
+    margin-left: 30%;
+    justify-content: center;
+  }
+  
   input[type="text"],
   input[type="email"],
   textarea {

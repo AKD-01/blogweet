@@ -7,9 +7,9 @@ const Contact=()=>{
             <hr/>
             <p>
             Please fill out the form below to get in touch with us:
-             </p>
+            </p>
             <form>
-                <div >
+                <div>
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" placeholder="Name"></input>
                 </div>
