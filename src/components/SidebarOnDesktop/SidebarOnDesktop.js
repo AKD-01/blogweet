@@ -14,7 +14,6 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
   return (
     <div className={`SidebarOnDesktop active`}>
       <div className="logo_content">
-<<<<<<< Updated upstream
         <div className="logo">
           <div
             className="logoname"
@@ -33,13 +32,12 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
           style={{ fontSize: "25px" }}
           onClick={toggleSidebarOnDesktop}
         />
-=======
+
         {/* <div className="logo"> */}
            <img className="logo_img" src={logo} />
            <img className="logo_img_vertical" src={logo_vertical} />
         {/* </div> */}
         
->>>>>>> Stashed changes
       </div>
       <ul className="nav_list">
         <li onClick={toggleSidebarOnDesktop}>

@@ -40,14 +40,11 @@ body {
   opacity: 0;
   pointer-events: none;
 }
-<<<<<<< Updated upstream
-=======
 .logo_content{
   height: 90px;
   padding: 0%;
   justify-content: center;
 }
->>>>>>> Stashed changes
 
 .SidebarOnDesktop .logo_content {
   opacity: 1;
