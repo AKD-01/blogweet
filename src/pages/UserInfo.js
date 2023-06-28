@@ -4,7 +4,7 @@ import "./UserInfo.css";
 
 const UserInfo = () => {
   const location = useLocation();
-  console.log(location.state);
+  // console.log(location.state);
   let user;
   if (location.state) {
     user = location.state;

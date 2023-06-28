@@ -47,7 +47,7 @@ const About = () => {
       <hr />
       <div className="social">
         <a href="https://github.com/AKD-01/blogweet">
-          <i class="bx bxl-github"></i>
+          <i className="bx bxl-github"></i>
           <span>GitHub</span>
         </a>
       </div>
