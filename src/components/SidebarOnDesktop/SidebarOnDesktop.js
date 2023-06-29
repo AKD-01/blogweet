@@ -43,13 +43,13 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         </li>
         <li onClick={toggleSidebarOnDesktop}>
           <Link to="/about">
-            <i class="bx bxs-info-circle"></i>
+            <i className="bx bxs-info-circle"></i>
             <span className="link_names">About</span>
           </Link>
         </li>
         <li>
           <Link to="/contact">
-            <i class="bx bxs-user-circle"></i>
+            <i className="bx bxs-user-circle"></i>
             <span className="link_names">Contact Us</span>
           </Link>
         </li>

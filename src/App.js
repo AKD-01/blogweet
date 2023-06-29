@@ -1,17 +1,20 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {signUserAccountOut} from "./utils/firebase";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import CreatePost from "./pages/CreatePost";
-import Sidebar from "./components/SideBar/Sidebar";
-import SidebarOnDesktop from "./components/SidebarOnDesktop/SidebarOnDesktop";
-import Blogpost from "./pages/Blogpost";
-import UserInfo from "./pages/UserInfo";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import NotFound404 from "./pages/NotFound404";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+
+const Home = lazy(()=>import("./pages/Home"))
+const Login = lazy(()=>import("./pages/Login"))
+const CreatePost = lazy(()=>import("./pages/CreatePost"))
+const Blogpost = lazy(()=>import("./pages/Blogpost"))
+const UserInfo = lazy(()=>import("./pages/UserInfo"))
+const About = lazy(()=>import("./pages/About"))
+const Contact = lazy(()=>import("./pages/Contact"))
+const NotFound404 = lazy(()=>import("./pages/NotFound404"))
+const Sidebar = lazy(()=>import("./components/SideBar/Sidebar"))
+const SidebarOnDesktop = lazy(()=>import("./components/SidebarOnDesktop/SidebarOnDesktop"))
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -28,6 +31,7 @@ function App() {
 
   return (
     <Router>
+    <Suspense fallback={<FontAwesomeIcon icon={faSpinner} spin />}>
       {width <= 600 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
       {width > 600 && (
         <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
@@ -43,6 +47,7 @@ function App() {
         <Route path="/user/:username/:blogname" element={<Blogpost />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
+      </Suspense>
     </Router>
   );
 }
