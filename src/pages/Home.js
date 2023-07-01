@@ -100,7 +100,13 @@ function Home({ isAuth }) {
         {postLists.map((post) => {
           // console.log(post);
           return (
-            <div className="post" key={post.id}>
+            <div className="post" key={post.id} onClick={() => {
+              navigate(
+                `/user/${post.author.name.replaceAll(" ", "-")}/${post.id
+                }`,
+                { state: post }
+              );
+            }}>
               <div className="postHeader">
                 <div>
                   <h1
