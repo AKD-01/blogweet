@@ -281,6 +281,10 @@ textarea {
   padding: 2rem;
 }
 
+.homePage .post:hover{
+  cursor: pointer;
+}
+
 .post .postHeader {
   display: flex;
   justify-content: center;
