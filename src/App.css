@@ -112,7 +112,6 @@ a {
 
 .inputGp input {
   height: 40px;
-  
 }
 
 .inputGp textarea {
@@ -207,14 +206,14 @@ textarea {
 
 ::-webkit-scrollbar-track {
   border-radius: 100vw;
-  background: #BCB9D6; 
+  background: #bcb9d6;
   margin-block: 0.4em;
 }
 
 ::-webkit-scrollbar-thumb {
   border: 0.21em solid transparent;
   border-radius: 100px;
-  background-color: #9E9BBB;
+  background-color: #9e9bbb;
   background-clip: content-box;
 }
 
@@ -331,9 +330,7 @@ textarea {
   font-weight: 500;
   font-size: 1.1rem;
   line-height: 1.8rem;
-  
 }
-
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .homePage .post {
@@ -395,10 +392,10 @@ textarea {
     word-wrap: break-word;
     display: grid;
     height: 100px;
-    padding: .25rem;
+    padding: 0.25rem;
     width: 100%;
     overflow: hidden;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .loginPage p {
@@ -438,4 +435,57 @@ textarea {
 
 .modal-content button:hover {
   background-color: #0056b3;
+}
+
+.dropdown {
+  position: relative;
+  padding: 5px 10px;
+  background-color: #11101d;
+  cursor: pointer;
+}
+
+.dropdown-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dropdown-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.dropdown-para {
+  padding: 0;
+  color: white;
+}
+
+.checkbox-container {
+  position: absolute;
+  background-color: #11101d;
+  width: 100%;
+  left: 0;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+  gap: 10px;
+  color: white;
+}
+
+.checkboxes-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkboxes-bar p {
+  padding: 0;
+}
+
+.checkboxes-bar span {
+  padding: 0;
+  font-size: small;
 }
