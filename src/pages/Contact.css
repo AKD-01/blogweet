@@ -1,23 +1,11 @@
-.Contactus {
-  margin-left: 250px;
-}
-
 h1 {
   text-align: center;
   font-weight: normal;
   font-size: 4rem;
 }
-
-p {
-  text-align: center;
-  /* padding: 2rem;  */
-  font-weight: bold;
-  /* margin-left: 8%; */
-}
-
 form {
   margin-top: 20px;
-  margin-left: 37%;  
+ 
 }
 
 label {
@@ -29,15 +17,11 @@ label {
 input[type="text"],
 input[type="email"],
 textarea {
-  width: 35%;
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-}
-
-textarea {
-  width: 35%;
+  width: 250px;
 }
 
 .cbutton {
