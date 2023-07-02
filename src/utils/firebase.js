@@ -16,13 +16,23 @@ import {
   signOut,
 } from "firebase/auth";
 
+// const firebaseConfig = {
+//   apiKey: process.env.REACT_APP_API_KEY,
+//   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+//   projectId: process.env.REACT_APP_PROJECT_ID,
+//   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+//   messagingSenderId: process.env.REACT_APP_MESSAGE_SENDER_ID,
+//   appId: process.env.REACT_APP_APP_ID,
+// };
+
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGE_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID,
+  apiKey: "AIzaSyCaEnLB9i1AjNkoR3jj0BhoKJ4TZWDikzI",
+  authDomain: "animating-buttons-5ae2b.firebaseapp.com",
+  projectId: "animating-buttons-5ae2b",
+  storageBucket: "animating-buttons-5ae2b.appspot.com",
+  messagingSenderId: "328113147529",
+  appId: "1:328113147529:web:517d447a8a83f581ee0058",
+  measurementId: "G-WHKWF2ZSFD"
 };
 
 // Initialize Firebase
