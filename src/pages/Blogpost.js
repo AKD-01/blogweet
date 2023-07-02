@@ -38,6 +38,12 @@ const Blogpost = () => {
       {post && (
         <>
           <div className="blogtitle">
+            <button
+              className="backButton"
+              onClick={() => navigate("/")}
+            >
+              <box-icon size="lg" name='left-arrow-circle' animation='tada' rotate='90' ></box-icon>
+            </button>
             <div className="three">
               <h1>{post.title}</h1>
             </div>

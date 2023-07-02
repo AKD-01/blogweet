@@ -73,6 +73,15 @@ textarea {
   }
 }
 
+.headerContact {
+  display: flex;
+  align-items: center;
+}
+
+.headerContact h1 {
+  margin-left: 150px;
+}
+
 /* medium screen  */
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   /* Styles specific to medium screens */
