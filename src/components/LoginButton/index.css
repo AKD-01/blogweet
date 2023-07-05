@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 /* CSS */
+
+.blogweetLogin:hover{
+  text-decoration: underline;
+  color: rgb(12, 174, 12);
+}
+
+
 .button-57 {
     margin: 1rem;
   position: relative;
@@ -54,7 +61,7 @@
   height: 100%;
   background-color: black;
   transform-origin: bottom center;
-  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transition: transform 800ms cubic-bezier(0.48, 0, 0.12, 1);
   transform: skewY(9.3deg) scaleY(0);
   z-index: 50;
 }
