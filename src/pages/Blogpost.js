@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "./pages.css";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 const Blogpost = () => {
   const postId = useParams();
@@ -37,30 +38,38 @@ const Blogpost = () => {
     <div className="blogpage">
       {post && (
         <>
-          <div className="blogtitle">
-            <div className="three">
-              <h1>{post.title}</h1>
+          <div className="blog-head">
+            <i
+              onClick={() => {
+                navigate("/");
+              }}
+              className="bx bx-arrow-back"
+            ></i>
+            <div className="blogtitle">
+              <div className="three">
+                <h1>{post.title}</h1>
+              </div>
+              <button
+                className="shareButton"
+                onClick={() =>
+                  sharingHandler(
+                    `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
+                  )
+                }
+              >
+                <i
+                  className="bx bxs-share-alt"
+                  style={{
+                    color: "rgb(255, 255, 255)",
+                    boxShadow: " 0px 0px 0.2rem black",
+                    borderRadius: "1rem",
+                    background: " black",
+                    fontSize: "2rem",
+                    cursor: "pointer",
+                  }}
+                ></i>
+              </button>
             </div>
-            <button
-              className="shareButton"
-              onClick={() =>
-                sharingHandler(
-                  `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
-                )
-              }
-            >
-              <i
-                className="bx bxs-share-alt"
-                style={{
-                  color: "rgb(255, 255, 255)",
-                  boxShadow: " 0px 0px 0.2rem black",
-                  borderRadius: "1rem",
-                  background: " black",
-                  fontSize: "2rem",
-                  cursor: "pointer",
-                }}
-              ></i>
-            </button>
           </div>
 
           <hr />

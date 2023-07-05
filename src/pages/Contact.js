@@ -1,9 +1,20 @@
 import React from "react";
 import "./Contact.css"
+import { useNavigate } from "react-router-dom";
+
 const Contact=()=>{
+    const navigate = useNavigate();
     return (
         <div className="Contactus">
+            <div className="contact-head">
+        <i
+          onClick={() => {
+            navigate("/");
+          }}
+          className="bx bx-arrow-back"
+        ></i>
             <h1>Contact Us</h1>
+      </div>
             <hr/>
             <p>
             Please fill out the form below to get in touch with us:
