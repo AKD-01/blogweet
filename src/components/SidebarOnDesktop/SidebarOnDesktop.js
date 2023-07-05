@@ -23,7 +23,9 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
               marginTop: ".5rem",
             }}
           >
-            <b>BLOGWEET</b>
+            <Link to="/">
+              <b className="link_names">BLOGWEET</b>
+            </Link>
           </div>
         </div>
         <i
