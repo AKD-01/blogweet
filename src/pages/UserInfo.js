@@ -12,6 +12,9 @@ const UserInfo = () => {
     user = {
       name: "Dummy User",
       email: "user@gmail.com",
+      linkedin: "in/8329",
+      website: "https://github.com/in/8329",
+      github: "https://github.com/in/8329",
       photoUrl: "https://avatars.githubusercontent.com/in/8329?s=80&v=4",
     };
   }
@@ -27,8 +30,9 @@ const UserInfo = () => {
       <div className="card">
         <img src={user.photoUrl} alt={user.name} className="card-img" />
         <div className="card-body">
-          <h3 className="card-title">{user.name}</h3>
-          <p className="card-text">Email: {user.email}</p>
+          <h3 className="card-title">Writer: {user.name}</h3>
+          <h5 className="card-text">Email: {user.email}</h5>
+
         </div>
       </div>
     </>
