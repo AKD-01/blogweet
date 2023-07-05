@@ -12,9 +12,6 @@ const UserInfo = () => {
     user = {
       name: "Dummy User",
       email: "user@gmail.com",
-      linkedin: "in/8329",
-      website: "https://github.com/in/8329",
-      github: "https://github.com/in/8329",
       photoUrl: "https://avatars.githubusercontent.com/in/8329?s=80&v=4",
     };
   }
