@@ -23,15 +23,21 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
               marginTop: ".5rem",
             }}
           >
-            <b>BLOGWEET</b>
+            <Link to="/">
+            <span className="link_names main-txt"><b>BLOGWEET</b></span>
+          </Link>
+            
           </div>
         </div>
-        <i
-          className="bx bxl-twitter bx-tada"
-          id="btn"
-          style={{ fontSize: "25px" }}
-          onClick={toggleSidebarOnDesktop}
-        />
+        <Link to="/">
+          <i
+            className="bx bxl-twitter bx-tada"
+            id="btn"
+            style={{ fontSize: "35px" }}
+            onClick={toggleSidebarOnDesktop}
+          />  
+        </Link>
+        
       </div>
       <ul className="nav_list">
         <li onClick={toggleSidebarOnDesktop}>
