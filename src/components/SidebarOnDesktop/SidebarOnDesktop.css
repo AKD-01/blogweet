@@ -24,6 +24,7 @@ body {
   background: #11101d;
   padding: 2px 6px;
   transition: all 0.5s ease;
+  padding-top: 14px;
 }
 
 .SidebarOnDesktop {
@@ -58,9 +59,9 @@ body {
 
 .SidebarOnDesktop #btn {
   position: absolute;
-  color: #fff;
-  left: 50%;
-  top: 6px;
+  color: rgb(188, 157, 234);
+  left: 70%;
+  top: 16px;
   font-size: 20px;
   height: 50px;
   width: 50px;
@@ -69,8 +70,10 @@ body {
   transform: translateX(-50%);
 }
 
-.SidebarOnDesktop #btn {
-  left: 80%;
+.SidebarOnDesktop #btn:hover {
+  transform:scaleX(2);
+  background-color: #1d1b31;
+  border-radius: 100%;
 }
 
 .SidebarOnDesktop ul {
@@ -94,7 +97,7 @@ body {
   border-radius: 6px;
   height: 35px;
   width: 122px;
-  background: #fff;
+  background: #ffffff84;
   line-height: 35px;
   text-align: center;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -159,7 +162,7 @@ body {
 }
 
 .SidebarOnDesktop ul li a:hover {
-  background: #fff;
+  background: #ffffffd8;
   color: #11101d;
 }
 
@@ -286,6 +289,11 @@ body {
   margin: 0.5rem;
   bottom: 0;
   position: absolute;
+}
+
+.main-txt{
+  margin-left: 10px;
+  color: rgb(188, 157, 234);
 }
 
 @media screen and (max-width:600px) {
