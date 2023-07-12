@@ -1,8 +1,6 @@
 body {
   background-color: #1d1b31c4;
 }
-
-
 .post h3 {
   display: flex;
   justify-content: space-between;
@@ -11,15 +9,12 @@ body {
   text-align: right;
   color: rgb(24, 8, 95);
 }
-
 .post {
   transition: transform 0.3s ease-out;
   display: inline-block;
   width: 300px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-
 .post:hover{
   transform: scale(1.03);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -37,19 +32,13 @@ body {
     pointer-events: none;
   }
 }
-
-
 .blogcredits {
   display: flex;
   justify-content: space-between;
   padding: 8px;
   font-size: 1.2rem;
 }
-
-.Link {
-  text-decoration: inherit;
-}
-
+.Link {text-decoration: inherit;}
 .title {
   color: #110c22;
   font-weight: normal;
@@ -60,7 +49,6 @@ body {
   position: relative;
   width: fit-content;
 }
-
 .title::after {
   content: "";
   position: absolute;
@@ -71,21 +59,12 @@ body {
   background-color: #3c1247;
   transition: width 0.3s ease-out;
 }
-
-.title:hover {
-  color: #3c1247;
-}
-
-.title:hover::after {
-  width: 100%;
-}
-
+.title:hover {color: #3c1247;}
+.title:hover::after {width: 100%;}
 .imageCont {
   text-align: left;
-  width: 45%;
   margin: 1rem;
 }
-
 .post .postTextContainer {
   word-wrap: break-word;
   display: grid;
@@ -101,82 +80,48 @@ body {
   transition: transform 0.3s ease-out;
   color: black;
 }
-
-.expandElement:hover {
-  transform: scale(1.2);
-}
+.expandElement:hover {transform: scale(1.2);}
 /* Expading animations */
 
 .imageCont img {
   height: 9rem;
-  
   padding: 0;
   border: none;
     border-radius: 8px;
   padding: 0.2rem;
   border-radius: 10px;
 }
-
 .contents {
   display: flex;
-  
   padding-bottom: 15px;
 }
-
-.deletePost {
-  display: flex;
-}
-
+.deletePost {display: flex;}
 
 @media screen and (min-width: 600px) and (max-width: 740px) {
-  .contents {
-    flex-direction: column;
-  }
-
-  .title {
-    font-size: 1.3rem;
-  }
+  .contents {flex-direction: column;}
+  .title {font-size: 1.3rem;}
 }
-
 @media screen and (min-width: 740px) and (max-width: 800px) {
-  .contents {
-    gap: 1.2rem;
-  }
-
-  .title {
-    font-size: 1.3rem;
-  }
+  .contents {gap: 1.2rem;}
+  .title {font-size: 1.3rem;}
 }
-
 @media screen and (min-width: 300px) and (max-width: 600px) {
-
   .imageCont img {
     width: 8rem;
     height: auto;
     padding: 0.2rem;
     border: ridge;
   }
-
   .imageCont {
     font-size: .5rem;
     text-align: left;
     width: 45%;
     margin: .5rem;
   }
-
-  .blogcredits {
-    color: #110c22;
-  }
-
-  .blogContent p {
-    color: #110c22;
-  }
-
-  .title {
-    font-size: 1.5rem;
-  }
+  .blogcredits {color: #110c22;}
+  .blogContent p {color: #110c22;}
+  .title {font-size: 1.5rem;}
 }
-
 .scrollToTopBtn {
   position: fixed;
   bottom: 40px;
@@ -199,35 +144,27 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .scrollToTopBtn:hover {
   opacity: 1;
   bottom: 46px;
   background-color: #333;
 }
-
 .edit-heading{
   display: flex;
   justify-content: center;
   font-family: Poppins,sans-serif;
   font-size:xxx-large;
 }
-
 .edit-label {
   margin-top: 50px;
   font-size: 1.2rem; /* Adjust the font size as desired */
 }
-
 .edit-textarea {
   width: 90%;
   font-size: 1rem; /* Adjust the font size as desired */
 }
-
 .button {
   border-radius: 5px;
   font-size: 15px;
 }
-
-.buttonGap {
-  margin-left: 100px;
-}
+.buttonGap {margin-left: 100px;}
