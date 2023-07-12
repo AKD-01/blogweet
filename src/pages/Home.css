@@ -64,6 +64,7 @@ body {
 .imageCont {
   text-align: left;
   margin: 1rem;
+  width: 60%;
 }
 .post .postTextContainer {
   word-wrap: break-word;
