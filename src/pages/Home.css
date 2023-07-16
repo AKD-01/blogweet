@@ -175,6 +175,14 @@ body {
   .title {
     font-size: 1.5rem;
   }
+  .homePage .post {
+    width: 80vw;
+    margin-left: -9.4rem;
+  }
+
+  .post h3 {
+    font-size: 10px;
+  }
 }
 
 .scrollToTopBtn {
