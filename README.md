@@ -1,9 +1,9 @@
 # BlogWeet
 
 <div align="center">
-<img src="https://forthebadge.com/images/badges/built-with-love.svg" />
+<!--<img src="https://forthebadge.com/images/badges/built-with-love.svg" />
 <img src="https://forthebadge.com/images/badges/uses-brains.svg" />
-<img src="https://forthebadge.com/images/badges/powered-by-responsibility.svg" />
+<img src="https://forthebadge.com/images/badges/powered-by-responsibility.svg" />!-->
   <br>
   <img src="https://img.shields.io/github/repo-size/AKD-01/blogweet?style=for-the-badge" />
   <img src="https://img.shields.io/github/issues/AKD-01/blogweet?style=for-the-badge" />
