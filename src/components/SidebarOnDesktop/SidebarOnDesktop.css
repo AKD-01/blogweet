@@ -30,7 +30,7 @@ body {
   width: 240px;
 }
 
-.SidebarOnDesktop .logo_content .logo {
+.SidebarOnDesktop .logo_content {
   color: #fff;
   display: flex;
   height: 50px;
@@ -40,8 +40,13 @@ body {
   opacity: 0;
   pointer-events: none;
 }
+.logo_content{
+  height: 90px;
+  padding: 0%;
+  justify-content: center;
+}
 
-.SidebarOnDesktop .logo_content .logo {
+.SidebarOnDesktop .logo_content {
   opacity: 1;
   pointer-events: none;
 }

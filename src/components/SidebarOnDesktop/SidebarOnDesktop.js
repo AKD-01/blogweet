@@ -32,6 +32,12 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
           style={{ fontSize: "25px" }}
           onClick={toggleSidebarOnDesktop}
         />
+
+        {/* <div className="logo"> */}
+           <img className="logo_img" src={logo} />
+           <img className="logo_img_vertical" src={logo_vertical} />
+        {/* </div> */}
+        
       </div>
       <ul className="nav_list">
         <li onClick={toggleSidebarOnDesktop}>
