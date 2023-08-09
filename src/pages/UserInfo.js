@@ -1,26 +1,26 @@
-import React, { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import "./UserInfo.css";
+import React, { useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import './UserInfo.css'
 
 const UserInfo = () => {
-  const location = useLocation();
-  console.log(location.state);
-  let user;
+  const location = useLocation()
+  console.log(location.state)
+  let user
   if (location.state) {
-    user = location.state;
+    user = location.state
   } else {
     user = {
-      name: "Dummy User",
-      email: "user@gmail.com",
-      photoUrl: "https://avatars.githubusercontent.com/in/8329?s=80&v=4",
-    };
+      name: 'Dummy User',
+      email: 'user@gmail.com',
+      photoUrl: 'https://avatars.githubusercontent.com/in/8329?s=80&v=4',
+    }
   }
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   useEffect(() => {
     if (!location.state) {
-      navigate("/404");
+      navigate('/404')
     }
-  }, [location.state, navigate]);
+  }, [location.state, navigate])
 
   return (
     <>
@@ -32,7 +32,7 @@ const UserInfo = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default UserInfo;
+export default UserInfo

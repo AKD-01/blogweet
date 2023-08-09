@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./About.css";
-import "./error.css";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './About.css'
+import './error.css'
 
 const NotFound404 = () => {
   return (
@@ -17,7 +17,7 @@ const NotFound404 = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NotFound404;
+export default NotFound404

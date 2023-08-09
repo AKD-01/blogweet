@@ -1,15 +1,22 @@
-import React, { useState } from "react";
-import "./SidebarOnDesktop.css";
-import "boxicons";
-import { auth } from "../../utils/firebase";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react'
+import './SidebarOnDesktop.css'
+import 'boxicons'
+import { auth } from '../../utils/firebase'
+import { Link, useLocation } from 'react-router-dom'
 
 const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
-  const [state, setState] = useState(true);
+  const location = useLocation()
+
+  const [state, setState] = useState(true)
 
   const toggleSidebarOnDesktop = () => {
-    setState(!state);
-  };
+    setState(!state)
+  }
+
+  // only don't show sidebar in createpost screen
+  if (location.pathname === '/createpost') {
+    return null
+  }
 
   return (
     <div className={`SidebarOnDesktop active`}>
@@ -18,18 +25,17 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
           <div
             className="logoname"
             style={{
-              marginLeft: "5px",
-              fontSize: "1.8rem",
-              marginTop: ".5rem",
-            }}
-          >
+              marginLeft: '5px',
+              fontSize: '1.8rem',
+              marginTop: '.5rem',
+            }}>
             <b>BLOGWEET</b>
           </div>
         </div>
         <i
           className="bx bxl-twitter bx-tada"
           id="btn"
-          style={{ fontSize: "25px" }}
+          style={{ fontSize: '25px' }}
           onClick={toggleSidebarOnDesktop}
         />
       </div>
@@ -71,11 +77,18 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
               className="bx bx-log-in bx-fade-left"
               id="log_in"
               onClick={toggleSidebarOnDesktop}
+              style={{
+                color: 'white',
+              }}
             />
             <span
               className="link_names login-button"
-              style={{ left: "2.5rem", position: "relative", bottom: ".1rem" }}
-            >
+              style={{
+                left: '2.5rem',
+                position: 'relative',
+                bottom: '.1rem',
+                color: 'white',
+              }}>
               Log in
             </span>
           </Link>
@@ -99,7 +112,7 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default SidebarOnDesktop;
+export default SidebarOnDesktop

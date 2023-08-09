@@ -1,32 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+
+  list-style: none;
+  list-style-type: none;
+
+  transition: all 0.2s ease-in-out;
 }
 
 body {
-  font-family: "Poppins";
   padding: 0%;
   margin: 0%;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-nav {
-  font-family: "Poppins";
-  margin: 0;
-  width: 100%;
-  height: 50px;
-  background-color: black;
-  display: flex;
-  justify-content: space-between;
-  color: white;
-  text-decoration: none;
-  padding-top: 0.5rem;
+  font-family: 'Poppins';
+  font-family: Arial, Helvetica, sans-serif;
+
+  background-color: var(--background);
 }
 
 .logout {
   border: none;
-  font-family: "poppins";
+  font-family: 'poppins';
   color: navajowhite;
   background-color: transparent;
   margin-right: 0.5rem;
@@ -42,30 +45,13 @@ nav {
   color: navajowhite;
 }
 
-.CreatePost {
-  font-size: 1rem;
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  background-color: black;
-  padding: 0.5rem;
-  border-radius: 1rem;
-  box-shadow: 1px 1px 0.5rem wheat;
-}
-
 .HomeLink {
-  background-color: black;
+  /* background-color: black; */
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   font-size: 1.25rem;
   vertical-align: middle;
   display: inline;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-  font-size: 25px;
 }
 
 .createPostPage {
@@ -79,7 +65,7 @@ a {
   width: 70%;
   height: auto;
   padding: 20px;
-  background-color: #1d1b31;
+  /* background-color: #1d1b31; */
   border-radius: 12px;
   color: white;
   display: flex;
@@ -112,7 +98,6 @@ a {
 
 .inputGp input {
   height: 40px;
-  
 }
 
 .inputGp textarea {
@@ -185,7 +170,8 @@ textarea {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Poppins";
+  font-family: 'Poppins';
+  font-weight: 700;
 }
 
 * {
@@ -207,14 +193,14 @@ textarea {
 
 ::-webkit-scrollbar-track {
   border-radius: 100vw;
-  background: #BCB9D6; 
+  background: #bcb9d6;
   margin-block: 0.4em;
 }
 
 ::-webkit-scrollbar-thumb {
   border: 0.21em solid transparent;
   border-radius: 100px;
-  background-color: #9E9BBB;
+  background-color: #9e9bbb;
   background-clip: content-box;
 }
 
@@ -229,8 +215,8 @@ textarea {
   color: #757575;
   font-size: 25px;
   font-weight: 500;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
   background-color: white;
   background-repeat: no-repeat;
@@ -327,13 +313,11 @@ textarea {
 
 .blogContent p {
   text-align: left;
-  font-family: "Verdana", sans-serif;
+  font-family: 'Verdana', sans-serif;
   font-weight: 500;
   font-size: 1.1rem;
   line-height: 1.8rem;
-  
 }
-
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .homePage .post {
@@ -361,7 +345,7 @@ textarea {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: "Poppins";
+    font-family: 'Poppins';
     margin-left: 95px;
     width: 80%;
     right: 1rem;
@@ -395,10 +379,10 @@ textarea {
     word-wrap: break-word;
     display: grid;
     height: 100px;
-    padding: .25rem;
+    padding: 0.25rem;
     width: 100%;
     overflow: hidden;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .loginPage p {
@@ -415,6 +399,21 @@ textarea {
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bfa5de;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .modal-content {
