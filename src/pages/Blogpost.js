@@ -1,9 +1,9 @@
-import { getPostsFromDb } from "../utils/firebase";
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
-import "./pages.css";
+import { useNavigate, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { getPostsFromDb } from "../utils/firebase";
+import "./pages.css";
 
 const Blogpost = () => {
   const postId = useParams();
@@ -45,7 +45,7 @@ const Blogpost = () => {
               className="shareButton"
               onClick={() =>
                 sharingHandler(
-                  `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
+                  `/user/${post.author.name.replaceAll(" ", "-")}/${post.id}`
                 )
               }
             >
