@@ -11,7 +11,7 @@ const Blogpost = () => {
   const [post, setPost] = useState();
   const navigate = useNavigate();
   useEffect(() => {
-    console.log(postId.blogname);
+    // console.log(postId.blogname);
     const getPosts = async () => {
       const data = await getPostsFromDb();
       const postInfo = data.filter((x) => x.id === postId.blogname)[0];
