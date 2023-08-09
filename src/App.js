@@ -1,17 +1,19 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {signUserAccountOut} from "./utils/firebase";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import CreatePost from "./pages/CreatePost";
 import Sidebar from "./components/SideBar/Sidebar";
 import SidebarOnDesktop from "./components/SidebarOnDesktop/SidebarOnDesktop";
-import Blogpost from "./pages/Blogpost";
-import UserInfo from "./pages/UserInfo";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import NotFound404 from "./pages/NotFound404";
+
+const Home = lazy(() => import('./pages/Home'));
+const Login = lazy(() => import('./pages/Login'));
+const CreatePost = lazy(() => import('./pages/CreatePost'));
+const Blogpost = lazy(() => import('./pages/Blogpost'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const UserInfo = lazy(() => import('./pages/UserInfo'));
+const NotFound404 = lazy(() => import('./pages/NotFound404'));
+
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -33,15 +35,46 @@ function App() {
         <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
       )}
       <Routes>
-        <Route path="/" element={<Home isAuth={isAuth} />} />
-        <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-
-        <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
-        <Route path="/user/:username" element={<UserInfo />} />
-        <Route path="/user/:username/:blogname" element={<Blogpost />} />
-        <Route path="*" element={<NotFound404 />} />
+        <Route path="/" element={
+          <Suspense fallback={<p>Loading</p>}>
+            <Home isAuth={isAuth} />
+          </Suspense>
+        } />
+        <Route path="/createpost" element={
+          <Suspense fallback={<p>Loading</p>}>
+            <CreatePost isAuth={isAuth} />
+          </Suspense>
+        } />
+        <Route path="/about" element={
+          <Suspense fallback={<p>Loading</p>}>
+            <About />
+          </Suspense>
+        } />
+        <Route path="/contact" element={
+          <Suspense fallback={<p>Loading</p>}>
+            <Contact />
+          </Suspense>
+        } />
+        <Route path="/login" element={
+          <Suspense fallback={<p>Loading</p>}>
+            <Login setIsAuth={setIsAuth} />
+          </Suspense>
+        } />
+        <Route path="/user/:username" element={
+          <Suspense fallback={<p>Loading</p>}>
+            <UserInfo />
+          </Suspense>
+        } />
+        <Route path="/user/:username/:blogname" element={
+          <Suspense fallback={<p>Loading</p>}>
+            <Blogpost />
+          </Suspense>
+        } />
+        <Route path="*" element={
+          <Suspense fallback={<p>Loading</p>}>
+            <NotFound404 />
+          </Suspense>
+        } />
       </Routes>
     </Router>
   );
