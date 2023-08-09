@@ -207,7 +207,13 @@ function Home({ isAuth }) {
                     });
                   }}
                 >
+                   <div className="container">
                   👤{post.author.name}
+                 
+                  <a href=""><img src="../assets/svg-icons/github.svg"/></a>
+                  <a href=""><img src="../assets/svg-icons/linkedin-svgrepo-com.svg"/></a>
+                  <a href=""><img src="../assets/svg-icons/twitter-154-svgrepo-com.svg"/></a>
+                  </div>
                 </div>
               </h3>
             </div>
