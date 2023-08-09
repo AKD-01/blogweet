@@ -1,10 +1,20 @@
 import React from "react";
 import "./About.css";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
   return (
     <div className="AboutPage">
-      <h1>ABOUT</h1>
+      <div className="about-head">
+        <i
+          onClick={() => {
+            navigate("/");
+          }}
+          className="bx bx-arrow-back"
+        ></i>
+        <h1>ABOUT</h1>
+      </div>
       <hr />
       <p>
         BlogWeet is a social media app that allows users to create, post and
