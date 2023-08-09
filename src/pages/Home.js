@@ -170,6 +170,7 @@ function Home({ isAuth }) {
                 </div>
                 <div className="postTextContainer">
                   <div style={{ height: "70px", overflow: "hidden" }}>
+                <div dangerouslySetInnerHTML={{ __html: post.postText }} />
                     {post.postText.substr(
                       0,
                       Math.min(post.postText.length, 200)

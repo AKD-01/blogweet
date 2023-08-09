@@ -1,0 +1,30 @@
+/* CreatePost.css */
+
+.jodit-editor-container {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+  }
+  
+  .jodit-editor-container .jodit-wysiwyg {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .jodit-editor-container .jodit-wysiwyg p {
+    margin: 0;
+  }
+  
+  .jodit-editor-container .jodit-wysiwyg ul,
+  .jodit-editor-container .jodit-wysiwyg ol {
+    padding-left: 20px;
+  }
+  
+  .jodit-editor-container .jodit-wysiwyg ul li,
+  .jodit-editor-container .jodit-wysiwyg ol li {
+    margin-bottom: 5px;
+  }
+  
+  /* Add any additional styles as per your preference */
+  

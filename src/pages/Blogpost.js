@@ -10,6 +10,7 @@ const Blogpost = () => {
   const [postLists, setPostList] = useState([]);
   const [post, setPost] = useState();
   const navigate = useNavigate();
+
   useEffect(() => {
     console.log(postId.blogname);
     const getPosts = async () => {
@@ -30,9 +31,11 @@ const Blogpost = () => {
     navigator.clipboard.writeText(`https://blogweet.vercel.app${s}`);
     toast(`Your link has been pasted to your Clipboard. Enjoy!`);
   };
-  // const postInfo = postLists.filter((x) => x.id === postId.blogname)[0];
-  // console.log(Array.of(postInfo)[0]);
-  // const post = Array.of(postInfo)[0];
+
+  const renderPostContent = () => {
+    return { __html: post.postText };
+  };
+
   return (
     <div className="blogpage">
       {post && (
@@ -76,10 +79,10 @@ const Blogpost = () => {
             </div>
           </div>
           <hr />
-          <div className="blogContent">
-            <img src={post.image} alt={post.title} />
-            <p>{post.postText}</p>
-          </div>
+          <div
+            className="blogContent"
+            dangerouslySetInnerHTML={renderPostContent()}
+          ></div>
         </>
       )}
       <ToastContainer
