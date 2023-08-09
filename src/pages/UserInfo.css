@@ -1,6 +1,6 @@
 .card {
     width: 500px;
-    height: 70vh;
+    height: 73vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     border-radius: 5px;
@@ -8,36 +8,51 @@
     margin-top: 5rem;
     margin-left: 40%;
     position: relative;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+
+}
+
+.card:hover {
+    box-shadow: rgba(50, 50, 93, 4) 0px 50px 100px -20px, rgba(0, 0, 0, 4) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .card-img {
-    width: 100%;
-    height: 60%;
+    width: 40%;
+    height: 40%;
     object-fit: cover;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30%;
+    margin-top: 12%;
+    border-style: solid;
 }
 
 .card-body {
-    padding: 20px;
+    /* padding: 20px; */
     position: absolute;
     bottom: 0;
-    background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
     width: 100%;
     height: 40%;
     transition: 0.3s;
 }
 
 .card-title {
-    font-size: 24px;
+    font-size: 33px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 10px;
-    color: #333;
+    /* margin-bottom: 10px; */
+    color: #1e1e1e;
+    text-shadow: 0.5px 0.5px 10.5x #000;
 }
 
 .card-text {
     font-size: 18px;
     text-align: center;
-    color: #333;
+    color: #282727;
+    margin-top: 30px;
 }
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
@@ -52,5 +67,24 @@
         margin-top: 5rem;
         margin-left: 5rem;
         position: relative;
+        background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+
+    }
+    .card-title{
+        font-size: 28px;
+    }
+    .card-text{
+        font-size: 16px;
+    }
+    .card-img{
+        width: 55%;
+        height: 40%;
+        object-fit: cover;
+        border-radius: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-left: 23%;
+        margin-top: 16%;
+        border-style: solid;
     }
 }
