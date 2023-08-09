@@ -30,7 +30,7 @@ body {
   width: 240px;
 }
 
-.sidebar .logo_content .logo {
+.sidebar .logo_content {
   color: #fff;
   display: flex;
   height: 50px;
@@ -51,9 +51,14 @@ body {
   margin-right: 5px;
 }
 
-.logo_content .logo .logo_name {
+.logo_content .logo_name {
   font-size: 20px;
   font-weight: 400;
+}
+
+.logo{
+  width: 100%;
+  height: 20vh;
 }
 
 .sidebar #btn {
