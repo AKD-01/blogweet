@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { addPostToDb } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import Modal from "./Modal"; // Import the Modal component
+import './CreatePost.css';
 
 function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
@@ -74,7 +75,7 @@ function CreatePost({ isAuth }) {
           </div>
         </div>
 
-        <button onClick={createPost}> Submit Post </button>
+        <button className="submit" onClick={createPost}> Submit Post </button>
       </div>
 
       {showModal && <Modal message={modalMessage} closeModal={closeModal} />}
