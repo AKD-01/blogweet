@@ -38,6 +38,7 @@ textarea {
 
 textarea {
   width: 35%;
+  resize:vertical;
 }
 
 .cbutton {
