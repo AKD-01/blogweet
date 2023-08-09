@@ -31,19 +31,18 @@ body {
 }
 
 .sidebar .logo_content .logo {
-  color: #fff;
+  color: green;
   display: flex;
   height: 50px;
   width: 100%;
   align-items: center;
   font-size: 20px;
   opacity: 0;
-  pointer-events: none;
+  
 }
 
 .sidebar.active .logo_content .logo {
   opacity: 1;
-  pointer-events: none;
 }
 
 .logo_content.logo i {
@@ -295,4 +294,11 @@ body {
   .sidebar.active .profile #log_out {
     left: 50%;
   }
+}
+.heading-bw:hover{
+  color: green;
+  transition: .4s;
+}
+.bxl-twitter:hover{
+  color: skyblue !important;
 }

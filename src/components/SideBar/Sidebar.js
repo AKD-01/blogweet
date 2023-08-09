@@ -21,9 +21,9 @@ const Sidebar = ({ isAuth, signUserOut }) => {
               marginLeft: "5px",
               fontSize: "1.5rem",
               marginTop: ".5rem",
-            }}
-          >
-            <b>BLOGWEET</b>
+               }}
+          > 
+            <b className="heading-bw">BlogWeet</b>
           </div>
         </div>
         <i

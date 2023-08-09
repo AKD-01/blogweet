@@ -38,12 +38,10 @@ body {
   align-items: center;
   font-size: 20px;
   opacity: 0;
-  pointer-events: none;
 }
 
 .SidebarOnDesktop .logo_content .logo {
   opacity: 1;
-  pointer-events: none;
 }
 
 .logo_content.logo i {
@@ -303,4 +301,9 @@ body {
     width: 25px;
   }
 }
- 
+.heading-bw:hover{
+  color: green;
+}
+.bxl-twitter:hover{
+  color: skyblue !important;
+}

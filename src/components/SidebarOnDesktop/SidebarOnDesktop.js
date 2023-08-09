@@ -21,9 +21,11 @@ const SidebarOnDesktop = ({ isAuth, signUserOut }) => {
               marginLeft: "5px",
               fontSize: "1.8rem",
               marginTop: ".5rem",
+             
             }}
           >
-            <b>BLOGWEET</b>
+            <b className="heading-bw"
+      >BLOGWEET</b>
           </div>
         </div>
         <i
