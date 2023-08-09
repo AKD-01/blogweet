@@ -7,6 +7,8 @@ function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [image, setImage] = useState("");
+
+  const [tags, setTags] = useState([]);
   const [modalMessage, setModalMessage] = useState(""); // State for the modal message
   const [showModal, setShowModal] = useState(false); // State to control the modal visibility
   let navigate = useNavigate();
@@ -22,8 +24,9 @@ function CreatePost({ isAuth }) {
       setModalMessage("The post must contain at least 20 words."); // Set the modal message
       setShowModal(true); // Show the modal
       return;
-    }
-    await addPostToDb(title, postText, image);
+    } 
+    await addPostToDb(title, postText, image, tags);
+
     navigate("/");
   };
 
@@ -64,6 +67,12 @@ function CreatePost({ isAuth }) {
             placeholder="Post..."
             value={postText}
             onChange={(e) => setPostText(e.target.value)}
+          />
+          <label> Tags:</label>
+          <input
+            placeholder="Tag1, Tag2..."
+            value={tags}
+            onChange={(e) => setTags (e.target.value.split(","))}
           />
         </div>
         <div className="inputImg">

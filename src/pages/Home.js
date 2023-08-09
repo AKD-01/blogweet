@@ -176,6 +176,7 @@ function Home({ isAuth }) {
                     )}
                     &nbsp;&nbsp;{" "}
                   </div>
+                  <div> {post.tags.map((tag) => {return (<span style={{margin: 2}}>#{tag}</span>)})}</div>
                   <div
                     style={{
                       textAlign: "right",
