@@ -1,91 +1,86 @@
-.Contactus {
-  margin-left: 250px;
-}
-
-h1 {
-  text-align: center;
-  font-weight: normal;
-  font-size: 4rem;
-}
-
-p {
-  text-align: center;
-  /* padding: 2rem;  */
-  font-weight: bold;
-  /* margin-left: 8%; */
-}
-
-form {
-  margin-top: 20px;
-  margin-left: 37%;  
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 35%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-textarea {
-  width: 35%;
-}
-
-.cbutton {
-  padding: 12px 25px;
-  background-color: #d65f30;
+.contact-form{
+  background-color: #11101d;
+  width: 60%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
   color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.contact-form input,textarea{
+  padding: 13px;
+  margin-top:-40px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  outline:none;
   border: none;
-  border-radius: 4px;
+  font-size: 15px;
+  }
+  
+  .btn-submit{
+  border: none;
+  outline: none;
+  padding: 15px 35px;
+  border-radius: 20px;
+  background-color: rgb(225, 202, 247);
+  color: #11101d;
+  font-size: 15px;
+  font-weight: 700;
   cursor: pointer;
-  text-align: center;
-  /* margin-left: 200px; */
-}
-
-.cbutton:hover {
-  background-color: #45a049;
-}
-
-@media (max-width: 767px) {
-  /* p {
-    text-align: center;
-  } */
-  h1 {
-    font-size: 3rem;
   }
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 90%;
+  
+  .btn-submit:hover{
+  color: white;
+  border: 1.5px solid white;
+  }
+  .form-heading{
+  font-size: 22px;
+  font-weight: 600;
+  padding-top: 5px;
+  }
+  .contact-form label{
+    margin-top: -10px;
+  font-size: 18px;
+  font-weight: 400;
   }
 
-  form{
-    margin-left: 30%;;
+  .contact-heading{
+    margin-top: -25px;
   }
-}
 
-/* medium screen  */
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-  /* Styles specific to medium screens */
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 80%;
+ 
+  @media(max-width:800px){
+  .contact-wrapper{
+  margin-left: 10%;
   }
-  /* p {
-    text-align: center;
-  } */
-  form{
-    margin-left: 25%;
+  .contact-form{
+  width: 90%;
+  padding: 20px;
+  margin-top: 30px;
   }
-  /* Add more styles for other elements as needed */
-}
+  .form-heading{
+  font-size: 15px;
+  }
+  .contact-form input,textarea{
+    font-size: 13px;
+  padding: 6px;
+  margin-bottom: 10px;
+  }
+  .btn-submit{
+  padding: 10px 30px;
+  font-size: 13px;
+  }
+  .contact-heading{
+  font-size: 25px;
+  
+  }
+  .contact-form label{
+    font-size: 13px;
+  }
+  
+  }

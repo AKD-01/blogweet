@@ -288,7 +288,7 @@ body {
   position: absolute;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:800px) {
   .SidebarOnDesktop{
     width: 60px;
   }
