@@ -10,6 +10,24 @@ const Blogpost = () => {
   const [postLists, setPostList] = useState([]);
   const [post, setPost] = useState();
   const navigate = useNavigate();
+  /* scroll-progress-bar-starts */
+  const [scroll, setScroll] = useState(0);
+  useEffect(() => {
+
+    let progressBarHandler = () => {
+        
+        const totalScroll = document.documentElement.scrollTop;
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scroll = `${totalScroll / windowHeight}`;
+
+        setScroll(scroll);
+    }
+
+    window.addEventListener("scroll", progressBarHandler);
+
+    return () => window.removeEventListener("scroll", progressBarHandler);
+});
+/* scroll-progress-bar-ends */
   useEffect(() => {
     console.log(postId.blogname);
     const getPosts = async () => {
@@ -34,7 +52,11 @@ const Blogpost = () => {
   // console.log(Array.of(postInfo)[0]);
   // const post = Array.of(postInfo)[0];
   return (
+    
     <div className="blogpage">
+      <div id="progressBarContainer">
+          <div id="progressBar" style={{transform: `scale(${scroll}, 1)`, opacity: `${scroll}`}} />
+      </div>
       {post && (
         <>
           <div className="blogtitle">
@@ -97,5 +119,6 @@ const Blogpost = () => {
     </div>
   );
 };
+
 
 export default Blogpost;
