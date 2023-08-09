@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {signUserAccountOut} from "./utils/firebase";
 import Home from "./pages/Home";
@@ -12,9 +12,11 @@ import UserInfo from "./pages/UserInfo";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound404 from "./pages/NotFound404";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+  const [loading, setLoading] = useState(true);
 
   const signUserOut = async () => {
     await signUserAccountOut();
@@ -26,8 +28,23 @@ function App() {
 
   width = window.screen.width;
 
+  useEffect(() => {
+    window.addEventListener('load', () => {
+      setLoading(false);
+    });
+  }, []);
+  
+
   return (
-    <Router>
+    <>
+     {loading ? (
+      <div className="preloader">
+        <ClipLoader color={'#18085f'}
+        loading={loading}
+        size={100} />
+      </div>
+      ) : (
+        <Router>
       {width <= 600 && <Sidebar isAuth={isAuth} signUserOut={signUserOut} />}
       {width > 600 && (
         <SidebarOnDesktop isAuth={isAuth} signUserOut={signUserOut} />
@@ -44,6 +61,9 @@ function App() {
         <Route path="*" element={<NotFound404 />} />
       </Routes>
     </Router>
+
+      )}
+    </>
   );
 }
 
