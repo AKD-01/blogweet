@@ -7,17 +7,16 @@ h1{
     font-weight: normal;
 }
 .AboutPage i{
-    font-size: 3rem;
+    font-size: 2rem;
     color: black;
-    filter: drop-shadow(1rem 1rem 1rem yellow);
 }
 .AboutPage span{
-    font-size: 3rem;
+    font-size: 2rem;
     color: black;
-    filter: drop-shadow(1rem 1rem 1rem yellow);
+    font-weight: bold;
 }
 .AboutPage i:hover, span:hover{
-    filter: drop-shadow(1rem 1rem 1rem blue);
+    filter: drop-shadow(0.1rem 0.1rem 0.1rem blue);
 }
 p{
     padding: 2rem;
