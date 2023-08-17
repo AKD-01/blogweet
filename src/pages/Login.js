@@ -25,27 +25,41 @@ function Login({ setIsAuth }) {
   };
 
   return (
-    <div className="loginPage">
-      <p className="lg-hd">Choose an account</p>
-      <p className="lg-shd">to continue to <span className="clr-hd">blogweet</span> </p>
-      
-      <LoginButton
-        label="Continue With Google"
-        alt="Google"
-        bgColor="#8ab4f8"
-        altColor="#8ab4f8"
-        signIn={signInWithGoogle}
-        image="bx bxl-google bx-flip-horizontal bx-burst"
-      />
-      <LoginButton
-        label="Continue With Github"
-        alt="Github"
-        bgColor="rgb(145, 151, 157)"
-        altColor="#f0f6fc"
-        signIn={signInWithGithub}
-        image="bx bxl-github bx-tada"
-      />
-    </div>
+    <>
+      <div>
+        <button
+          className="backButton"
+          onClick={() => navigate("/")}
+          style={{
+            position: "absolute",
+            marginLeft: "16rem",
+          }}
+        >
+          <box-icon size="lg" name='left-arrow-circle' animation='tada' rotate='90' ></box-icon>
+        </button>
+      </div>
+      <div className="loginPage">
+        <p className="lg-hd">Choose an account</p>
+        <p className="lg-shd">to continue to <span className="clr-hd">blogweet</span> </p>
+
+        <LoginButton
+          label="Continue With Google"
+          alt="Google"
+          bgColor="#8ab4f8"
+          altColor="#8ab4f8"
+          signIn={signInWithGoogle}
+          image="bx bxl-google bx-flip-horizontal bx-burst"
+        />
+        <LoginButton
+          label="Continue With Github"
+          alt="Github"
+          bgColor="rgb(145, 151, 157)"
+          altColor="#f0f6fc"
+          signIn={signInWithGithub}
+          image="bx bxl-github bx-tada"
+        />
+      </div>
+    </>
   );
 }
 
