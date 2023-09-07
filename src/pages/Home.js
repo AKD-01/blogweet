@@ -96,7 +96,7 @@ function Home({ isAuth }) {
 
   return (
     <>
-      <div className="homePage">
+      <div className="homePage" style={{backgroundColor:"white"}}>
         {postLists.map((post) => {
           // console.log(post);
           return (
