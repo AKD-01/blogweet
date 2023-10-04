@@ -1,5 +1,5 @@
 .Contactus {
-  margin-left: 250px;
+  margin-left: auto;
 }
 
 h1 {
@@ -13,6 +13,7 @@ p {
   /* padding: 2rem;  */
   font-weight: bold;
   /* margin-left: 8%; */
+  margin-left: 50px;
 }
 
 form {
@@ -56,9 +57,9 @@ textarea {
 }
 
 @media (max-width: 767px) {
-  /* p {
+   p {
     text-align: center;
-  } */
+  } 
   h1 {
     font-size: 3rem;
   }
@@ -72,8 +73,8 @@ textarea {
     margin-left: 30%;;
   }
 }
-
-/* medium screen  */
+    
+/* medium screen */
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   /* Styles specific to medium screens */
   input[type="text"],
@@ -81,11 +82,12 @@ textarea {
   textarea {
     width: 80%;
   }
-  /* p {
+   p {
     text-align: center;
-  } */
+  } 
   form{
     margin-left: 25%;
   }
-  /* Add more styles for other elements as needed */
-}
+ /* Add more styles for other elements as needed  */
+} 
+
