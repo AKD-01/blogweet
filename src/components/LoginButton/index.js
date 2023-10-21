@@ -6,24 +6,18 @@ const LoginButton = (props) => {
     props.signIn();
   };
   return (
-    
-    <button 
-    className="button-57"
-    style={{ backgroundColor: `${props.bgColor}` }}
-    onClick={SignInHandler}
+    <button
+      className="button-57"
+      style={{ backgroundColor: `${props.bgColor}` }}
+      onClick={SignInHandler}
     >
-      
       <span className="text" style={{ display: "flex" }}>
-        <i className={props.image} style={{ color: "#18181a" }} />
-        <div style={{ marginTop: ".15rem", marginLeft: ".5rem" }}>
-          {props.label}
-        </div>
+        <i className={props.image} style={{ color: "#18181a", fontSize: "2.2rem" }} />
+        <div style={{ marginTop: ".15rem", marginLeft: ".5rem" }}>{props.label}</div>
       </span>
       <span style={{ color: `${props.altColor}` }}>{props.alt}</span>
     </button>
-  
   );
 };
-
 
 export default LoginButton;
