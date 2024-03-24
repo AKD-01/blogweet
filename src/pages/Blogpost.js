@@ -45,7 +45,7 @@ const Blogpost = () => {
               className="shareButton"
               onClick={() =>
                 sharingHandler(
-                  `/${post.author.name.replaceAll(" ", "-")}/${post.id}`
+                  `/user/${post.author.name.replaceAll(" ", "-")}/${post.id}`
                 )
               }
             >
